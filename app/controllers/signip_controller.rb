@@ -1,0 +1,2 @@
+class SignipController < ApplicationController
+end
