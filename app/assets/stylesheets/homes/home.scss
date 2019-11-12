@@ -1,3 +1,34 @@
+body{
+  height: 7027px;
+  width: 1366px;
+}
+
+main{
+  height: 6028px;
+  width: 1028px;
+}
+
+header{
+  height: 490px;
+  width: 100%;
+
+  &HeaderTop{
+    height: 100px;
+  }
+
+  &HeaderBottom{
+    height: 390px;
+
+    &__Left{
+      &__category_search{
+
+      }
+      &__brand-search{
+
+      }
+
+  }
+}
 
 ul{
   vertical-align: baseline;
@@ -78,7 +109,3 @@ nav{
   height: 33px;
   width: 124px;
 }
-
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
