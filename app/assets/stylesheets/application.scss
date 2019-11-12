@@ -1,2 +1,13 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+// config
+@import "config/colors";
+@import "config/font-size";
+@import "config/reset";
+
+// 各コントローラー
+@import "homes/home";
+@import "mypages/mypage";
+@import "signups/signup.scss"
