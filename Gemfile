@@ -77,3 +77,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "haml-rails"
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
