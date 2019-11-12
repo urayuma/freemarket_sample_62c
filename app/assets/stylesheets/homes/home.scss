@@ -1,0 +1,84 @@
+
+ul{
+  vertical-align: baseline;
+  list-style: none;
+  padding-inline-start: 0;
+
+}
+
+li{
+  text-align: left;
+  line-height: 1.4em;
+  opacity: 0.7;
+
+}
+
+img{
+  vertical-align: middle;
+  padding-left: 25px;
+}
+
+span{
+  text-align: center;
+  width: 765px;
+  height: 12px;
+  font-size: 12px;
+  padding-left: 280px;
+}
+
+footer{
+  height: 389px;
+  width: 100%;
+  background-color: darkorange;
+  color: #ffffff;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  margin: 0, auto;
+}
+
+.FooterMenu{
+    height: 296px;
+    width: 1020px;
+    display: flex;
+    justify-content: center;  
+    margin: 30px, 153px, 20px;
+
+
+    &__list{
+      display: inline-block;
+      vertical-align: top;
+      margin: 36px;
+      padding: 0, 40px, 0, 0;
+    
+      &__title{
+        font-size: 16px;
+      }
+      
+      &__small{
+        font-size: 12px;
+        font: inherit;
+      }
+    }
+}
+
+
+
+.FooterBottom{
+  margin: 30px, 153px, 20px;
+  width: 1020px;
+  height: 33px;
+
+}
+
+
+.footer-logo{
+  height: 33px;
+  width: 124px;
+}
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
