@@ -21,7 +21,6 @@ describe Address, type: :model do
 
     it "lastnameが35文字の場合、登録できること" do
       address = build(:address, lastname: "a"*35)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -39,7 +38,6 @@ describe Address, type: :model do
 
     it "firstnameが35文字の場合、登録できること" do
       address = build(:address, firstname: "a"*35)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -75,7 +73,6 @@ describe Address, type: :model do
 
     it "lastname_kanaが35文字の場合、登録できること" do
       address = build(:address, lastname_kana: "ア"*35)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -111,7 +108,6 @@ describe Address, type: :model do
 
     it "firstname_kanaが35文字の場合、登録できること" do
       address = build(:address, firstname: "ア"*35)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -135,6 +131,7 @@ describe Address, type: :model do
 
     it "postcodeが数字以外の場合、登録できないこと" do
       address = build(:address, postcode: "aaa-aaaa")
+      address.valid?
       expect(address.errors[:postcode]).to include("は不正な値です")
     end
 
@@ -151,7 +148,6 @@ describe Address, type: :model do
 
     it "prefecturesがある場合、登録できること" do
       address = build(:address, prefectures: "東京都")
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -169,7 +165,6 @@ describe Address, type: :model do
 
     it "cityが35文字の場合、登録できること" do
       address = build(:address, city: "a"*35)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -187,7 +182,6 @@ describe Address, type: :model do
 
     it "street_numが100文字の場合、登録できること" do
       address = build(:address, street_num: "a"*100)
-      address.valid?
       expect(address).to be_valid
     end
 
@@ -199,7 +193,6 @@ describe Address, type: :model do
 
     it "buildingが100文字の場合、登録できること" do
       address = build(:address, building: "a"*100)
-      address.valid?
       expect(address).to be_valid
     end
     
@@ -227,15 +220,20 @@ describe Address, type: :model do
       expect(address.errors[:home_call_num]).to include("は不正な値です")
     end
 
+    it "home_call_numが登録済みの場合、登録できないこと" do
+      user = create(:address)
+      another_user = build(:address, home_call_num: user.home_call_num)
+      another_user.valid?
+      expect(another_user.errors[:home_call_num]).to include("はすでに存在します")
+    end
+
     it "home_call_numが10桁の数字の場合、登録できること" do
       address = build(:address, home_call_num: "0312345678")
-      address.valid?
       expect(address).to be_valid
     end
 
     it "home_call_numが11桁の数字の場合、登録できること" do
       address = build(:address, home_call_num: "09012345678")
-      address.valid?
       expect(address).to be_valid
     end
 

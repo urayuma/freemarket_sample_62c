@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :birthday_year, presence: true, numericality: { only_integer: true, greater_than: 1899, less_than: 2020 } #1900以上2019以下の整数
   validates :birthday_month, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 13 } #1以上12以下の整数
   validates :birthday_day, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 32 } #1以上31以下の整数
-  validates :phonenumber, presence: true, format: { with: /\A\d{10}$|^\d{11}\z/ } #10桁か11桁の数字の文字列
+  validates :phonenumber, presence: true, uniqueness: true, format: { with: /\A\d{10}$|^\d{11}\z/ } #10桁か11桁の数字の文字列
   validates :introduction, length:{ maximum: 1000 }
 
 end

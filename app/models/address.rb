@@ -10,7 +10,7 @@ class Address < ApplicationRecord
   validates :city, presence: true, length:{ maximum: 50 }
   validates :street_num, presence: true, length:{ maximum: 100 }
   validates :building, length:{ maximum: 100 }
-  validates :home_call_num, length:{ maximum: 100 }, format: { with: /\A\d{10}$|^\d{11}\z/ } #10桁か11桁の数字の文字列
+  validates :home_call_num, length:{ maximum: 100 }, uniqueness: true, format: { with: /\A\d{10}$|^\d{11}\z/ } #10桁か11桁の数字の文字列
 end
 
 

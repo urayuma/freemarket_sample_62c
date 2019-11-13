@@ -18,10 +18,16 @@ describe User do
       user.valid?
       expect(user.errors[:email]).to include("は不正な値です")
     end
+
+    it "emailが登録済みの場合、登録できないこと" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("はすでに存在します")
+    end
     
     it "emailの中間に@がある場合、登録できること" do
       user = build(:user, email: "email@email")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -59,7 +65,6 @@ describe User do
 
     it "passwordが数字と英字を含む7文字の場合、登録できること" do
       user = build(:user, password: "1a2b3c4")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -67,7 +72,6 @@ describe User do
       o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
       password = (0...128).map { o[rand(o.length)] }.join
       user = build(:user, password: "#{password}")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -87,7 +91,6 @@ describe User do
     it "nicknameが20文字以内の場合、登録できること" do
       nickname = (0...20).map{ ('A'..'Z').to_a[rand(26)] }.join #英字で20文字の文字列を生成
       user = build(:user, nickname: "#{nickname}")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -119,7 +122,6 @@ describe User do
     it "lastnameが数字や特殊文字を含まず35文字以内の場合、登録できること" do
       lastname = (0...35).map{ ('A'..'Z').to_a[rand(26)] }.join #英字で35文字の文字列を生成
       user = build(:user, lastname: "#{lastname}")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -151,7 +153,6 @@ describe User do
     it "firstnameが数字や特殊文字を含まず35文字以内の場合、登録できること" do
       firstname = (0...35).map{ ('A'..'Z').to_a[rand(26)] }.join #英字で35文字の文字列を生成
       user = build(:user, firstname: "#{firstname}")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -183,7 +184,6 @@ describe User do
     it "lastname_kanaがカタカナのみで35文字以内の場合、登録できること" do
       lastname_kana = ('ア'..'ン').to_a.sample(35).join #カタカナで35文字の文字列を生成
       user = build(:user, lastname_kana: "#{lastname_kana}")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -215,7 +215,6 @@ describe User do
     it "firstname_kanaがカタカナのみで35文字以内の場合、登録できること" do
       firstname_kana = ('ア'..'ン').to_a.sample(35).join #カタカナで35文字の文字列を生成
       user = build(:user, firstname_kana: "#{firstname_kana}")
-      user.valid?
       expect(user).to be_valid
     end
     
@@ -239,13 +238,11 @@ describe User do
 
     it "birthday_yearが1900の場合、登録できること" do
       user = build(:user, birthday_year: 1900)
-      user.valid?
       expect(user).to be_valid
     end
 
     it "birthday_yearが2019の場合、登録できること" do
       user = build(:user, birthday_year: 2019)
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -269,13 +266,11 @@ describe User do
     
     it "birthday_monthが1の場合、登録できること" do
       user = build(:user, birthday_month: 1)
-      user.valid?
       expect(user).to be_valid
     end
 
     it "birthday_monthが12の場合、登録できること" do
       user = build(:user, birthday_month: 12)
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -299,13 +294,11 @@ describe User do
 
     it "birthday_dayが1の場合、登録できること" do
       user = build(:user, birthday_day: 1)
-      user.valid?
       expect(user).to be_valid
     end
     
     it "birthday_dayが31の場合、登録できること" do
       user = build(:user, birthday_day: 31)
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -333,33 +326,35 @@ describe User do
       expect(user.errors[:phonenumber]).to include("は不正な値です")
     end
 
+    it "phonenumberが登録済みの場合、登録できないこと" do
+      user = create(:user)
+      another_user = build(:user, phonenumber: user.phonenumber)
+      another_user.valid?
+      expect(another_user.errors[:phonenumber]).to include("はすでに存在します")
+    end
+
     it "phonenumberが数字のみで10桁の場合、登録できること" do
       user = build(:user, phonenumber: "0312345678")
-      user.valid?
       expect(user).to be_valid
     end
 
     it "phonenumberが数字のみで11桁の場合、登録できること" do
       user = build(:user, phonenumber: "09012345678")
-      user.valid?
       expect(user).to be_valid
     end
 
     it "imageが空の場合、登録できること" do
       user = build(:user, image: "")
-      user.valid?
       expect(user).to be_valid
     end
 
     it "imageがある場合、登録できること" do
       user = build(:user, image: "https://blogimg.goo.ne.jp/user_image/2d/79/1d8407860d8063d31ec552053905c051.jpg")
-      user.valid?
       expect(user).to be_valid
     end
     
     it "introductionが空の場合、登録できること" do
       user = build(:user, introduction: "")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -375,7 +370,6 @@ describe User do
       o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
       introduction = (0...1000).map { o[rand(o.length)] }.join
       user = build(:user, introduction: "#{introduction}")
-      user.valid?
       expect(user).to be_valid
     end
 
