@@ -1,23 +1,55 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 body{
   height: 7027px;
   width: 1366px;
 }
 
-main{
-  height: 6028px;
-  width: 1028px;
-}
 
 header{
-  height: 490px;
+  height: 100px;
   width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+}
 
-  &HeaderTop{
-    height: 100px;
-  }
+.HeaderTop{
+    height: 40px;
+    width: 1020px;
+    margin: 0, auto;
+    padding: 8px, 0, 0;
+    display: flex;
+    justify-content: space-between;
 
-  &HeaderBottom{
+    &__header-logo{
+      height: 36px;
+      width: 134px;
+
+    }
+
+    &__header-search{
+      height: 40px;
+      width: 841px;
+      padding: 0, 50px, 0, 10px;
+
+    }
+
+    &button.search-logo{
+
+    }
+}
+
+.HeaderBottom{
     height: 390px;
+    width: 1020px;
+    display: flex;
+    // -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
 
     &__Left{
       &__category_search{
@@ -27,8 +59,77 @@ header{
 
       }
 
+    }
+  
+    &__Right{
+      &__favorite{
+
+      }
+      &__notification{
+
+      }
+      &__todo{
+
+      }
+      &__mypage{
+
+      }
+
+    }
+
+}
+
+
+.Slide-menu{
+  height: 390px;
+  width: 100%;
+  background-color: darksalmon;
+  text-align: center;
+
+}
+
+main{
+  height: 6028px;
+  width: 1028px;
+
+.MainMenu{
+  // display: flex;
+  // justify-content: center;
+
+  &__FavoriteItems{
+    height: 254px;
+    background-color: deeppink;
+    width: 100%;
+
+  }
+  &__CategoryLists{
+    height: 171px;
+    width: 100%;
+
+
+  }
+  &__CategoryItems{
+    height: 2614px;
+    background-color: deepskyblue;
+    width: 100%;
+
+
+  }
+  &__BrandLists{
+    height: 171px;
+    width: 100%;
+
+
+  }
+  &__BrandItems{
+    height: 2614px;
+    background-color: deepskyblue;
+    width: 100%;
+
   }
 }
+}
+
 
 ul{
   vertical-align: baseline;
@@ -108,4 +209,23 @@ nav{
 .footer-logo{
   height: 33px;
   width: 124px;
+}
+
+// @media (min-width: 768px)
+
+.PostItems{
+
+    width: 160px;
+    height: 160px;
+    padding-top: 32px;
+
+  &__Button{
+    padding-top: 15px;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(234, 53, 45);
+    border-radius: 50%;
+  }
+
 }

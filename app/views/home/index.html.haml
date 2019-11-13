@@ -1,12 +1,12 @@
 %body
     %header
         .HeaderTop
-            %div
-                %img.header-logo{alt: "Fmarket", src: "assets/images/fmarket_logo_red.svg"}/
-            %div
-                %form.sc-kjoXOD.jhhfpc{action: "/jp/search/"}
-                %input.sc-cHGsZl.uBYjF{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-                %button.sc-TOsTZ.eEWgtr
+            .HeaderTop__header-logo
+                %img{alt: "Fmarket", src: "assets/images/fmarket_logo_red.svg"}/
+            .HeaderTop__header-search
+                %form{action: "/jp/search/"}
+                %input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+                %button.search-logo
         .HeaderBottom
             .HeaderBottom__Left
                 .HeaderBottom__Left__category_search
@@ -19,27 +19,31 @@
                     %svg.sc-csuQGl.sc-caSCKo.kspmux{"aria-hidden" => "true", height: "16", viewbox: "0 0 23 16", width: "23"}>
                         %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule" => "nonzero"}
                     ブランドから探す
-            %ul.HeaderBottom_Right
+            %ul.HeaderBottom__Right
                 %li
-                %a.sc-RefOD.jwHbWf{href: "/jp/mypage/like/history/"}
+                %a.HeaderBottom__Right__favorite{href: "/jp/mypage/like/history/"}
                     いいね！一覧
                 %li
-                %a.sc-RefOD.jwHbWf{href: "/jp/mypage/notification/"}
+                %a.HeaderBottom__Right__notification{href: "/jp/mypage/notification/"}
                     お知らせ
                 %li
-                %a.sc-RefOD.jwHbWf{href: "/jp/mypage/todo/"}
+                %a.HeaderBottom__Right__todo{href: "/jp/mypage/todo/"}
                     やることリスト
                 %li
-                %a.sc-RefOD.jwHbWf{href: "/jp/mypage/"}
+                %a.HeaderBottom__Right__mypage{href: "/jp/mypage/"}
                     %img.profile-photo{alt: "", src: ""}>/
                     マイページ
-    .slide-menu
+    .Slide-menu
+        スライドしょーだお
+        .Slide-menu__1
+        .Slide-menu__2
     %main
-        .favorite-items
-        .category-lists
-        .category-items
-        .brand-lists
-        .brand-items
+        .MainMenu
+            .MainMenu__FavoriteItems
+            .MainMenu__CategoryLists
+            .MainMenu__CategoryItems
+            .MainMenu__BrandLists
+            .MainMenu__BrandItems
     %aside
 
     %footer
@@ -75,3 +79,9 @@
                 .FooterBottom__menu
                     %img.footer-logo{alt: "Fmarket", src: "fmarket_logo_red.svg"}
                     %span.footer-text © 2019 Fmarket
+    
+    .PostItems
+    -# = link_to '出品画面', new_post_path, data: { confirm: '画面を離れてよろしいですか？' }
+        .PostItems__Button
+        %p 出品
+        %svg.sc-kGXeez.sc-fBuWsC.bMYJEZ{"aria-hidden" => "true", height: "16", viewbox: "0 0 18 16", width: "18"}
