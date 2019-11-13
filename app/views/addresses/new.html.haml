@@ -1,0 +1,113 @@
+%header.single-header
+  %h1
+    %a 画像リンク
+  %nav.progress-bar_signup-bar
+    %ol.clearfix
+      %li headerのバー
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      住所入力
+    = form_for @address, url: new_address_path do |f|
+      - required = '必須'
+      - optional = '任意'
+      .user_address
+        .field
+          .field-label
+            = f.label :"お名前", class: 'user_address_name'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:lastname].any?
+              = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname_error'
+            - else
+              = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname'
+            - if @address.errors.messages[:firstname].any?
+              = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname_error'
+            - else
+              = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname'
+          - if @address.errors.messages[:lastname].any?
+            = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:lastname)
+          - if @address.errors.messages[:firstname].any?
+            = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:firstname)
+        .field
+          .field-label
+            = f.label :"お名前カナ", class: 'user_address_name_kana'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:lastname_kana].any?
+              = f.text_field :lastname_kana, placeholder: '例）佐藤', id: 'user_lastname_kana_error'
+            - else
+              = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana'
+            - if @address.errors.messages[:firstname_kana].any?
+              = f.text_field :firstname_kana, placeholder: '例）太郎', id: 'user_firstname_kana_error'
+            - else
+              = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana'
+          - if @address.errors.messages[:lastname_kana].any?
+            = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:lastname_kana)
+          - if @address.errors.messages[:firstname_kana].any?
+            = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:firstname_kana)
+        .field
+          .field-label
+            = f.label :"郵便番号", class: 'address_city'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:postcode].any?
+              = f.text_field :postcode, placeholder: '例）123-4567', id: 'address_postcode_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:postcode)
+            - else
+              = f.text_field :postcode, placeholder: '例）123-4567', id: 'address_postcode'
+        .field
+          .field-label
+            = f.label :"都道府県", class: 'address_prefectures'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:prefectures].any?
+              = f.select :prefectures, ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"], id: 'address_prefectures_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:prefectures)
+            - else
+              = f.select :prefectures, ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"], id: 'address_prefectures'
+        .field
+          .field-label
+            = f.label :"市区町村", class: 'address_city'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:city].any?
+              = f.text_field :city, placeholder: '例）横浜市緑区', id: 'address_city_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:city)
+            - else
+              = f.text_field :city, placeholder: '例）横浜市緑区', id: 'address_city'
+        .field
+          .field-label
+            = f.label :"番地", class: 'address_street_num'
+            %span.min #{required}
+          .field-input
+            - if @address.errors.messages[:street_num].any?
+              = f.text_field :street_num, placeholder: '例）青山1-1-1', id: 'address_street_num_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:street_num)
+            - else
+              = f.text_field :street_num, placeholder: '例）青山1-1-1', id: 'address_street_num'
+        .field
+          .field-label
+            = f.label :"建物名", class: 'address_building'
+            %span.nin #{optional}
+          .field-input
+            - if @address.errors.messages[:building].any?
+              = f.text_field :building, placeholder: '例）青山1-1-1', id: 'address_building_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:building)
+            - else
+              = f.text_field :building, placeholder: '例）エスポワール号45', id: 'address_building'
+        .field
+          .field-label
+            = f.label :"電話", class: 'address_home_call_num'
+            %span.nin #{optional}
+          .field-input
+            - if @address.errors.messages[:home_call_num].any?
+              = f.text_field :home_call_num, placeholder: '例）青山1-1-1', id: 'address_home_call_num_error'
+              = render 'shard/signups_errors', errors: @address.errors.full_messages_for(:home_call_num)
+            - else
+              = f.text_field :home_call_num, placeholder: '例）09012345678', id: 'address_home_call_num'
+        .field_submit
+          .firld-input
+            = f.submit :"次へ進む", class: "next_submit", class: 'address_submit'
+        .destory_wall
+.footer フッター

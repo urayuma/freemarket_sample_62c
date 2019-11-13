@@ -60,6 +60,7 @@ end
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
 end
@@ -80,9 +81,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'devise'
+gem 'dotenv-rails' # 環境変数設定のために
 gem 'fog-aws'
 gem 'font-awesome-sass'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'rails-i18n'
+gem 'recaptcha', require: "recaptcha/rails"

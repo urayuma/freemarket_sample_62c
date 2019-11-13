@@ -13,6 +13,8 @@ module FreemarketSample62c
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
 
+    # from_forタグがエラーメッセージがるときに自動で作成する<div class="form_with_erroro></div>"を作成させないために
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
     config.generators do |g|
       g.assets false # CSS/JSファイル生成せず
       g.skip_routes false        # trueなら routes.rb変更せず
