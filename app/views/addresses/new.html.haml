@@ -8,7 +8,7 @@
   %section.l-single-container
     %h2.l-single-inner_registration
       住所入力
-    = form_for @address, url: new_address_path do |f|
+    = form_for @address, url: addresses_path do |f|
       - required = '必須'
       - optional = '任意'
       .user_address
