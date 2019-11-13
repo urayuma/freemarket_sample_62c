@@ -3,7 +3,7 @@ describe Address, type: :model do
   describe '#create', focus: true do
 
     it "全ての値が適切に入力されている場合、登録できること" do
-      address = create(:address)
+      address = build(:address)
       expect(address).to be_valid
     end
 
@@ -121,11 +121,6 @@ describe Address, type: :model do
       expect(address.errors[:postcode]).to include("を入力してください")
     end
 
-    it "postcodeが3桁-4桁の場合、登録できること" do
-      address = create(:address, postcode: "123-4567")
-      expect(address).to be_valid
-    end
-
     it "postcodeが3桁-5桁の場合、登録できないこと" do
       address = build(:address, postcode: "111-11111")
       address.valid?
@@ -136,6 +131,16 @@ describe Address, type: :model do
       address = build(:address, postcode: "11-1111")
       address.valid?
       expect(address.errors[:postcode]).to include("は不正な値です")
+    end
+
+    it "postcodeが数字以外の場合、登録できないこと" do
+      address = build(:address, postcode: "aaa-aaaa")
+      expect(address.errors[:postcode]).to include("は不正な値です")
+    end
+
+    it "postcodeが3桁-4桁の場合、登録できること" do
+      address = build(:address, postcode: "123-4567")
+      expect(address).to be_valid
     end
 
     it "prefecturesが空の場合、登録できないこと" do
@@ -212,6 +217,12 @@ describe Address, type: :model do
 
     it "home_call_numが12桁の数字の場合、登録できないこと" do
       address = build(:address, home_call_num: "123456789012")
+      address.valid?
+      expect(address.errors[:home_call_num]).to include("は不正な値です")
+    end
+
+    it "home_call_numが数字以外の場合、登録できないこと" do
+      address = build(:address, home_call_num: "aiueoaiueo")
       address.valid?
       expect(address.errors[:home_call_num]).to include("は不正な値です")
     end

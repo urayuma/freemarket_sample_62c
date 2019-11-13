@@ -345,29 +345,25 @@ describe User do
       expect(user).to be_valid
     end
 
-  end
-
-  describe '#edit' do
-
-    it "imageが空の場合、編集できること" do
+    it "imageが空の場合、登録できること" do
       user = build(:user, image: "")
       user.valid?
       expect(user).to be_valid
     end
 
-    it "imageがある場合、編集できること" do
+    it "imageがある場合、登録できること" do
       user = build(:user, image: "https://blogimg.goo.ne.jp/user_image/2d/79/1d8407860d8063d31ec552053905c051.jpg")
       user.valid?
       expect(user).to be_valid
     end
     
-    it "introductionが空の場合、編集できること" do
+    it "introductionが空の場合、登録できること" do
       user = build(:user, introduction: "")
       user.valid?
       expect(user).to be_valid
     end
 
-    it "introductionが1001文字以上の場合、編集できないこと" do
+    it "introductionが1001文字以上の場合、登録できないこと" do
       o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
       introduction = (0...1001).map { o[rand(o.length)] }.join
       user = build(:user, introduction: "#{introduction}")
@@ -375,13 +371,13 @@ describe User do
       expect(user.errors[:introduction]).to include("は1000文字以内で入力してください")
     end
 
-    it "introductionが1000文字以内の場合、編集できること" do
+    it "introductionが1000文字以内の場合、登録できること" do
       o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
       introduction = (0...1000).map { o[rand(o.length)] }.join
       user = build(:user, introduction: "#{introduction}")
       user.valid?
       expect(user).to be_valid
     end
-    
+
   end
 end
