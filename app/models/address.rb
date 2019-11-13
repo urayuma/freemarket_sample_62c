@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :user
 
   validates :lastname, presence: true, length:{ maximum: 35 }
   validates :firstname, presence: true, length:{ maximum: 35 }
