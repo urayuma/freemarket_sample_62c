@@ -57,8 +57,16 @@ describe User do
       expect(user.errors[:password]).to include("は不正な値です")
     end
 
-    it "passwordが数字と英字を含む7文字以上128文字以下の場合、登録できること" do
+    it "passwordが数字と英字を含む7文字の場合、登録できること" do
       user = build(:user, password: "1a2b3c4")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "passwordが数字と英字を含む128文字の場合、登録できること" do
+      o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
+      password = (0...128).map { o[rand(o.length)] }.join
+      user = build(:user, password: "#{password}")
       user.valid?
       expect(user).to be_valid
     end
@@ -147,12 +155,233 @@ describe User do
       expect(user).to be_valid
     end
 
+    it "lastname_kanaが空の場合、登録できないこと" do
+      user = build(:user, lastname_kana: "")
+      user.valid?
+      expect(user.errors[:lastname_kana]).to include("を入力してください")
+    end
+    
+    it "lastname_kanaが36文字以上の場合、登録できないこと" do
+      lastname_kana = ('ア'..'ン').to_a.sample(36).join #カタカナで36文字の文字列を生成
+      user = build(:user, lastname_kana: "#{lastname_kana}")
+      user.valid?
+      expect(user.errors[:lastname_kana]).to include("は35文字以内で入力してください")
+    end
+    
+    it "lastname_kanaが特殊文字を含む場合、登録できないこと" do
+      user = build(:user, lastname_kana: "@＠!！_?><")
+      user.valid?
+      expect(user.errors[:lastname_kana]).to include("は不正な値です")
+    end
+    
+    it "lastname_kanaが数字を含む場合、登録できないこと" do
+      user = build(:user, lastname_kana: "123１２３")
+      user.valid?
+      expect(user.errors[:lastname_kana]).to include("は不正な値です")
+    end
+    
+    it "lastname_kanaがカタカナのみで35文字以内の場合、登録できること" do
+      lastname_kana = ('ア'..'ン').to_a.sample(35).join #カタカナで35文字の文字列を生成
+      user = build(:user, lastname_kana: "#{lastname_kana}")
+      user.valid?
+      expect(user).to be_valid
+    end
 
+    it "firstname_kanaが空の場合、登録できないこと" do
+      user = build(:user, firstname_kana: "")
+      user.valid?
+      expect(user.errors[:firstname_kana]).to include("を入力してください")
+    end
+    
+    it "firstname_kanaが36文字以上の場合、登録できないこと" do
+      firstname_kana = ('ア'..'ン').to_a.sample(36).join #カタカナで36文字の文字列を生成
+      user = build(:user, firstname_kana: "#{firstname_kana}")
+      user.valid?
+      expect(user.errors[:firstname_kana]).to include("は35文字以内で入力してください")
+    end
+    
+    it "firstname_kanaが特殊文字を含む場合、登録できないこと" do
+      user = build(:user, firstname_kana: "@＠!！_?><")
+      user.valid?
+      expect(user.errors[:firstname_kana]).to include("は不正な値です")
+    end
+    
+    it "firstname_kanaが数字を含む場合、登録できないこと" do
+      user = build(:user, firstname_kana: "123１２３")
+      user.valid?
+      expect(user.errors[:firstname_kana]).to include("は不正な値です")
+    end
+    
+    it "firstname_kanaがカタカナのみで35文字以内の場合、登録できること" do
+      firstname_kana = ('ア'..'ン').to_a.sample(35).join #カタカナで35文字の文字列を生成
+      user = build(:user, firstname_kana: "#{firstname_kana}")
+      user.valid?
+      expect(user).to be_valid
+    end
+    
+    it "birthday_yearが空の場合、登録できないこと" do
+      user = build(:user, birthday_year: nil)
+      user.valid?
+      expect(user.errors[:birthday_year]).to include("を入力してください")
+    end
 
+    it "birthday_yearが1899以下の場合、登録できないこと" do
+      user = build(:user, birthday_year: 1899)
+      user.valid?
+      expect(user.errors[:birthday_year]).to include("は1899より大きい値にしてください")
+    end
 
+    it "birthday_yearが2020以上の場合、登録できないこと" do
+      user = build(:user, birthday_year: 2020)
+      user.valid?
+      expect(user.errors[:birthday_year]).to include("は2020より小さい値にしてください")
+    end
 
+    it "birthday_yearが1900の場合、登録できること" do
+      user = build(:user, birthday_year: 1900)
+      user.valid?
+      expect(user).to be_valid
+    end
 
+    it "birthday_yearが2019の場合、登録できること" do
+      user = build(:user, birthday_year: 2019)
+      user.valid?
+      expect(user).to be_valid
+    end
 
+    it "birthday_monthが空の場合、登録できないこと" do
+      user = build(:user, birthday_month: nil)
+      user.valid?
+      expect(user.errors[:birthday_month]).to include("を入力してください")
+    end
+    
+    it "birthday_monthが0以下の場合、登録できないこと" do
+      user = build(:user, birthday_month: 0)
+      user.valid?
+      expect(user.errors[:birthday_month]).to include("は0より大きい値にしてください")
+    end
+    
+    it "birthday_monthが13以上の場合、登録できないこと" do
+      user = build(:user, birthday_month: 13)
+      user.valid?
+      expect(user.errors[:birthday_month]).to include("は13より小さい値にしてください")
+    end
+    
+    it "birthday_monthが1の場合、登録できること" do
+      user = build(:user, birthday_month: 1)
+      user.valid?
+      expect(user).to be_valid
+    end
 
+    it "birthday_monthが12の場合、登録できること" do
+      user = build(:user, birthday_month: 12)
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "birthday_dayが空の場合、登録できないこと" do
+      user = build(:user, birthday_day: nil)
+      user.valid?
+      expect(user.errors[:birthday_day]).to include("を入力してください")
+    end
+    
+    it "birthday_dayが0以下の場合、登録できないこと" do
+      user = build(:user, birthday_day: 0)
+      user.valid?
+      expect(user.errors[:birthday_day]).to include("は0より大きい値にしてください")
+    end
+    
+    it "birthday_dayが32以上の場合、登録できないこと" do
+      user = build(:user, birthday_day: 32)
+      user.valid?
+      expect(user.errors[:birthday_day]).to include("は32より小さい値にしてください")
+    end
+
+    it "birthday_dayが1の場合、登録できること" do
+      user = build(:user, birthday_day: 1)
+      user.valid?
+      expect(user).to be_valid
+    end
+    
+    it "birthday_dayが31の場合、登録できること" do
+      user = build(:user, birthday_day: 31)
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "phonenumberが空の場合、登録できないこと" do
+      user = build(:user, phonenumber: "")
+      user.valid?
+      expect(user.errors[:phonenumber]).to include("を入力してください")
+    end
+
+    it "phonenumberが9桁以下の数字の場合、登録できないこと" do
+      user = build(:user, phonenumber: "012345678")
+      user.valid?
+      expect(user.errors[:phonenumber]).to include("は不正な値です")
+    end
+
+    it "phonenumberが12桁以上の数字の場合、登録できないこと" do
+      user = build(:user, phonenumber: "012345678912")
+      user.valid?
+      expect(user.errors[:phonenumber]).to include("は不正な値です")
+    end
+
+    it "phonenumberが数字以外の文字を含む場合、登録できないこと" do
+      user = build(:user, phonenumber: "aiueoあいうえお")
+      user.valid?
+      expect(user.errors[:phonenumber]).to include("は不正な値です")
+    end
+
+    it "phonenumberが数字のみで10桁の場合、登録できること" do
+      user = build(:user, phonenumber: "0312345678")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "phonenumberが数字のみで11桁の場合、登録できること" do
+      user = build(:user, phonenumber: "09012345678")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+  end
+
+  describe '#edit' do
+
+    it "imageが空の場合、編集できること" do
+      user = build(:user, image: "")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "imageがある場合、編集できること" do
+      user = build(:user, image: "https://blogimg.goo.ne.jp/user_image/2d/79/1d8407860d8063d31ec552053905c051.jpg")
+      user.valid?
+      expect(user).to be_valid
+    end
+    
+    it "introductionが空の場合、編集できること" do
+      user = build(:user, introduction: "")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "introductionが1001文字以上の場合、編集できないこと" do
+      o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
+      introduction = (0...1001).map { o[rand(o.length)] }.join
+      user = build(:user, introduction: "#{introduction}")
+      user.valid?
+      expect(user.errors[:introduction]).to include("は1000文字以内で入力してください")
+    end
+
+    it "introductionが1000文字以内の場合、編集できること" do
+      o = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
+      introduction = (0...1000).map { o[rand(o.length)] }.join
+      user = build(:user, introduction: "#{introduction}")
+      user.valid?
+      expect(user).to be_valid
+    end
+    
   end
 end
