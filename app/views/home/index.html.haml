@@ -9,30 +9,31 @@
                 %button.search-logo
         .HeaderBottom
             .HeaderBottom__Left
-                .HeaderBottom__Left__category_search
+                .HeaderBottom__Left__genre_search
                     %a.sc-eqIVtm.jreoh{href: "/jp/category/"}
                     %svg.sc-cvbbAY.sc-fAjcbJ.dKBFhm{"aria-hidden" => "true", height: "16", viewbox: "0 0 20 16", width: "20"}>
                         %path{d: "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", fill: "currentColor", "fill-rule" => "nonzero"}
                     カテゴリーから探す
-                .HeaderBottom__Left__brand-search
+                .HeaderBottom__Left__genre_search
                     %a.sc-eqIVtm.jreoh{href: "/jp/brand/"}
                     %svg.sc-csuQGl.sc-caSCKo.kspmux{"aria-hidden" => "true", height: "16", viewbox: "0 0 23 16", width: "23"}>
                         %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule" => "nonzero"}
                     ブランドから探す
-            %ul.HeaderBottom__Right
-                %li
-                %a.HeaderBottom__Right__favorite{href: "/jp/mypage/like/history/"}
+            .HeaderBottom__Right
+                .HeaderBottom__Right__Menu
+                = link_to 'いいね一覧画面', XXX_XXX_path, data: { confirm: '画面を離れてよろしいですか？' }
                     いいね！一覧
-                %li
-                %a.HeaderBottom__Right__notification{href: "/jp/mypage/notification/"}
+                .HeaderBottom__Right__Menu
+                = link_to 'いいね一覧画面', XXX_XXX_path, data: { confirm: '画面を離れてよろしいですか？' }
                     お知らせ
-                %li
-                %a.HeaderBottom__Right__todo{href: "/jp/mypage/todo/"}
-                    やることリスト
-                %li
-                %a.HeaderBottom__Right__mypage{href: "/jp/mypage/"}
-                    %img.profile-photo{alt: "", src: ""}>/
-                    マイページ
+                .HeaderBottom__Right__Menu
+                = link_to 'いいね一覧画面', XXX_XXX_path, data: { confirm: '画面を離れてよろしいですか？' }
+
+                -# .HeaderBottom__Right__Menu
+                -# = link_to 'いいね一覧画面', XXX_XXX_path, data: { confirm: '画面を離れてよろしいですか？' }
+                -# -# %img.profile-photo{alt: "プロフィール写真", src: ""}>/
+                -#      Mypage
+
     .Slide-menu
         スライドしょーだお
         .Slide-menu__1
@@ -40,10 +41,16 @@
     %main
         .MainMenu
             .MainMenu__FavoriteItems
+            いいね！した商品
             .MainMenu__CategoryLists
+            人気のカテゴリー
             .MainMenu__CategoryItems
+            XXXカテゴリー新着アイテム
             .MainMenu__BrandLists
+            人気のブランド
             .MainMenu__BrandItems
+            XXXブランド新着アイテム
+
     %aside
 
     %footer
@@ -61,27 +68,30 @@
                     -# %a.sc-jxGEyO.hbBsqD{href: "https://www.facebook.com/mercarijp", target: "_blank"}
                     -#     %svg.sc-kEYyzF.sc-gacfCG.hqOMdY{"aria-hidden" => "true", height: "16", viewbox: "0 0 16 16", width: "16"}
                     -#     %path{d: "M15.111 0H.89A.889.889 0 0 0 0 .889V15.11c0 .491.398.889.889.889h7.658V9.813H6.469V7.391h2.078V5.613c0-2.066 1.262-3.193 3.11-3.193.623-.002 1.244.03 1.863.096v2.15h-1.276c-1.002 0-1.197.478-1.197 1.178v1.543h2.397l-.31 2.422h-2.087V16h4.064c.491 0 .889-.398.889-.889V.89A.889.889 0 0 0 15.111 0z", fill: "currentColor", "fill-rule" => "evenodd"}
-                %ul
+            
             .FooterMenu__list
                 %h2.FooterMenu__list__title ヘルプ＆ガイド
-                %ul.FooterMenu__list_wrapper
-                    %li.FooterMenu__list__small Fmarketガイド
-                    %li.FooterMenu__list__small XXXXXX
                 %ul
+                    %li.FooterMenu__list__small 
+                        Fmarketガイド
+                    %li.FooterMenu__list__small
+                        XXXXXX
+
             .FooterMenu__list
                 %h2.FooterMenu__list__title プライバシーと利用規約
-                %ul.FooterMenu__list_wrapper
-                    %li.FooterMenu__list__small プライバシーポリシー
-                    %li.FooterMenu__list__small XXXXXX
                 %ul
-        %nav
+                    %li.FooterMenu__list__small 
+                        プライバシーポリシー
+                    %li.FooterMenu__list__small
+                        XXXXXX
+
             .FooterBottom
                 .FooterBottom__menu
                     %img.footer-logo{alt: "Fmarket", src: "fmarket_logo_red.svg"}
-                    %span.footer-text © 2019 Fmarket
-    
+                    %span.footer-text 
+                        © 2019 Fmarket
+
     .PostItems
-    -# = link_to '出品画面', new_post_path, data: { confirm: '画面を離れてよろしいですか？' }
+    = link_to '出品画面', new_post_path, data: { confirm: '画面を離れてよろしいですか？' }
         .PostItems__Button
-        %p 出品
-        %svg.sc-kGXeez.sc-fBuWsC.bMYJEZ{"aria-hidden" => "true", height: "16", viewbox: "0 0 18 16", width: "18"}
+            出品
