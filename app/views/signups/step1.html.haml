@@ -1,10 +1,30 @@
-%header.single-header
-  %h1
-    %a 画像リンク
-  %nav.progress-bar_signup-bar
-    %ol.clearfix
-      %li headerのバー
-%main.single-main
+.header-signup
+  .header-signup
+  .header-signup__left
+  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+  .header-signup__right
+    %ol.step-bar
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        会員情報
+        %br
+        %span.point1
+      %li.step-bar__block  
+        電話番号認証
+        %br
+        %span.point2
+      %li.step-bar__block  
+        お届け先住所入力
+        %br
+        %span.point3
+      %li.step-bar__block 
+        支払い方法
+        %br
+        %span.point4
+      %li.step-bar__block 
+        完了
+        %br
+        %span.point5
+.single-main
   %section.l-single-container
     %h2.l-single-inner_registration
       会員情報入力
@@ -13,7 +33,7 @@
       .user_information
         .field
           .field-label
-            = f.label :"ニックネーム", class: 'left-label'
+            = f.label :"ニックネーム", class: 'label_nickname'
             %span.min #{required}
           - if @user.errors.messages[:nickname].any?
             .field-input
@@ -24,7 +44,7 @@
               = f.text_field :nickname, autofocus: true, class: 'user_nickname', id: 'nickname', placeholder: '例）フリマ123'
         .field
           .field-label
-            = f.label :"メールアドレス"
+            = f.label :"メールアドレス", class: 'label_mail'
             %span.min #{required}
           - if @user.errors.messages[:email].any?
             .field-input
@@ -34,7 +54,7 @@
             .field-input
               = f.email_field :email, class: 'user_email', id: 'email', placeholder: 'PC・携帯どちらでも可'
         .field
-          = f.label :"パスワード"
+          = f.label :"パスワード", class: 'label_password'
           %span.min #{required}
           - if @user.errors.messages[:password].any?
             = f.password_field :password_confirmation, class: 'user_password_error', id: 'password', placeholder: '７文字以上'
@@ -51,7 +71,7 @@
               安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
         .field
           .field-label
-            = f.label :"お名前(全角)"
+            = f.label :"お名前(全角)", class: 'label_name'
             %span.min #{required}
           .field-input.field-input_errors
             - if @user.errors.messages[:lastname].any?
@@ -68,7 +88,7 @@
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname)
         .field
           .field-label
-            = f.label :"お名前カナ(全角)"
+            = f.label :"お名前カナ(全角)", class: 'label_namekana'
             %span.min #{required}
           .field-input.field-input_errors
             - if @user.errors.messages[:lastname].any?
@@ -85,7 +105,7 @@
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname_kana)
         .field
           .field-label
-            = f.label :"生年月日"
+            = f.label :"生年月日", class: 'label_birthday'
             %span.min #{required}
           - if @user.errors.messages[:birthday_year].any?
             .field-input
