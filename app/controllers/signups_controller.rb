@@ -74,7 +74,6 @@ class SignupsController < ApplicationController
         birthday_day: session[:birthday_day],
         phonenumber: 0000000000
       )
-      binding.pry
       render '/signups/step1' unless @user.valid?
     end
 end
