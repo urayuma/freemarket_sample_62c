@@ -21,5 +21,6 @@ Rails.application.routes.draw do
       post "/", to: 'addresses#create'
     end
   end
-  resources :creditcards, only: %i[new create]
+  resources :addresses, only: [:new, :create]
+  resources :creditcards, only: [:new, :create]
 end
