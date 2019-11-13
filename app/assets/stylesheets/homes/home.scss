@@ -11,6 +11,8 @@ body{
 header{
   height: 100px;
   width: 100%;
+  padding: 8px, 153px;
+  
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   position: relative;
@@ -20,52 +22,93 @@ header{
 .HeaderTop{
     height: 40px;
     width: 1020px;
-    margin: 0, auto;
-    padding: 8px, 0, 0;
+
+    // display: flex;
+    // justify-content: space-between;
+    // position: relative;
+    // float: right;
+
+    // margin-right:auto;
+    // margin-left:auto;
+    // width:21em;
+
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 
-    &__header-logo{
-      height: 36px;
-      width: 134px;
+    // overflow: hidden;
 
+    &__Menu{
+      // display: flex;
+      // justify-content: space-between;
+
+      &__header-logo{
+        height: 36px;
+        width: 134px;
+        // float: left;
+        display: flex;
+        justify-content: space-between;
+  
+
+      }
+
+      &__header-search{
+        height: 40px;
+        width: 750px;
+        // padding-left: 153px;
+        // padding: 8px, 50px, 0, 10px;
+
+        background-color: rgb(245, 245, 245);
+        font-size: 16px;
+        height: 40px;
+        line-height: 2.4em;
+        position: absolute;
+        -webkit-appearance: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        border-radius: 4px;
+        outline: none;
+        transition: all 0.3s ease-out 0s;
+
+        display: flex;
+        justify-content: space-between;
+  
+      }
     }
 
-    &__header-search{
-      height: 40px;
-      width: 841px;
-      padding: 8px, 50px, 0, 10px;
+}
 
-      background-color: rgb(245, 245, 245);
-      font-size: 16px;
-      height: 40px;
-      line-height: 1.4em;
-      position: relative;
-      // width: 100%;
-      -webkit-appearance: none;
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgb(204, 204, 204);
-      border-image: initial;
-      border-radius: 4px;
-      outline: none;
-      padding: 0px 50px 0px 10px;
-      transition: all 0.3s ease-out 0s;
+input.search{
+  font-family: inherit;
+  border: none;
+  background-color: #f5f5f5;
+  padding-left: 10px;
+}
 
-    }
+button.search-logo{
+  float: right;
+  height: 40px;
+  width: 40px;
+  border-color: none;
+  background-color: #f5f5f5;
+  
+}
 
-    &button.search-logo{
+img.footer-logo{
+  float: left;
 
-    }
 }
 
 .HeaderBottom{
-    height: 390px;
+    height: 50px;
     width: 1020px;
     display: flex;
     // -webkit-box-pack: justify;
     justify-content: space-between;
-    margin-top: 8px;
+    margin: 8px;
+    // padding: 153px;
 
     &__Left{
 
@@ -75,6 +118,8 @@ header{
         font-weight: 600;
         line-height: 36px;
         white-space: nowrap;
+        float: left;
+        padding-right: 10px;
 
       }
 
@@ -85,9 +130,10 @@ header{
       &__Menu{
         -webkit-box-align: center;
         align-items: center;
-        display: flex;
+        float: right;
         font-size: 14px;
         height: 32px;
+        padding-right: 15px;
         transform: scale(1);
         transition: all 0.3s ease-out 0s;
 
@@ -97,9 +143,6 @@ header{
 
 }
 
-input{
-  font-family: inherit;
-}
 
 
 .Slide-menu{
@@ -167,7 +210,7 @@ li{
 
 }
 
-img{
+img.footer-logo{
   vertical-align: middle;
   padding-left: 25px;
 }
