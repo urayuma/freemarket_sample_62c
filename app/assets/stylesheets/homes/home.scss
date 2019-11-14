@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-// body{
-//   height: 7027px;
-//   width: 1366px;
-// }
-
 
 header{
   height: 100px;
@@ -21,28 +16,12 @@ header{
 
 .Header{
   display: flex;
-  // align-items: center;
   justify-content: center;
-  // margin: 0, auto;
 
 
   .HeaderTop{
       height: 40px;
       width: 1020px;
-
-      // display: flex;
-      // justify-content: space-between;
-      // position: relative;
-      // float: right;
-
-      // margin-right:auto;
-      // margin-left:auto;
-      // width:21em;
-
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-
 
       &__Menu{
         display: flex;
@@ -159,8 +138,6 @@ main{
   width: 1028px;
 
 .MainMenu{
-  // display: flex;
-  // justify-content: center;
 
   &__FavoriteItems{
     height: 254px;
@@ -223,14 +200,11 @@ footer{
 nav{
   display: flex;
   justify-content: center;
-  // margin: 0, auto;
 }
 
 .FooterMenu{
     height: 296px;
     width: 1020px;
-    // display: flex;
-    // justify-content: center;  
     float: left;
 
 
@@ -255,16 +229,10 @@ nav{
 
 
 .FooterBottom{
-  // margin: 30px, 153px, 20px;
   width: 1020px;
   height: 33px;
   position: absolute;
   bottom: 20px;
-
-  // &__Menu{
-  //   display: flex;
-  //   justify-content: center;
-  // }
 
 }
 
@@ -286,7 +254,6 @@ span.footer-text{
 }
 
 
-// @media (min-width: 768px)
 
 .PostItems{
 
