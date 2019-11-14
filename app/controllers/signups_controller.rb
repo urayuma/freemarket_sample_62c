@@ -37,7 +37,7 @@ class SignupsController < ApplicationController
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path
     else
-      render '/signup/step2'
+      render '/signups/step2'
     end
   end
 
@@ -74,7 +74,7 @@ class SignupsController < ApplicationController
         birthday_day: session[:birthday_day],
         phonenumber: 0000000000
       )
-      render '/signup/step1' unless @user.valid?
+      binding.pry
+      render '/signups/step1' unless @user.valid?
     end
-  end
 end
