@@ -1,0 +1,96 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.user_address {
+  margin-left: 60px;
+}
+
+.field {
+  line-height: 20px;
+  margin-top: 40px;
+}
+
+.field_submit {
+  @extend .field;
+  margin-bottom: 40px;
+}
+
+.nin {
+  background-color: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.user_address_name,
+.user_address_name_kana,
+.address_postcode,
+.address_prefectures,
+.address_city,
+.address_street_num,
+.address_building,
+.address_home_call_num
+ {
+  font-weight: bold;
+}
+
+#user_lastname,
+#user_firstname,
+#user_lastname_kana,
+#user_firstname_kana,
+#address_postcode,
+#address_city,
+#address_street_num,
+#address_building,
+#address_home_call_num
+{
+  height: 34px;
+  width: 500px;
+  padding: 10px 16px 8px;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display: block;
+}
+
+@mixin action {
+  height: 58px;
+  width: 534px;
+  padding: 10px 16px 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display: block;
+}
+
+#address_prefectures {
+  @include action;
+  border-radius: 4px;
+}
+
+.address_submit {
+  @include action;
+  background-color: rgb(234, 53, 45);
+  color: #fff;
+}
+
+.destory_wall {
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+}
+
+.footer {
+  height: 50px;
+  width: 100%;
+
+}
