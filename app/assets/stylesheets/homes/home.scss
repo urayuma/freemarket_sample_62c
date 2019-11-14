@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 
-body{
-  height: 7027px;
-  width: 1366px;
-}
+// body{
+//   height: 7027px;
+//   width: 1366px;
+// }
 
 
 header{
@@ -16,68 +16,67 @@ header{
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
 
-.HeaderTop{
-    height: 40px;
-    width: 1020px;
+.Header{
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  // margin: 0, auto;
 
-    // display: flex;
-    // justify-content: space-between;
-    // position: relative;
-    // float: right;
 
-    // margin-right:auto;
-    // margin-left:auto;
-    // width:21em;
+  .HeaderTop{
+      height: 40px;
+      width: 1020px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    // overflow: hidden;
-
-    &__Menu{
       // display: flex;
       // justify-content: space-between;
+      // position: relative;
+      // float: right;
 
-      &__header-logo{
-        height: 36px;
-        width: 134px;
-        // float: left;
+      // margin-right:auto;
+      // margin-left:auto;
+      // width:21em;
+
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+
+
+      &__Menu{
         display: flex;
         justify-content: space-between;
-  
+        margin-top: 10px;
 
+        &__header-logo{
+          height: 36px;
+          width: 134px;
+
+        }
+
+        &__header-search{
+          height: 40px;
+          width: 750px;
+          margin-left: 270px;
+
+          background-color: rgb(245, 245, 245);
+          font-size: 16px;
+          height: 40px;
+          line-height: 2.4em;
+          position: absolute;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          border-radius: 4px;
+          outline: none;
+          transition: all 0.3s ease-out 0s;
+
+        }
       }
 
-      &__header-search{
-        height: 40px;
-        width: 750px;
-        // padding-left: 153px;
-        // padding: 8px, 50px, 0, 10px;
-
-        background-color: rgb(245, 245, 245);
-        font-size: 16px;
-        height: 40px;
-        line-height: 2.4em;
-        position: absolute;
-        -webkit-appearance: none;
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(204, 204, 204);
-        border-image: initial;
-        border-radius: 4px;
-        outline: none;
-        transition: all 0.3s ease-out 0s;
-
-        display: flex;
-        justify-content: space-between;
-  
-      }
-    }
-
+  }
 }
 
 input.search{
@@ -105,10 +104,11 @@ img.footer-logo{
     height: 50px;
     width: 1020px;
     display: flex;
-    // -webkit-box-pack: justify;
     justify-content: space-between;
-    margin: 8px;
-    // padding: 153px;
+    margin-top: 10px;
+    bottom: 0;
+
+    position: absolute;
 
     &__Left{
 
@@ -119,7 +119,8 @@ img.footer-logo{
         line-height: 36px;
         white-space: nowrap;
         float: left;
-        padding-right: 10px;
+        padding-right: 20px;
+        padding-top: 10px;
 
       }
 
@@ -128,12 +129,12 @@ img.footer-logo{
     &__Right{
 
       &__Menu{
+        display: inline-block;
         -webkit-box-align: center;
         align-items: center;
-        float: right;
         font-size: 14px;
         height: 32px;
-        padding-right: 15px;
+        padding-right: 30px;
         transform: scale(1);
         transition: all 0.3s ease-out 0s;
 
@@ -210,45 +211,35 @@ li{
 
 }
 
-img.footer-logo{
-  vertical-align: middle;
-  padding-left: 25px;
-}
-
-span{
-  text-align: center;
-  width: 765px;
-  height: 12px;
-  font-size: 12px;
-  padding-left: 280px;
-}
 
 footer{
   height: 389px;
   width: 100%;
   background-color: darkorange;
   color: #ffffff;
+  position: relative;
 }
 
 nav{
   display: flex;
   justify-content: center;
-  margin: 0, auto;
+  // margin: 0, auto;
 }
 
 .FooterMenu{
     height: 296px;
     width: 1020px;
-    display: flex;
-    justify-content: center;  
-    margin: 30px, 153px, 20px;
+    // display: flex;
+    // justify-content: center;  
+    float: left;
 
 
     &__list{
       display: inline-block;
+      width: 200px;
       vertical-align: top;
       margin: 36px;
-      padding: 0, 40px, 0, 0;
+      padding-left: 0;
     
       &__title{
         font-size: 16px;
@@ -264,9 +255,16 @@ nav{
 
 
 .FooterBottom{
-  margin: 30px, 153px, 20px;
+  // margin: 30px, 153px, 20px;
   width: 1020px;
   height: 33px;
+  position: absolute;
+  bottom: 20px;
+
+  // &__Menu{
+  //   display: flex;
+  //   justify-content: center;
+  // }
 
 }
 
@@ -274,7 +272,19 @@ nav{
 .footer-logo{
   height: 33px;
   width: 124px;
+  vertical-align: middle;
+  padding-left: 25px;
+
 }
+
+span.footer-text{
+  text-align: center;
+  width: 765px;
+  height: 12px;
+  font-size: 12px;
+  padding-left: 280px;
+}
+
 
 // @media (min-width: 768px)
 
@@ -283,14 +293,29 @@ nav{
     width: 160px;
     height: 160px;
     padding-top: 32px;
+    position: fixed;
+    bottom: 40px;
+    right: 0;
+    display: inline-block;
 
   &__Button{
-    padding-top: 15px;
+    padding-top: 7px;
     text-align: center;
-    height: 80px;
-    width: 80px;
+    height: 140px;
+    width: 140px;
     background-color: rgb(234, 53, 45);
     border-radius: 50%;
+    color: white;
+    font-size: 22px;
+
+    i.button-icon{
+      height: 50px;
+      width: 50px;
+
+   
+    }
+
   }
+
 
 }

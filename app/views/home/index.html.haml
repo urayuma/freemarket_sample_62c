@@ -1,48 +1,50 @@
 %body
     %header
-        .HeaderTop
-            .HeaderTop__Menu
-                .HeaderTop__Menu__header-logo
-                    %svg.header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg"}
-                        %defs
-                            :css
-                                .cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
-                        %title アセット 3
-                        %g{"data-name" => "レイヤー 2", id: "レイヤー_2"}
-                            %g{"data-name" => "レイヤー 1", id: "レイヤー_1-2"}
-                            %polygon.cls-1{points: "36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"}
-                            %polyline.cls-1{points: "0.5 21.31 36.41 42.04 72.32 21.31"}
-                            %polyline.cls-1{points: "36.41 83.5 36.41 49.36 36.41 42.04"}
-                            %line.cls-1{x1: "36.41", x2: "0.5", y1: "52.41", y2: "31.67"}
-                            %line.cls-1{x1: "72.32", x2: "36.41", y1: "33.2", y2: "50.88"}
-                            %text.cls-2{transform: "translate(86.41 62.77)"} Fmarket
-                        -# %svg.header-logo{alt: "Fmarket", src: "assets/images/fmarket_logo_red.svg"}/
-                        .HeaderTop__Menu__header-search
-                            %form.search{action: "/jp/search/"}
-                            %input.search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-                            %button.search-logo
-        .HeaderBottom
-            .HeaderBottom__Left
-                .HeaderBottom__Left__genre_search
-                    %a.sc-eqIVtm.jreoh{href: "/jp/category/"}
-                    %svg.sc-cvbbAY.sc-fAjcbJ.dKBFhm{"aria-hidden" => "true", height: "16", viewbox: "0 0 20 16", width: "20"}>
-                        %path{d: "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", fill: "currentColor", "fill-rule" => "nonzero"}
-                    カテゴリーから探す
-                .HeaderBottom__Left__genre_search
-                    %a.sc-eqIVtm.jreoh{href: "/jp/brand/"}
-                    %svg.sc-csuQGl.sc-caSCKo.kspmux{"aria-hidden" => "true", height: "16", viewbox: "0 0 23 16", width: "23"}>
-                        %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule" => "nonzero"}
-                    ブランドから探す
-            .HeaderBottom__Right
-                .HeaderBottom__Right__Menu
-                = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
-                    いいね！一覧
-                .HeaderBottom__Right__Menu
-                = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
-                    お知らせ
-                .HeaderBottom__Right__Menu
-                = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
-                    Mypage
+        .Header
+            .HeaderTop
+                .HeaderTop__Menu
+                    .HeaderTop__Menu__header-logo
+                        %svg.header-logo{viewbox: "0 0 281.19 84.08", xmlns: "http://www.w3.org/2000/svg"}
+                            %defs
+                                :css
+                                    .cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
+                            %title アセット 3
+                            %g{"data-name" => "レイヤー 2", id: "レイヤー_2"}
+                                %g{"data-name" => "レイヤー 1", id: "レイヤー_1-2"}
+                                %polygon.cls-1{points: "36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"}
+                                %polyline.cls-1{points: "0.5 21.31 36.41 42.04 72.32 21.31"}
+                                %polyline.cls-1{points: "36.41 83.5 36.41 49.36 36.41 42.04"}
+                                %line.cls-1{x1: "36.41", x2: "0.5", y1: "52.41", y2: "31.67"}
+                                %line.cls-1{x1: "72.32", x2: "36.41", y1: "33.2", y2: "50.88"}
+                                %text.cls-2{transform: "translate(86.41 62.77)"} Fmarket
+                            -# %svg.header-logo{alt: "Fmarket", src: "assets/images/fmarket_logo_red.svg"}/
+                    .HeaderTop__Menu__header-search
+                        %form.search{action: "/jp/search/"}
+                        %input.search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+                        %button.search-logo
+                            %i.fas.fa-search
+
+            .HeaderBottom
+                .HeaderBottom__Left
+                    .HeaderBottom__Left__genre_search
+                        %i.far.fa-list-alt
+                        カテゴリーから探す
+                    .HeaderBottom__Left__genre_search
+                        %i.fas.fa-tag
+                        ブランドから探す
+                .HeaderBottom__Right
+                    .HeaderBottom__Right__Menu
+                    = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
+                        %i.far.fa-heart
+                        いいね！一覧
+                    .HeaderBottom__Right__Menu
+                    = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
+                        %i.far.fa-bell
+                        お知らせ
+                    .HeaderBottom__Right__Menu
+                    = link_to 'いいね一覧画面', data: { confirm: '画面を離れてよろしいですか？' } do
+                        %i.far.fa-image
+                        マイページ
 
     .Slide-menu
         スライドしょーだお
@@ -95,13 +97,27 @@
                         %li.FooterMenu__list__small
                             XXXXXX
 
-                .FooterBottom
-                    .FooterBottom__menu
-                        %img.footer-logo{alt: "Fmarket", src: "app/assets/images/d12185-9-389300-0.jpg"}
-                        %span.footer-text 
-                            © 2019 Fmarket
+            .FooterBottom
+                %svg.footer-logo{:viewbox => "0 0 281.19 84.08", :xmlns => "http://www.w3.org/2000/svg"}
+                    %defs
+                        :css
+                            .cls-1{fill:#fff;stroke:#b53d22;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
+                    %title アセット 1
+                    %g{"data-name" => "レイヤー 2", :id => "レイヤー_2"}
+                        %g{"data-name" => "レイヤー 1", :id => "レイヤー_1-2"}
+                        %polygon.cls-1{:points => "36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"}
+                        %polyline.cls-1{:points => "0.5 21.31 36.41 42.04 72.32 21.31"}
+                        %polyline.cls-1{:points => "36.41 83.5 36.41 49.36 36.41 42.04"}
+                        %line.cls-1{:x1 => "36.41", :x2 => "0.5", :y1 => "52.41", :y2 => "31.67"}
+                        %line.cls-1{:x1 => "72.32", :x2 => "36.41", :y1 => "33.2", :y2 => "50.88"}
+                        %text.cls-2{:transform => "translate(86.41 62.77)"} Fmarket
+
+
+                    %span.footer-text 
+                        © 2019 Fmarket
 
     .PostItems
-        = link_to '出品画面', data: { confirm: '画面を離れてよろしいですか？' } do
-            .PostItems__Button
-                出品
+        .PostItems__Button
+            .PostItems__Button__icon 出品
+            %i.button-icon.fas.fa-camera
+
