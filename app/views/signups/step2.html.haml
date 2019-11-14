@@ -1,2 +1,25 @@
 %h1 Signups#step2
 %p Find me in app/views/signups/step2.html.haml
+%header.single-header
+  %h1
+    %a 画像リンク
+  %nav.progress-bar_signup-bar
+    %ol.clearfix
+      %li headerのバー
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      電話番号の確認
+    = form_for @user, url: registrations_path do |f|
+      .user_phonenumber
+        .field
+          .number_presentment
+            = f.label :"携帯電話の番号"
+          .number_input
+            = f.text_field :phonenumber, class: "number_text", placeholder: '携帯電話の番号を入力'
+          %p.number_message 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+        .next_btn
+          = f.submit :"次へ進む", class: "next_submit"
+        %p.number_explanation ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+%footer
+  フッター

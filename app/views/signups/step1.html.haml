@@ -1,2 +1,74 @@
 %h1 Signups#step1
 %p Find me in app/views/signups/step1.html.haml
+%header.single-header
+  %h1
+    %a 画像リンク
+  %nav.progress-bar_signup-bar
+    %ol.clearfix
+      %li headerのバー
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      会員情報入力
+    = form_for @user, url: registrations_path do |f|
+      - required = '必須'
+      .user_information
+        .field
+          .field-label
+            = f.label :"ニックネーム", class: 'left-label'
+            %span.min #{required}
+          .field-input
+            = f.text_field :nickname, autofocus: true, class: 'user_nickname', placeholder: '例）フリマ123'
+        .field
+          .field-label
+            = f.label :"メールアドレス"
+            %span.min #{required}
+          .field-input
+            = f.email_field :email, class: 'user_email', placeholder: 'PC・携帯どちらでも可'
+        .field
+          = f.label :"パスワード"
+          %span.min #{required}
+          = f.password_field :password, class: 'user_password', placeholder: '７文字以上'
+        .field_checkbox
+          = f.check_box :password, checked: false, class: "checkbox"
+          = f.label :"パスワードを表示する", class: 'check_password'
+        .user_confirm
+          %h4.confirm_title
+            本人確認
+          %p.confirm_message
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .field
+          .field-label
+            = f.label :"お名前(全角)"
+            %span.min #{required}
+          .field-input
+            = f.text_field :lastname, placeholder: '例）佐藤'
+            = f.text_field :firstname, placeholder: '例）太郎'
+        .field
+          .field-label
+            = f.label :"お名前カナ(全角)"
+            %span.min #{required}
+          .field-input
+            = f.text_field :lastname_kana, placeholder: '例）サトウ'
+            = f.text_field :firstname_kana, placeholder: '例）タロウ'
+        .field
+          .field-label
+            = f.label :"生年月日"
+            %span.min #{required}
+          .field-input
+            = f.select :birthday_year, [*1900..2019],:prompt=>"--"
+            %span 年
+            = f.select :birthday_month, [*1..12],:prompt=>"--"
+            %span 月
+            = f.select :birthday_day, [*1..31],:prompt=>"--"
+            %span 日
+        .registration_message
+          %p.regime
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .field
+          =image_tag "im_not_robo 2019-11-12 19.24.24.png", width: '280', height: '80'
+        .field
+          .firld-input
+            = f.submit :"次へ進む", class: "next_submit"
+%footer.single_footer
+  %h1 フッター
