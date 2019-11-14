@@ -1,4 +1,6 @@
 class SignupsController < ApplicationController
+  before_action :validates_step1, only: :step2
+  
   def step1
     @user = User.new
   end
@@ -32,7 +34,7 @@ class SignupsController < ApplicationController
       phonenumber: user_params[:phonenumber]
     )
     if @user.save
-      session[:user_id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path
     else
       render '/signup/step2'
@@ -47,7 +49,7 @@ class SignupsController < ApplicationController
                                     :birthday_month, :birthday_day, :phonenumber)
     end
 
-    def validates_step1
+    def validates_step1  #ユーザを保存していなくてもページ遷移時にバリデーションに引っかかるように
       session[:nickname] = user_params[:nickname]
       session[:email] = user_params[:email]
       session[:password] = user_params[:password]

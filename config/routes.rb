@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       get 'step2'
     end
   end
+  resources :addresses, only: [:new, :create]
+  resources :creditcards, only: [:new, :create]
 end
