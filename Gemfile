@@ -59,6 +59,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'spring-commands-rspec'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -80,3 +81,5 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'devise'
+gem 'rails-i18n'
