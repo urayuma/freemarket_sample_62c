@@ -61,7 +61,10 @@
             = f.label :"電話"
             %span.nin #{optional}
           .field-input
-            = f.text_field :home_call_num, placeholder: '09012345678'
+            = f.text_field :home_call_num, placeholder: '例）09012345678'
+        .field
+          .firld-input
+            = f.submit :"次へ進む", class: "next_submit"
 %footer
   フッター
         
