@@ -1,0 +1,160 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  body{
+    background-color: #f5f5f5;
+    .header{
+      height: 150px;
+      width: 100%;
+      background-color: lightblue;
+    }
+    .mypage-main-box{
+      margin: 40px 40px 0 0;
+      height: 507px;
+      width: 700px;
+      box-sizing: border-box;
+      display: inline-block;
+        .background{
+          box-sizing: border-box;
+          height: 200px;
+          width: 700px;
+          background-color: goldenrod;
+          text-align: center;
+          padding: 72px 16px 24px;
+        }
+            .my-image{
+              height: 60px;
+              width: 60px;
+              margin: 0, 320px;
+              background-color: gray;
+              border-radius: 50%;
+              display: inline-block;
+              vertical-align:middle;
+            }
+              .user-name{
+                font-size: 14px;
+                font-weight: bold;
+                margin-top: 8px;
+              }
+              .evaluation{
+                font-size: 14px;
+                display :inline-block;
+
+              }
+              .evaluation-num{
+                font-size: 14px;
+                margin-left: 8px;
+                display :inline-block;
+                font-weight: bold;
+              }
+              .exhibit{
+                font-size: 14px;
+                margin-left: 8px;
+                display :inline-block;
+              }
+              .exhibit-num{
+                font-size: 14px;
+                margin-left: 8px;
+                display :inline-block;
+                font-weight: bold;
+              }
+              ul{
+                list-style: none;
+                font-size:0;
+                display: inline-block;
+                width: 100%;
+                box-sizing: border-box;
+
+                li.notice{
+                  height: 72px;
+                  width: 50%;
+                  font-size: 18px;
+                  font-weight: bold;
+                  background-color: lightgray;
+                  text-align: center;
+                  line-height: 72px;
+                  display: inline-block;
+                  
+                }
+                li.to-do-list{
+                  height: 72px;
+                  width: 50%;
+                  font-size: 18px;
+                  font-weight: bold;
+                  background-color: gray;
+                  text-align: center;
+                  line-height: 72px;
+                  display: inline-block;
+                }
+              }
+        .box-area{
+          height: 235px;
+          width: 700px;
+          font-size: 18px;
+          font-weight: bold;
+          color: gray;
+          background-color: white;
+          text-align: center;
+          line-height: 235px;
+        }
+      }
+      .purchased-product{
+        height: 72px;
+        width: 668px;
+        background-color: white;
+        margin-top: 40px;
+        padding: 0 16px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 72px;
+      }
+                    ul{
+                list-style: none;
+                font-size:0;
+                display: inline-block;
+                width: 100%;
+                box-sizing: border-box;
+
+                li.during-trading{
+                  height: 72px;
+                  width: 50%;
+                  font-size: 18px;
+                  font-weight: bold;
+                  background-color: lightgray;
+                  text-align: center;
+                  line-height: 72px;
+                  display: inline-block;
+                
+                }
+                .past-transactions{
+                  height: 72px;
+                  width: 50%;
+                  font-size: 18px;
+                  font-weight: bold;
+                  background-color: gray;
+                  text-align: center;
+                  line-height: 72px;
+                  display: inline-block;
+                }
+              }
+        .report-area{
+          height: 235px;
+          width: 700px;
+          font-size: 18px;
+          font-weight: bold;
+          color: gray;
+          background-color: white;
+          text-align: center;
+          line-height: 235px;
+        }
+      }
+
+      .side-bar{
+        height: 1250px;
+        width: 280px;
+        background-color: lightgoldenrodyellow;
+        margin: 40px 40px 0 100px;
+        float: left;
+      }
+}
