@@ -290,16 +290,19 @@ span.footer-text{
 
 .PostItems{
 
-    width: 160px;
-    height: 160px;
-    padding-top: 32px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
     position: fixed;
-    bottom: 40px;
+    bottom: 5px;
     right: 0;
     display: inline-block;
+    display: flex;
+    justify-content: center;
+
 
   &__Button{
-    padding-top: 7px;
+    padding-top: 15px;
     text-align: center;
     height: 140px;
     width: 140px;
@@ -307,15 +310,18 @@ span.footer-text{
     border-radius: 50%;
     color: white;
     font-size: 22px;
-
-    i.button-icon{
-      height: 50px;
-      width: 50px;
-
-   
-    }
-
   }
 
+  &__Icon{
+      display: block;
+      height: 50px;
+      width: 50px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      margin-top: 7px;
+      margin-left: 45px;
+   
+  }
 
 }
