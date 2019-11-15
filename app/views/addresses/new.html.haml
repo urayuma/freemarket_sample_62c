@@ -17,15 +17,15 @@
             = f.label :"お名前", class: 'user_address_name'
             %span.min #{required}
           .field-input
-            = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname'
-            = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname'
+            = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname address_user_lastname', class: 'address_user_lastname'
+            = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname', class: 'address_user_firstname'
         .field
           .field-label
             = f.label :"お名前カナ", class: 'user_address_name_kana'
             %span.min #{required}
           .field-input
-            = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana'
-            = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana'
+            = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana', class: 'address_user_lastname_kana'
+            = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana', class: 'address_user_firstname_kana'
         .field
           .field-label
             = f.label :"郵便番号", class: 'address_postcode'

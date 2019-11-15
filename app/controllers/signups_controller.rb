@@ -19,7 +19,7 @@ class SignupsController < ApplicationController
     @user = User.new
   end
 
-  def creata
+  def create
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],

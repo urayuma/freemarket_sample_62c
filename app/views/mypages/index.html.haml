@@ -1,2 +1,37 @@
-%h1 Mypages#index
-%p Find me in app/views/mypages/index.html.haml
+%header.single-header
+  %h1
+    %a 画像リンク
+  %nav.progress-bar_signup-bar
+    %ol.clearfix
+      %li headerのバー
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      支払い方法
+    -# = form_for @user, url: mypage_index_path, method: :get do |f|
+    - required = '必須'
+      .creditcard_information
+          .field
+            .field-label
+              = f.label :"カード番号"
+              %span.min #{required}
+            .field-input
+              -# = f.text_field : ,placeholder: '半角数字のみ'
+          .field
+            .field-label
+              = f.label :"有効期限"
+              %span.min #{required}
+            .field-input
+              -# = f.text_field :
+              %span 月
+              -# = f.text_field :
+              %span 年
+          .field
+            .field-label
+              = f.label :"セキュリティコード"
+              %span.min #{required}
+            .field-input
+              -# = f.text_field : ,placeholder: 'カード背面４桁もしくは３桁の番号'
+          .field
+            .firld-input
+              = f.submit :"次へ進む", class: "next_submit"

@@ -38,10 +38,10 @@
   font-weight: bold;
 }
 
-#user_lastname,
-#user_firstname,
-#user_lastname_kana,
-#user_firstname_kana,
+.address_user_lastname,
+.address_user_firstname,
+.address_user_lastname_kana,
+.address_user_firstname_kana,
 #address_postcode,
 #address_city,
 #address_street_num,
@@ -49,7 +49,7 @@
 #address_home_call_num
 {
   height: 34px;
-  width: 500px;
+  width: 500px !important;
   padding: 10px 16px 8px;
   margin: 5px;
   border-radius: 4px;
@@ -92,5 +92,4 @@
 .footer {
   height: 50px;
   width: 100%;
-
 }

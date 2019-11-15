@@ -2,7 +2,7 @@
 .user_email,
 .user_password
  {
-  height: 34px;
+  height: 28px;
   width: 300px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -51,19 +51,34 @@ h2 {
   vertical-align: top;
 }
 
+.label_nickname,
+.label_mail,
+.label_password,
+.label_name,
+.label_namekana,
+.label_birthday
+{
+  font-size: 13px;
+  font-weight: bold;
+}
 .confirm_title {
   margin-bottom: 1px;
 }
 .confirm_message {
   margin-top: 5px;
+  font-size: 13px;
 }
 
 .check_password {
   display: inline;
 }
 
+.field_checkbox {
+  margin: 10px 0;
+}
 .checkbox {
   width: 30px;
+  margin-top: 6px;
 }
 
 .field_checkbox {
@@ -75,7 +90,7 @@ h2 {
 #user_lastname_kana,
 #user_firstname_kana
 {
-  height: 34px;
+  height: 28px;
   width: 125px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -85,17 +100,56 @@ h2 {
   font-size: 16px;
 }
 
+#user_birthday_year::-ms-expand,
+#user_birthday_month::-ms-expand,
+#user_birthday_day::-ms-expand{
+  display: none;
+}
+
 #user_birthday_year,
 #user_birthday_month,
 #user_birthday_day 
 {
-  height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1.1em;
+  padding: 7px 20px 7px 10px;
+  height: 45px;
   width: 70px;
+  font-size: 16px;
+  margin-right: -23px;
+  overflow: hidden;
+
 }
 
+#user_birthday_year:after,
+#user_birthday_month:after,
+#user_birthday_day:after
+{
+
+  position: absolute;
+}
+
+.fa-angle-down {
+  padding-right: 4px;
+  pointer-events: none;
+}
+
+.regime {
+  color: gray;
+  font-size: 13px;
+}
 .next_submit {
   background-color: rgb(234, 53, 45);
   color: #fff;
   height: 52px;
   width: 325px;
+  margin-bottom: 80px;
+}
+
+.destory_wall {
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
 }
