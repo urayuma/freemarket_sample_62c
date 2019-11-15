@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get   'home/index', to: 'home#index'
-  get   'mypage/index', to: 'mypage#index'
-  get   'mypage/edit', to: 'mypage#edit'
-  get   'mypage/card', to: 'mypage#card'
+  root 'homes#index'
+  get 'home/index', to: 'homes#index'
+  get 'mypage/index', to: 'mypages#index'
+  get 'mypage/edit', to: 'mypages#index'
+  get 'mypage/card', to: 'mypages#index'
   
-  resources :signup do
+  resources :signups do
     collection do
       get 'step1'
       get 'step2'
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
