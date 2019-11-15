@@ -3,16 +3,17 @@
   margin: 0px;
 }
 .user_address {
-  margin-left: 60px;
+  margin-left: 77px;
+  margin-right: 77px;
 }
 
-.field {
+.field-address {
   line-height: 20px;
   margin-top: 40px;
 }
 
 .field_submit {
-  @extend .field;
+  @extend .field-address;
   margin-bottom: 40px;
 }
 
@@ -75,7 +76,26 @@
 #address_prefectures {
   @include action;
   border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
 }
+
+.field-pulldown {
+  position: relative;
+}
+.address_icon {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 26px;
+}
+
+#address_prefectures::-ms-expand {
+  display: none;
+}
+
 
 .address_submit {
   @include action;
