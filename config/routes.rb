@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'mypage/index', to: 'mypages#index'
   get 'mypage/edit', to: 'mypages#index'
   get 'mypage/card', to: 'mypages#index'
+  get 'mypage/logout', to: 'mypages#logout'
   
   resources :signups do
     collection do
@@ -15,6 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # devise_for :users
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
