@@ -1,0 +1,27 @@
+- menulist = ["マイページ","お知らせ","やることリスト","いいね！一覧","出品する","出品した商品 - 出品中","出品した商品 - 取引中","出品した商品 - 売却済み","購入した商品 - 取引中","購入した商品 - 過去の取引","ニュース一覧","評価一覧","ガイド","お問い合わせ"]
+- linklist = ["/example/","/info/","/mustdo/","/shuppin/","/mypage/"]
+- configlist =["プロフィール","発送元・お届け先住所変更","支払い方法","メール/パスワード","本人情報","電話番号の確認"]
+- configlinklist = ["/example/","/info/","/mustdo/","/shuppin/","/mypage/"]
+
+.sidebar
+  .sidebar__list
+    %ul.menu
+      = menulist.zip(linklist) do |menu,link|
+        %li.menu__item
+          %a.menu__item--link{href:"#{link}"} 
+            #{menu}
+            .menu__item--arrow 
+              %i.fas.fa-chevron-right
+    .navi-head 設定
+    %ul.config
+      = configlist.zip(configlinklist) do |config,link|
+        %li.config__item
+          %a.config__item--link{href:"#{link}"} 
+            #{config}
+            .config__item--arrow 
+              %i.fas.fa-chevron-right
+      %li.config__item
+        %a.config__item--link-logout{href:"/users/signout/"} 
+          ログアウト
+          .config__item--arrow-logout
+            %i.fas.fa-chevron-right
