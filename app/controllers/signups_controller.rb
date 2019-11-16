@@ -56,6 +56,12 @@ class SignupsController < ApplicationController
     )
   end
 
+  def done
+  end
+
+  def done
+  end
+
   def create
     @user = User.new(
       nickname: session[:nickname],

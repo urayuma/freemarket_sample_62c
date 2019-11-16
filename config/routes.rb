@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'step1'
       post 'step1', to: 'signups#step1_validates'
       get 'step2'
+<<<<<<< HEAD
       post 'step2', to: 'signups#create'
     end
   end
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'
+=======
+      get 'done'
+>>>>>>> registration_step5
     end
   end
   resources :addresses, only: [:new, :create]
