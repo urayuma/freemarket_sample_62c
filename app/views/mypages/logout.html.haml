@@ -7,6 +7,5 @@
   .logout
     .logout__form
       = button_to "ログアウト", destroy_user_session_path, {method: :delete, class: "logout__form--button"}
-  -# = render 'sidebar' サイドバーをレンダーする
-/ フッターをレンダーする
+  = render 'sidebar'
 .footer
