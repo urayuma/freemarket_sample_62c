@@ -1,2 +1,159 @@
-%h1 Homes#index
-%p Find me in app/views/homes/index.html.haml
+%body
+    %header
+        = render 'header'
+
+
+    .Slide-menu
+        .Slide-menu__1
+        .Slide-menu__2
+
+    %main
+        .MainMenu
+            .MainMenu__FavoriteItems
+                .MainMenu__FavoriteItems__Header
+                    %h3.favorite-item-title いいね！した商品
+                    %p.show-detail すべて見る >
+                .MainMenu__FavoriteItems__Body
+                    .MainMenu__FavoriteItems__Body__Items
+                        .MainMenu__FavoriteItems__Body__Items__All
+                            .MainMenu__FavoriteItems__Body__Items__All__List
+                                .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                    %img.favorite-item-image{alt:"", src: "https://static.mercdn.net/item/detail/orig/photos/m68735417310_1.jpg?1571708042"}/
+                                    -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                            .MainMenu__FavoriteItems__Body__Items__All__List
+                                .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                    %img.favorite-item-image{alt:"", src: "https://static.mercdn.net/item/detail/orig/photos/m68735417310_1.jpg?1571708042"}/
+                                    -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                            .MainMenu__FavoriteItems__Body__Items__All__List
+                                .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                    %img.favorite-item-image{alt:"", src: "https://static.mercdn.net/item/detail/orig/photos/m68735417310_1.jpg?1571708042"}/
+                                    -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                            .MainMenu__FavoriteItems__Body__Items__All__List
+                                .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                    %img.favorite-item-image{alt:"", src: "https://static.mercdn.net/item/detail/orig/photos/m68735417310_1.jpg?1571708042"}/
+                                    -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+
+
+
+            .MainMenu__CategoryLists
+                %h2.category-title 人気のカテゴリー
+                .MainMenu__CategoryLists__List
+                    .MainMenu__CategoryLists__List__All
+                        .MainMenu__CategoryLists__List__All__list
+                            %a.category-list 福岡
+                        .MainMenu__CategoryLists__List__All__list
+                            %a.category-list 明太子
+                        .MainMenu__CategoryLists__List__All__list
+                            %a.category-list めんたいパーク
+                        .MainMenu__CategoryLists__List__All__list
+                            %a.category-list 赤い皮に包まれた魚卵
+
+            .MainMenu__CategoryItems
+                .MainMenu__CategoryItems__Header
+                    %h3.category-item-title MENTAI 新着アイテム
+                    %p.show-detail もっと見る >
+                .MainMenu__CategoryItems__Body
+                    .MainMenu__CategoryItems__Body__Items
+                        .MainMenu__CategoryItems__Body__Items__All
+                            .MainMenu__CategoryItems__Body__Items__All__List
+                                %div{ style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__CategoryItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "", src: "https://static.mercdn.net/item/detail/orig/photos/m51605700246_1.jpg?1573572058"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+                            .MainMenu__CategoryItems__Body__Items__All__List
+                                %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__CategoryItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "", src: "https://static.mercdn.net/item/detail/orig/photos/m51605700246_1.jpg?1573572058"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+                            .MainMenu__CategoryItems__Body__Items__All__List
+                                %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__CategoryItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "", src: "https://static.mercdn.net/item/detail/orig/photos/m51605700246_1.jpg?1573572058"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+
+
+
+            .MainMenu__BrandLists
+                %h2.category-title 人気のブランド
+                .MainMenu__BrandLists__List
+                    .MainMenu__BrandLists__List__All
+                        .MainMenu__BrandLists__List__All__list
+                            %a.brand-list ドイツ
+                        .MainMenu__BrandLists__List__All__list
+                            %a.brand-list スイス
+                        .MainMenu__BrandLists__List__All__list
+                            %a.brand-list ジョージア
+                        .MainMenu__BrandLists__List__All__list
+                            %a.brand-list オーロラ
+
+            .MainMenu__BrandItems
+                .MainMenu__BrandItems__Header
+                    %h3.brand-item-title 魚卵ブランド 新着アイテム
+                    %p.show-detail もっと見る >
+                .MainMenu__BrandItems__Body
+                    .MainMenu__BrandItems__Body__Items
+                        .MainMenu__BrandItems__Body__Items__All
+                            .MainMenu__BrandItems__Body__Items__All__List
+                                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__BrandItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "Thumbnail of \"セール13000円→12000円　Douxmiere キュービックネックレス\"", src: "https://static.mercdn.net/thumb/photos/m68548725798_1.jpg?1562335238"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+                            .MainMenu__BrandItems__Body__Items__All__List
+                                %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__BrandItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "Thumbnail of \"セール13000円→12000円　Douxmiere キュービックネックレス\"", src: "https://static.mercdn.net/thumb/photos/m68548725798_1.jpg?1562335238"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+                            .MainMenu__BrandItems__Body__Items__All__List
+                                %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                                    %figure.body-item
+                                        .MainMenu__BrandItems__Body__Items__All__List__image
+                                            -# %span.body-item-pricetag{"aria-label" => "Price"} ¥12,000
+                                            %img.body-item-image{alt: "Thumbnail of \"セール13000円→12000円　Douxmiere キュービックネックレス\"", src: "https://static.mercdn.net/thumb/photos/m68548725798_1.jpg?1562335238"}/
+                                        %figcaption
+                                            %span セール13000円→12000円　めんたいマヨネーズ
+
+
+
+
+    %aside
+        .Aside__Text
+            .Aside__Text__Lists
+                %p.aside-text1 Fmarket  わくわくフリマアプリ
+                %p.aside-text2 今すぐ出品してみよう！
+            %img.aside-app{alt: "", src:"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
+            %img.aside-app{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+
+        .Aside__Image
+            %img.aside-image1{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+
+    %footer
+        = render 'footer'
+
+
+    .PostItems
+        .PostItems__Button 
+            出品
+            .PostItems__Icon 
+                %i.fas.fa-camera.fa-3x
+
+
