@@ -1,0 +1,10 @@
+{
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.emptyRules": "ignore",
+  "scss.lint.float": "warning",
+  "scss.lint.fontFaceProperties": "ignore",
+  "scss.lint.important": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "css.lint.float": "warning",
+  "css.lint.zeroUnits": "warning"
+}
