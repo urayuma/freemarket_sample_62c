@@ -1,7 +1,11 @@
-*, ::before, ::after {
+*{
   box-sizing: border-box;
 }
 
+body{
+  width: 100%;
+  box-sizing: border-box;
+}
 
 header{
   height: 100px;
@@ -21,7 +25,7 @@ header{
 
   .HeaderTop{
       height: 40px;
-      width: 1020px;
+      width: 75%;
 
       &__Menu{
         display: flex;
@@ -81,7 +85,7 @@ img.footer-logo{
 
 .HeaderBottom{
     height: 50px;
-    width: 1020px;
+    width: 75%;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -130,7 +134,9 @@ img.footer-logo{
   width: 100%;
   background-color: darksalmon;
   text-align: center;
-  background-image: url("https://image.shutterstock.com/image-vector/pop-art-superhero-young-handsome-260nw-620435939.jpg");
+  // background-image: url("https://image.shutterstock.com/image-vector/pop-art-superhero-young-handsome-260nw-620435939.jpg");
+  background-image: url("https://www.haikei-free.com/dataimg/purple0119.png");
+
   background-size: inherit;
 
 
@@ -141,20 +147,17 @@ img.footer-logo{
 
 }
 
-img.slide1{
-
-}
 
 main{
-  height: 1200x;
-  width: 1028px;
+  height: 1200px;
+  width: 75%;
 
 .MainMenu{
 
   &__FavoriteItems{
     height: 280px;
-    background-color: #f0821e;
-    width: 1020px;
+    background-color: #ffbf1f;
+    width: 100%;
     margin-left: 153px;
     margin-top: 30px;
 
@@ -191,16 +194,17 @@ main{
 
   &__CategoryLists{
     height: 171px;
-    width: 1366px;
+    width: 100%;
     background-color: rgb(255, 255, 255);
+    margin-left: 153px;
 
     &__List{
 
       &__All{
         height: 40px;
         width: 100%;
-        margin-left: 320px;
         align-items: center;
+
 
         &__list{
         
@@ -213,6 +217,8 @@ main{
           margin: 10px;
 
           float: left;
+          margin-top: 20px;
+          margin-left: 50px;
 
           text-align: center;
           background-color: #dddddd ;
@@ -224,8 +230,8 @@ main{
   }
 
   &__CategoryItems{
-    height: 500px;
-    background-color: deepskyblue;
+    height: 400px;
+    background-color: #000000;
     width: 100%;
     margin-left: 153px;
 
@@ -270,12 +276,9 @@ main{
 
 h3.category-item-title{
   font-size: 24px;
+  color: #dddddd;
 }
 
-p.show-detail{
-  float: right;
-
-}
 
 figure.body-item{
 
@@ -286,16 +289,16 @@ figure.body-item{
   }
   &__BrandLists{
     height: 171px;
-    width: 1366px;
+    width: 100%;
     background-color: rgb(255, 255, 255);
+    margin-left: 153px;
   
       &__List{
+
   
         &__All{
           height: 40px;
           width: 100%;
-          margin-left: 500px;
-          justify-content: center;
           float: left;
   
           &__list{
@@ -305,9 +308,11 @@ figure.body-item{
             height: 32px;
           
             padding: 10px;
-            margin: 10px;
+
+            margin-top: 20px;
+            margin-left: 120px;
   
-            text-align: center;
+  
             background-color: #dddddd ;
             border-radius: 20px;
         
@@ -318,8 +323,8 @@ figure.body-item{
   
 
   &__BrandItems{
-    height: 500px;
-    background-color: deepskyblue;
+    height: 400px;
+    background-color: #000000;
     width: 100%;
     margin-left: 153px;
     margin-bottom: 50px;
@@ -368,7 +373,15 @@ figure.body-item{
 
 h3.brand-item-title{
   font-size: 24px;
+  color: #dddddd;
 }
+
+p.show-detail{
+  float: right;
+  color: #dddddd;
+
+}
+
 
 figcaption{
   display: block;
@@ -456,8 +469,8 @@ li{
 aside{
   height: 180px;
   width: 100%;
-  background-color: yellow;
-  background-image: url("https://sozai-good.com/uploads/40254/40254_sample.png");
+  background-color: #ffbf1f;
+  // background-image: url("https://sozai-good.com/uploads/40254/40254_sample.png");
   background-size: inherit;
   
   display: flex;
@@ -483,6 +496,7 @@ aside{
 
 p.aside-text1{
   color: rgb(255, 255, 255);
+  margin-top: 30px;
   font-size: 24px;
   text-shadow: 1px 1px 0 gray,
                -1px 1px 0 gray,
@@ -513,7 +527,7 @@ img.aside-image1{
 footer{
   height: 289px;
   width: 100%;
-  background-color: #193278;
+  background-color: #ff006f;
   color: #ffffff;
   position: relative;
 }
@@ -525,7 +539,7 @@ nav{
 
 .FooterMenu{
     height: 296px;
-    width: 1020px;
+    width: 75%;
     float: left;
 
 
@@ -550,7 +564,7 @@ nav{
 
 
 .FooterBottom{
-  width: 1020px;
+  width: 75%;
   height: 33px;
   position: absolute;
   bottom: 20px;
