@@ -1,7 +1,3 @@
-//variables
-@import "variables/mixins";
-
-
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
@@ -10,12 +6,6 @@
 @import "config/colors";
 @import "config/font-size";
 @import "config/reset";
-
-//mypages
-@import "mypages/sidebar";
-
-
-
 
 // 各コントローラー
 @import "homes/home";
