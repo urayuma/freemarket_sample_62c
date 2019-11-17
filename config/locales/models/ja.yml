@@ -27,3 +27,10 @@ ja:
         street_num: 番地
         building: 建物名
         home_call_num: 電話
+      user_information:
+        user_id: ユーザー
+        postcode: 郵便番号
+        prefectures: 都道府県
+        city: 市区町村
+        street_num: 番地
+        building: 建物名

@@ -8,7 +8,7 @@ set :application, 'freemarket_sample_62c'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'https://github.com/urayuma/freemarket_sample_62c.git'
 
-# deploy先のディレクトリ。 
+# deploy先のディレクトリ。
 set :deploy_to, '/var/www/freemarket_sample_62c'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
@@ -17,12 +17,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
 
-#出力するログのレベル。
+# 出力するログのレベル。
 set :log_level, :debug
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/mercari.pem'] 
+                  keys: ['~/.ssh/mercari.pem']
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -31,16 +31,15 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
-  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
+set :default_env,
+    rbenv_root: "/usr/local/rbenv",
+    path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+    BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
+    BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
+    AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+    AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 
-set :linked_files, %w{ config/secrets.yml }
+set :linked_files, %w[config/secrets.yml]
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
@@ -51,10 +50,8 @@ namespace :deploy do
 
   desc 'upload secrets.yml'
   task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
+    on roles(:app) do |_host|
+      execute "mkdir -p #{shared_path}/config" if test "[ ! -d #{shared_path}/config ]"
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
   end
@@ -63,7 +60,7 @@ namespace :deploy do
 
   desc 'Create database'
   task :db_create do
-    on roles(:db) do |host|
+    on roles(:db) do |_host|
       with rails_env: fetch(:rails_env) do
         within current_path do
           execute :bundle, :exec, :rake, 'db:create'
