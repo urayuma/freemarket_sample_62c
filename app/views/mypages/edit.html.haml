@@ -1,2 +1,16 @@
-%h1 Mypages#edit
-%p Find me in app/views/mypages/edit.html.haml
+%body
+  / ヘッダーをレンダーする
+  .header
+    仮置きheader
+  .box
+  .profile-main-box
+    .profile-main
+      .profile
+        プロフィール
+      .background
+        .my-image
+        %input{name: "nickname", placeholder: "例)AYA☆セール", type: "text", value: ""}/
+      .textarea-box
+        %textarea{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ", :type "text"}
+        .change__button 変更する
+  .side-bar
