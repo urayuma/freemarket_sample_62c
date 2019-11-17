@@ -1,13 +1,9 @@
 class MypagesController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def edit
-  end
+  def edit; end
 
-  def card
-  end
+  def card; end
 
-  def logout
-  end
+  def logout; end
 end

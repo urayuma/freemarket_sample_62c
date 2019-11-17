@@ -1,7 +1,6 @@
 require 'rails_helper'
 describe Address, type: :model do
   describe '#create', focus: true do
-
     it "全ての値が適切に入力されている場合、登録できること" do
       address = build(:address)
       expect(address).to be_valid
@@ -14,13 +13,13 @@ describe Address, type: :model do
     end
 
     it "lastnameが36文字以上の場合、登録できないこと" do
-      address = build(:address, lastname: "a"*36)
+      address = build(:address, lastname: "a" * 36)
       address.valid?
       expect(address.errors[:lastname]).to include("は35文字以内で入力してください")
     end
 
     it "lastnameが35文字の場合、登録できること" do
-      address = build(:address, lastname: "a"*35)
+      address = build(:address, lastname: "a" * 35)
       expect(address).to be_valid
     end
 
@@ -31,18 +30,18 @@ describe Address, type: :model do
     end
 
     it "firstnameが36文字以上の場合、登録できないこと" do
-      address = build(:address, firstname: "a"*36)
+      address = build(:address, firstname: "a" * 36)
       address.valid?
       expect(address.errors[:firstname]).to include("は35文字以内で入力してください")
     end
 
     it "firstnameが35文字の場合、登録できること" do
-      address = build(:address, firstname: "a"*35)
+      address = build(:address, firstname: "a" * 35)
       expect(address).to be_valid
     end
 
     it "lastname_kanaが36文字以上の場合、登録できないこと" do
-      address = build(:address, lastname_kana: "ア"*36)
+      address = build(:address, lastname_kana: "ア" * 36)
       address.valid?
       expect(address.errors[:lastname_kana]).to include("は35文字以内で入力してください")
     end
@@ -72,12 +71,12 @@ describe Address, type: :model do
     end
 
     it "lastname_kanaが35文字の場合、登録できること" do
-      address = build(:address, lastname_kana: "ア"*35)
+      address = build(:address, lastname_kana: "ア" * 35)
       expect(address).to be_valid
     end
 
     it "firstname_kanaが36文字以上の場合、登録できないこと" do
-      address = build(:address, firstname: "ア"*36)
+      address = build(:address, firstname: "ア" * 36)
       address.valid?
       expect(address.errors[:firstname]).to include("は35文字以内で入力してください")
     end
@@ -107,7 +106,7 @@ describe Address, type: :model do
     end
 
     it "firstname_kanaが35文字の場合、登録できること" do
-      address = build(:address, firstname: "ア"*35)
+      address = build(:address, firstname: "ア" * 35)
       expect(address).to be_valid
     end
 
@@ -158,13 +157,13 @@ describe Address, type: :model do
     end
 
     it "cityが51文字以上の場合、登録できないこと" do
-      address = build(:address, city: "a"*51)
+      address = build(:address, city: "a" * 51)
       address.valid?
       expect(address.errors[:city]).to include("は50文字以内で入力してください")
     end
 
     it "cityが35文字の場合、登録できること" do
-      address = build(:address, city: "a"*35)
+      address = build(:address, city: "a" * 35)
       expect(address).to be_valid
     end
 
@@ -175,29 +174,29 @@ describe Address, type: :model do
     end
 
     it "street_numが101文字以上の場合、登録できないこと" do
-      address = build(:address, street_num: "a"*101)
+      address = build(:address, street_num: "a" * 101)
       address.valid?
       expect(address.errors[:street_num]).to include("は100文字以内で入力してください")
     end
 
     it "street_numが100文字の場合、登録できること" do
-      address = build(:address, street_num: "a"*100)
+      address = build(:address, street_num: "a" * 100)
       expect(address).to be_valid
     end
 
     it "buildingが101文字以上の場合、登録できないこと" do
-      address = build(:address, building: "a"*101)
+      address = build(:address, building: "a" * 101)
       address.valid?
       expect(address.errors[:building]).to include("は100文字以内で入力してください")
     end
 
     it "buildingが100文字の場合、登録できること" do
-      address = build(:address, building: "a"*100)
+      address = build(:address, building: "a" * 100)
       expect(address).to be_valid
     end
-    
+
     it "home_call_numが101文字以上の場合、登録できないこと" do
-      address = build(:address, home_call_num: "1"*101)
+      address = build(:address, home_call_num: "1" * 101)
       address.valid?
       expect(address.errors[:home_call_num]).to include("は100文字以内で入力してください")
     end
@@ -236,6 +235,5 @@ describe Address, type: :model do
       address = build(:address, home_call_num: "09012345678")
       expect(address).to be_valid
     end
-
   end
 end
