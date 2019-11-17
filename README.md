@@ -39,7 +39,7 @@ Things you may want to cover:
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 |image|string||
 |introduction|text||
 
@@ -49,6 +49,7 @@ Things you may want to cover:
 - has_many :orders
 - has_many :items
 - has_one :address
+- has_one:user_information
 
 ## creditcardsテーブル
 
@@ -75,7 +76,21 @@ Things you may want to cover:
 |city|string|null: false|
 |street_num|string|null: false|
 |building|string||
-|home_call_num|integer||
+|home_call_num|string||
+
+### Association
+- belongs_to :user
+
+## user_informationsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
+|postcode|string||
+|prefectures|string||
+|city|string||
+|street_num|string||
+|building|string||
 
 ### Association
 - belongs_to :user
@@ -89,7 +104,7 @@ Things you may want to cover:
 
 ### Association
 - has_one :user_evaluation
-- belongs_to :item @
+- belongs_to :item 
 - belongs_to :user
 
 ## user_evaluationsテーブル
@@ -101,7 +116,7 @@ Things you may want to cover:
 |text|text||
 
 ### Association
-- belongs_to :order @
+- belongs_to :order 
 
 ## chatsテーブル
 
@@ -113,7 +128,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :item @
+- belongs_to :item 
 
 ## itemsテーブル
 
@@ -139,7 +154,7 @@ Things you may want to cover:
 - has_many :likes
 - has_many :images
 - has_one :brand
-- has_one :order @
+- has_one :order 
 - belongs_to :category
 
 ## imagesテーブル
@@ -150,7 +165,7 @@ Things you may want to cover:
 |item_id|reference|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item @
+- belongs_to :item 
 
 ## likesテーブル
 
@@ -161,7 +176,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :item @
+- belongs_to :item 
 
 ## brandsテーブル
 
@@ -170,7 +185,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- belongs_to :item @
+- belongs_to :item 
 
 ## categorysテーブル
 
