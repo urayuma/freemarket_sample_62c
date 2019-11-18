@@ -1,10 +1,7 @@
 //variables
 @import "variables/mixins";
-
-
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // config
 @import "config/colors";
@@ -14,12 +11,13 @@
 //mypages
 @import "mypages/sidebar";
 
-
-
-
 // 各コントローラー
 @import "homes/home";
 @import "mypages/mypage";
 @import "mypages/logout";
 @import "mypages/sidebar";
-@import "signups/signup.scss"
+@import "signups/signup.scss";
+@import "signups/step1.scss";
+@import "signups/step2.scss";
+@import "addresses/new.scss";
+@import "shard/signups_errors";
