@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-body{
+.body-toppage{
   width: 100%;
   box-sizing: border-box;
 }
 
-header{
+.header-toppage{
   height: 100px;
   width: 100%;
   padding: 8px, 153px;
@@ -127,6 +127,15 @@ img.footer-logo{
 
 }
 
+.header-logo{
+  height: 45px;
+  width: 180px;
+  padding: 5px;
+  display: block;
+  background-image: url("fmarket_logo_red");
+  background-repeat: no-repeat;
+}
+
 
 
 .Slide-menu{
@@ -148,7 +157,7 @@ img.footer-logo{
 }
 
 
-main{
+.main-toppage{
   height: 1200px;
   width: 75%;
 
@@ -451,22 +460,23 @@ a.category-list{
 
 
 
-ul{
+ul.FooterMenu__list_wrapper{
   vertical-align: baseline;
   list-style: none;
   padding-inline-start: 0;
 
 }
 
-li{
+li.FooterMenu__list__small{
   text-align: left;
   line-height: 1.4em;
+  margin: 10px 0 0 0;
   opacity: 0.7;
 
 }
 
 
-aside{
+.aside-toppage{
   height: 180px;
   width: 100%;
   background-color: #ffbf1f;
@@ -524,7 +534,7 @@ img.aside-image1{
 
 }
 
-footer{
+.footer-toppage{
   height: 289px;
   width: 100%;
   background-color: #ff006f;
@@ -532,7 +542,7 @@ footer{
   position: relative;
 }
 
-nav{
+.nav-toppage{
   display: flex;
   justify-content: center;
 }
@@ -575,10 +585,13 @@ nav{
 .footer-logo{
   height: 33px;
   width: 124px;
-  vertical-align: middle;
-  padding-left: 25px;
-
+  padding: 25px 5px 5px 5px;
+  display: block;
+  background-image: url("fmarket_logo_white");
+  background-repeat: no-repeat;
 }
+
+
 
 span.footer-text{
   text-align: center;
