@@ -1,6 +1,4 @@
 class SignupsController < ApplicationController
-  before_action :validates_step1, only: :step2
-
   def step1
     @user = User.new
   end

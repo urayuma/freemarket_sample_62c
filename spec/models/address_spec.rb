@@ -49,8 +49,8 @@ describe Address, type: :model do
       expect(address.errors[:firstname]).to include("は35文字以内で入力してください")
     end
 
-    it "firstnameが35文字の場合、登録できること" do
-      address = build(:address, firstname: "a" * 35, user_id: user.id)
+    it "firstnameが35文字の場合、登録できること" d
+      address = build(:address, firstname: "a" * 35, user_id: user.id
       expect(address).to be_valid
     end
 
@@ -119,8 +119,8 @@ describe Address, type: :model do
       expect(address.errors[:firstname_kana]).to include("全角カタカナ以外は使用できません")
     end
 
-    it "firstname_kanaが35文字の場合、登録できること" do
-      address = build(:address, firstname: "ア" * 35, user_id: user.id)
+    it "firstname_kanaが35文字の場合、登録できること" d
+      address = build(:address, firstname: "ア" * 35, user_id: user.id
       expect(address).to be_valid
     end
 
@@ -177,7 +177,9 @@ describe Address, type: :model do
     end
 
     it "cityが35文字の場合、登録できること" do
+
       address = build(:address, city: "a" * 35, user_id: user.id)
+
       expect(address).to be_valid
     end
 
