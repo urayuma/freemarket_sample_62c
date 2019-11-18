@@ -40,15 +40,32 @@
 
 .address_user_lastname,
 .address_user_firstname,
+.address_user_lastname_error,
+.address_user_firstname_error,
 .address_user_lastname_kana,
 .address_user_firstname_kana,
+.address_user_lastname_kana_error,
+.address_user_firstname_kana_error
+ {
+  height: 34px;
+  width: 240px !important;
+  padding: 10px 16px 8px;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display: inline-block;
+}
+
 #address_postcode,
 #address_city,
 #address_street_num,
 #address_building,
 #address_home_call_num {
-  height: 34px;
-  width: 500px !important;
+  height: 48px;
+  width: 500px;
   padding: 10px 16px 8px;
   margin: 5px;
   border-radius: 4px;
@@ -68,8 +85,8 @@
 #address_street_num_error,
 #address_building_error,
 #address_home_call_num_error {
-  height: 34px;
-  width: 500px !important;
+  height: 48px;
+  width: 500px;
   padding: 10px 16px 8px;
   margin: 5px;
   border-radius: 4px;
@@ -82,7 +99,7 @@
 
 @mixin action {
   height: 58px;
-  width: 534px;
+  width: 500px;
   padding: 10px 16px 8px;
   margin: 5px;
   border: 1px solid #ccc;
@@ -114,6 +131,21 @@
 #address_prefectures::-ms-expand {
   display: none;
 }
+
+.field-pulldown {
+  position: relative;
+}
+.address_icon {
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  font-size: 26px;
+}
+
+#address_prefectures::-ms-expand {
+  display: none;
+}
+
 
 .address_submit {
   @include action;

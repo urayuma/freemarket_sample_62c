@@ -1,11 +1,30 @@
-
-%header.single-header
-  %h1
-    %a 画像リンク
-  %nav.progress-bar_signup-bar
-    %ol.clearfix
-      %li headerのバー
-%main.single-main
+.header-signup
+  .header-signup
+  .header-signup__left
+  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+  .header-signup__right
+    %ol.step-bar
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        会員情報
+        %br
+        %span.point2-1
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        電話番号認証
+        %br
+        %span.point2-2
+      %li.step-bar__block  
+        お届け先住所入力
+        %br
+        %span.point2-3
+      %li.step-bar__block 
+        支払い方法
+        %br
+        %span.point2-4
+      %li.step-bar__block 
+        完了
+        %br
+        %span.point2-5
+.single-main
   %section.l-single-container
     %h2.l-single-inner_registration
       電話番号の確認
