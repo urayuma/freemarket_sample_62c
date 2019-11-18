@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   get 'home/index', to: 'homes#index'
   get 'mypage/index', to: 'mypages#index'
-  get 'mypage/edit', to: 'mypages#index'
+  get 'mypage/edit', to: 'mypages#edit'
   get 'mypage/card', to: 'mypages#index'
   get 'mypage/logout', to: 'mypages#logout'
 
