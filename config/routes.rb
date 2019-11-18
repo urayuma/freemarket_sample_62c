@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'mypage/edit', to: 'mypages#index'
   get 'mypage/card', to: 'mypages#index'
   
-  resources :signups, only: [:create] do
+  resources :signups, only: [:create, :index] do
     collection do
       get 'step1'
       get 'step2'

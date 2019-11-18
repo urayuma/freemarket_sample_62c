@@ -1,0 +1,152 @@
+.single-container{
+  width: 100%;
+  background-color:  rgb(245, 245, 245);
+}
+
+.single-header{
+  height: 128px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+.header-logo{
+  height: 49px;
+  width: 185px;
+  display: block;
+  margin: 40px 40px 0 0;
+  background-image: url("fmarket_logo_red");
+  background-repeat: no-repeat;
+}
+
+
+// Main
+
+.single-main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: block;
+  background-repeat: no-repeat;
+
+
+  .login2-panel{
+    width: 700px;
+    background-color: #fff;
+    margin: 0 305px;
+
+
+
+    &__login-form-inner{
+      width: 100%;
+      padding: 40px 40px 60px;
+      margin: 0 140px;
+
+      &--email{
+        height: 50px;
+        width: 328px;
+        background: red;
+        color: #fff;
+        text-align: center;
+        line-height: center;
+        display: block;
+        font-size: 15px;
+        margin: 15px;
+      }
+
+      &--facebook{
+        height: 50px;
+        width: 328px;
+        background: #385185;
+        color: #fff;
+        text-align: center;
+        line-height: center;
+        display: block;
+        font-size: 15px;
+        margin: 15px;
+
+      }
+
+      &--google{
+        height: 50px;
+        width: 328px;
+        background: orange;
+        text-align: center;
+        line-height: center;
+        margin-top: 10px;
+        display: block;
+        font-size: 15px;
+        margin: 15px;
+
+
+      }
+    }
+  }
+}
+
+p.login2-panel-title{
+  font-size: 22px;
+  padding: 30px;
+  text-align: center;
+
+}
+
+
+// Footer
+
+footer.single-footer{
+  height: 220px;
+  width: 33%;
+  position: relative;
+  margin-left: 455px;
+  padding-top: 40px;
+
+  .footer-top{
+    height: 20px;
+    width: 100%;
+    position: absolute;
+
+  }
+
+  .footer-logo{
+    height: 65px;
+    width: 100%;
+
+
+  }
+
+  .footer-bottom{
+    height: 15px;
+    width: 100%;
+  }
+}
+
+
+li.footer-top__list__text{
+  float: left;
+  font-size: 12px;
+  list-style: none;
+  margin-left: 25px;
+
+}
+
+p.footer-bottom-text{
+  margin-top: 10px;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+.footer-logo{
+  height: 65px;
+  width: 80px;
+  display: block;
+  margin: 50px 190px 0 190px;
+  background-image: url("logo_gray");
+  background-repeat: no-repeat;
+}
+
+
