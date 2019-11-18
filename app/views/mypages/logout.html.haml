@@ -1,11 +1,8 @@
 %body
-  / ヘッダーをレンダーする
-.header
-  仮置きheader
-  
-.contents
-  .logout
-    .logout__form
-      = button_to "ログアウト", destroy_user_session_path, {method: :delete, class: "logout__form--button"}
-  = render 'sidebar'
-.footer
+  = render "/homes/header"
+  .contents
+    .logout
+      .logout__form
+        = button_to "ログアウト", destroy_user_session_path, {method: :delete, class: "logout__form--button"}
+    = render 'sidebar'
+  = render "/homes/footer"

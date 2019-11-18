@@ -7,12 +7,6 @@
 body{
   background-color: #f5f5f5;
 }
-  
-.header{
-  height: 150px;
-  width: 100%;
-  background-color: lightblue;
-  }
 
 .contents{
   margin: 40px auto 0;
@@ -23,7 +17,6 @@ body{
   height: 179px;
   width: 700px;
   box-sizing: border-box;
-  background-color: black;
   float: right;
   background: #fff;
   &__form{

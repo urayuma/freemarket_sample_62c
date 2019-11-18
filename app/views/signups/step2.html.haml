@@ -40,7 +40,6 @@
           - else
             .number_input
               = f.text_field :phonenumber, class: "number_text", id: 'phonenumber', placeholder: '携帯電話の番号を入力'
-
           %p.number_message 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         .next_btn
           = f.submit :"次へ進む", class: "next_submit"
