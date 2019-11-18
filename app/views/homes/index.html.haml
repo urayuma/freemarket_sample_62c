@@ -1,13 +1,13 @@
-%body
-    %header
-        = render 'header'
+%body.body-toppage
+
+    = render 'header'
 
 
     .Slide-menu
         .Slide-menu__1
         .Slide-menu__2
 
-    %main
+    %main.main-toppage
         .MainMenu
             .MainMenu__FavoriteItems
                 .MainMenu__FavoriteItems__Header
@@ -135,7 +135,7 @@
 
 
 
-    %aside
+    %aside.aside-toppage
         .Aside__Text
             .Aside__Text__Lists
                 %p.aside-text1 Fmarket  わくわくフリマアプリ
@@ -146,14 +146,9 @@
         .Aside__Image
             %img.aside-image1{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
 
-    %footer
-        = render 'footer'
+    = render 'footer'
 
 
-    .PostItems
-        .PostItems__Button 
-            出品
-            .PostItems__Icon 
-                %i.fas.fa-camera.fa-3x
+    = render 'postitem'
 
 
