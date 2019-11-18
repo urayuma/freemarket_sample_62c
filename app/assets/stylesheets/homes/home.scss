@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-body.toppage{
+.body-toppage{
   width: 100%;
   box-sizing: border-box;
 }
 
-header.toppage{
+.header-toppage{
   height: 100px;
   width: 100%;
   padding: 8px, 153px;
@@ -157,7 +157,7 @@ img.footer-logo{
 }
 
 
-main.toppage{
+.main-toppage{
   height: 1200px;
   width: 75%;
 
@@ -476,7 +476,7 @@ li.FooterMenu__list__small{
 }
 
 
-aside.toppage{
+.aside-toppage{
   height: 180px;
   width: 100%;
   background-color: #ffbf1f;
@@ -534,7 +534,7 @@ img.aside-image1{
 
 }
 
-footer.toppage{
+.footer-toppage{
   height: 289px;
   width: 100%;
   background-color: #ff006f;
@@ -542,7 +542,7 @@ footer.toppage{
   position: relative;
 }
 
-nav.toppage{
+.nav-toppage{
   display: flex;
   justify-content: center;
 }
