@@ -27,3 +27,9 @@
 /config/master.key
 
 config/secrets.yml
+
+#環境変数を記述したファイルの追跡を無視
+.env
+
+#失敗したテストを記録するファイルを無視
+spec/examples.txt

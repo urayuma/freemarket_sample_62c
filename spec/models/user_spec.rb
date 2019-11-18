@@ -31,46 +31,46 @@ describe User do
     end
 
     it "passwordが空の場合、登録できないこと" do
-      user = build(:user, password: "")
+      user = build(:user, password: "", password_confirmation: "")
       user.valid?
       expect(user.errors[:password]).to include("を入力してください")
     end
 
     it "passwordが6文字以下の場合、登録できないこと" do
-      user = build(:user, password: "12345q")
+      user = build(:user, password: "12345q", password_confirmation: "12345q")
       user.valid?
-      expect(user.errors[:password]).to include("は7文字以上で入力してください", "は不正な値です")
+      expect(user.errors[:password]).to include("は7文字以上で入力してください", "は英字と数字両方を含むパスワードを設定してください")
     end
 
     it "passwordが129文字以上の場合、登録できないこと" do
       o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
       password = (0...129).map { o[rand(o.length)] }.join
-      user = build(:user, password: password.to_s)
+      user = build(:user, password: password.to_s, password_confirmation: password.to_s)
       user.valid?
       expect(user.errors[:password]).to include("は128文字以内で入力してください")
     end
 
     it "passwordが数字のみの場合、登録できないこと" do
-      user = build(:user, password: "1234567")
+      user = build(:user, password: "1234567", password_confirmation: "1234567")
       user.valid?
-      expect(user.errors[:password]).to include("は不正な値です")
+      expect(user.errors[:password]).to include("は英字と数字両方を含むパスワードを設定してください")
     end
 
     it "passwordが英字のみの場合、登録できないこと" do
-      user = build(:user, password: "abcdefg")
+      user = build(:user, password: "abcdefg", password_confirmation: "abcdefg")
       user.valid?
-      expect(user.errors[:password]).to include("は不正な値です")
+      expect(user.errors[:password]).to include("は英字と数字両方を含むパスワードを設定してください")
     end
 
     it "passwordが数字と英字を含む7文字の場合、登録できること" do
-      user = build(:user, password: "1a2b3c4")
+      user = build(:user, password: "1a2b3c4", password_confirmation: "1a2b3c4")
       expect(user).to be_valid
     end
 
     it "passwordが数字と英字を含む128文字の場合、登録できること" do
       o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
       password = (0...128).map { o[rand(o.length)] }.join
-      user = build(:user, password: password.to_s)
+      user = build(:user, password: password.to_s, password_confirmation: password.to_s)
       expect(user).to be_valid
     end
 
@@ -310,19 +310,19 @@ describe User do
     it "phonenumberが9桁以下の数字の場合、登録できないこと" do
       user = build(:user, phonenumber: "012345678")
       user.valid?
-      expect(user.errors[:phonenumber]).to include("は不正な値です")
+      expect(user.errors[:phonenumber]).to include("登録できません")
     end
 
     it "phonenumberが12桁以上の数字の場合、登録できないこと" do
       user = build(:user, phonenumber: "012345678912")
       user.valid?
-      expect(user.errors[:phonenumber]).to include("は不正な値です")
+      expect(user.errors[:phonenumber]).to include("登録できません")
     end
 
     it "phonenumberが数字以外の文字を含む場合、登録できないこと" do
       user = build(:user, phonenumber: "aiueoあいうえお")
       user.valid?
-      expect(user.errors[:phonenumber]).to include("は不正な値です")
+      expect(user.errors[:phonenumber]).to include("登録できません")
     end
 
     it "phonenumberが登録済みの場合、登録できないこと" do
