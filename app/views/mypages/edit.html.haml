@@ -1,16 +1,18 @@
-%body
-  / ヘッダーをレンダーする
-  .header
-    仮置きheader
-  .box
-  .profile-main-box
-    .profile-main
-      .profile
-        プロフィール
-      .background
-        .my-image
-        %input{name: "nickname", placeholder: "例)AYA☆セール", type: "text", value: ""}/
-      .textarea-box
-        %textarea{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ", :type "text"}
-        .change__button 変更する
-  .side-bar
+= render '/homes/header'
+
+.profile-container
+  .profile-main
+    .profile-main__top
+      プロフィール
+    .profile-main__header
+      .profile-main__header--image
+      -# 一度仮置きをしておいてあとでform_foに書き換える
+      %input.profile-main__header--input{name: "nickname", placeholder: "例)AYA☆セール", type: "text", value: ""}/
+    .profile-main__textarea
+      -# 一度仮置きをしておいてあとでform_foに書き換える
+      %textarea.profile-main__textarea--box{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ", type: "text", value: ""}
+      .profile-main__textarea--edit 変更する
+
+  = render "sidebar"
+
+= render "/homes/footer"

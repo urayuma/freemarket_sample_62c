@@ -1,160 +1,69 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  body{
-    background-color: #f5f5f5;
-    .header{
-      height: 150px;
-      width: 100%;
-      background-color: lightblue;
+.profile-container {
+  height: 1292px;
+  width: 1020px;
+  margin: 40px auto 0;
+  padding-bottom: 40px;
+  .profile-main {
+    height: 568px;
+    width: 700px;
+    background: #fff;
+    float: right;
+    &__top {
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
     }
-    .mypage-main-box{
-      margin: 40px 40px 0 0;
-      height: 507px;
-      width: 700px;
+    &__header {
       box-sizing: border-box;
-      display: inline-block;
-        .background{
-          box-sizing: border-box;
-          height: 200px;
-          width: 700px;
-          background-color: goldenrod;
-          text-align: center;
-          padding: 72px 16px 24px;
-        }
-            .my-image{
-              height: 60px;
-              width: 60px;
-              margin: 0, 320px;
-              background-color: gray;
-              border-radius: 50%;
-              display: inline-block;
-              vertical-align:middle;
-            }
-              .user-name{
-                font-size: 14px;
-                font-weight: bold;
-                margin-top: 8px;
-              }
-              .evaluation{
-                font-size: 14px;
-                display :inline-block;
-
-              }
-              .evaluation-num{
-                font-size: 14px;
-                margin-left: 8px;
-                display :inline-block;
-                font-weight: bold;
-              }
-              .exhibit{
-                font-size: 14px;
-                margin-left: 8px;
-                display :inline-block;
-              }
-              .exhibit-num{
-                font-size: 14px;
-                margin-left: 8px;
-                display :inline-block;
-                font-weight: bold;
-              }
-              ul{
-                list-style: none;
-                font-size:0;
-                display: inline-block;
-                width: 100%;
-                box-sizing: border-box;
-
-                li.notice{
-                  height: 72px;
-                  width: 50%;
-                  font-size: 18px;
-                  font-weight: bold;
-                  background-color: lightgray;
-                  text-align: center;
-                  line-height: 72px;
-                  display: inline-block;
-                  
-                }
-                li.to-do-list{
-                  height: 72px;
-                  width: 50%;
-                  font-size: 18px;
-                  font-weight: bold;
-                  background-color: gray;
-                  text-align: center;
-                  line-height: 72px;
-                  display: inline-block;
-                }
-              }
-        .box-area{
-          height: 235px;
-          width: 700px;
-          font-size: 18px;
-          font-weight: bold;
-          color: gray;
-          background-color: white;
-          text-align: center;
-          line-height: 235px;
-        }
+      height: 156px;
+      width: 700px;
+      text-align: center;
+      padding: 72px 16px 24px;
+      background-image: url(fmarket.jpg);
+      &--image {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url(user.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 10%;
       }
-      .purchased-product{
-        height: 72px;
-        width: 668px;
-        background-color: white;
-        margin-top: 40px;
-        padding: 0 16px;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 72px;
+      &--input {
+        box-sizing: border-box;
+        vertical-align: middle;
+        width: 220px;
+        height: 48px;
+        background-color: #fff;
+        margin-left: 8px;
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 10px 16px 8px;
       }
-                    ul{
-                list-style: none;
-                font-size:0;
-                display: inline-block;
-                width: 100%;
-                box-sizing: border-box;
-
-                li.during-trading{
-                  height: 72px;
-                  width: 50%;
-                  font-size: 18px;
-                  font-weight: bold;
-                  background-color: lightgray;
-                  text-align: center;
-                  line-height: 72px;
-                  display: inline-block;
-                
-                }
-                .past-transactions{
-                  height: 72px;
-                  width: 50%;
-                  font-size: 18px;
-                  font-weight: bold;
-                  background-color: gray;
-                  text-align: center;
-                  line-height: 72px;
-                  display: inline-block;
-                }
-              }
-        .report-area{
-          height: 235px;
-          width: 700px;
-          font-size: 18px;
-          font-weight: bold;
-          color: gray;
-          background-color: white;
-          text-align: center;
-          line-height: 235px;
-        }
+    }
+    &__textarea {
+      padding: 40px 16px;
+      &--box {
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 10px;
+        min-height: 216px;
+        width: 100%;
+        line-height: 1.5;
       }
-
-      .side-bar{
-        height: 1250px;
-        width: 280px;
-        background-color: lightgoldenrodyellow;
-        margin: 40px 40px 0 100px;
-        float: left;
+      &--edit {
+        height: 50px;
+        width: 100%;
+        background-color: #ea352d;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        margin-top: 16px;
+        line-height: 50px;
       }
+    }
+  }
 }
