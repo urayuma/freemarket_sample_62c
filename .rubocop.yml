@@ -26,3 +26,23 @@ Metrics/LineLength:
 #'frozen_string_literal: true'を無効
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# Use only ascii symbols in comments.を無視
+Style/AsciiComments:
+  Enabled: false
+
+# Block has too many lines.を無視
+Metrics/BlockLength:
+  Enabled: false
+
+# Class has too many lines.を無視
+Metrics/ClassLength:
+  Enabled: false
+
+# Method has too many lines
+Metrics/MethodLength:
+  Enabled: false
+
+# Use nested module/class definitions instead of compact style.
+Style/ClassAndModuleChildren:
+  Enabled: false
