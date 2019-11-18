@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get 'step1'
       get 'step2'
+      get 'done'
     end
   end
   resources :addresses, only: [:new, :create]
