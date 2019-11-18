@@ -20,4 +20,6 @@ class Address < ApplicationRecord
   validates :home_call_num, length: { maximum: 100 }
   validates :home_call_num, uniqueness: true, format: { with: /\A\d{10}$|^\d{11}\z/, message: "は10~11桁の数字を入力してください" }, allow_blank: true # 10桁か11桁の数字の文字列
 
+  validates :home_call_num, length: { maximum: 100 }
+  validates :home_call_num, uniqueness: true, format: { with: /\A\d{10}$|^\d{11}\z/, message: "は10~11桁の数字を入力してください" }, allow_blank: true # 10桁か11桁の数字の文字列
 end
