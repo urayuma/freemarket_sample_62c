@@ -1,2 +1,127 @@
-%h1 Signups#step1
-%p Find me in app/views/signups/step1.html.haml
+%header.single-header
+  %h1
+    %a 画像リンク
+  %nav.progress-bar_signup-bar
+    %ol.clearfix
+      %li headerのバー
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      会員情報入力
+    = form_for @user, url: step1_signups_path, method: :post do |f|
+      - required = '必須'
+      .user_information
+        .field
+          .field-label
+            = f.label :"ニックネーム", class: 'left-label'
+            %span.min #{required}
+          - if @user.errors.messages[:nickname].any?
+            .field-input
+              = f.text_field :nickname, autofocus: true, class: 'user_nickname_error', id: 'nickname', placeholder: '例）フリマ123'
+              = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:nickname)
+          - else
+            .field-input
+              = f.text_field :nickname, autofocus: true, class: 'user_nickname', id: 'nickname', placeholder: '例）フリマ123'
+        .field
+          .field-label
+            = f.label :"メールアドレス"
+            %span.min #{required}
+          - if @user.errors.messages[:email].any?
+            .field-input
+              = f.email_field :email, class: 'user_email_error', id: 'email', placeholder: 'PC・携帯どちらでも可'
+              = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:email)
+          - else
+            .field-input
+              = f.email_field :email, class: 'user_email', id: 'email', placeholder: 'PC・携帯どちらでも可'
+        .field
+          = f.label :"パスワード"
+          %span.min #{required}
+          - if @user.errors.messages[:password].any?
+            = f.password_field :password_confirmation, class: 'user_password_error', id: 'password', placeholder: '７文字以上'
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:password)
+          - else
+            = f.password_field :password_confirmation, class: 'user_password', id: 'password', placeholder: '７文字以上'
+          .field_checkbox
+            = f.check_box :password, checked: false, class: "checkbox"
+            = f.label :"パスワードを表示する", class: 'check_password'
+          .user_confirm
+            %h4.confirm_title
+              本人確認
+            %p.confirm_message
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .field
+          .field-label
+            = f.label :"お名前(全角)"
+            %span.min #{required}
+          .field-input.field-input_errors
+            - if @user.errors.messages[:lastname].any?
+              = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname_error'
+            - else
+              = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname'
+            - if @user.errors.messages[:firstname].any?
+              = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname_error'
+            - else
+              = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname'
+          - if @user.errors.messages[:lastname].any?
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:lastname)
+          - if @user.errors.messages[:firstname].any?
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname)
+        .field
+          .field-label
+            = f.label :"お名前カナ(全角)"
+            %span.min #{required}
+          .field-input.field-input_errors
+            - if @user.errors.messages[:lastname].any?
+              = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana_error'
+            - else
+              = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana'
+            - if @user.errors.messages[:firstname].any?
+              = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana_error'
+            - else
+              = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana'
+          - if @user.errors.messages[:lastname_kana].any?
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:lastname_kana)
+          - if @user.errors.messages[:firstname_kana].any?
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname_kana)
+        .field
+          .field-label
+            = f.label :"生年月日"
+            %span.min #{required}
+          - if @user.errors.messages[:birthday_year].any?
+            .field-input
+              = f.select :birthday_year, [*1900..2019].reverse!, prompt: "--", id: 'user_birthday_year'
+              %span 年
+              = f.select :birthday_month, [*1..12], prompt: "--", id: 'user_birthday_month'
+              %span 月
+              = f.select :birthday_day, [*1..31], prompt: "--", id: 'user_birthday_day'
+              %span 日
+              %p.signups_errors__error
+                = @user.errors.messages[:birthday_day].join
+          - else
+            .field-input
+              = f.select :birthday_year, [*1900..2019].reverse, prompt: "--", id: 'user_birthday_year'
+              %span 年
+              = f.select :birthday_month, [*1..12], prompt: "--", id: 'user_birthday_month'
+              %span 月
+              = f.select :birthday_day, [*1..31], prompt: "--", id: 'user_birthday_day'
+              %span 日
+        .registration_message
+          %p.regime
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        - if @user.errors.details[:base].any?
+          .field
+            = recaptcha_tags id: 'recaptcha_error'
+            .signups_errors
+            %p.signups_errors__error
+              = @user.errors.details[:base].first[:error]
+        - else
+          .field
+            = recaptcha_tags id: 'recaptcha'
+        .terms_of_service_messages
+          %p.terms_of_service_messages__content
+            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+        .field
+          .firld-input
+            = f.submit :"次へ進む", class: "next_submit"
+%footer.single_footer
+  %h1 フッター
