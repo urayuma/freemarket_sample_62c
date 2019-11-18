@@ -36,12 +36,12 @@
   .login-panel{
     width: 456px;
     background-color: #fff;
-    margin-left: 455px;
-
+    margin: auto;
 
     &__login-no-account{
-       width: 70%;
+       width: 100%;
        padding: 20px 64px;
+       border-bottom: 2px rgb(245, 245, 245) solid;
 
       &__signup{
         height: 42px;
@@ -139,11 +139,13 @@ input.input-data{
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+  box-sizing: border-box;
+  padding-left: 10px;
 }
 
 button.login-btn-red{
   height: 50px;
-  width: 100%;
+  width: 328px;
   margin-top: 40px;
   background-color: #ea352d;
   color: #fff;
@@ -151,64 +153,8 @@ button.login-btn-red{
   font-size: 15px;
 }
 
-
-
-// Footer
-
-footer.single-footer{
-  height: 220px;
-  width: 33%;
-  position: relative;
-  margin-left: 455px;
-  padding-top: 40px;
-
-  .footer-top{
-    height: 20px;
-    width: 100%;
-    position: absolute;
-
-  }
-
-  .footer-logo{
-    height: 65px;
-    width: 100%;
-
-
-  }
-
-  .footer-bottom{
-    height: 15px;
-    width: 100%;
-  }
+.forgot-password-sign-in {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0099e8;
 }
-
-ul.footer-top__list{
-
-}
-
-li.footer-top__list__text{
-  float: left;
-  font-size: 12px;
-  list-style: none;
-  margin-left: 25px;
-
-}
-
-p.footer-bottom-text{
-  margin-top: 10px;
-  font-size: 10px;
-  text-align: center;
-}
-
-.footer-logo{
-  height: 65px;
-  width: 80px;
-  display: block;
-  margin: 50px 190px 0 190px;
-  background-image: url("logo_gray");
-  background-repeat: no-repeat;
-
-
-}
-
-

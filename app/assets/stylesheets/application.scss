@@ -28,7 +28,6 @@
 @import 'creditcards/new.scss';
 @import 'signups/done.scss';
 @import 'signups/header.scss';
-
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'signups/step1.scss';
@@ -36,7 +35,10 @@
 
 @import 'addresses/new.scss';
 @import 'creditcards/new.scss';
-
 @import 'devise/sessions/new';
 
 @import 'signups/done.scss';
+
+@import 'signups/index.scss';
+@import 'devise/sessions/new';
+@import 'signups/footer.scss';

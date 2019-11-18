@@ -5,7 +5,7 @@
             .header-logo
 
 
-        %main.single-main
+        .single-main
             .login-panel
                 .login-panel__login-no-account
                     %p.has-no-account アカウントをお持ちでない方はこちら
@@ -35,10 +35,10 @@
 
                             -# %img.iam-not-robo{alt:"im_not_robo", src: "/images/im_not_robo 2019-11-12 19.24.24.png"}/
                             %button.login-btn-red{type: "submit"} ログイン
-                            %a{href: ""} パスワードをお忘れの方
+                            %a.forgot-password-sign-in{href: ""} パスワードをお忘れの方
 
 
-        %footer.single-footer
+        .single-footer
             = render 'signups/footer'
 
 
