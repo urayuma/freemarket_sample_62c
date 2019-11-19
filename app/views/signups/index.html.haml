@@ -10,16 +10,21 @@
                 %p.login2-panel-title 新規会員登録
 
                 .login2-panel__login-form-inner
-                    %button.login2-panel__login-form-inner--email
+                    = button_to step1_signups_path, method: :get, class: "login2-panel__login-form-inner--email" do
                         %i.far.fa-envelope
-                        メールアドレスで登録する
+                        %span.login2-panel__login-form-inner--email__message
+                            メールアドレスで登録する
 
-                    %button.login2-panel__login-form-inner--facebook 
+                .login2-panel__login-form-inner
+                    = button_to user_facebook_omniauth_authorize_path, method: :post, class: "login2-panel__login-form-inner--facebook" do
                         %i.fab.fa-facebook-square
-                        Facebookでログイン
+                        %span.login2-panel__login-form-inner--facebook__message
+                            Facebookで登録
 
-                    %button.login2-panel__login-form-inner--google
+                .login2-panel__login-form-inner
+                    = button_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "login2-panel__login-form-inner--google" do
                         %i.fab.fa-google
-                        Googleでログイン
+                        %span.login2-panel__login-form-inner--google__message
+                            Googleで登録
         .single-footer
             = render 'signups/footer'

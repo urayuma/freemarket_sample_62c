@@ -2,12 +2,14 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+
   has_one :address
   has_one :user_information
   has_many :chats
   has_many :orders
   has_many :items
+  has_many :sns_credentials, dependent: :destroy
 
   validates :nickname, presence: true, length: { maximum: 20 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i, message: "は英字と数字両方を含むパスワードを設定してください" } # 英字と数字の両方を含む7文字以上128文字以下
@@ -32,4 +34,53 @@ class User < ApplicationRecord
   validates :phonenumber, presence: true, uniqueness: true
   validates :phonenumber, format: { with: /\A\d{10}$|^\d{11}\z/, message: "登録できません" }, allow_blank: true # 10桁か11桁の数字の文字列
   validates :introduction, length: { maximum: 1000 }
+
+  def self.find_oauth(auth)
+    uid = auth.uid
+    provider = auth.provider
+    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+
+    # sns_credentialsが登録されている
+    if snscredential.present?
+      user = User.where(email: auth.info.email).first
+
+      # userが登録されていない
+      unless user.present?
+        user = User.new(
+          nickname: auth.info.name,
+          email: auth.info.email
+        )
+      end
+      sns = snscredential
+      { user: user, sns: sns } # メソッドを使ったときにハッシュで代入するため info = User.find_oauth(auth)
+
+    # sns_credentialsが登録されていない
+    else
+      user = User.where(email: auth.info.email).first
+
+      # userが登録されている
+      if user.present?
+        sns = SnsCredential.create(
+          uid: uid,
+          provider: provider,
+          user_id: user.id
+        )
+
+        { user: user, sns: sns }
+
+      # userが登録されていない
+      else
+        user = User.new(
+          nickname: auth.info.name,
+          email: auth.info.email
+        )
+        sns = SnsCredential.new(
+          uid: uid,
+          provider: provider
+        )
+
+        { user: user, sns: sns }
+      end
+    end
+  end
 end

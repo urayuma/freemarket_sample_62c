@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'homes#index'
   get 'home/index', to: 'homes#index'
   get 'mypage/index', to: 'mypages#index'
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'mypage/card3', to: 'mypages#card3'
   # 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
 
-
   resources :signups, only: [:index] do
     collection do
       get 'step1'
@@ -22,12 +21,12 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :addresses, only: [:edit, :update, :delete] do
+  resources :addresses, only: %i[edit update delete] do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'
     end
   end
-  resources :addresses, only: [:new, :create]
-  resources :creditcards, only: [:new, :create]
+  resources :addresses, only: %i[new create]
+  resources :creditcards, only: %i[new create]
 end
