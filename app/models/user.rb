@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :address
   has_one :user_information
-  has_many :chats
-  has_many :orders
-  has_many :items
 
   validates :nickname, presence: true, length: { maximum: 20 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i, message: "は英字と数字両方を含むパスワードを設定してください" } # 英字と数字の両方を含む7文字以上128文字以下
