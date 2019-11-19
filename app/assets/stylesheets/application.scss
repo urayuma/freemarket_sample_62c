@@ -1,4 +1,5 @@
 //variables
+@import "variables/variables";
 @import "variables/mixins";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -20,5 +21,19 @@
 @import "signups/signup.scss";
 @import "signups/step1.scss";
 @import "signups/step2.scss";
-@import "addresses/new.scss";
 @import "shard/signups_errors";
+@import 'addresses/new.scss';
+@import 'creditcards/new.scss';
+@import 'signups/done.scss';
+@import 'signups/header.scss';
+@import 'signups/index.scss';
+@import 'addresses/new.scss';
+@import 'devise/sessions/new';
+@import 'devise/sessions/new';
+@import 'signups/footer.scss';
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'signups/step1.scss';
+@import 'addresses/new.scss';
+@import 'creditcards/new.scss'
