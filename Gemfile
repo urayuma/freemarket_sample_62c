@@ -89,3 +89,4 @@ gem 'jquery-rails'
 gem 'mini_magick'
 gem 'rails-i18n'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'ancestry'
