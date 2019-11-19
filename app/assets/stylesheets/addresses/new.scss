@@ -1,7 +1,50 @@
-* {
-  padding: 0px;
-  margin: 0px;
+.point3-1 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
 }
+.point3-2 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+}
+.point3-3 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+  &::after {
+    @include after;
+  }
+}
+.point3-4 {
+  @include inpoint;
+&::after {
+  @include after;
+}
+&::before {
+  @include before;
+}
+}
+.point3-5 {
+  @include inpoint;
+  &::before {
+    @include before;
+  }
+}
+
 .user_address {
   margin-left: 77px;
   margin-right: 77px;

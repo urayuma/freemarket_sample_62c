@@ -1,3 +1,43 @@
+.point4-1 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+}
+.point4-2,
+.point4-3 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+}
+.point4-4 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+  &::after {
+    @include after;
+  }
+}
+
+.point4-5 {
+  @include inpoint;
+  &::before {
+    @include before;
+  }
+}
+
 
 h4 {                       // 仮置き用なので消して下さい
   display: inline-block;

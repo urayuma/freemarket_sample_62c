@@ -1,4 +1,38 @@
-
+.point2-1 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+}
+.point2-2 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+  &::after {
+    @include after;
+  }
+}
+.point2-3,
+.point2-4 {
+  @include inpoint;
+&::after {
+  @include after;
+}
+&::before {
+  @include before;
+}
+}
+.point2-5 {
+  @include inpoint;
+  &::before {
+    @include before;
+  }
+}
 .single-main {
   background-color:rgb(245, 245, 245);
   display: block;

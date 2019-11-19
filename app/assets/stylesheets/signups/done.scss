@@ -1,3 +1,34 @@
+.point5-1 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+}
+.point5-2,
+.point5-3,
+.point5-4 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::after {
+    @include after;
+    background-color: #ea352d;
+  }
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+}
+
+.point5-5 {
+  @include inpoint;
+  background-color: #ea352d;
+  &::before {
+    @include before;
+    background-color: #ea352d;
+  }
+}
 .done-message {
   text-align: center;
   margin-top: 40px;
