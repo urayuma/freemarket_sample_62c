@@ -3,3 +3,46 @@
   font-size: 14px;
   text-shadow: 1px 2px 3px #333;
 }
+
+@mixin inpoint {
+  background-color: #ccc;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 8px auto;
+}
+@mixin after {
+  position: absolute;
+  bottom: 13px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  left: 50%;
+}
+@mixin before {
+  position: absolute;
+  bottom: 13px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  right: 50%;
+}
+
+@mixin address_select {
+  height: 58px;
+  width: 500px;
+  padding: 10px 16px 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display: block;
+}

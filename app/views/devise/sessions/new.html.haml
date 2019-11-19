@@ -1,0 +1,44 @@
+%body
+    .single-container
+
+        %header.single-header
+            .header-logo
+
+
+        .single-main
+            .login-panel
+                .login-panel__login-no-account
+                    %p.has-no-account アカウントをお持ちでない方はこちら
+                    .login-panel__login-no-account__signup
+                        %p.new-signup 新規会員登録
+
+                .login-panel__login-form-inner
+                    %button.login-panel__login-form-inner--facebook 
+                        %i.fab.fa-facebook-square
+                        Facebookでログイン
+
+                    %button.login-panel__login-form-inner--google
+                        %i.fab.fa-google
+                        Googleでログイン
+
+
+                .login-panel__login-form-form
+                    %form
+                        .login-panel__login-form-form__form-group
+                            %input.input-data{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
+                        .login-panel__login-form-form__form-group
+                            %input.input-data{name: "password", placeholder: "パスワード", type: "password"}/
+                        .login-panel__login-form-form__form-group
+                            .login-panel__login-form-form__form-group--iam-not-robbot 
+                                %i.fas.fa-robot
+                                I AM NOT A ROBBOT
+
+                            -# %img.iam-not-robo{alt:"im_not_robo", src: "/images/im_not_robo 2019-11-12 19.24.24.png"}/
+                            %button.login-btn-red{type: "submit"} ログイン
+                            %a.forgot-password-sign-in{href: ""} パスワードをお忘れの方
+
+
+        .single-footer
+            = render 'signups/footer'
+
+

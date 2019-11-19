@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post 'step1', to: 'signups#step1_validates'
       get 'step2'
       post 'step2', to: 'signups#create'
+      get 'done'
     end
   end
   resources :addresses, only: %i[edit update delete] do

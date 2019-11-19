@@ -1,0 +1,48 @@
+.header-signup
+  .header-signup__left
+  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+  .header-signup__right
+    %ol.step-bar
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        会員情報
+        %br
+        %span.point5-1
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        電話番号認証
+        %br
+        %span.point5-2
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        お届け先住所入力
+        %br
+        %span.point5-3
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        支払い方法
+        %br
+        %span.point5-4
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        完了
+        %br
+        %span.point5-5
+.single-main
+  %section.l-single-container
+    %h2.l-single-inner_registration
+      会員登録完了
+    .user_done
+      .created_message
+        %p.done-message 
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+      .field-creditcard
+        .done-btn
+          = button_to "メルカリをはじめる", home_index_path, class: 'btn-default_go-mercari'
+      .field-image
+        =image_tag 'mercari-back.jpg', width: '700'
+        =image_tag 'mercari-smart.png', height: '275',width: '300',class: "put-done"
+        %p.back-message \ スマホでかんたんフリマアプリ /
+        %h1.back-message2 今すぐ無料ダウンロード！
+        =image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', class: "apple-done"
+        =image_tag 'google-play-badge.png', width: '153', class: "gogle-done"
+        =image_tag 'logo_red.svg', width: '36', class: "logo-done"
+.single-footer
+  = render 'signups/footer'

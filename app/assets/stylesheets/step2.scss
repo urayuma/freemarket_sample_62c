@@ -1,38 +1,7 @@
-.point2-1 {
-  @include inpoint;
-  background-color: #ea352d;
-  &::after {
-    @include after;
-    background-color: #ea352d;
-  }
-}
-.point2-2 {
-  @include inpoint;
-  background-color: #ea352d;
-  &::before {
-    @include before;
-    background-color: #ea352d;
-  }
-  &::after {
-    @include after;
-  }
-}
-.point2-3,
-.point2-4 {
-  @include inpoint;
-&::after {
-  @include after;
-}
-&::before {
-  @include before;
-}
-}
-.point2-5 {
-  @include inpoint;
-  &::before {
-    @include before;
-  }
-}
+// Place all the styles related to the registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 .single-main {
   background-color:rgb(245, 245, 245);
   display: block;
@@ -76,36 +45,20 @@ h2 {
   font-size: 16px;
 }
 
-.number_text_error {
-  height: 52px;
-  width: 325px;
-  border-radius: 4px;
-  border: 1px solid red;
-  font-size: 16px;
-}
-
 .number_message {
-  margin: 10px 0 30px 0;
   font-size: 13px;
   display: flex;
   height: 30px;
   width: 300px;
-  line-height: 1.5;
+  padding-bottom: 50px;;
 }
 .next_submit {
   background-color: rgb(234, 53, 45);
   color: #fff;
+  height: 52px;
   width: 325px;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 .number_explanation {
   font-size: 13px;
-  margin-bottom: 50px;
-}
-
-.destroy-wall {
-  height: 1px;
-  width: 100%;
 }
