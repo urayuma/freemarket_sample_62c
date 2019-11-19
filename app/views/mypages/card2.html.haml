@@ -1,0 +1,22 @@
+%body
+
+.header-a
+  = render '/homes/header'
+.contents
+  .main-mypage
+    %h2.l-single-inner_registration
+      支払い方法
+      -# = form_for @user, url: mypage_index_path, method: :get do |f|
+    .creditcard_information-add
+      .pay-way
+        .pay-way__creditcard
+          クレジットカード一覧
+        .pay-way__addcard
+          %button{class:"btn-default add_credit"}
+            .i{class: "far fa-credit-card credit-icon"}
+            クレジットカードを追加する
+
+
+  = render "sidebar"
+
+= render "/homes/footer"

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get 'home/index', to: 'homes#index'
   get 'mypage/index', to: 'mypages#index'
   get 'mypage/edit', to: 'mypages#edit'
-  get 'mypage/card', to: 'mypages#index'
+  get 'mypage/card', to: 'mypages#card'
   get 'mypage/logout', to: 'mypages#logout'
+  get 'mypage/card2', to: 'mypages#card2'
 
   resources :signups, only: [:index] do
     collection do

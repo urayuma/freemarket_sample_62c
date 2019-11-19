@@ -1,46 +1,4 @@
-.header-signup {
-  height: 128px;
-  background-color: #f5f5f5;
-  display:flex;
-  justify-content: center; /* 子要素をflexboxにより中央に配置する */
-  &__left {
-    display: inline-block;
-  }
-  &__right {
-    display: inline-block;
-    padding: 40px 0 0 44px;
-    .step-bar {
-      display: flex;
-      font-size:12px;
-      &__block {
-        display: inline-block;
-        margin-right: 40px;
-        position: relative;
-        z-index: 1;
-        .point1 {
-          @include inpoint;
-          background-color: $red;
-          &::after {
-            @include after;
-          }
-        }
-        .point2,
-        .point3,
-        .point4 {
-          @include inpoint;
-        &::after {
-          @include after;
-        }
-        &::before {
-          @include before;
-        }
-      }
-        .point5 {
-          @include inpoint;
-* {
-  padding: 0px;
-  margin: 0px;
-  .header {
+.header {
     height: 128px;
     background-color: #f5f5f5;
     display:flex;
@@ -119,6 +77,7 @@
           @include inpoint;
           &::before {
             @include before;
+          
           }
         }
       }

@@ -18,6 +18,7 @@
 @import "mypages/edit";
 @import "mypages/logout";
 @import "mypages/sidebar";
+@import "mypages/creditcard.scss";
 @import "signups/signup.scss";
 @import "signups/step1.scss";
 @import "signups/step2.scss";
@@ -31,9 +32,3 @@
 @import 'devise/sessions/new';
 @import 'devise/sessions/new';
 @import 'signups/footer.scss';
-
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-@import 'signups/step1.scss';
-@import 'addresses/new.scss';
-@import 'creditcards/new.scss'
