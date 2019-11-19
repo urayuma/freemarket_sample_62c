@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'mypage/edit', to: 'mypages#edit'
   get 'mypage/card', to: 'mypages#index'
   get 'mypage/logout', to: 'mypages#logout'
+  get 'mypage/identification', to: 'mypages#identification'
+  patch 'user_information/update'
 
   resources :signups, only: [:index] do
     collection do
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :addresses, only: %i[edit update delete] do
+  resources :addresses, only: [:edit, :update, :delete] do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'
