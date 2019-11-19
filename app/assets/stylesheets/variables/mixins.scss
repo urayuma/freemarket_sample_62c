@@ -34,3 +34,15 @@
   background: #ccc;
   right: 50%;
 }
+
+@mixin address_select {
+  height: 58px;
+  width: 500px;
+  padding: 10px 16px 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display: block;
+}

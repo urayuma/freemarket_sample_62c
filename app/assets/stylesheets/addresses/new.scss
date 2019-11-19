@@ -140,20 +140,8 @@
   display: block;
 }
 
-@mixin action {
-  height: 58px;
-  width: 500px;
-  padding: 10px 16px 8px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-  display: block;
-}
-
 #address_prefectures {
-  @include action;
+  @include address_select;
   border-radius: 4px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -191,7 +179,7 @@
 
 
 .address_submit {
-  @include action;
+  @include address_select;
   background-color: rgb(234, 53, 45);
   color: #fff;
 }
