@@ -1,28 +1,38 @@
-<<<<<<< HEAD
-=======
-%h1 Signups#step2
-%p Find me in app/views/signups/step2.html.haml
->>>>>>> 25ae976... addressコントローラーを作成
-%header.single-header
-  %h1
-    %a 画像リンク
-  %nav.progress-bar_signup-bar
-    %ol.clearfix
-      %li headerのバー
-%main.single-main
+.header-signup
+  .header-signup
+  .header-signup__left
+  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+  .header-signup__right
+    %ol.step-bar
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        会員情報
+        %br
+        %span.point2-1
+      %li.step-bar__block{style: 'color: #ea352d;'}
+        電話番号認証
+        %br
+        %span.point2-2
+      %li.step-bar__block  
+        お届け先住所入力
+        %br
+        %span.point2-3
+      %li.step-bar__block 
+        支払い方法
+        %br
+        %span.point2-4
+      %li.step-bar__block 
+        完了
+        %br
+        %span.point2-5
+.single-main
   %section.l-single-container
     %h2.l-single-inner_registration
       電話番号の確認
-<<<<<<< HEAD
     = form_for @user, url: step2_signups_path, method: :post do |f|
-=======
-    = form_for @user, url: registrations_path do |f|
->>>>>>> 25ae976... addressコントローラーを作成
       .user_phonenumber
         .field
           .number_presentment
             = f.label :"携帯電話の番号"
-<<<<<<< HEAD
           - if @user.errors.messages[:phonenumber].any?
             .number_input
             = f.text_field :phonenumber, class: "number_text_error", id: 'phonenumber_error', placeholder: '携帯電話の番号を入力'
@@ -30,17 +40,11 @@
           - else
             .number_input
               = f.text_field :phonenumber, class: "number_text", id: 'phonenumber', placeholder: '携帯電話の番号を入力'
-=======
-          .number_input
-            = f.text_field :phonenumber, class: "number_text", placeholder: '携帯電話の番号を入力'
->>>>>>> 25ae976... addressコントローラーを作成
+
           %p.number_message 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         .next_btn
           = f.submit :"次へ進む", class: "next_submit"
         %p.number_explanation ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-%footer
-<<<<<<< HEAD
-  フッター
-=======
-  フッター
->>>>>>> 25ae976... addressコントローラーを作成
+        .destroy-wall
+.single-footer
+  = render 'signups/footer'

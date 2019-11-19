@@ -1,6 +1,5 @@
 class SignupsController < ApplicationController
-  before_action :validates_step1, only: :step2
-
+  # before_action :step1_validates, only: :step2
   def step1
     @user = User.new
   end
@@ -56,6 +55,8 @@ class SignupsController < ApplicationController
       birthday_day: session[:birthday_day]
     )
   end
+
+  def done; end
 
   def create
     @user = User.new(

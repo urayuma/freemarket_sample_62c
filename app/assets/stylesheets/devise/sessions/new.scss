@@ -1,0 +1,160 @@
+.single-container{
+  width: 100%;
+  background-color:  rgb(245, 245, 245);
+}
+
+.single-header{
+  height: 128px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+.header-logo{
+  height: 49px;
+  width: 185px;
+  display: block;
+  margin: 40px 0 0 0;
+  background-image: url("fmarket_logo_red");
+  background-repeat: no-repeat;
+}
+
+
+// Main
+
+.single-main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: block;
+  background-repeat: no-repeat;
+
+
+  .login-panel{
+    width: 456px;
+    background-color: #fff;
+    margin: auto;
+
+    &__login-no-account{
+       width: 100%;
+       padding: 20px 64px;
+       border-bottom: 2px rgb(245, 245, 245) solid;
+
+      &__signup{
+        height: 42px;
+        width: 328px;
+        display: block;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        line-height: 40px;
+      }
+    }
+
+    &__login-form-inner{
+      width: 70%;
+      padding: 30px 64px;
+
+      &--email{
+        height: 50px;
+        width: 328px;
+        background: red;
+        color: #fff;
+        text-align: center;
+        line-height: center;
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 15px;
+
+      }
+
+      &--facebook{
+        height: 50px;
+        width: 328px;
+        background: #385185;
+        color: #fff;
+        text-align: center;
+        line-height: center;
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 15px;
+
+      }
+
+      &--google{
+        height: 50px;
+        width: 328px;
+        background: orange;
+        text-align: center;
+        line-height: center;
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 15px;
+
+
+      }
+    }
+
+    &__login-form-form{
+      height: 410px;
+      width: 72%;
+      padding: 40px 64px;
+
+
+      &__form-group{
+        padding-bottom: 20px;
+
+        &--iam-not-robbot{
+          height: 50px;
+          background-color: darkgray;
+          text-align: center;
+        }
+
+      }
+    }
+
+  }
+}
+
+p.has-no-account{
+  font-size: 14px;
+  text-align: center;
+
+}
+
+p.new-signup{
+  text-align: center;
+
+}
+
+input.input-data{
+  height: 48px;
+  width: 328px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+button.login-btn-red{
+  height: 50px;
+  width: 328px;
+  margin-top: 40px;
+  background-color: #ea352d;
+  color: #fff;
+  margin-bottom: 60px;
+  font-size: 15px;
+}
+
+.forgot-password-sign-in {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0099e8;
+}
