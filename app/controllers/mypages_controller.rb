@@ -5,6 +5,11 @@ class MypagesController < ApplicationController
   def edit; end
 
   def card; end
+# 下２つは消してOKです。ビュー作成時に仮置きしてました。
+# 〜〜〜〜〜〜〜〜〜〜〜
+  def card2; end
+  def card3; end
+# 〜〜〜〜〜〜〜〜〜〜〜
 
   def logout; end
 

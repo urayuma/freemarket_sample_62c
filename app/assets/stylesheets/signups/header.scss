@@ -39,6 +39,7 @@
           @include inpoint;
           &::before {
             @include before;
+          
           }
         }
       }

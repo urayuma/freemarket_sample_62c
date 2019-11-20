@@ -1,0 +1,62 @@
+.main-mypage {
+  height: 100%;
+  width: 700px;
+  box-sizing: border-box;
+  background-color: black;
+  float: right;
+  background: #fff;
+}
+  .input-text_cardnum {
+    box-sizing: border-box;
+    padding-left: 15px;  
+  }
+
+.creditcard_information-add {
+  background-color: #fff;
+  padding: 64px;
+  .pay-way {
+    background-color: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    &__creditcard {
+      font-size: 16px;
+      background-color: #fff;
+      margin-left: 135px;
+      font-weight: bold;
+    }
+    &__addcard {
+      height: 100px;
+      width: 300px;
+      .add_credit {
+        background-color: $red;
+        height: 54px;
+        width: 320px;
+        margin: 30px 0 40px 135px;
+        color: #fff;
+        font-size: 14px;
+        .credit-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+.creditcard_information-add {
+  .pay-informartion {
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+    .pay-informartion__list {
+      margin-top: 20px;
+      .delete-btn {
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        color: $red;
+        border: 1px solid $red;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+}

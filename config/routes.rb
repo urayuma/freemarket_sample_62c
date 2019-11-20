@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   get 'home/index', to: 'homes#index'
   get 'mypage/index', to: 'mypages#index'
   get 'mypage/edit', to: 'mypages#edit'
-  get 'mypage/card', to: 'mypages#index'
+  get 'mypage/card', to: 'mypages#card'
   get 'mypage/logout', to: 'mypages#logout'
-  get 'mypage/identification', to: 'mypages#identification'
-  patch 'user_information/update'
+  # 下２つのルーティングはマイページのクレジットカード登録画面の確認のためのパスです。サーバーサイドを書くときは消してOKです！
+  # 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
+  get 'mypage/card2', to: 'mypages#card2'
+  get 'mypage/card3', to: 'mypages#card3'
+  # 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
+
 
   resources :signups, only: [:index] do
     collection do
