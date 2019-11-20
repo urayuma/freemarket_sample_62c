@@ -17,7 +17,7 @@
      birthday_month: Faker::Number.number(digits: 2),
      birthday_day: Faker::Number.number(digits: 2),
      phonenumber: Faker::Number.number(digits: 9),
-     password: Faker::Number.number(digits: 8),
+     encrypted_password: Faker::Number.number(digits: 8),
      email: Faker::Internet.email,
    )
 end
