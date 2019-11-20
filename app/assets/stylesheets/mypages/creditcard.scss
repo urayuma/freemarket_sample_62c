@@ -40,3 +40,25 @@
     }
   }
 }
+.creditcard_information-add {
+  .pay-informartion {
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+    .pay-informartion__title {
+      }
+    .pay-informartion__list {
+      margin-top: 20px;
+      .delete-btn {
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        color: orange;
+        border: 1px solid orange;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'mypage/card', to: 'mypages#card'
   get 'mypage/logout', to: 'mypages#logout'
   get 'mypage/card2', to: 'mypages#card2'
+  get 'mypage/card3', to: 'mypages#card3'
 
   resources :signups, only: [:index] do
     collection do
