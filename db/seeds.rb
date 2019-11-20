@@ -6,6 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+10.times do
+  User.create(
+     nickname: Faker::JapaneseMedia::OnePiece.character,
+     lastname: Faker::Name.last_name,
+     firstname: Faker::Name.first_name,
+     lastname_kana: Faker::Name.last_name,
+     firstname_kana: Faker::Name.first_name,
+     birthday_year: Faker::Number.number(digits: 4),
+     birthday_month: Faker::Number.number(digits: 2),
+     birthday_day: Faker::Number.number(digits: 2),
+     phonenumber: Faker::Number.number(digits: 9),
+     encrypted_password: Faker::Number.number(digits: 8),
+     email: Faker::Internet.email,
+   )
+end
+
+
 lady = Category.create(name: "レディース")
 man = Category.create(name: "メンズ")
 baby = Category.create(name: "ベビー・キッズ")
