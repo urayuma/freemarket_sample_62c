@@ -17,4 +17,14 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id].to_s).children
   end
+
+  def show
+    @item = Item.find(params[:id])
+    @like = Like.find(params[:id])
+  end
+
+  def chat
+    Chat.create(text: params[:text], chat_id: params[:chat_id], user_id: current_user.id)
+  end
+
 end

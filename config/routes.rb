@@ -26,6 +26,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items do
+    resources :chats, only: [:show]
+  end
+
+
   resources :signups, only: [:index] do
     collection do
       get 'step1'
