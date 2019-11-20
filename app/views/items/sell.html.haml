@@ -1,0 +1,116 @@
+.sell-header
+  = link_to root_path, class:"sell-header__link" do
+    = image_tag 'fmarket_logo_red.svg', width: '170', class: "sell-header__link--logo"
+
+.sell-main
+  %h2.sell-head 商品の情報を入力
+  = form_for @item do |f|
+    .sell-image
+      .sell-image__wrapper
+        %label.sell-image__wrapper--subject 出品画像
+        %span.sell-image__wrapper--essential 必須
+        %p.sell-image__wrapper--caution 最大10枚までアップロードできます
+        =f.label :image do
+          .drop-area 
+            = f.file_field :image, {multipart: true, multiple: true, class:"dropzone"} #デフォルトのファイル選択が表示されますが、サーバーサイドと合わせる際に調整します。
+            .drop-area__text
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
+
+    .sell-item
+      .sell-item__form
+        %label.sell-item__form--subject 商品名
+        %span.sell-item__form--essential 必須
+        = f.text_field :name, placeholder: '商品名（必須 40文字まで）',  class: 'sell-item__form--name'
+      .sell-item__form
+        %label.sell-item__form--subject 商品の説明
+        %span.sell-item__form--essential 必須
+        = f.text_area :name, placeholder: "商品の説明（必須1,000文字以内） （色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです", rows: 5, class:'sell-item__form--explain'
+    .sell-select
+      .sell-select__title 商品の詳細
+      .select-wrapper
+        .sell-select__group
+          .category-wrapper
+            %label.select-subject カテゴリー
+            %span.select-essential 必須
+            .parent-wrapper
+              = f.collection_select :category_id , @category, :id , :name, {include_blank: "---"}, {id:'select-parent-category'}
+              .select-arrow
+                %i.fas.fa-chevron-down
+        .sell-select__group
+          %label.select-subject 商品の状態
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :usage_status , @usage_status, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+
+    .sell-select
+      .sell-select__title 配送について
+      = link_to "?", "/items/sell", class:'sell-select__link'
+      .selects-wrapper
+        .sell-select__group
+          %label.select-subject 配送料の負担
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :delivery_fee , @delivery_fee, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+        .sell-select__group
+          %label.select-subject 発送元の地域
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :delivery_area , @prefectures, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+        .sell-select__group
+          %label.select-subject 発送までの日数
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :shipping_date , @shipping_date, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+
+    .sell-price
+      .sell-price__title 販売価格(300〜9,999,999)
+      = link_to "?", "/items/sell", class:'sell-price__link'
+      .sell-price__box
+        %ul.price-form
+          %li.price-form__input
+            .price-form__input--left
+              %label.input-subject 価格
+              %span.input-essential 必須
+            .price-form__input--right
+              %span.input-chara ￥
+              = f.text_field :price, placeholder: '例）300',  class: 'input-form'
+          %li.price-form__fee
+            .price-form__fee--left
+              %label.subject-fee 販売手数料 (10%)
+            .price-form__fee--right
+              .result-fee -
+          %li.price-form__profit
+            .price-form__profit--left
+              %label.subject-profit 販売利益
+            .price-form__profit--right
+              .result-profit -
+
+    .sell-send
+      %p.sell-send__caution
+        = link_to "禁止されている出品", "/items/sell", class:'sell-send__caution--link'
+        、
+        = link_to "行為", "/items/sell", class:'sell-send__caution--link'
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        = link_to "偽ブランドの販売", "/items/sell", class:'sell-send__caution--link'
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        = link_to "加盟店規約", "/items/sell", class:'sell-send__caution--link'
+        に同意したことになります。
+      .sell-send__submit
+        = f.submit :"出品する", class:"sell-send__submit--button"
+      .sell-send__back
+        = link_to "もどる", :back, { class: "sell-send__back--button" }
+.single-footer
+  = render "/signups/footer"

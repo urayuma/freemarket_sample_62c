@@ -1,4 +1,22 @@
-// config
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require dropzone/basic
+ *= require dropzone/dropzone  
+ */
+
+
+ // config
 @import "config/reset";
 @import "config/colors";
 @import "config/font-size";
@@ -47,3 +65,18 @@
 
 //その他
 @import "shard/signups_errors";
+@import 'addresses/new.scss';
+@import 'creditcards/new.scss';
+@import 'signups/done.scss';
+@import 'signups/header.scss';
+@import 'signups/index.scss';
+@import 'addresses/new.scss';
+@import 'devise/sessions/new';
+@import 'devise/sessions/new';
+@import 'signups/footer.scss';
+@import 'signups/step1.scss';
+@import 'addresses/new.scss';
+@import 'creditcards/new.scss';
+@import "mypages/identification";
+@import "signups/signup.scss";
+@import "items/sell";
