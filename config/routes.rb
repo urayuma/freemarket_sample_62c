@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :addresses, only: %i[edit update delete] do
+  resources :addresses, only: [:edit, :update, :delete] do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'

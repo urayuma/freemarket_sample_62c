@@ -1,5 +1,5 @@
 class SignupsController < ApplicationController
-  # before_action :step1_validates, only: :step2
+
   def step1
     @user = User.new
   end
@@ -75,6 +75,7 @@ class SignupsController < ApplicationController
     )
     if @user.save
       sign_in User.find(@user.id) unless user_signed_in?
+      @user.create_user_information
       session.delete(:nickname)
       session.delete(:email)
       session.delete(:password)
@@ -94,24 +95,24 @@ class SignupsController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname, :firstname,
-                                  :lastname_kana, :firstname_kana, :birthday_year,
-                                  :birthday_month, :birthday_day, :phonenumber)
-    end
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname, :firstname,
+                                 :lastname_kana, :firstname_kana, :birthday_year,
+                                 :birthday_month, :birthday_day, :phonenumber)
+  end
 
-    # 電話番号をstep1で入力しないので空のときのバリデーションをスキップする
-    def skip_phonenumber_validate(errors)
-      errors.messages.delete(:phonenumber)
-      errors.details.delete(:phonenumber)
-    end
+  # 電話番号をstep1で入力しないので空のときのバリデーションをスキップする
+  def skip_phonenumber_validate(errors)
+    errors.messages.delete(:phonenumber)
+    errors.details.delete(:phonenumber)
+  end
 
-    # 生年月日のどれかにひとつでもバリデーションエラーがあった場合は同じエラーメッセージを表示する
-    def change_birthday_validate_message(user)
-      if user.errors.messages[:birthday_year].any? || user.errors.messages[:birthday_month].any? || user.errors.messages[:birthday_day].any?
-        user.errors.messages.delete(:birthday_year)
-        user.errors.messages.delete(:birthday_month)
-        user.errors.messages[:birthday_year] = ["生年月日は正しく入力してください"]
-      end
+  # 生年月日のどれかにひとつでもバリデーションエラーがあった場合は同じエラーメッセージを表示する
+  def change_birthday_validate_message(user)
+    if user.errors.messages[:birthday_year].any? || user.errors.messages[:birthday_month].any? || user.errors.messages[:birthday_day].any?
+      user.errors.messages.delete(:birthday_year)
+      user.errors.messages.delete(:birthday_month)
+      user.errors.messages[:birthday_year] = ["生年月日は正しく入力してください"]
     end
+  end
 end

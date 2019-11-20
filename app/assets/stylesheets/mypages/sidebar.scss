@@ -8,7 +8,6 @@
     .menu{
       &__item{
         list-style: none;
-      
         &--link{
           position: relative;
           padding: 16px;
@@ -45,6 +44,7 @@
 
     .config{
       &__item{
+        list-style: none;
         &--link{
           @extend .menu__item--link;
         }

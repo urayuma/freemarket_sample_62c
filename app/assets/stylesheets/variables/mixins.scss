@@ -14,8 +14,8 @@
 }
 @mixin after {
   position: absolute;
-  bottom: 13px;
   z-index: -1;
+  bottom: 13px;
   display: block;
   content: '';
   width: 100%;
