@@ -2,9 +2,9 @@
     .Header
         .HeaderTop
             .HeaderTop__Menu
-                .HeaderTop__Menu__header-logo
-                    .header-logo
-                    
+                = link_to root_path do
+                    .HeaderTop__Menu__header-logo
+
                 .HeaderTop__Menu__header-search
                     %form.search{action: "/jp/search/"}
                     %input.search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
@@ -20,12 +20,18 @@
                     %i.fas.fa-tag
                     ブランドから探す
             .HeaderBottom__Right
-                .HeaderBottom__Right__Menu
-                    %i.far.fa-heart
-                    いいね！一覧
-                .HeaderBottom__Right__Menu
-                    %i.far.fa-bell
-                    お知らせ
-                .HeaderBottom__Right__Menu
-                    %i.far.fa-image
-                    マイページ
+                - if user_signed_in?
+                    .HeaderBottom__Right__Menu-with-sign_in
+                        %i.far.fa-heart
+                        いいね！一覧
+                    .HeaderBottom__Right__Menu-with-sign_in
+                        %i.far.fa-bell
+                        お知らせ
+                    .HeaderBottom__Right__Menu-with-sign_in
+                        = link_to  mypage_index_path, class: "HeaderBottom__Right__Menu-with-sign_in__mypage"  do
+                            %i.far.fa-image
+                            マイページ
+                - else
+                    .HeaderBottom__Right__Menu-without-sign_in
+                        = button_to "新規会員登録", signups_path, method: :get, class: "HeaderBottom__Right__Menu-without-sign_in__sign_up"
+                        = button_to "ログイン", new_user_session_path, method: :get, class: "HeaderBottom__Right__Menu-without-sign_in__sign_in"
