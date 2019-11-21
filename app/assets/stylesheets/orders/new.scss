@@ -1,0 +1,175 @@
+.single-container {
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+}
+
+.single-header {
+  height: 128px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+  background-color: rgb(245, 245, 245);
+}
+
+.header-logo {
+  height: 49px;
+  width: 185px;
+  display: block;
+  margin: 40px 40px 0 0;
+  background-image: url("fmarket_logo_red");
+  background-repeat: no-repeat;
+}
+
+// Main
+
+.single-main {
+  width: 100%;
+  justify-content: center;
+  background-repeat: no-repeat;
+
+  .buy-panel {
+    width: 700px;
+    background-color: #fff;
+    margin: auto;
+
+    &__item-detail-inner {
+      width: 45%;
+      margin: auto;
+      margin-top: 20px;
+
+      &__about {
+        display: flex;
+
+        &__image {
+          height: 70px;
+          width: 70px;
+        }
+
+        &__name {
+          margin-left: 1rem;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+      }
+
+      &__box {
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        line-height: 100%;
+
+        &__price {
+          font-weight: bolder;
+        }
+
+        &__delivery_fee {
+          font-size: 0.8rem;
+          margin-left: 1rem;
+          color: #333333;
+        }
+      }
+
+      &__point {
+        height: 50px;
+        width: 100%;
+        background-color: #cccccc;
+        margin: auto;
+        text-align: center;
+        line-height: 50px;
+        font-size: 0.8rem;
+      }
+
+      &__pay {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bolder;
+
+        &__message {
+          font-size: 1.2rem;
+        }
+
+        &__price {
+          font-size: 1.4rem;
+        }
+      }
+
+      &__error {
+        color: red;
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      &__buy-button {
+        height: 50px;
+        width: 45%;
+        background-color: #999999;
+        color: #fff;
+        display: block;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        line-height: 50px;
+        font-size: 0.9rem;
+        font-weight: bolder;
+      }
+
+      &__shipping {
+        font-size: 0.9rem;
+        font-weight: bolder;
+        margin-bottom: 0.8rem;
+      }
+
+      &__postcode,
+      &__address,
+      &__buyer {
+        font-size: 0.9rem;
+        font-weight: lighter;
+        color: #222222;
+        margin-bottom: 0.2rem;
+      }
+
+      &__link {
+        .go-to_change {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          color: rgb(0, 149, 238);
+          font-size: 0.9rem;
+
+          &__messaege {
+            display: inline-block;
+          }
+        }
+      }
+
+      &__pay-way {
+        font-size: 0.9rem;
+        font-weight: bolder;
+        margin-bottom: 1.3rem;
+      }
+
+      &__pay-detail {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+p.buy-panel-title__order {
+  font-size: 22px;
+  font-weight: bolder;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px rgb(245, 245, 245) solid;
+}
+
+.buy-panel__item-detail-inner-order1 {
+  border-top: 2px rgb(245, 245, 245) solid;
+  padding: 1rem 0 2rem 0;
+}
+
+// Footer
