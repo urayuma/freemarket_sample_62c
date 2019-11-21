@@ -1,60 +1,33 @@
 
--# このファイルはクレジットカードを登録するための画面です
-
-%body
-
+-# このファイルはクレジットカードを持っていなかった場合の画面です
 .header-a
   = render '/homes/header'
 .contents
   .main-mypage
     %h2.l-single-inner_registration
-      クレジットカード情報入力
+      支払い方法
       -# = form_for @user, url: mypage_index_path, method: :get do |f|
-    - required = '必須'
-    .creditcard_information
-      .field
-        .field-label
-          -# = f.label :"カード番号"
-          %h4 カード番号
-          %span.min #{required}
-          %input.input-text_cardnum{name:  "cardnumber", placeholder: "半角数字のみ", value: ""}/
-          %div
-            =image_tag "visa.svg", height: '20', width: '40'
-            =image_tag "master-card.svg", height: '20', width: '40'
-            =image_tag "saison-card.svg", height: '20', width: '35'
-            =image_tag "jcb.svg", height: '20', width: '40'
-            =image_tag "american_express.svg", height: '20', width: '20'
-            =image_tag "diners_logo_white.gif", height: '20', width: '30'
-            =image_tag "discover.svg", height: '20', width: '40'
-        -# .field-input
-          -# = f.text_field : ,placeholder: '半角数字のみ'
-      .field-creditcard
-        .field-label
-          %h4 有効期限
-          -# = f.label :"有効期限"
-          %span.min #{required}
-          -# .field-input
-        .field-input-expiring
-          %input.input-text{name: "expiring date", placeholder: "--", value: ""}/
-          -# = f.text_field :
-          -# spanはform_for切り替え時にセレクトの横に移動すると思います
-          %span 月
-          %input.input-text{name: "expiring date", placeholder: "--", value: ""}/
-          -# = f.text_field :
-          -# spanはform_for切り替え時にセレクトの横に移動すると思います
-          %span 年
-      .field-creditcard
-        .field-label
-          %h4 セキュリティコード
-          -# = f.label :"セキュリティコード"
-          %span.min #{required}
-          %input.input-text_cardnum{name: "security code", placeholder: "カード背面４桁もしくは３桁の番号", value: ""}/
-        -# .field-input
-          -# = f.text_field : ,placeholder: 'カード背面４桁もしくは３桁の番号'
-      .field-creditcard
-        .firld-input
-          %button.btn-default.btn-red 次へ進む
-          -# = f.submit :"次へ進む", class: "next_submit"
+    .creditcard_information-add
+      .pay-way
+        .pay-way__creditcard
+          クレジットカード一覧
+        .pay-way__addcard
+          = button_to card_new_mypage_index_path, method: :get, class: "btn-default add_credit" do
+            .i{class: "far fa-credit-card credit-icon"}
+            クレジットカードを追加する
+      %br
+      %h1 クレジットカードの有無で分岐させる
+      %br
+      .pay-informartion
+        .pay-informartion__title
+          クレジットカード一覧
+        .pay-informartion__list
+          =image_tag "visa.svg", height: '20', width: '40', class: "list-card-sort"
+          .list-card-number ************1234
+          .list-card-expiration 11/19
+          .delete-btn-zone
+            %button{class:"btn-default delete-btn"}  削除する
+
 
   = render "sidebar"
 

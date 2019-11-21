@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'homes#index'
   get 'home/index', to: 'homes#index'
-  get 'mypage/index', to: 'mypages#index'
-  get 'mypage/edit', to: 'mypages#edit'
-  get 'mypage/card', to: 'mypages#card'
-  get 'mypage/logout', to: 'mypages#logout'
-  # 下２つのルーティングはマイページのクレジットカード登録画面の確認のためのパスです。サーバーサイドを書くときは消してOKです！
-  # 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
-  get 'mypage/card2', to: 'mypages#card2'
-  get 'mypage/card3', to: 'mypages#card3'
-  # 〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
+
+  resources :mypage, only: [:index] do
+    collection do
+      get '/',    to: 'mypages#index'
+      get 'edit', to: 'mypages#edit'
+      get 'card', to: 'mypages#card'
+      get 'card/new', to: 'mypages#card_new'
+      get 'logout', to: 'mypages#logout'
+      get 'identification', to: 'mypages#identification'
+    end
+  end
 
   resources :signups, only: [:index] do
     collection do
