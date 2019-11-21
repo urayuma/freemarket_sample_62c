@@ -7,6 +7,7 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
+    @address[:home_call_num] = nil if @address[:home_call_num].empty?
     if @address.save
       redirect_to new_creditcard_path
     else
