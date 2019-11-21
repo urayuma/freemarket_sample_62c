@@ -1,9 +1,9 @@
-.single-container{
+.single-container {
   width: 100%;
-  background-color:  rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
 }
 
-.single-header{
+.single-header {
   height: 128px;
   width: 100%;
   display: flex;
@@ -12,8 +12,7 @@
   background-color: rgb(245, 245, 245);
 }
 
-
-.header-logo{
+.header-logo {
   height: 49px;
   width: 185px;
   display: block;
@@ -22,77 +21,105 @@
   background-repeat: no-repeat;
 }
 
-
 // Main
 
-.single-main{
+.single-main {
   width: 100%;
   display: flex;
   justify-content: center;
   display: block;
   background-repeat: no-repeat;
 
-
-  .login2-panel{
+  .login2-panel {
     width: 700px;
     background-color: #fff;
-    margin: 0 360px;
+    margin: auto;
+    margin-bottom: 10px;
 
-
-
-    &__login-form-inner{
+    &__login-form-inner {
       width: 100%;
-      padding: 40px 40px 60px;
-      margin: 0 140px;
+      margin-top: 20px;
 
-      &--email{
+      &--email {
         height: 50px;
         width: 328px;
         background: red;
         color: #fff;
-        text-align: center;
-        line-height: center;
         display: block;
-        font-size: 15px;
-        margin: 15px;
+        margin: auto;
+        margin-bottom: 10px;
+        color: #fff;
+        position: relative;
+
+        .far.fa-envelope {
+          font-size: 25px;
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          line-height: 50px;
+          text-align: center;
+        }
       }
 
-      &--facebook{
+      &--facebook {
         height: 50px;
         width: 328px;
         background: #385185;
-        color: #fff;
-        text-align: center;
-        line-height: center;
         display: block;
-        font-size: 15px;
-        margin: 15px;
+        margin: auto;
+        margin-bottom: 10px;
+        color: #fff;
+        position: relative;
 
+        .fab.fa-facebook-square {
+          font-size: 25px;
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          line-height: 50px;
+          text-align: center;
+        }
       }
 
-      &--google{
+      &--google {
         height: 50px;
         width: 328px;
-        background: orange;
-        text-align: center;
-        line-height: center;
-        margin-top: 10px;
+        background: #fff;
+        border: solid 1px #979797;
         display: block;
-        font-size: 15px;
-        margin: 15px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
 
-
+        .fab.fa-google {
+          font-size: 25px;
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          line-height: 50px;
+          color: #333;
+          text-align: center;
+        }
       }
     }
   }
 }
 
-p.login2-panel-title{
+p.login2-panel-title {
   font-size: 22px;
   padding: 30px;
   text-align: center;
   border-bottom: 2px rgb(245, 245, 245) solid;
 }
-
 
 // Footer

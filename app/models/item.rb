@@ -6,5 +6,4 @@ class Item < ApplicationRecord
   has_one :brand
   has_one :order
   belongs_to :category
-
 end

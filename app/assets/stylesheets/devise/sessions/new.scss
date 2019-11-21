@@ -1,19 +1,16 @@
-.single-container{
+.single-container {
   width: 100%;
-  background-color:  rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
 }
 
-.single-header{
+.single-header {
   height: 128px;
   width: 100%;
   display: flex;
   justify-content: center;
-
-
 }
 
-
-.header-logo{
+.header-logo {
   height: 49px;
   width: 185px;
   display: block;
@@ -22,28 +19,26 @@
   background-repeat: no-repeat;
 }
 
-
 // Main
 
-.single-main{
+.single-main {
   width: 100%;
   display: flex;
   justify-content: center;
   display: block;
   background-repeat: no-repeat;
 
-
-  .login-panel{
+  .login-panel {
     width: 456px;
     background-color: #fff;
     margin: auto;
 
-    &__login-no-account{
-       width: 100%;
-       padding: 20px 64px;
-       border-bottom: 2px rgb(245, 245, 245) solid;
+    &__login-no-account {
+      width: 100%;
+      padding: 20px 64px;
+      border-bottom: 2px rgb(245, 245, 245) solid;
 
-      &__signup{
+      &__signup {
         height: 42px;
         width: 328px;
         display: block;
@@ -52,86 +47,89 @@
         background: #0099e8;
         color: #fff;
         line-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .new-signup {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
 
-    &__login-form-inner{
-      width: 70%;
-      padding: 30px 64px;
+    &__login-form-inner {
+      width: 100%;
+      margin-top: 10px;
 
-      &--email{
-        height: 50px;
-        width: 328px;
-        background: red;
-        color: #fff;
-        text-align: center;
-        line-height: center;
-        margin-top: 10px;
-        display: inline-block;
-        font-size: 15px;
-
-      }
-
-      &--facebook{
+      &--facebook {
         height: 50px;
         width: 328px;
         background: #385185;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
         color: #fff;
-        text-align: center;
-        line-height: center;
-        margin-top: 10px;
-        display: inline-block;
-        font-size: 15px;
+        position: relative;
 
+        .fab.fa-facebook-square {
+          font-size: 25px;
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          line-height: 50px;
+          text-align: center;
+        }
       }
 
-      &--google{
+      &--google {
         height: 50px;
         width: 328px;
-        background: orange;
-        text-align: center;
-        line-height: center;
-        margin-top: 10px;
-        display: inline-block;
-        font-size: 15px;
+        background: #fff;
+        border: solid 1px #979797;
+        display: block;
+        margin: auto;
+        position: relative;
 
-
+        .fab.fa-google {
+          font-size: 25px;
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          line-height: 50px;
+          color: #333;
+          text-align: center;
+        }
       }
     }
 
-    &__login-form-form{
+    &__login-form-form {
       height: 410px;
       width: 72%;
       padding: 40px 64px;
 
-
-      &__form-group{
+      &__form-group {
         padding-bottom: 20px;
-
-        &--iam-not-robbot{
-          height: 50px;
-          background-color: darkgray;
-          text-align: center;
-        }
-
       }
     }
-
   }
 }
 
-p.has-no-account{
+p.has-no-account {
   font-size: 14px;
   text-align: center;
-
 }
 
-p.new-signup{
+p.new-signup {
   text-align: center;
-
 }
 
-input.input-data{
+input.input-data {
   height: 48px;
   width: 328px;
   border-radius: 4px;
@@ -143,13 +141,12 @@ input.input-data{
   padding-left: 10px;
 }
 
-button.login-btn-red{
+.login-btn-red {
   height: 50px;
   width: 328px;
-  margin-top: 40px;
   background-color: #ea352d;
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 
