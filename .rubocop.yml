@@ -46,3 +46,7 @@ Metrics/MethodLength:
 # Use nested module/class definitions instead of compact style.
 Style/ClassAndModuleChildren:
   Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false

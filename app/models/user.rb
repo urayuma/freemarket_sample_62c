@@ -39,48 +39,38 @@ class User < ApplicationRecord
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    user = User.where(email: auth.info.email).first
 
     # sns_credentialsが登録されている
-    if snscredential.present?
-      user = User.where(email: auth.info.email).first
-
-      # userが登録されていない
-      unless user.present?
-        user = User.new(
-          nickname: auth.info.name,
-          email: auth.info.email
-        )
-      end
-      sns = snscredential
-      { user: user, sns: sns } # メソッドを使ったときにハッシュで代入するため info = User.find_oauth(auth)
+    # userが登録されていない
+    if snscredential.present? && user.blank?
+      { user: User.new(
+        nickname: auth.info.name,
+        email: auth.info.email
+      ),
+        sns: snscredential }
 
     # sns_credentialsが登録されていない
-    else
-      user = User.where(email: auth.info.email).first
-
-      # userが登録されている
-      if user.present?
-        sns = SnsCredential.create(
+    # userが登録されている
+    elsif snscredential.blank? && user.present?
+      { user: user,
+        sns: SnsCredential.create(
           uid: uid,
           provider: provider,
           user_id: user.id
-        )
+        ) }
 
-        { user: user, sns: sns }
-
-      # userが登録されていない
-      else
-        user = User.new(
-          nickname: auth.info.name,
-          email: auth.info.email
-        )
-        sns = SnsCredential.new(
+    # sns_credentialsが登録されていない
+    # userが登録されていない
+    else
+      { user: User.new(
+        nickname: auth.info.name,
+        email: auth.info.email
+      ),
+        sns: SnsCredential.new(
           uid: uid,
           provider: provider
-        )
-
-        { user: user, sns: sns }
-      end
+        ) }
     end
   end
 end
