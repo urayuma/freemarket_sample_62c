@@ -31,4 +31,9 @@ Rails.application.routes.draw do
   end
   resources :addresses, only: %i[new create]
   resources :creditcards, only: %i[new create]
+  resources :order, only: %i[index] do
+    member do
+      get '/buy', to: 'orders#new'
+    end
+  end
 end
