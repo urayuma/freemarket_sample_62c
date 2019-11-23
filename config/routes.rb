@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, skip: %i[sessions password registrations],
+                     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  as :user do
+    get 'login', to: 'devise/sessions#new', as: :new_user_session
+    post 'login', to: 'devise/sessions#create', as: :user_session
+    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
   root 'homes#index'
   get 'home/index', to: 'homes#index'
 
@@ -29,7 +35,6 @@ Rails.application.routes.draw do
       post "/", to: 'addresses#create'
     end
   end
-  resources :addresses, only: %i[new create]
   resources :creditcards, only: %i[new create]
   resources :order, only: %i[index] do
     member do
