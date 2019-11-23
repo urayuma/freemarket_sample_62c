@@ -9,7 +9,7 @@ describe UserInformation do
 
     it "user_idが既にある場合、登録できないこと" do
       user = create(:user)
-      user_information = create(:user_information, user_id: user.id)
+      create(:user_information, user_id: user.id)
       user_information_another = build(:user_information, user_id: user.id)
       user_information_another.valid?
       expect(user_information_another.errors[:user_id]).to include("はすでに存在します")

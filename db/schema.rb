@@ -100,15 +100,6 @@ ActiveRecord::Schema.define(version: 2019_11_19_054639) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "user_evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "rate", null: false
-    t.bigint "order_id", null: false
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_user_evaluations_on_order_id"
-  end
-
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -116,6 +107,15 @@ ActiveRecord::Schema.define(version: 2019_11_19_054639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "user_evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "rate", null: false
+    t.bigint "order_id", null: false
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_user_evaluations_on_order_id"
   end
 
   create_table "user_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_054639) do
   add_foreign_key "likes", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
-  add_foreign_key "user_evaluations", "orders"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "user_evaluations", "orders"
   add_foreign_key "user_informations", "users"
 end

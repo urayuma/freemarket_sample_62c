@@ -2,15 +2,17 @@ class SignupsController < ApplicationController
   before_action :authenticate_user!, only: :done
 
   def index
+    delete_session # ユーザ登録を途中でやめたときのsessionを削除するために
     redirect_to root_path if user_signed_in?
   end
 
   def step1
+    redirect_to signups_path if session[:lastname].present?
     @user = if session[:password_confirmation]
               User.new(
                 nickname: session[:nickname],
                 email: session[:email],
-                password: session[:password_confirmation]
+                password_confirmation: session[:password_confirmation]
               )
             else
               User.new
@@ -18,12 +20,15 @@ class SignupsController < ApplicationController
   end
 
   def step1_validates
-    # step2にデータを渡すためにsessionに入れる
-    create_session(user_params)
-    set_user_with_session
+    @user = if session[:password_confirmation].present?
+              set_user_when_sns(user_params)
+            else
+              set_user_when_email(user_params)
+            end
     @user.valid?
     skip_phonenumber_validate(@user.errors)
     if verify_recaptcha(model: @user, message: "選択してください") && @user.errors.messages.blank? && @user.errors.details.blank?
+      create_session(user_params)
       redirect_to step2_signups_path
     else
       @user.errors.messages[:birthday_day] = change_birthday_validate_message(@user)
@@ -32,6 +37,7 @@ class SignupsController < ApplicationController
   end
 
   def step2
+    redirect_to signups_path if session[:lastname].blank?
     @user = User.new
   end
 
@@ -95,6 +101,39 @@ class SignupsController < ApplicationController
     )
   end
 
+  def set_user_when_sns(user_params)
+    session[:email] = user_params[:email] unless session[:email]
+    User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password_confirmation],
+      password_confirmation: session[:password_confirmation],
+      lastname: user_params[:lastname],
+      firstname: user_params[:firstname],
+      lastname_kana: user_params[:lastname_kana],
+      firstname_kana: user_params[:firstname_kana],
+      birthday_year: user_params[:birthday_year],
+      birthday_month: user_params[:birthday_month],
+      birthday_day: user_params[:birthday_day]
+    )
+  end
+
+  def set_user_when_email(user_params)
+    User.new(
+      nickname: user_params[:nickname],
+      email: user_params[:email],
+      password: user_params[:password_confirmation],
+      password_confirmation: user_params[:password_confirmation],
+      lastname: user_params[:lastname],
+      firstname: user_params[:firstname],
+      lastname_kana: user_params[:lastname_kana],
+      firstname_kana: user_params[:firstname_kana],
+      birthday_year: user_params[:birthday_year],
+      birthday_month: user_params[:birthday_month],
+      birthday_day: user_params[:birthday_day]
+    )
+  end
+
   # 電話番号をstep1で入力しないので空のときのバリデーションをスキップする
   def skip_phonenumber_validate(errors)
     errors.messages.delete(:phonenumber)
@@ -106,7 +145,7 @@ class SignupsController < ApplicationController
     if user.errors.messages[:birthday_year].any? || user.errors.messages[:birthday_month].any? || user.errors.messages[:birthday_day].any?
       user.errors.messages.delete(:birthday_year)
       user.errors.messages.delete(:birthday_month)
-      user.errors.messages[:birthday_year] = ["生年月日は正しく入力してください"]
+      user.errors.messages[:birthday_day] = ["生年月日は正しく入力してください"]
     end
   end
 
