@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       get 'card/new', to: 'mypages#card_new'
       get 'logout', to: 'mypages#logout'
       get 'identification', to: 'mypages#identification'
+      get 'listings/listing/', to: 'mypages#listing'
+      get 'listings/in_progress/', to: 'mypages#in_progress'
+      get 'listings/completed/', to: 'mypages#completed'
     end
   end
 

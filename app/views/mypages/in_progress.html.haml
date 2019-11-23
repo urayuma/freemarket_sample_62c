@@ -1,0 +1,13 @@
+%body
+  = render '/homes/header'
+  .main
+    .mypage-container__listings
+
+      .listings-product
+        出品した商品
+
+      = render 'listings', { url: @url }
+
+    = render "sidebar"
+
+  = render "/homes/footer"
