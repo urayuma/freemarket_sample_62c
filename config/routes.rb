@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       get 'listings/listing/', to: 'mypages#listing'
       get 'listings/in_progress/', to: 'mypages#in_progress'
       get 'listings/completed/', to: 'mypages#completed'
+      get 'purchase', to: 'mypages#purchase'
+      get 'purchased', to: 'mypages#purchased'
     end
   end
 
