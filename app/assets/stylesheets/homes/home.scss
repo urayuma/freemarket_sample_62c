@@ -161,7 +161,6 @@ img.footer-logo {
   width: 100%;
   background-color: darksalmon;
   text-align: center;
-  // background-image: url("https://image.shutterstock.com/image-vector/pop-art-superhero-young-handsome-260nw-620435939.jpg");
   background-image: url("https://www.haikei-free.com/dataimg/purple0119.png");
 
   background-size: inherit;
@@ -174,13 +173,26 @@ img.footer-logo {
   height: 1200px;
   width: 75%;
 
-  .MainMenu {
-    &__FavoriteItems {
-      height: 280px;
-      background-color: #ffbf1f;
-      width: 100%;
-      margin-left: 153px;
-      margin-top: 30px;
+.MainMenu{
+
+  &__FavoriteItems{
+    height: 280px;
+    background-color: #ffbf1f;
+    width: 100%;
+    margin-left: 153px;
+    margin-top: 30px;
+
+    &__Header{
+      height: 50px;
+      font-weight: 600;
+      line-height: 1.4em;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+    }
+
 
       &__Header {
         height: 50px;
@@ -194,12 +206,8 @@ img.footer-logo {
         padding: 10px;
       }
 
-      &__Body {
-        &__Items {
-          &__All {
-            &__List {
-              padding: 30px;
-              float: left;
+          &__List{
+            padding: 30px;
 
               &__image {
               }
@@ -230,9 +238,8 @@ img.footer-logo {
             padding: 10px;
             margin: 10px;
 
-            float: left;
-            margin-top: 20px;
-            margin-left: 50px;
+          margin-top: 20px;
+          margin-left: 50px;
 
             text-align: center;
             background-color: #dddddd;
@@ -241,46 +248,55 @@ img.footer-logo {
         }
       }
     }
+  }
 
-    &__CategoryItems {
-      height: 400px;
-      background-color: #000000;
-      width: 100%;
-      margin-left: 153px;
+  &__CategoryItems{
+    height: 400px;
+    background-color: #000000;
+    width: 100%;
+    margin-left: 153px;
 
-      &__Header {
-        display: flex;
-        font-weight: 600;
-        line-height: 1.4em;
-        margin: 0;
-        padding: 0;
+    &__Header{
+      display: flex;
+      font-weight: 600;
+      line-height: 1.4em;
+      margin: 0;
 
-        height: 50px;
-        justify-content: space-between;
-        padding: 15px;
-      }
+      height: 50px;
+      justify-content: space-between;
+      padding: 15px;
 
-      &__Body {
-        &__Items {
-          &__All {
-            &__List {
-              height: 300px;
-              width: 250px;
-              padding: 10px;
-              float: left;
 
-              &__image {
-                width: 200px;
-              }
-            }
+    }
+
+    &__Body{
+    
+      &__Items{
+        
+
+      
+        &__All{
+          height:300px;
+          width: 100%;
+          
+
+          &__List{
+            padding: 10px, 16px, 0, 16px;
+            display: flex;
+            
+  
           }
         }
       }
+    }
 
-      h3.category-item-title {
-        font-size: 24px;
-        color: #dddddd;
-      }
+
+h3.category-item-title{
+  font-size: 24px;
+  color: #dddddd;
+}
+
+
 
       figure.body-item {
       }
@@ -295,9 +311,9 @@ img.footer-logo {
         &__All {
           height: 40px;
           width: 100%;
-          float: left;
-
-          &__list {
+  
+          &__list{
+          
             display: inline-block;
             font-size: 14px;
             height: 32px;
@@ -312,6 +328,27 @@ img.footer-logo {
           }
         }
       }
+  }
+  
+
+  &__BrandItems{
+    height: 400px;
+    background-color: #000000;
+    width: 100%;
+    margin-left: 153px;
+    margin-bottom: 50px;
+
+    &__Header{
+      display: flex;
+      font-weight: 600;
+      line-height: 1.4em;
+      margin: 0;
+
+      height: 50px;
+      justify-content: space-between;
+      padding: 15px;
+
+
     }
 
     &__BrandItems {
@@ -321,17 +358,17 @@ img.footer-logo {
       margin-left: 153px;
       margin-bottom: 50px;
 
-      &__Header {
-        display: flex;
-        font-weight: 600;
-        line-height: 1.4em;
-        margin: 0;
-        padding: 0;
+    
+      &__Items{
 
-        height: 50px;
-        justify-content: space-between;
-        padding: 15px;
-      }
+      
+        &__All{
+          height: 300px;
+          width: 100%;
+
+          &__List{
+            padding: 10px, 16px, 0, 16px;
+            display: flex;
 
       &__Body {
         &__Items {
@@ -351,7 +388,9 @@ img.footer-logo {
       }
     }
   }
+  
 }
+
 
 h3.brand-item-title {
   font-size: 24px;
@@ -363,42 +402,25 @@ p.show-detail {
   color: #dddddd;
 }
 
-figcaption {
-  display: block;
+
+figcaption{
   height: 50px;
   width: 200px;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
+  margin: 10px;
+  position: absolute;
   background-color: white;
   border-style: ridge;
 }
 
-span.body-item-pricetag {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 0 14px 14px 0;
-  bottom: 8px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #fff;
-  display: inline-flex;
-  font-size: 17px;
-  height: 32px;
-  height: 28px;
-  letter-spacing: 0.02em;
-  margin: 0;
-  padding: 0 12px;
-  position: absolute;
-  z-index: 2;
-}
 
-img.body-item-image {
-  display: block;
+img.body-item-image{
+  display: flex;
   height: 230px;
   width: 200px;
   border-style: groove;
-  position: relative;
+  background-size: cover;
+  margin: 10px;
+
 }
 
 img.favorite-item-image {
@@ -406,7 +428,9 @@ img.favorite-item-image {
   height: 150px;
   width: 180px;
   border-style: outset;
-  position: relative;
+  float: left;
+  background-size: cover;
+  margin: 10px;
 }
 
 h2.category-title {
@@ -415,8 +439,8 @@ h2.category-title {
   padding-top: 20px;
 }
 
-a.category-list {
-  display: inline-block;
+
+a.category-list{
   display: flex;
   justify-content: center;
 }

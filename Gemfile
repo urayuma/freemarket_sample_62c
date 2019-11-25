@@ -98,3 +98,6 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem 'ancestry'
 gem 'active_hash'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+gem 'carrierwave'
+gem 'kaminari', '~> 0.17.0'
