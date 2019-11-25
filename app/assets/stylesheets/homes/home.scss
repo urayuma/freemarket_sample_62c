@@ -8,12 +8,12 @@
 }
 
 .header-toppage {
-  height: 100px;
+  height: 10rem;
   width: 100%;
-  padding: 8px, 153px;
+  padding: 1rem 15rem;
 
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0 0.2rem 0.4rem;
   position: relative;
   z-index: 1;
 }
@@ -24,37 +24,36 @@
 
 
   .HeaderTop{
-      height: 40px;
-      width: 75%;
+      height: 5rem;
+      width: 95%;
       position: relative;
 
       &__Menu{
         display: flex;
-        margin-top: 10px;
 
         &__header-logo{
-          height: 45px;
-          width: 180px;
-          padding: 5px;
+          height: 4.5rem;
+          width: 18rem;
+          padding: 0.5rem;
           background-image: url("fmarket_logo_red");
           background-repeat: no-repeat;
           position: absolute;
         }
 
         &__header-search {
-          width: 750px;
-          margin-left: 270px;
+          width: 75rem;
+          margin-left: 27rem;
           background-color: rgb(245, 245, 245);
 
-          font-size: 16px;
-          height: 40px;
+          font-size: 1.6rem;
+          height: 4rem;
           line-height: 2.4em;
           position: absolute;
-          border-width: 1px;
+          border-width: 0.1rem;
           border-style: solid;
           border-color: rgb(204, 204, 204);
           border-image: initial;
-          border-radius: 4px;
+          border-radius: 0.4rem;
           outline: none;
           transition: all 0.3s ease-out 0s;
         }
@@ -66,49 +65,49 @@ input.search{
   font-family: inherit;
   border: none;
   background-color: #f5f5f5;
-  padding-left: 10px;
+  padding-left: 1rem;
 }
 
 button.search-logo {
   float: right;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   border-color: none;
   background-color: #f5f5f5;
 }
 
 
   .HeaderBottom {
-    height: 50px;
+    height: 5rem;
     width: 75%;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 1rem;
     bottom: 0;
     position: absolute;
 
     &__Left {
       &__genre_search {
         display: block;
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 600;
-        line-height: 36px;
+        line-height: 2rem;
         white-space: nowrap;
         float: left;
-        padding-right: 20px;
-        padding-top: 10px;
+        padding-right: 2rem;
+        padding-top: 2rem;
       }
     }
 
     &__Right {
-      margin-right: 220px;
+      margin: 0 ;
       &__Menu-with-sign_in {
         display: inline-block;
         align-items: center;
-        font-size: 14px;
-        height: 32px;
-        padding-right: 30px;
-        padding-top: 20px;
+        font-size: 1.4rem;
+        height: 2rem;
+        padding-right: 3rem;
+        padding-top: 2rem;
         transform: scale(1);
         transition: all 0.3s ease-out 0s;
 
@@ -120,33 +119,32 @@ button.search-logo {
 
       &__Menu-without-sign_in {
         display: flex;
-        margin-right: 240px;
-        margin-top: 10px;
+        margin-top: 1rem;
         &__sign_up {
           background-color: rgb(234, 53, 45);
           color: rgb(255, 255, 255);
           display: block;
-          font-size: 14px;
-          border-width: 1px;
+          font-size: 1.4rem;
+          border-width: 0.1rem;
           border-style: solid;
           border-color: rgb(234, 53, 45);
           border-image: initial;
-          border-radius: 4px;
-          padding: 8px 10px;
+          border-radius: 0.4rem;
+          padding: 0.8rem 1rem;
         }
 
         &__sign_in {
           background-color: rgb(255, 255, 255);
           color: rgb(0, 149, 238);
           display: block;
-          font-size: 14px;
-          border-width: 1px;
+          font-size: 1.4rem;
+          border-width: 0.1rem;
           border-style: solid;
           border-color: rgb(0, 149, 238);
           border-image: initial;
-          border-radius: 4px;
-          padding: 8px 10px;
-          margin-left: 10px;
+          border-radius: 0.4rem;
+          padding: 0.8rem 1rem;
+          margin-left: 1rem;
         }
       }
     }
@@ -158,7 +156,7 @@ button.search-logo {
 
 
 .Slide-menu {
-  height: 250px;
+  height: 25rem;
   width: 100%;
   background-color: darksalmon;
   text-align: center;
@@ -178,20 +176,20 @@ button.search-logo {
 .MainMenu{
 
   &__FavoriteItems{
-    height: 280px;
+    height: 28rem;
     background-color: #ffbf1f;
     width: 100%;
-    margin-left: 153px;
-    margin-top: 30px;
+    margin-left: 15.3rem;
+    margin-top: 3rem;
 
       &__Header {
-        height: 50px;
+        height: 5rem;
         font-weight: 600;
-        line-height: 1.4em;
+        line-height: 1.4rem;
         margin: 0;
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: 1rem;
       }
 
       &__Body{
@@ -200,7 +198,7 @@ button.search-logo {
           &__All{
   
             &__List{
-              padding: 30px;
+              padding: 3rem;
   
               &__image{
               }
@@ -214,32 +212,32 @@ button.search-logo {
     
 
   &__CategoryLists {
-      height: 171px;
+      height: 17.1rem;
       width: 100%;
       background-color: rgb(255, 255, 255);
-      margin-left: 153px;
+      margin-left: 15.3rem;
 
       &__List {
         &__All {
-          height: 40px;
+          height: 4rem;
           width: 100%;
           align-items: center;
 
           &__list {
             display: block;
-            font-size: 14px;
-            height: 32px;
-            width: 180px;
+            font-size: 1.4rem;
+            height: 3.2rem;
+            width: 18rem;
 
-            padding: 10px;
-            margin: 10px;
+            padding: 1rem;
+            margin: 1rem;
 
-            margin-top: 20px;
-            margin-left: 50px;
+            margin-top: 2rem;
+            margin-left: 5rem;
 
             text-align: center;
             background-color: #dddddd;
-            border-radius: 20px;
+            border-radius: 2rem;
           }
         }
       }
@@ -247,18 +245,18 @@ button.search-logo {
   
 
   &__CategoryItems{
-    height: 400px;
+    height: 40rem;
     background-color: #000000;
     width: 100%;
-    margin-left: 153px;
+    margin-left: 15.3rem;
 
     &__Header{
       display: flex;
       font-weight: 600;
-      line-height: 1.4em;
+      line-height: 1.4rem;
       margin: 0;
 
-      height: 50px;
+      height: 5rem;
       justify-content: space-between;
       padding: 15px;
 
@@ -270,12 +268,12 @@ button.search-logo {
       &__Items{
         
         &__All{
-          height:300px;
+          height:30rem;
           width: 100%;
           
 
           &__List{
-            padding: 10px, 16px, 0, 16px;
+            padding: 1rem, 1.6rem, 0, 1.6rem;
             display: flex;
             
   
@@ -287,7 +285,7 @@ button.search-logo {
 
 
 h3.category-item-title{
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #dddddd;
 }
 
@@ -296,29 +294,29 @@ h3.category-item-title{
       
     
     &__BrandLists {
-      height: 171px;
+      height: 17.1rem;
       width: 100%;
       background-color: rgb(255, 255, 255);
-      margin-left: 153px;
+      margin-left: 15.3rem;
 
       &__List {
         &__All {
-          height: 40px;
+          height: 4rem;
           width: 100%;
   
           &__list{
           
             display: inline-block;
-            font-size: 14px;
-            height: 32px;
+            font-size: 1.4rem;
+            height: 3.2rem;
 
-            padding: 10px;
+            padding: 1rem;
 
-            margin-top: 20px;
-            margin-left: 120px;
+            margin-top: 2rem;
+            margin-left: 12rem;
 
             background-color: #dddddd;
-            border-radius: 20px;
+            border-radius: 2rem;
           }
         }
       }
@@ -326,21 +324,21 @@ h3.category-item-title{
   
 
   &__BrandItems{
-    height: 400px;
+    height: 40rem;
     background-color: #000000;
     width: 100%;
-    margin-left: 153px;
-    margin-bottom: 50px;
+    margin-left: 15.3rem;
+    margin-bottom: 5rem;
 
     &__Header{
       display: flex;
       font-weight: 600;
-      line-height: 1.4em;
+      line-height: 1.4rem;
       margin: 0;
 
-      height: 50px;
+      height: 5rem;
       justify-content: space-between;
-      padding: 15px;
+      padding: 1.5rem;
 
     }
 
@@ -350,11 +348,11 @@ h3.category-item-title{
 
       
         &__All{
-          height: 300px;
+          height: 30rem;
           width: 100%;
 
           &__List{
-            padding: 10px, 16px, 0, 16px;
+            padding: 1rem 1.6rem 0 1.6rem;
             display: flex;
 
             }
@@ -368,7 +366,7 @@ h3.category-item-title{
 
 
 h3.brand-item-title {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #dddddd;
 }
 
@@ -379,9 +377,9 @@ p.show-detail {
 
 
 figcaption{
-  height: 50px;
-  width: 200px;
-  margin: 10px;
+  height: 5rem;
+  width: 20rem;
+  margin: 1rem;
   position: absolute;
   background-color: white;
   border-style: ridge;
@@ -390,28 +388,28 @@ figcaption{
 
 img.body-item-image{
   display: flex;
-  height: 230px;
-  width: 200px;
+  height: 23rem;
+  width: 20rem;
   border-style: groove;
   background-size: cover;
-  margin: 10px;
+  margin: 1rem;
 
 }
 
 img.favorite-item-image {
   display: block;
-  height: 150px;
-  width: 180px;
+  height: 15rem;
+  width: 18rem;
   border-style: outset;
   float: left;
   background-size: cover;
-  margin: 10px;
+  margin: 1rem;
 }
 
 h2.category-title {
   text-align: center;
   display: block;
-  padding-top: 20px;
+  padding-top: 2rem;
 }
 
 
@@ -429,12 +427,12 @@ ul.FooterMenu__list_wrapper {
 li.FooterMenu__list__small {
   text-align: left;
   line-height: 1.4em;
-  margin: 10px 0 0 0;
+  margin: 1rem 0 0 0;
   opacity: 0.7;
 }
 
 .aside-toppage {
-  height: 180px;
+  height: 18rem;
   width: 100%;
   background-size: inherit;
   background-color: darkorange;
@@ -454,24 +452,24 @@ li.FooterMenu__list__small {
 
 p.aside-text1 {
   color: rgb(255, 255, 255);
-  margin-top: 30px;
-  font-size: 24px;
-  text-shadow: 1px 1px 0 gray, -1px 1px 0 gray, 1px -1px 0 gray,
-    -1px -1px 0 gray;
+  margin-top: 3rem;
+  font-size: 2.4rem;
+  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray, 0.1rem -0.1rem 0 gray,
+    -0.1rem -0.1rem 0 gray;
 }
 
 p.aside-text2 {
   color: rgb(255, 255, 255);
-  font-size: 24px;
-  text-shadow: 1px 1px 0 gray, -1px 1px 0 gray, 1px -1px 0 gray,
-    -1px -1px 0 gray;
+  font-size: 2.4rem;
+  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray, 0.1rem -0.1rem 0 gray,
+    -0.1rem -0.1rem 0 gray;
 }
 
 img.aside-image1 {
   display: block;
-  height: 180px;
-  width: 180px;
-  padding-left: 20px;
+  height: 18rem;
+  width: 18rem;
+  padding-left: 2rem;
 }
 
 .footer-toppage{
@@ -487,25 +485,25 @@ img.aside-image1 {
 }
 
 .FooterMenu{
-    height: 250px;
+    height: 25rem;
     width: 75%;
     float: left;
 
 
     &__list{
       display: inline-block;
-      width: 200px;
+      width: 20rem;
       vertical-align: top;
-      margin: 32px;
+      margin: 3.2rem;
       padding-left: 0;
     
       &__title{
-        font-size: 16px;
+        font-size: 1.6rem;
       }
       
       &__small{
-        font-size: 12px;
-        margin-left: 16px;
+        font-size: 1.2rem;
+        margin-left: 1.6rem;
         font: inherit;
       }
     }
@@ -514,65 +512,65 @@ img.aside-image1 {
 
 .FooterBottom {
   width: 75%;
-  height: 33px;
+  height: 3.3rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 2rem;
 
   &__footer-logo{
-    height: 33px;
-    width: 124px;
-    padding: 25px 5px 5px 5px;
+    height: 3.3rem;
+    width: 12rem;
+    padding: 2.5rem 0.5rem 0.5rem 0.5rem;
     background-image: url("fmarket_logo_white");
     background-repeat: no-repeat;
   }
   
   &__footer-text{
     text-align: center;
-    width: 765px;
-    height: 12px;
-    font-size: 12px;
-    padding-left: 280px;
+    width: 76rem;
+    height: 1.2rem;
+    font-size: 1.2rem;
+    padding-left: 28rem;
   }
   
 
 }
 
 
+
 .PostItems{
-  width: 200px;
-  height: 200px;
-  padding: 20px;
+  width: 20rem;
+  height: 20rem;
+  padding: 2rem;
   position: fixed;
-  bottom: 5px;
+  bottom: 0.5rem;
   right: 0;
   display: inline-block;
   display: flex;
   justify-content: center;
-  z-index: 100;f
+  z-index: 100;
 
 
-&__Button{
-  padding-top: 15px;
-  text-align: center;
-  height: 140px;
-  width: 140px;
-  background-color: rgb(234, 53, 45);
-  border-radius: 50%;
-  color: white;
-  font-size: 22px;
-}
-
-&__Icon{
-    display: block;
-    height: 50px;
-    width: 50px;
+  &__Button{
+    padding-top: 1.5rem;
+    text-align: center;
+    height: 14rem;
+    width: 14rem;
+    background-color: rgb(234, 53, 45);
+    border-radius: 50%;
     color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 7px;
-    margin-left: 45px;
- 
-}
+    font-size: 2rem;
+   }
 
-}
 
+    &__Icon{
+        height: 5rem;
+        width: 5rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.7rem;
+        margin-left: 4.5rem;
+    
+    }
+
+ }
