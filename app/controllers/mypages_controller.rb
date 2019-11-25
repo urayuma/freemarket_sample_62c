@@ -1,6 +1,6 @@
 class MypagesController < ApplicationController
   before_action :sidebar_setteing
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_url, only: %i[listing in_progress completed]
 
   def index; end
