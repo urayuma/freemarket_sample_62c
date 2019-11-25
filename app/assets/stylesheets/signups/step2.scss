@@ -20,12 +20,12 @@
 .point2-3,
 .point2-4 {
   @include inpoint;
-&::after {
-  @include after;
-}
-&::before {
-  @include before;
-}
+  &::after {
+    @include after;
+  }
+  &::before {
+    @include before;
+  }
 }
 .point2-5 {
   @include inpoint;
@@ -34,7 +34,7 @@
   }
 }
 .single-main {
-  background-color:rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
   display: block;
   background-repeat: no-repeat;
   margin: 0;
@@ -42,70 +42,70 @@
 }
 .l-single-container {
   background-color: #fff;
-  width: 700px;
-  margin-left: 363px;
+  width: 70rem;
+  margin: auto;
 }
 .l-single-inner_registration {
-  border-bottom: 1px rgb(245, 245, 245) solid;
-  padding: 10px;
-  font-size: 22px;
+  border-bottom: 0.1rem rgb(245, 245, 245) solid;
+  padding: 1rem;
+  font-size: 2.2rem;
   margin: 0;
 }
 
 .phonenumber_information {
-  margin-left: 188px;
-  margin-right: 188px;
+  margin-left: 18.8rem;
+  margin-right: 18.8rem;
 }
 h2 {
   text-align: center;
 }
 
 .user_phonenumber {
-  margin-left: 188px;
-  margin-right: 188px;
+  margin-left: 18.8rem;
+  margin-right: 18.8rem;
 }
 
 .number_presentment {
-  line-height: 50px;
+  line-height: 5rem;
 }
 .number_text {
-  height: 52px;
-  width: 325px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  height: 5.2rem;
+  width: 32.5rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #ccc;
+  font-size: 1.6rem;
 }
 
 .number_text_error {
-  height: 52px;
-  width: 325px;
-  border-radius: 4px;
-  border: 1px solid red;
-  font-size: 16px;
+  height: 5.2rem;
+  width: 32.5rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid red;
+  font-size: 1.6rem;
 }
 
 .number_message {
-  margin: 10px 0 30px 0;
-  font-size: 13px;
+  margin: 1rem 0 3rem 0;
+  font-size: 1.3rem;
   display: flex;
-  height: 30px;
-  width: 300px;
+  height: 3rem;
+  width: 30rem;
   line-height: 1.5;
 }
 .next_submit {
   background-color: rgb(234, 53, 45);
   color: #fff;
-  width: 325px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  width: 32.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .number_explanation {
-  font-size: 13px;
-  margin-bottom: 50px;
+  font-size: 1.3rem;
+  margin-bottom: 5rem;
 }
 
 .destroy-wall {
-  height: 1px;
+  height: 0.1rem;
   width: 100%;
 }

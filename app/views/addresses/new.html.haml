@@ -1,6 +1,7 @@
 .header-signup
   .header-signup__left
-  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+    = link_to root_path do
+      = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
   .header-signup__right
     %ol.step-bar
       %li.step-bar__block{style: 'color: #ea352d;'}
@@ -19,7 +20,7 @@
         支払い方法
         %br
         %span.point3-4
-      %li.step-bar__block 
+      %li.step-bar__block
         完了
         %br
         %span.point3-5

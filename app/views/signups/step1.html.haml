@@ -1,6 +1,7 @@
 .header-signup
   .header-signup__left
-  = image_tag 'fmarket_logo_red.svg', width: '170', class: "header-signup__left--logo"
+    = link_to root_path do
+      = image_tag 'fmarket_logo_red.svg', class: "header-signup__left--logo"
   .header-signup__right
     %ol.step-bar
       %li.step-bar__block{style: 'color: #ea352d;'}
@@ -36,7 +37,7 @@
             = f.label :"ニックネーム", class: 'label_nickname'
             %span.min #{required}
 
-          - if @user.errors.messages[:nickname].any?
+          - if @user.errors.messages[:nickname].present?
             .field-input
               = f.text_field :nickname, autofocus: true, class: 'user_nickname_error', id: 'nickname', placeholder: '例）フリマ123'
               = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:nickname)
@@ -54,7 +55,7 @@
             = f.label :"メールアドレス", class: 'label_mail'
             %span.min #{required}
 
-          - if @user.errors.messages[:email].any?
+          - if @user.errors.messages[:email].present?
             .field-input
               = f.email_field :email, class: 'user_email_error', id: 'email', placeholder: 'PC・携帯どちらでも可'
               = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:email)
@@ -70,7 +71,7 @@
           .field
             = f.label :"パスワード", class: 'label_password'
             %span.min #{required}
-            - if @user.errors.messages[:password].any?
+            - if @user.errors.messages[:password].present?
               = f.password_field :password_confirmation, class: 'user_password_error', id: 'password', placeholder: '７文字以上'
               = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:password)
             - else
@@ -92,19 +93,19 @@
             %span.min #{required}
 
           .field-input.field-input_errors
-            - if @user.errors.messages[:lastname].any?
+            - if @user.errors.messages[:lastname].present?
               = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname_error'
             - else
               = f.text_field :lastname, placeholder: '例）佐藤', id: 'user_lastname'
 
-            - if @user.errors.messages[:firstname].any?
+            - if @user.errors.messages[:firstname].present?
               = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname_error'
             - else
               = f.text_field :firstname, placeholder: '例）太郎', id: 'user_firstname'
 
-          - if @user.errors.messages[:lastname].any?
+          - if @user.errors.messages[:lastname].present?
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:lastname)
-          - if @user.errors.messages[:firstname].any?
+          - if @user.errors.messages[:firstname].present?
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname)
 
         .field
@@ -113,19 +114,19 @@
             %span.min #{required}
 
           .field-input.field-input_errors
-            - if @user.errors.messages[:lastname].any?
+            - if @user.errors.messages[:lastname].present?
               = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana_error'
             - else
               = f.text_field :lastname_kana, placeholder: '例）サトウ', id: 'user_lastname_kana'
 
-            - if @user.errors.messages[:firstname].any?
+            - if @user.errors.messages[:firstname].present?
               = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana_error'
             - else
               = f.text_field :firstname_kana, placeholder: '例）タロウ', id: 'user_firstname_kana'
 
-          - if @user.errors.messages[:lastname_kana].any?
+          - if @user.errors.messages[:lastname_kana].present?
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:lastname_kana)
-          - if @user.errors.messages[:firstname_kana].any?
+          - if @user.errors.messages[:firstname_kana].present?
             = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:firstname_kana)
 
         .field
@@ -133,7 +134,7 @@
             = f.label :"生年月日", class: 'label_birthday'
             %span.min #{required}
 
-          - if @user.errors.messages[:birthday_day].any?
+          - if @user.errors.messages[:birthday_day].present?
             .field-input
               = f.select :birthday_year, [*1900..2019].reverse, prompt: "--", id: 'user_birthday_year'
               .i{class: "fas fa-angle-down"}
@@ -163,7 +164,7 @@
           %p.regime
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-        - if @user.errors.details[:base].any?
+        - if @user.errors.details[:base].present?
           .field
             = recaptcha_tags id: 'recaptcha_error'
             .signups_errors

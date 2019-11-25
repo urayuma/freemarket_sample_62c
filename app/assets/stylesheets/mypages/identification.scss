@@ -1,99 +1,99 @@
-.main{
-  .identification{
+.main {
+  .identification {
     float: right;
-    width: 700px;
-    &__head{
+    width: 70rem;
+    &__head {
       text-align: center;
-      font-size: 24px;
-      padding: 8px 24px;
+      font-size: 2.4rem;
+      padding: 0.8rem 2.4rem;
       background: #fff;
-      border-bottom: 1px solid #f5f5f5;
-      line-height:1.4;
+      border-bottom: 0.1rem solid #f5f5f5;
+      line-height: 1.4;
     }
-    &__form{
+    &__form {
       background: #fff;
-      padding: 64px;
-      font-size: 14px;
-      &--explain{ 
+      padding: 6.4rem;
+      font-size: 1.4rem;
+      &--explain {
       }
-      &--link{
+      &--link {
         text-align: right;
-        .about-link{
+        .about-link {
           text-decoration: none;
           color: #0099e8;
         }
-        .upload-link:hover{
+        .upload-link:hover {
           text-decoration-color: #0099e8;
           text-decoration-line: underline;
         }
       }
-      &--group{
-        margin-top: 40px ;
-        .form-subject{
+      &--group {
+        margin-top: 4rem;
+        .form-subject {
           font-weight: 600;
         }
-        .form-contents{
-          margin-top: 8px ;
+        .form-contents {
+          margin-top: 0.8rem;
           line-height: 1.5;
           font-weight: 100;
         }
-        .form-text{
+        .form-text {
           width: 100%;
-          margin-top: 8px ;
-          height: 48px;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
+          margin-top: 0.8rem;
+          height: 4.8rem;
+          padding: 1rem 1.6rem 0.8rem;
+          border-radius: 0.4rem;
+          border: 0.1rem solid #ccc;
           background: #fff;
         }
-        .form-text:focus{
-          border-color: #0196E4;
+        .form-text:focus {
+          border-color: #0196e4;
         }
-        .form-optional{
-          margin-left: 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
+        .form-optional {
+          margin-left: 0.8rem;
+          padding: 0.2rem 0.4rem;
+          border-radius: 0.2rem;
           color: #fff;
-          font-size: 12px;
+          font-size: 1.2rem;
           vertical-align: top;
           background: #ccc;
         }
-        .select-wrrapper{
+        .select-wrrapper {
           position: relative;
           z-index: 2;
-          margin-top: 8px ;
-          .form-select{
+          margin-top: 0.8rem;
+          .form-select {
             width: 100%;
-            height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            height: 4.8rem;
+            padding: 1rem 1.6rem 0.8rem;
+            border-radius: 0.4rem;
+            border: 0.1rem solid #ccc;
             background: #fff;
             -webkit-appearance: none;
-            -moz-appearance: none; 
-            appearance: none; 
+            -moz-appearance: none;
+            appearance: none;
           }
-          .select-arrow{
+          .select-arrow {
             position: absolute;
-            right: 16px;
+            right: 1.6rem;
             top: 50%;
             z-index: 2;
             color: #888;
-            font-size: 18px;
+            font-size: 1.8rem;
             -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
           }
         }
-        .submit-button{
+        .submit-button {
           background: #ea352d;
-          border: 1px solid #ea352d;
+          border: 0.1rem solid #ea352d;
           color: #fff;
           display: block;
           width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
+          line-height: 4.8rem;
+          font-size: 1.4rem;
+          -webkit-transition: all ease-out 0.3s;
+          transition: all ease-out 0.3s;
           cursor: pointer;
           text-align: center;
         }

@@ -4,7 +4,7 @@
 }
 
 .single-header {
-  height: 128px;
+  height: 12.8rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -13,10 +13,10 @@
 }
 
 .header-logo {
-  height: 49px;
-  width: 185px;
+  height: 4.9rem;
+  width: 18.5rem;
   display: block;
-  margin: 40px 40px 0 0;
+  margin: 4rem 4rem 0 0;
   background-image: url("fmarket_logo_red");
   background-repeat: no-repeat;
 }
@@ -29,26 +29,26 @@
   background-repeat: no-repeat;
 
   .buy-panel {
-    width: 700px;
+    width: 70rem;
     background-color: #fff;
     margin: auto;
 
     &__item-detail-inner {
       width: 45%;
       margin: auto;
-      margin-top: 20px;
+      margin-top: 2rem;
 
       &__about {
         display: flex;
 
         &__image {
-          height: 70px;
-          width: 70px;
+          height: 7rem;
+          width: 7rem;
         }
 
         &__name {
-          margin-left: 1rem;
-          font-size: 1rem;
+          margin-left: 1.6rem;
+          font-size: 1.6rem;
           font-weight: bold;
         }
       }
@@ -56,7 +56,7 @@
       &__box {
         display: flex;
         justify-content: center;
-        font-size: 1.3rem;
+        font-size: 2.1rem;
         line-height: 100%;
 
         &__price {
@@ -64,20 +64,20 @@
         }
 
         &__delivery_fee {
-          font-size: 0.8rem;
+          font-size: 1.28rem;
           margin-left: 1rem;
           color: #333333;
         }
       }
 
       &__point {
-        height: 50px;
+        height: 5rem;
         width: 100%;
         background-color: #cccccc;
         margin: auto;
         text-align: center;
-        line-height: 50px;
-        font-size: 0.8rem;
+        line-height: 5rem;
+        font-size: 1.28rem;
       }
 
       &__pay {
@@ -87,49 +87,49 @@
         font-weight: bolder;
 
         &__message {
-          font-size: 1.2rem;
+          font-size: 1.9rem;
         }
 
         &__price {
-          font-size: 1.4rem;
+          font-size: 2.24rem;
         }
       }
 
       &__error {
         color: red;
         text-align: center;
-        margin-top: 1.5rem;
-        font-size: 0.9rem;
+        margin-top: 2.4rem;
+        font-size: 1.44rem;
       }
 
       &__buy-button {
-        height: 50px;
+        height: 5rem;
         width: 45%;
         background-color: #999999;
         color: #fff;
         display: block;
         margin: auto;
-        margin-top: 0.5rem;
-        margin-bottom: 3rem;
+        margin-top: 0.8rem;
+        margin-bottom: 4.8rem;
         text-align: center;
-        line-height: 50px;
-        font-size: 0.9rem;
+        line-height: 5rem;
+        font-size: 1.44rem;
         font-weight: bolder;
       }
 
       &__shipping {
-        font-size: 0.9rem;
+        font-size: 1.44rem;
         font-weight: bolder;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1.28rem;
       }
 
       &__postcode,
       &__address,
       &__buyer {
-        font-size: 0.9rem;
+        font-size: 1.44rem;
         font-weight: lighter;
         color: #222222;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.12rem;
       }
 
       &__link {
@@ -138,7 +138,7 @@
           display: flex;
           justify-content: flex-end;
           color: rgb(0, 149, 238);
-          font-size: 0.9rem;
+          font-size: 1.44rem;
 
           &__messaege {
             display: inline-block;
@@ -147,28 +147,28 @@
       }
 
       &__pay-way {
-        font-size: 0.9rem;
+        font-size: 1.44rem;
         font-weight: bolder;
-        margin-bottom: 1.3rem;
+        margin-bottom: 2.1rem;
       }
 
       &__pay-detail {
-        font-size: 0.8rem;
+        font-size: 1.28rem;
       }
     }
   }
 }
 
 p.buy-panel-title__order {
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: bolder;
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
-  border-bottom: 2px rgb(245, 245, 245) solid;
+  border-bottom: 0.2rem rgb(245, 245, 245) solid;
 }
 
 .buy-panel__item-detail-inner-order1 {
-  border-top: 2px rgb(245, 245, 245) solid;
+  border-top: 0.2rem rgb(245, 245, 245) solid;
   padding: 1rem 0 2rem 0;
 }
 
