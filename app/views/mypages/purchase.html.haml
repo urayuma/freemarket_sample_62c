@@ -1,0 +1,52 @@
+-# haml-lint:disable FinalNewline
+%body
+  = render '/homes/header'
+  .main
+    .mypage-container__purchase
+
+      .purchase-product
+        購入した商品
+
+      .purchase-tabs
+        .purchase-tabs__active
+        .purchase-tabs__post
+
+      .purchase-detail
+        = link_to "取引中", purchase_mypage_index_path, class: "purchase-detail__active"
+        = link_to "過去の取引", purchased_mypage_index_path, class: "purchase-detail__post"
+
+
+      %ul.purchase-report-areas-none
+        %li.purchase-report-area-none__area
+          出品中の商品はありません
+      %br
+
+      %ul.purchase-report-areas-exsis
+
+        %li.purchase-report-areas-exsis__area
+          = link_to "", class: "purchase-report-areas-exsis__area__link" do
+
+            %figure.purchase-report-areas-exsis__area__link__figure
+              = image_tag 'fmarket.jpg', class: 'purchase-report-areas-exsis__area__link__figure__image'
+
+            .purchase-report-areas-exsis__area__link__item
+              %p.purchase-report-areas-exsis__area__link__item__name
+                アイテム タイトル
+
+              .purchase-report-areas-exsis__area__link__item__detail
+                %span.purchase-report-areas-exsis__area__link__item__detail__icon
+                  %i.far.fa-heart
+                  %span.purchase__likes-count
+                    0
+
+                  %i.far.fa-comment-alt
+                  %span.purchase__chates-count
+                    0
+                  %span.purchase__selling_status
+                    出品中
+
+            %i.fas.fa-angle-right.purchase-report-areas-exsis__area__link__sngle-left
+
+    = render "sidebar"
+
+  = render "/homes/footer"

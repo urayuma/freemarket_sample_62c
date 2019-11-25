@@ -1,0 +1,88 @@
+.listings-tabs
+  - if url.match(/\/listings\/.*listing.*/)
+    .listings-tabs__active
+    .listings-tabs__post
+    .listings-tabs__post
+  - if url.match(/\/listings\/.*in_progress.*/)
+    .listings-tabs__post
+    .listings-tabs__active
+    .listings-tabs__post
+  - if url.match(/\/listings\/.*completed.*/)
+    .listings-tabs__post
+    .listings-tabs__post
+    .listings-tabs__active
+
+
+.listings-detail
+  -if url.match(/\/listings\/.*listing.*/)
+    = link_to "出品中", listings_listing_mypage_index_path, class: "listings-detail__active"
+    = link_to "取引中", listings_in_progress_mypage_index_path, class: "listings-detail__post"
+    = link_to "売却済み", listings_completed_mypage_index_path, class: "listings-detail__post"
+
+  - if url.match(/\/listings\/.*in_progress.*/)
+    = link_to "出品中", listings_listing_mypage_index_path, class: "listings-detail__post"
+    = link_to "取引中", listings_in_progress_mypage_index_path, class: "listings-detail__active"
+    = link_to "売却済み", listings_completed_mypage_index_path, class: "listings-detail__post"
+
+  - if url.match(/\/listings\/.*completed.*/)
+    = link_to "出品中", listings_listing_mypage_index_path, class: "listings-detail__post"
+    = link_to "取引中", listings_in_progress_mypage_index_path, class: "listings-detail__post"
+    = link_to "売却済み", listings_completed_mypage_index_path, class: "listings-detail__active"
+
+%ul.listings-report-areas-none
+  %li.listings-report-area-none__area
+    - if url.match(/\/listings\/.*listing.*/)
+      出品中の商品はありません
+    - if url.match(/\/listings\/.*in_progress.*/)
+      取引中の商品はありません
+    - if url.match(/\/listings\/.*completed.*/)
+      売却済みの商品はありません
+
+%br 商品がある場合
+
+%ul.listings-report-areas-exsis
+
+  %li.listings-report-areas-exsis__area
+    = link_to "", class: "listings-report-areas-exsis__area__link" do
+
+      %figure.listings-report-areas-exsis__area__link__figure
+        = image_tag 'fmarket.jpg', class: 'listings-report-areas-exsis__area__link__figure__image'
+
+      .listings-report-areas-exsis__area__link__item
+        %p.listings-report-areas-exsis__area__link__item__name
+          アイテム タイトル
+
+          - if url.match(/\/listings\/.*listing.*/)
+            .listings-report-areas-exsis__area__link__item__detail
+              %span.listings-report-areas-exsis__area__link__item__detail__icon
+                %i.far.fa-heart
+                %span.listings__likes-count
+                  0
+
+                %i.far.fa-comment-alt
+                %span.listings__chates-count
+                  0
+                %span.listings__selling_status
+                  出品中
+
+          - if url.match(/\/listings\/.*in_proress.*/)
+            .listings-report-areas-exsis__area__link__item__detail
+              %span.listings-report-areas-exsis__area__link__item__detail__icon
+                %i.far.fa-heart
+                %span.listings__likes-count
+                  0
+
+                %i.far.fa-comment-alt
+                %span.listings__chates-count
+                  0
+                %span.listings__selling_status
+                  取引中
+
+
+          - if url.match(/\/listings\/.*completed.*/)
+            .listings-report-areas-exsis__area__link__item__detail
+              %span.listings-report-areas-exsis__area__link__item__detail__icon
+                %span.listings__selling_status.listings__selling_status-sold
+                  売却済み
+
+      %i.fas.fa-angle-right.listings-report-areas-exsis__area__link__sngle-left
