@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post 'login', to: 'devise/sessions#create', as: :user_session
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
+
   root 'homes#index'
   get 'home/index', to: 'homes#index'
 
@@ -44,6 +45,16 @@ Rails.application.routes.draw do
   resources :order, only: %i[index] do
     member do
       get '/buy', to: 'orders#new'
+    end
+  end
+  resources :addresses, only: %i[new create]
+  resources :creditcards, only: %i[new create]
+
+  resources :items, only: %i[new create] do
+    collection do
+      get 'sell'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
 end

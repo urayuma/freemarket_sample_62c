@@ -84,6 +84,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails' # 環境変数設定のために
+gem 'dropzonejs-rails'
 gem 'fog-aws'
 gem 'font-awesome-sass'
 gem "haml-rails"
