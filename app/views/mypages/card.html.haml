@@ -2,6 +2,8 @@
 -# このファイルはクレジットカードを持っていなかった場合の画面です
 .header-a
   = render '/homes/header'
+  - breadcrumb :card
+  = render "layouts/breadcrumbs"
 .contents
   .main-mypage
     %h2.l-single-inner_registration
