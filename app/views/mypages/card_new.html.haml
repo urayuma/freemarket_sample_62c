@@ -5,6 +5,8 @@
 
 .header-a
   = render '/homes/header'
+  - breadcrumb :card_new
+  = render "layouts/breadcrumbs"
 .contents
   .main-mypage
     %h2.l-single-inner_registration

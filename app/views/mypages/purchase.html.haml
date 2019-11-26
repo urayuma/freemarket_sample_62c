@@ -1,6 +1,8 @@
 -# haml-lint:disable FinalNewline
 %body
   = render '/homes/header'
+  - breadcrumb :purchase
+  = render "layouts/breadcrumbs"
   .main
     .mypage-container__purchase
 

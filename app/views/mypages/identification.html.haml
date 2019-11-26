@@ -1,5 +1,7 @@
 %body
   = render "/homes/header"
+  - breadcrumb :identification
+  = render "layouts/breadcrumbs"
   .main
     = render "sidebar"
     .identification
