@@ -26,10 +26,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items do
-    resources :chats, only: [:show]
-  end
-
   resources :signups, only: [:index] do
     collection do
       get 'step1'
@@ -54,7 +50,8 @@ Rails.application.routes.draw do
   resources :addresses, only: %i[new create]
   resources :creditcards, only: %i[new create]
 
-  resources :items, only: %i[new create] do
+  resources :items, only: %i[new create show] do
+    resources :chats, only: [:show]
     collection do
       get 'sell'
       get 'get_category_children', defaults: { format: 'json' }
