@@ -15,8 +15,8 @@
     .item-detail-content__information--list
       %table.item-detail-table(border = "1")
         %tr
-          %th 出品者
-          %td 
+          %th.item-th 出品者
+          %td.item-td
             = @item.user.nickname
             .item-user-evaluation
               .good-icon
@@ -26,8 +26,8 @@
               .bad-icon
               %span 03
         %tr
-          %th カテゴリー
-          %td
+          %th.item-th カテゴリー
+          %td.item-td
             = @category.parent.parent.name
             .category-icon
             %span 
@@ -36,32 +36,32 @@
             %span
               = @category.name
         %tr
-          %th ブランド
-          %td
+          %th.item-th ブランド
+          %td.item-td
             = @brand.name
         %tr
-          %th 商品のサイズ
-          %td
+          %th.item-th 商品のサイズ
+          %td.item-td
             = @item.size
         %tr
-          %th 商品の状態
-          %td
+          %th.item-th 商品の状態
+          %td.item-td
             = @item.usage_status
         %tr
-          %th 配送料の負担
-          %td
+          %th.item-th 配送料の負担
+          %td.item-td
             = @item.delivery_fee
         %tr
-          %th 配送の方法	
-          %td
+          %th.item-th 配送の方法	
+          %td.item-td
             = @item.delivery_way
         %tr
-          %th 配送元地域
-          %td
+          %th.item-th 配送元地域
+          %td.item-td
             = @user.address.prefectures
         %tr
-          %th 発送日の目安
-          %td
+          %th.item-th 発送日の目安
+          %td.item-td
             = @item.shipping_date
 
   .item-price-box
