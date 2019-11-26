@@ -20,11 +20,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @category = Category.find(@item.category_id.to_i)
-    @brand = Brand.find(@item.brand_id.to_i)
-    @like = Like.find(params[:id])
-    @user = User.find(@item.user_id.to_i)
-    @chats = Chat.where(item_id: params[:id])
   end
 end
 

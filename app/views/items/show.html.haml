@@ -28,17 +28,17 @@
         %tr
           %th.item-th カテゴリー
           %td.item-td
-            = @category.parent.parent.name
+            = @item.category.parent.parent.name
             .category-icon
             %span 
-              = @category.parent.name
+              = @item.category.parent.name
             .category-icon
             %span
-              = @category.name
+              = @item.category.name
         %tr
           %th.item-th ブランド
           %td.item-td
-            = @brand.name
+            = @item.brand.name
         %tr
           %th.item-th 商品のサイズ
           %td.item-td
@@ -58,7 +58,7 @@
         %tr
           %th.item-th 配送元地域
           %td.item-td
-            = @user.address.prefectures
+            = @item.user.address.prefectures
         %tr
           %th.item-th 発送日の目安
           %td.item-td

@@ -1,7 +1,7 @@
 .item-chat
   .item-chat-area
     %ul.item-chat-area__library
-    - @chats.each do |chat|
+    - @item.chats.each do |chat|
       %li.item-chat-area__library--board
         %figure.item-user-image
           = image_tag chat.user.image , class: "item-user-image-size"
