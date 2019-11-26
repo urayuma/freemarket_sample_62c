@@ -33,3 +33,6 @@ config/secrets.yml
 
 #失敗したテストを記録するファイルを無視
 spec/examples.txt
+
+# /public/uploads/以下のファイルを無視
+/public/uploads/image/*
