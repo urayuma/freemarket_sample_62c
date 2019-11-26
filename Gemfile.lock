@@ -123,6 +123,8 @@ GEM
       railties (>= 4.2.0)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
+    faker (2.7.0)
+      i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
@@ -408,6 +410,7 @@ DEPENDENCIES
   dotenv-rails
   dropzonejs-rails
   factory_bot_rails
+  faker
   fog-aws
   font-awesome-sass
   haml-rails

@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :images
-  has_one :brand
+  belongs_to :brand
   has_one :order
   belongs_to :category
 end

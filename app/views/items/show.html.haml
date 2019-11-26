@@ -1,0 +1,93 @@
+.header-a
+  = render '/homes/header'
+.item-detail-content
+
+  %h1.item-detail-content__title
+    = @item.name
+  .item-detail-content__information
+    .item-detail-content__information--pictures
+      .item-detail-phone-big
+        - @item.images.first(1).each do |image|
+          = image_tag image.image, class: ".item-detail-phone-big__main--image", height: '300', width: '300'
+      .item-detail-phone-cells
+        - @item.images.each do |image|
+          =image_tag image.image, class: "item-detail-phone-cells__bit", height: '60', width: '60'
+    .item-detail-content__information--list
+      %table.item-detail-table(border = "1")
+        %tr
+          %th 出品者
+          %td 
+            = @item.user.nickname
+            .item-user-evaluation
+              .good-icon
+              %span 01
+              .normal-icon
+              %span 02
+              .bad-icon
+              %span 03
+        %tr
+          %th カテゴリー
+          %td
+            = @category.parent.parent.name
+            .category-icon
+            %span 
+              = @category.parent.name
+            .category-icon
+            %span
+              = @category.name
+        %tr
+          %th ブランド
+          %td
+            = @brand.name
+        %tr
+          %th 商品のサイズ
+          %td
+            = @item.size
+        %tr
+          %th 商品の状態
+          %td
+            = @item.usage_status
+        %tr
+          %th 配送料の負担
+          %td
+            = @item.delivery_fee
+        %tr
+          %th 配送の方法	
+          %td
+            = @item.delivery_way
+        %tr
+          %th 配送元地域
+          %td
+            = @user.address.prefectures
+        %tr
+          %th 発送日の目安
+          %td
+            = @item.shipping_date
+
+  .item-price-box
+    %span.item-price-box__price
+      = @item.price
+    %span.item-price-box__tax (税込)
+    %span.item-price-box__postage 着払い
+    
+  .item-buy-btn
+    %button{class: "btn-default item-buy-btn__red"} 購入画面に進む
+  .item-description
+    %p
+      = @item.description
+  .item-bottom-button
+    .item-bottom-button__left
+      .item-like-btn
+        .i{class:"far fa-heart item-heart"}
+        %span.item-heart__like いいね！
+      .item-report-btn
+        .i{class: "far fa-flag item-flag"}
+        %span.item-flag__report不適切な商品の報告
+    .item-bottom-button__right
+      .item-safety-btn
+        .i{class: "fas fa-lock item-lock"}
+        %span.item-lock__safety あんしん・あんぜんへの取り組み
+-# ここまでが商品の詳細画面です〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
+
+= render 'chat'
+= render 'homes/footer'
