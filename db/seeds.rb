@@ -6,6 +6,215 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# User
+User.create!(
+  [
+    {
+      email: 'jonny@gmail.com',
+      password: 'jonny1234',
+      nickname: '波乗りJonny',
+      lastname: 'Naminori', 
+      firstname: 'Jonny',
+      lastname_kana: 'ナミノリ',
+      firstname_kana: 'ジョニー',
+      birthday_year: '2000',
+      birthday_month: '1', 
+      birthday_day: '1',
+      phonenumber: '09012345678',
+    },
+    {
+      email: 'samurai@gmail.com',
+      password: 'samurai2345',
+      nickname: 'さすらいの侍', 
+      lastname: 'Sasurai',
+      firstname: 'Samurai',
+      lastname_kana: 'サスライ',
+      firstname_kana: 'サムライ',
+      birthday_year: '1992', 
+      birthday_month: '3',
+      birthday_day: '3',
+      phonenumber: '08033333333',
+    },
+    {
+      email: 'omochi@gmail.com',
+      password: 'omochi3456',
+      nickname: 'お餅にはおしるこ',
+      lastname: 'oshiruko', 
+      firstname: 'omochi', 
+      lastname_kana: 'オシルコ', 
+      firstname_kana: 'オモチ',
+      birthday_year: '1993', 
+      birthday_month: '5',
+      birthday_day: '18',
+      phonenumber: '08055555555',
+    },
+  ]
+)
+
+
+
+
+# # ブランド レディース
+Brand.create!(
+  [
+    {
+      name: 'グッチ',
+    },
+    {
+      name: 'シャネル',
+    },
+  ]
+)
+
+# # ブランド メンズ
+Brand.create!(
+  [
+    {
+      name: 'ナイキ',
+    },
+    {
+      name: 'プーマ',
+    },
+  ]
+)
+
+
+# # ブランド ベビー・キッズ
+Brand.create!(
+  [
+    {
+      name: '西松屋',
+    },
+  ]
+)
+
+
+# # ブランド インテリア・住まい・小物
+Brand.create!(
+  [
+    {
+      name: 'イケア',
+    },
+    {
+      name: '無印用品',
+    },
+  ]
+)
+
+# # 本・音楽・ゲーム
+Brand.create!(
+  [
+    {
+      name: 'ニンテンドー',
+    },
+    {
+      name: 'カドカワ文庫',
+    },
+
+  ]
+)
+
+# # おもちゃ・ホビー・グッズ
+Brand.create!(
+  [
+    {
+      name: 'タカラトミー',
+    },
+  ]
+)
+
+
+# # ブランド コスメ・香水・美容
+Brand.create!(
+  [
+    {
+      name: 'クロエ',
+    },
+    {
+      name: 'Dior',
+    },
+  ]
+)
+
+
+# # ブランド 家電・スマホ・カメラ
+Brand.create!(
+  [
+    {
+      name: 'Apple',
+    },
+    {
+      name: 'パナソニック',
+    },
+  ]
+)
+
+# # ブランド スポーツ・レジャー
+Brand.create!(
+  [
+    {
+      name: 'アディダス',
+    },
+    {
+      name: 'バタフライ',
+    },
+  ]
+)
+
+
+
+# # ハンドメイド
+Brand.create!(
+  [
+    {
+      name: 'ワクワクハンド',
+    },
+  ]
+)
+
+
+# # チケット
+Brand.create!(
+  [
+    {
+      name: '大黒屋',
+    },
+    {
+      name: 'ワクワクチケット',
+    },
+  ]
+)
+
+
+# # 自動車・オートバイ
+Brand.create!(
+  [
+    {
+      name: 'スズキ',
+    },
+    {
+      name: 'スペースワールド',
+    },
+  ]
+)
+
+
+# # その他
+Brand.create!(
+  [
+    {
+      name: 'ディズニー',
+    },
+    {
+      name: 'ネスレ',
+    },
+  ]
+)
+
+
+
+# 親カテゴリー
 lady = Category.create(name: "レディース")
 man = Category.create(name: "メンズ")
 baby = Category.create(name: "ベビー・キッズ")
@@ -170,7 +379,744 @@ other_food = other.children.create(name: "食品")
 other_drink = other.children.create(name: "飲料/酒")
 other_other = other.children.create(name: "その他")
 # その他の孫カテゴリ
-other_matome.children.create([{ name: "ペットフード" }, { name: "犬用品" }, { name: "猫用品" }, { name: "魚用品/水草" }, { name: "小動物用品" }, { name: "爬虫類/両生類用品" }, { name: "かご/おり" }, { name: "鳥用品" }, { name: "虫類用品" }, { name: "その他" }])
-other_food.children.create([{ name: "菓子" }, { name: "米" }, { name: "野菜" }, { name: "果物" }, { name: "調味料" }, { name: "魚介類(加工食品)" }, { name: "肉類(加工食品)" }, { name: "その他 加工食品" }, { name: "その他" }])
-other_drink.children.create([{ name: "コーヒー" }, { name: "ソフトドリンク" }, { name: "ミネラルウォーター" }, { name: "茶" }, { name: "ウイスキー" }, { name: "ワイン" }, { name: "ブランデー" }, { name: "焼酎" }, { name: "日本酒" }, { name: "ビール、発泡酒" }, { name: "その他" }])
-other_other.children.create([{ name: "オフィス用品一般" }, { name: "オフィス家具" }, { name: "店舗用品" }, { name: "OA機器" }, { name: "ラッピング/包装" }, { name: "その他" }])
+other_matome.children.create([{name: "ペットフード"}, {name: "犬用品"}, {name: "猫用品"}, {name: "魚用品/水草"}, {name: "小動物用品"}, {name: "爬虫類/両生類用品"}, {name: "かご/おり"}, {name: "鳥用品"}, {name: "虫類用品"}, {name: "その他"}])
+other_food.children.create([{name: "菓子"}, {name: "米"}, {name: "野菜"}, {name: "果物"}, {name: "調味料"}, {name: "魚介類(加工食品)"}, {name: "肉類(加工食品)"}, {name: "その他 加工食品"}, {name: "その他"}])
+other_drink.children.create([{name: "コーヒー"}, {name: "ソフトドリンク"}, {name: "ミネラルウォーター"}, {name: "茶"}, {name: "ウイスキー"}, {name: "ワイン"}, {name: "ブランデー"}, {name: "焼酎"}, {name: "日本酒"}, {name: "ビール、発泡酒"}, {name: "その他"}])
+other_other.children.create([{name: "オフィス用品一般"}, {name: "オフィス家具"}, {name: "店舗用品"}, {name: "OA機器"}, {name: "ラッピング/包装"}, {name: "その他"}])
+
+
+# アイテム レディース
+Item.create!(
+  [
+    {
+      name: 'シャネルセール品３点', 
+      price: '15000', 
+      usage_status: '新品', 
+      description: 'お買い得！シャネルのおしゃれアイテム３点セット',
+      selling_status: '出品中', 
+      delivery_fee: '100', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '埼玉県',
+      shipping_date: '20191109',
+      user_id: '1', 
+      brand_id: '2', 
+      category_id: '1', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'カビゴン着ぐるみ', 
+      price: '3500', 
+      usage_status: '新品', 
+      description: 'カビゴンを着て美味しいものを食べに行こう',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '東京都',
+      shipping_date: '20191110',
+      user_id: '1', 
+      brand_id: '7', 
+      category_id: '1', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'グッチTシャツ', 
+      price: '3500', 
+      usage_status: '新品', 
+      description: 'ヤングでトレンディなTシャツ',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '徳島県',
+      shipping_date: '20191224',
+      user_id: '1', 
+      brand_id: '1', 
+      category_id: '1', 
+      payment_status: '支払済'
+    },
+
+
+
+  ]
+)
+
+# アイテム メンズ
+Item.create!(
+  [
+    {
+      name: '黄金に輝く胸筋', 
+      price: '50000', 
+      usage_status: '新品', 
+      description: 'まるで太陽のように輝く筋肉。今だけセール中',
+      selling_status: '出品中', 
+      delivery_fee: '2000', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '東京都',
+      shipping_date: '20191108',
+      user_id: '2', 
+      brand_id: '3', 
+      category_id: '2', 
+      payment_status: '支払済'
+
+    },
+    {
+      name: 'ブラウンニット', 
+      price: '12000', 
+      usage_status: '新品', 
+      description: 'この季節に一押しのニット。彼女とのデートでも好印象',
+      selling_status: '出品中', 
+      delivery_fee: '2000', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '東京都',
+      shipping_date: '20191108',
+      user_id: '2', 
+      brand_id: '4', 
+      category_id: '2', 
+      payment_status: '支払済'
+
+    },
+    {
+      name: 'イケてるトレンチコート', 
+      price: '15000', 
+      usage_status: '新品', 
+      description: 'ビジネスもクールにこなせる旬のトレンチコート',
+      selling_status: '出品中', 
+      delivery_fee: '2000', 
+      delivery_way: '普通郵便',
+      delivery_area: '島根県',
+      shipping_date: '20191111',
+      user_id: '3', 
+      brand_id: '6', 
+      category_id: '2', 
+      payment_status: '支払済'
+
+    },
+
+
+  ]
+)
+
+# アイテム キッズ・ベイビー
+Item.create!(
+  [
+    {
+      name: 'ボスベイビーと遊べる券', 
+      price: '2000', 
+      usage_status: '新品', 
+      description: 'あのボスベイビーがあなたの元にやってくる',
+      selling_status: '取引中', 
+      delivery_fee: '10', 
+      delivery_way: '普通郵便',
+      delivery_area: '東京都',
+      shipping_date: '20190819',
+      user_id: '3', 
+      brand_id: '19', 
+      category_id: '3', 
+      payment_status: '未払い'
+
+    },
+    {
+      name: 'ギフトにもGoodよだれかけ', 
+      price: '3000', 
+      usage_status: '新品', 
+      description: 'おしゃれなよだれかけ',
+      selling_status: '取引中', 
+      delivery_fee: '10', 
+      delivery_way: '普通郵便',
+      delivery_area: '東京都',
+      shipping_date: '20190819',
+      user_id: '3', 
+      brand_id: '5', 
+      category_id: '3', 
+      payment_status: '未払い'
+
+    },
+
+  ]
+)
+
+
+# インテリア・住まい・小物
+Item.create!(
+  [
+    {
+      name: '流れるアンモナイト型シンク', 
+      price: '12000', 
+      usage_status: '中古', 
+      description: '旧石器時代のアンモナイトの造形をモデルとしたデザインシンク',
+      selling_status: '取引中', 
+      delivery_fee: '10', 
+      delivery_way: '普通郵便',
+      delivery_area: '鹿児島県',
+      shipping_date: '20190818',
+      user_id: '1', 
+      brand_id: '20', 
+      category_id: '4', 
+      payment_status: '支払済'
+
+    },
+    {
+      name: 'アップルメモパッド', 
+      price: '1200', 
+      usage_status: '新品', 
+      description: 'かのリンゴ型メモ',
+      selling_status: '取引中', 
+      delivery_fee: '10', 
+      delivery_way: '普通郵便',
+      delivery_area: '鹿児島県',
+      shipping_date: '20190818',
+      user_id: '1', 
+      brand_id: '13', 
+      category_id: '4', 
+      payment_status: '支払済'
+
+    },
+
+
+
+  ]
+)
+  
+
+# 本・音楽・ゲーム
+Item.create!(
+  [
+    {
+      name: '安心引きこもりライフ', 
+      price: '800', 
+      usage_status: '中古', 
+      description: '現代人必読の一冊。家にこもってこそ見える人生もある',
+      selling_status: '出品中', 
+      delivery_fee: '10', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '沖縄県',
+      shipping_date: '20190818',
+      user_id: '2', 
+      brand_id: '9', 
+      category_id: '5', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'マッチョでポン！', 
+      price: '1500', 
+      usage_status: '中古', 
+      description: '筋肉を育てよう！筋肉育成ゲーム',
+      selling_status: '出品中', 
+      delivery_fee: '100', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '長崎県',
+      shipping_date: '20190818',
+      user_id: '2', 
+      brand_id: '10', 
+      category_id: '5', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'ゲームキューブカセットのみ', 
+      price: '500', 
+      usage_status: '中古', 
+      description: '懐かしのゲームキューブ',
+      selling_status: '出品中', 
+      delivery_fee: '100', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '長崎県',
+      shipping_date: '20190818',
+      user_id: '2', 
+      brand_id: '15', 
+      category_id: '5', 
+      payment_status: '支払済'
+    },
+
+
+  ]
+)
+  
+
+# おもちゃ・ホビー・グッズ
+Item.create!(
+  [
+    {
+      name: 'ゲロゲロな卵の黄身', 
+      price: '1300', 
+      usage_status: '新品', 
+      description: 'あなたのストレスも黄身と一緒に流しちゃいます',
+      selling_status: '出品中', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '北海道',
+      shipping_date: '20191010',
+      user_id: '3', 
+      brand_id: '10', 
+      category_id: '6', 
+      payment_status: '支払済'
+    },
+  ]
+)
+  
+# コスメ・香水・美容
+Item.create!(
+  [
+    {
+      name: 'フリーザのような美肌に！ドラゴンボールフェイスパック', 
+      price: '300', 
+      usage_status: '中古', 
+      description: 'これであなたもフリーザのような美肌になれる',
+      selling_status: '出品中', 
+      delivery_fee: '50', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '北海道',
+      shipping_date: '20191105',
+      user_id: '2', 
+      brand_id: '15', 
+      category_id: '7', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'クロエ香水', 
+      price: '5000', 
+      usage_status: '新規', 
+      description: 'フレンチで大人な香りを',
+      selling_status: '出品中', 
+      delivery_fee: '50', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '北海道',
+      shipping_date: '20191105',
+      user_id: '2', 
+      brand_id: '11', 
+      category_id: '7', 
+      payment_status: '支払済'
+    },
+
+
+
+  ]
+)
+  
+# 家電・スマホ・カメラ
+Item.create!(
+  [
+    {
+      name: 'ピザ生成機', 
+      price: '5000', 
+      usage_status: '新品', 
+      description: '窯焼きピザ顔負けのふっくらピザが焼けます',
+      selling_status: '売却済み', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '大阪府',
+      shipping_date: '20191009',
+      user_id: '2', 
+      brand_id: '14', 
+      category_id: '8', 
+      payment_status: '支払済'
+    },
+  ]
+)
+
+# スポーツ・レジャー
+Item.create!(
+  [
+    {
+      name: 'おしるこプロテイン', 
+      price: '1050', 
+      usage_status: '新品', 
+      description: 'お餅は炭水化物なので摂取NG。甘いおしるこ風味のプロテインで筋肉ムキムキになろう',
+      selling_status: '出品停止', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '大阪府',
+      shipping_date: '20191009',
+      user_id: '3', 
+      brand_id: '23', 
+      category_id: '9', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'バタフライ卓球ラケット', 
+      price: '2050', 
+      usage_status: '新品', 
+      description: '老舗卓球メーカーのラケット',
+      selling_status: '出品停止', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '大阪府',
+      shipping_date: '20191009',
+      user_id: '3', 
+      brand_id: '15', 
+      category_id: '9', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'AJIDESUTシャツ', 
+      price: '1500', 
+      usage_status: '新品', 
+      description: 'アジなTシャツ',
+      selling_status: '出品中', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '大阪府',
+      shipping_date: '20191009',
+      user_id: '3', 
+      brand_id: '15', 
+      category_id: '9', 
+      payment_status: '支払済'
+    },
+
+
+  ]
+)
+  
+
+# ハンドメイド
+Item.create!(
+  [
+    {
+      name: 'ハンドメイドキーホルダーおじさん', 
+      price: '550', 
+      usage_status: '中古', 
+      description: '手作りのおじさん',
+      selling_status: '出品停止', 
+      delivery_fee: '300', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '奈良県',
+      shipping_date: '20191001',
+      user_id: '1', 
+      brand_id: '17', 
+      category_id: '10', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'ハンドメイドJAPANグッズ', 
+      price: '15000', 
+      usage_status: '新品', 
+      description: 'これぞニッポン。メイドインジャパン',
+      selling_status: '売却済み', 
+      delivery_fee: '2000', 
+      delivery_way: 'Fmarket便',
+      delivery_area: '京都府',
+      shipping_date: '20190810',
+      user_id: '2', 
+      brand_id: '17', 
+      category_id: '10', 
+      payment_status: '未払い'
+    },
+  ]
+)
+
+# チケット
+Item.create!(
+  [
+    {
+      name: '関取トークショーチケット', 
+      price: '1800', 
+      usage_status: '新品', 
+      description: '相撲をみに行こう',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '京都府',
+      shipping_date: '20190815',
+      user_id: '2', 
+      brand_id: '18', 
+      category_id: '11', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'ディズニーランドチケット', 
+      price: '5000', 
+      usage_status: '新品', 
+      description: '夢の国に行こう！',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '京都府',
+      shipping_date: '20190815',
+      user_id: '2', 
+      brand_id: '22', 
+      category_id: '11', 
+      payment_status: '支払済'
+    },
+
+  ]
+)
+  
+# 自動車・オートバイ
+Item.create!(
+  [
+    {
+      name: '走行速度300km デススター', 
+      price: '3000000', 
+      usage_status: '中古', 
+      description: '惑星を一撃で吹き飛ばすほどの強い威力に要注意',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '15', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'ミレニアムファルコン', 
+      price: '5000000', 
+      usage_status: '中古', 
+      description: '初期シリーズ',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '21', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'セール中！宇宙の仲間たち', 
+      price: '5000', 
+      usage_status: '中古', 
+      description: 'あの仲間たちが登場！',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '21', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+    {
+      name: '惑星間をひとっ飛び！未確認生命体', 
+      price: '200000', 
+      usage_status: '中古', 
+      description: '惑星間ドライブはいかが',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '15', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+
+
+  ]
+)
+  
+
+
+# その他
+Item.create!(
+  [
+    {
+      name: 'スペイン産オレンジハニー', 
+      price: '450', 
+      usage_status: '新品', 
+      description: '地中海のあまみ。',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '23', 
+      category_id: '13', 
+      payment_status: '支払済'
+    },
+  ]
+)
+
+
+Image.create!(
+  [
+    {
+      # シャネルセール品３点
+      image: 'https://image.interior-book.jp/article/original/56619.jpg',
+      item_id: '1',
+    },
+    {
+      # カビゴン着ぐるみ
+      image: 'https://shop.r10s.jp/wigland/cabinet/110717/szj18-tmy-061.jpg',
+      item_id: '2',
+    },
+    {
+      # グッチTシャツ
+      image: 'https://i.pinimg.com/736x/06/58/e4/0658e4e5b54e2f5768c9dc2e9ca08487.jpg',
+      item_id: '3',
+    },
+
+    {
+      # 黄金に輝く胸筋
+      image: 'https://monde.jp/blog/wp-content/uploads/2018/09/toop-5.jpg',
+      item_id: '4',
+    },
+    {
+      # ブラウンニット
+      image: 'https://www.wearstand.com/upload/save_image/ps_5166405_505_m.jpg',
+      item_id: '5',
+    },
+    {
+      # イケてるトレンチコート
+      image: 'https://im.uniqlo.com/images/jp/pc/goods/419981/item/32_419981.jpg',
+      item_id: '6',
+    },
+
+
+    {
+      # ボスベイビー
+      image: 'https://bossbaby.jp/news/wp-content/uploads/sites/42/2018/04/bb_cg_Boss_Baby_05_RGB-%E3%82%B3%E3%83%94%E3%83%BC.jpg',
+      item_id: '7',
+    },
+
+    {
+      # ギフトにもGoodよだれかけ
+      image: 'https://marlmarl-cdn.azureedge.net/pub/assets/img/model/macaron/macaron-3_mauve/macaron-3_mauve-m1.jpg',
+      item_id: '8',
+    },
+
+
+    {
+      # 流れるアンモナイト型シンク
+      image: 'http://livedoor.blogimg.jp/hamusoku/imgs/f/0/f014ad2e.jpg',
+      item_id: '9',
+    },
+    {
+      # アップルメモパッド
+      image: 'http://www.neverlandclub.jp/images/e2/e2688/image.jpg',
+      item_id: '10',
+    },
+    
+    {
+      # 安心引きこもりライフ
+      image: 'https://up.gc-img.net/post_img_web/2014/05/InEKjVpSmGvrmFE',
+      item_id: '11',
+    },
+    {
+      # マッチョでぽん
+      image: 'http://blog-imgs-95.fc2.com/h/i/t/hitoikigame/macho_main.jpg',
+      item_id: '12',
+    },
+    {
+      # ゲームキューブカセット
+      image: 'https://image.biccamera.com/img/00000001994940_A01.jpg?sr.dw=320&sr.dh=320&sr.jqh=60&sr.mat=1',
+      item_id: '13',
+    },
+
+    {
+      # ゲロゲロ卵の黄身
+      image: 'https://img2.bgxcdn.com/thumb/view/oaupload/banggood/images/73/4A/53a93389-1091-2feb-c03b-d3909ecc7ca6.jpg',
+      item_id: '14',
+    },
+    {
+      # フリーザのような美肌に！ドラゴンボールフェイスパック
+      image: 'https://shop35-makeshop.akamaized.net/shopimages/isshindo/000000000051.jpg',
+      item_id: '15',
+    },
+
+    {
+      # クロエ香水
+      image: 'http://www.happiness-d.com/img/goods/L/kuroeo-doparufamu%20EPS75ml_l.jpg',
+      item_id: '16',
+    },
+
+
+    {
+      # ピザ機
+      image: 'http://ure.pia.co.jp/mwimgs/9/3/-/img_93cf494da83a05a87813ebc9bbf2100157735.jpg',
+      item_id: '17',
+    },
+    {
+      # おしるこプロテイン
+      image: 'https://cdn-ak.f.st-hatena.com/images/fotolife/s/ssachiko/20180120/20180120185647.jpg',
+      item_id: '18',
+    },
+    {
+      # バタフライラケット
+      image: 'https://tshop.r10s.jp/arhua/cabinet/2016/04c/16720_1.jpg?fitin=300:300',
+      item_id: '19',
+    },
+    {
+      # ajidesuシャツ
+      image: ' https://auctions.afimg.jp/item_data/image/20110324/yahoo/b/b119144780.1.jpg',
+      item_id: '20',
+    },
+
+    {
+      # おじさんキーホルダー
+      image: 'https://media-01.creema.net/user/1543965/exhibits/3315665/0_18ef12f2ff05ba2cb05eac25c91d52a7_583x585.jpg',
+      item_id: '21',
+    },
+    {
+      # ジャパングッズ
+      image: 'https://s3-ap-northeast-1.amazonaws.com/hmj-fes-production/users/creation_1s/000/012/671/original/d00042d2-1784-44c3-a7c2-63cbe81527c120181213-4-4nvbdn.jpg?1544686864',
+      item_id: '22',
+    },
+    {
+      # 関取トークショー
+      image: 'https://s3-ap-northeast-1.amazonaws.com/welltool/officials/offi290/spaces/spce288/arti3944_1_1570123069.jpg',
+      item_id: '23',
+    },
+    {
+      # ディズニーチケット
+      image: 'https://c05.castel.jp/picture?url=https%3A%2F%2Fcastel.jp%2Fimg%2Fup%2Fpicture_39386.jpg',
+      item_id: '24',
+    },
+
+
+    {
+      # 走行速度300km デススター
+      image: 'https://wired.jp/wp-content/uploads/2012/12/death-star-660x448.jpg',
+      item_id: '25',
+    },
+    {
+      # ミレニアムファルコン
+      image: 'https://cache.ymall.jp/webcom/item/multiimage/300/7657888012_001.jpg',
+      item_id: '26',
+    },
+    {
+      # セール中！宇宙の仲間たち
+      image: 'https://shop.daigo.co.jp/wp-content/uploads/post/26858/S3709.jpg',
+      item_id: '27',
+    },
+    {
+      # 惑星間をひとっ飛び未確認生命体
+      image: 'https://img.sirabee.com/wp-content/uploads/2019/09/GettyImages-1054137738.jpg',
+      item_id: '28',
+    },
+    
+    {
+      # スパイン産オレンジハニー
+      image: 'http://www.tullys.co.jp/menu/uploads/orangehoney_191015.jpg',
+      item_id: '29',
+    },
+
+  ]
+)
+
+# Likeテーブル
+
+Like.create!(
+  [
+    {
+      user_id: '1', 
+      item_id: '4', 
+    },
+    {
+      user_id: '1', 
+      item_id: '11', 
+    },
+    {
+      user_id: '1', 
+      item_id: '12', 
+    },
+    {
+      user_id: '1', 
+      item_id: '23', 
+    },
+
+  ]
+)
