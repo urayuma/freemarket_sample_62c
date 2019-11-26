@@ -30,7 +30,6 @@ Rails.application.routes.draw do
     resources :chats, only: [:show]
   end
 
-
   resources :signups, only: [:index] do
     collection do
       get 'step1'
