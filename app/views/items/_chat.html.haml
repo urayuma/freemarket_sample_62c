@@ -1,0 +1,15 @@
+.item-chat
+  .item-chat-area
+    %ul.item-chat-area__library
+    - @item.chats.each do |chat|
+      %li.item-chat-area__library--board
+        %figure.item-user-image
+          = image_tag chat.user.image , class: "item-user-image-size"
+          %figcaption.item-user-name
+            = chat.user.nickname
+        .item-chat-message
+          = chat.text
+  .item-chat-area
+    %p.item-chat__notes 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.item-chat__input
+    %button{class: "btn-default item-chat__btn"} コメントする

@@ -17,4 +17,8 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id].to_s).children
   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
 end
