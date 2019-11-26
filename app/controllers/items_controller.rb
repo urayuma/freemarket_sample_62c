@@ -27,3 +27,4 @@ class ItemsController < ApplicationController
     @chats = Chat.where(item_id: params[:id])
   end
 end
+

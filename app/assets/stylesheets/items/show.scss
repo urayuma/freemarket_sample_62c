@@ -16,7 +16,9 @@
       background-color: #fafafa;
       .item-detail-phone-big {
         line-height: 0;
-        &__main {
+        .item-detail-phone-big-main {
+          height: 30rem;
+          width: 30rem;
         }
       }
       .item-detail-phone-cells {
@@ -25,7 +27,7 @@
         flex-wrap: wrap;
         height: 12rem;
         width: 30rem;
-        &__bit {
+        .item-detail-phone-cells-bits {
           height: 6rem;
           width: 6rem;
         }

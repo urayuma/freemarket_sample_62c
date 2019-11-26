@@ -15,6 +15,10 @@
           border-radius: 50%;
           position: absolute;
           top: -2rem;
+          .item-user-image-size {
+            height: 4rem;
+            width: 4rem;
+          }
           .item-user-name {
             border: none;
             position: absolute;
