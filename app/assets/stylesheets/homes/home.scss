@@ -217,27 +217,23 @@ button.search-logo {
       background-color: rgb(255, 255, 255);
       margin-left: 15.3rem;
 
+
       &__List {
         &__All {
-          height: 4rem;
-          width: 100%;
-          align-items: center;
+          width: 75%;
+          margin-left: 13.5rem;
 
           &__list {
-            display: block;
+            display: inline-block;
             font-size: 1.4rem;
             height: 3.2rem;
-            width: 18rem;
 
             padding: 1rem;
-            margin: 1rem;
+            margin: 4rem 2rem 0 2rem;
 
-            margin-top: 2rem;
-            margin-left: 5rem;
-
-            text-align: center;
             background-color: #dddddd;
             border-radius: 2rem;
+
           }
         }
       }
@@ -301,8 +297,8 @@ h3.category-item-title{
 
       &__List {
         &__All {
-          height: 4rem;
-          width: 100%;
+          width: 75%;
+          margin-left: 11.5rem;
   
           &__list{
           
@@ -311,9 +307,7 @@ h3.category-item-title{
             height: 3.2rem;
 
             padding: 1rem;
-
-            margin-top: 2rem;
-            margin-left: 12rem;
+            margin: 4rem 5rem 0 5rem;
 
             background-color: #dddddd;
             border-radius: 2rem;
@@ -379,14 +373,16 @@ p.show-detail {
 figcaption{
   height: 5rem;
   width: 20rem;
-  margin: 1rem;
+  margin: 0.1rem 1rem 1rem 1rem;
   position: absolute;
-  background-color: white;
-  border-style: ridge;
+  background-color: grey;
+  color: #dddddd;
+  text-align: center;
+  line-height: initial;
 }
 
 
-img.body-item-image{
+.body-item-image{
   display: flex;
   height: 23rem;
   width: 20rem;
@@ -396,7 +392,7 @@ img.body-item-image{
 
 }
 
-img.favorite-item-image {
+.favorite-item-image {
   display: block;
   height: 15rem;
   width: 18rem;
@@ -425,7 +421,6 @@ ul.FooterMenu__list_wrapper {
 }
 
 li.FooterMenu__list__small {
-  text-align: left;
   line-height: 1.4em;
   margin: 1rem 0 0 0;
   opacity: 0.7;
@@ -467,8 +462,6 @@ p.aside-text2 {
 
 img.aside-image1 {
   display: block;
-  height: 18rem;
-  width: 18rem;
   padding-left: 2rem;
 }
 
@@ -494,7 +487,7 @@ img.aside-image1 {
       display: inline-block;
       width: 20rem;
       vertical-align: top;
-      margin: 3.2rem;
+      margin: 3.2rem 3.2rem 0 0;
       padding-left: 0;
     
       &__title{
@@ -507,6 +500,10 @@ img.aside-image1 {
         font: inherit;
       }
     }
+}
+
+h2.FooterMenu__list__title{
+  text-align: left;
 }
 
 

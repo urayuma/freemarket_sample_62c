@@ -194,7 +194,7 @@ Brand.create!(
       name: 'スズキ',
     },
     {
-      name: 'カワサキ',
+      name: 'スペースワールド',
     },
   ]
 )
@@ -389,10 +389,10 @@ other_other.children.create([{name: "オフィス用品一般"}, {name: "オフ�
 Item.create!(
   [
     {
-      name: 'サンタコスプレ', 
-      price: '1500', 
+      name: 'シャネルセール品３点', 
+      price: '15000', 
       usage_status: '新品', 
-      description: '可愛いサンタコスで素敵なクリスマスを過ごそう',
+      description: 'お買い得！シャネルのおしゃれアイテム３点セット',
       selling_status: '出品中', 
       delivery_fee: '100', 
       delivery_way: 'Fmarket便',
@@ -621,7 +621,7 @@ Item.create!(
       delivery_area: '長崎県',
       shipping_date: '20190818',
       user_id: '2', 
-      brand_id: '8', 
+      brand_id: '15', 
       category_id: '5', 
       payment_status: '支払済'
     },
@@ -666,7 +666,7 @@ Item.create!(
       delivery_area: '北海道',
       shipping_date: '20191105',
       user_id: '2', 
-      brand_id: '12', 
+      brand_id: '15', 
       category_id: '7', 
       payment_status: '支払済'
     },
@@ -741,7 +741,7 @@ Item.create!(
       delivery_area: '大阪府',
       shipping_date: '20191009',
       user_id: '3', 
-      brand_id: '16', 
+      brand_id: '15', 
       category_id: '9', 
       payment_status: '支払済'
     },
@@ -853,10 +853,57 @@ Item.create!(
       delivery_area: '広島県',
       shipping_date: '20190710',
       user_id: '1', 
+      brand_id: '15', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+    {
+      name: 'ミレニアムファルコン', 
+      price: '5000000', 
+      usage_status: '中古', 
+      description: '初期シリーズ',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
       brand_id: '21', 
       category_id: '12', 
       payment_status: '支払済'
     },
+    {
+      name: 'セール中！宇宙の仲間たち', 
+      price: '5000', 
+      usage_status: '中古', 
+      description: 'あの仲間たちが登場！',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '21', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+    {
+      name: '惑星間をひとっ飛び！未確認生命体', 
+      price: '200000', 
+      usage_status: '中古', 
+      description: '惑星間ドライブはいかが',
+      selling_status: '売却済み', 
+      delivery_fee: '100', 
+      delivery_way: '普通郵便',
+      delivery_area: '広島県',
+      shipping_date: '20190710',
+      user_id: '1', 
+      brand_id: '15', 
+      category_id: '12', 
+      payment_status: '支払済'
+    },
+
+
   ]
 )
   
@@ -887,8 +934,8 @@ Item.create!(
 Image.create!(
   [
     {
-      # サンタコスプレ
-      image: 'https://cdn.thumb.shop-list.com/res/up/shoplist/shp/__basethum370__/malymoon/cm_7/7576-top.jpg',
+      # シャネルセール品３点
+      image: 'https://image.interior-book.jp/article/original/56619.jpg',
       item_id: '1',
     },
     {
@@ -1026,12 +1073,50 @@ Image.create!(
       item_id: '25',
     },
     {
+      # ミレニアムファルコン
+      image: 'https://cache.ymall.jp/webcom/item/multiimage/300/7657888012_001.jpg',
+      item_id: '26',
+    },
+    {
+      # セール中！宇宙の仲間たち
+      image: 'https://shop.daigo.co.jp/wp-content/uploads/post/26858/S3709.jpg',
+      item_id: '27',
+    },
+    {
+      # 惑星間をひとっ飛び未確認生命体
+      image: 'https://img.sirabee.com/wp-content/uploads/2019/09/GettyImages-1054137738.jpg',
+      item_id: '28',
+    },
+    
+    {
       # スパイン産オレンジハニー
       image: 'http://www.tullys.co.jp/menu/uploads/orangehoney_191015.jpg',
-      item_id: '26',
+      item_id: '29',
     },
 
   ]
 )
 
+# Likeテーブル
 
+Like.create!(
+  [
+    {
+      user_id: '1', 
+      item_id: '4', 
+    },
+    {
+      user_id: '1', 
+      item_id: '11', 
+    },
+    {
+      user_id: '1', 
+      item_id: '12', 
+    },
+    {
+      user_id: '1', 
+      item_id: '23', 
+    },
+
+  ]
+)

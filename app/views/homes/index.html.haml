@@ -18,17 +18,18 @@
                         .MainMenu__FavoriteItems__Body__Items__All
                             .MainMenu__FavoriteItems__Body__Items__All__List
                                 .MainMenu__FavoriteItems__Body__Items__All__List__image
-                                    - @images.each do |image|
-                                        %img.favorite-item-image{:style => "background-image: url(#{image.image});"}
+                                    - @like_rankings.each do |image|
+                                        = image_tag image.image , height: '150', width: '180', class:'favorite-item-image'
+
 
 
             .MainMenu__CategoryLists
                 %h2.category-title 人気のカテゴリー
                 .MainMenu__CategoryLists__List
                     .MainMenu__CategoryLists__List__All
-                        .MainMenu__CategoryLists__List__All__list
-                            %a.category-list 
-                                - @categories.each do |category|
+                        - @category_rankings.each do |category|
+                            .MainMenu__CategoryLists__List__All__list
+                                %a.category-list 
                                     = category.name
 
 
@@ -45,18 +46,21 @@
                             .MainMenu__CategoryItems__Body__Items__All__List
                                 - @categoryitems.each do |item|
                                     %figure
-                                        %img.body-item-image{:style => "background-image: url(#{item.images.first.image});"}
+                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
                                         %figcaption 
                                             = item.name
+                                    
+
+                            
                                         
 
             .MainMenu__BrandLists
                 %h2.category-title 人気のブランド
                 .MainMenu__BrandLists__List
                     .MainMenu__BrandLists__List__All
-                        .MainMenu__BrandLists__List__All__list
-                            %a.brand-list 
-                                - @brands.each do |brand|
+                        - @brand_rankings.each do |brand|
+                            .MainMenu__BrandLists__List__All__list
+                                %a.brand-list 
                                     = brand.name
 
 
@@ -73,7 +77,7 @@
                             .MainMenu__BrandItems__Body__Items__All__List
                                 - @branditems.each do |item|
                                     %figure
-                                        %img.body-item-image{:style => "background-image: url(#{item.images.first.image});"}
+                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
                                         %figcaption
                                             = item.name
 
@@ -83,11 +87,13 @@
             .Aside__Text__Lists
                 %p.aside-text1 Fmarket  わくわくフリマアプリ
                 %p.aside-text2 今すぐ出品してみよう！
-            %img.aside-app{alt: "", src:"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
-            %img.aside-app{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+            = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", alt: "", class: "aside-app"
+
+            = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "aside-app"
+
 
         .Aside__Image
-            %img.aside-image1{alt: "", src: "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+            = image_tag "https://i.pinimg.com/originals/67/0c/e8/670ce89d7ce9d88121c0bf33a1d478e4.png", alt: "", class: "aside-image1", height: '200', width: '270'
 
     = render 'footer'
     = render 'postitem'
