@@ -38,44 +38,50 @@
   }
 }
 
-
-h4 {                       // 仮置き用なので消して下さい
+h4 {
+  // 仮置き用なので消して下さい
   display: inline-block;
 }
 
-.creditcard_information {   // 消さないでください。.creditcard_information(入力欄等)の位置を定めてます
-  margin-left: 178px;
-  margin-right: 178px;
+.creditcard_information {
+  // 消さないでください。.creditcard_information(入力欄等)の位置を定めてます
+  margin-left: 17.8rem;
+  margin-right: 17.8rem;
 }
 
-.field-creditcard {      //  支払い方法より下の記入欄の部分です
-  line-height: 40px;
-  margin-top: 15px;
+.field-creditcard {
+  //  支払い方法より下の記入欄の部分です
+  line-height: 4rem;
+  margin-top: 1.5rem;
 }
 
-@mixin input {             // form_for切り替え時に調整必要かもしれません
+@mixin input {
+  // form_for切り替え時に調整必要かもしれません
   display: block;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  height: 50px;
-  font-size: 17px;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #ccc;
+  height: 5rem;
+  font-size: 1.7rem;
 }
 
-.input-text {        //  selectなのでビューが崩れるかもしれません。 @mixin inputを継承してます
+.input-text {
+  //  selectなのでビューが崩れるかもしれません。 @mixin inputを継承してます
   @include input;
-  width: 100px;
+  width: 10rem;
   display: inline-block;
 }
 
-.input-text_cardnum {   //   @mixin inputを継承してます
+.input-text_cardnum {
+  //   @mixin inputを継承してます
   @include input;
-  width: 340px;
+  width: 34rem;
 }
 
-.btn-default.btn-red {     //  .input-text_cardnumを継承してます。margin-bottomはボタンとフッターとの余白を作るために記述してます
+.btn-default.btn-red {
+  //  .input-text_cardnumを継承してます。margin-bottomはボタンとフッターとの余白を作るために記述してます
   @extend .input-text_cardnum;
-  margin-top: 40px;
+  margin-top: 4rem;
   background-color: rgb(234, 53, 45);
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }

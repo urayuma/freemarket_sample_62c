@@ -31,21 +31,21 @@
 }
 .done-message {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 
 .done-btn {
-  text-align:center;
+  text-align: center;
 }
 
 .btn-default_go-mercari {
   background-color: rgb(234, 53, 45);
   color: #fff;
-  font-size: 18px;
-  height: 52px;
-  width: 325px;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  font-size: 1.8rem;
+  height: 5.2rem;
+  width: 32.5rem;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
 }
 
 .field-image {
@@ -54,39 +54,47 @@
 
 .put-done {
   position: absolute;
-  right: 10px;
-  top: 0px;
+  right: 1rem;
 }
 
 .back-message {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #fff;
   position: absolute;
-  top: 20px;
-  left: 60px;
+  top: 2rem;
+  left: 6rem;
 }
 
 .back-message2 {
-  font-size: 26px;
+  font-size: 2.6rem;
   color: #fff;
   position: absolute;
-  top: 50px;
-  left: 60px;
+  top: 5rem;
+  left: 6rem;
+}
+
+.image-phone {
+  width: 70rem;
+}
+
+.put-done {
+  height: 27.5rem;
+  width: 30rem;
 }
 
 .apple-done {
   position: absolute;
-  top: 140px;
-  left: 95px;
+  top: 14rem;
+  left: 9.5rem;
 }
 
 .gogle-done {
   position: absolute;
-  top: 130px;
-  left: 220px;
+  top: 13rem;
+  left: 22rem;
 }
 .logo-done {
   position: absolute;
-  top: 140px;
-  left: 36px;
+  top: 14rem;
+  left: 3.6rem;
 }

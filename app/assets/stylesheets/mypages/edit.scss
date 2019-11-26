@@ -1,29 +1,29 @@
 .profile-container {
-  height: 1292px;
-  width: 1020px;
-  margin: 40px auto 0;
-  padding-bottom: 40px;
+  height: 130rem;
+  width: 102rem;
+  margin: 4rem auto 0;
+  padding-bottom: 4rem;
   .profile-main {
-    height: 568px;
-    width: 700px;
+    height: 56.8rem;
+    width: 70rem;
     background: #fff;
     float: right;
     &__top {
-      padding: 12px 24px;
+      padding: 1.2rem 2.4rem;
       text-align: center;
-      font-size: 24px;
+      font-size: 2.4rem;
       font-weight: bold;
     }
     &__header {
       box-sizing: border-box;
-      height: 156px;
-      width: 700px;
+      height: 15.6rem;
+      width: 70rem;
       text-align: center;
-      padding: 72px 16px 24px;
+      padding: 7.2rem 1.6rem 2.4rem;
       background-image: url(fmarket.jpg);
       &--image {
-        height: 60px;
-        width: 60px;
+        height: 6rem;
+        width: 6rem;
         border-radius: 50%;
         display: inline-block;
         vertical-align: middle;
@@ -35,34 +35,34 @@
       &--input {
         box-sizing: border-box;
         vertical-align: middle;
-        width: 220px;
-        height: 48px;
+        width: 22rem;
+        height: 4.8rem;
         background-color: #fff;
-        margin-left: 8px;
-        font-size: 14px;
-        border-radius: 4px;
-        padding: 10px 16px 8px;
+        margin-left: 0.8rem;
+        font-size: 1.4rem;
+        border-radius: 0.4rem;
+        padding: 1rem 1.6rem 0.8rem;
       }
     }
     &__textarea {
-      padding: 40px 16px;
+      padding: 4rem 1.6rem;
       &--box {
         box-sizing: border-box;
-        font-size: 16px;
-        padding: 10px;
-        min-height: 216px;
+        font-size: 1.6rem;
+        padding: 1rem;
+        min-height: 21.6rem;
         width: 100%;
         line-height: 1.5;
       }
       &--edit {
-        height: 50px;
+        height: 5rem;
         width: 100%;
         background-color: #ea352d;
         text-align: center;
-        font-size: 16px;
+        font-size: 1.6rem;
         color: #fff;
-        margin-top: 16px;
-        line-height: 50px;
+        margin-top: 1.6rem;
+        line-height: 5rem;
       }
     }
   }

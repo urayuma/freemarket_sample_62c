@@ -2,25 +2,6 @@
   width: 100%;
   background-color: rgb(245, 245, 245);
 }
-
-.single-header {
-  height: 128px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  box-shadow: none;
-  background-color: rgb(245, 245, 245);
-}
-
-.header-logo {
-  height: 49px;
-  width: 185px;
-  display: block;
-  margin: 40px 40px 0 0;
-  background-image: url("fmarket_logo_red");
-  background-repeat: no-repeat;
-}
-
 // Main
 
 .single-main {
@@ -31,82 +12,82 @@
   background-repeat: no-repeat;
 
   .login2-panel {
-    width: 700px;
+    width: 70rem;
     background-color: #fff;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 
     &__login-form-inner {
       width: 100%;
-      margin-top: 20px;
+      margin-top: 2rem;
 
       &--email {
-        height: 50px;
-        width: 328px;
+        height: 5rem;
+        width: 32.8rem;
         background: red;
         color: #fff;
         display: block;
         margin: auto;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
         color: #fff;
         position: relative;
 
         .far.fa-envelope {
-          font-size: 25px;
+          font-size: 2.5rem;
           position: absolute;
-          bottom: 10px;
-          left: 15px;
+          bottom: 1rem;
+          left: 1.5rem;
         }
         &__message {
-          font-size: 15px;
-          line-height: 50px;
+          font-size: 1.5rem;
+          line-height: 5rem;
           text-align: center;
         }
       }
 
       &--facebook {
-        height: 50px;
-        width: 328px;
+        height: 5rem;
+        width: 32.8rem;
         background: #385185;
         display: block;
         margin: auto;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
         color: #fff;
         position: relative;
 
         .fab.fa-facebook-square {
-          font-size: 25px;
+          font-size: 2.5rem;
           position: absolute;
-          bottom: 10px;
-          left: 15px;
+          bottom: 1rem;
+          left: 1.5rem;
         }
         &__message {
-          font-size: 15px;
-          line-height: 50px;
+          font-size: 1.5rem;
+          line-height: 5rem;
           text-align: center;
         }
       }
 
       &--google {
-        height: 50px;
-        width: 328px;
+        height: 5rem;
+        width: 32.8rem;
         background: #fff;
         border: solid 1px #979797;
         display: block;
         margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         position: relative;
 
         .fab.fa-google {
-          font-size: 25px;
+          font-size: 2.5rem;
           position: absolute;
-          bottom: 10px;
-          left: 15px;
+          bottom: 1rem;
+          left: 1.5rem;
         }
         &__message {
-          font-size: 15px;
-          line-height: 50px;
+          font-size: 1.5rem;
+          line-height: 5rem;
           color: #333;
           text-align: center;
         }
@@ -116,10 +97,10 @@
 }
 
 p.login2-panel-title {
-  font-size: 22px;
-  padding: 30px;
+  font-size: 2.2rem;
+  padding: 3rem;
   text-align: center;
-  border-bottom: 2px rgb(245, 245, 245) solid;
+  border-bottom: 0.2rem rgb(245, 245, 245) solid;
 }
 
 // Footer

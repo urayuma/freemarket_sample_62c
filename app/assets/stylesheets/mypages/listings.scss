@@ -1,52 +1,52 @@
 .mypage-container__listings {
-  width: 43.5rem;
+  width: 70rem;
   box-sizing: border-box;
   float: right;
 }
 
 .listings-product {
-  height: 4.47rem;
+  height: 7.2rem;
   background-color: #fafafa;
-  padding: 0 1rem;
-  font-size: 1.12rem;
+  padding: 0 1.6;
+  font-size: 1.8rem;
   font-weight: bold;
-  line-height: 4.47rem;
+  line-height: 7.2rem;
 }
 
 .listings-tabs {
-  width: 43.5rem;
-  height: 0.12rem;
+  width: 70rem;
+  height: 0.2rem;
   box-sizing: border-box;
   display: flex;
 
   &__active {
     width: calc(100% / 3);
-    height: 0.12rem;
+    height: 0.2rem;
     background-color: #ea532d;
   }
 
   &__post {
     width: 33.33333%;
-    height: 0.12rem;
+    height: 0.2rem;
     background-color: #eee;
   }
 }
 
 .listings-detail {
-  height: 4.47rem;
-  width: 43.5rem;
+  height: 7.2rem;
+  width: 70rem;
   display: flex;
   box-sizing: border-box;
 
   &__active {
-    height: 4.47rem;
+    height: 7.2rem;
     width: 33.33333%;
-    font-size: 1.12rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #333333;
     background-color: #fff;
     text-align: center;
-    line-height: 4.47rem;
+    line-height: 7.2rem;
     text-decoration: none;
   }
 
@@ -55,14 +55,14 @@
   }
 
   &__post {
-    height: 4.47rem;
+    height: 7.2rem;
     width: 33.33333%;
-    font-size: 1.12rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #333333;
     background-color: #eee;
     text-align: center;
-    line-height: 4.47rem;
+    line-height: 7.2rem;
     text-decoration: none;
   }
 
@@ -72,9 +72,9 @@
 }
 
 .listings-report-areas-none {
-  height: 14.6rem;
-  width: 43.5rem;
-  font-size: 1.12rem;
+  height: 23.4rem;
+  width: 70rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #808080;
   background-color: #fff;
@@ -83,7 +83,7 @@
   background-repeat: no-repeat;
   background-position: 50%;
   text-align: center;
-  line-height: 24.2rem;
+  line-height: 39rem;
   list-style: none;
 
   &__area {
@@ -92,17 +92,17 @@
 }
 
 .listings-report-areas-exsis {
-  height: 4.47rem;
-  width: 43.5rem;
+  height: 7.2rem;
+  width: 70rem;
   background-color: #fff;
   list-style: none;
   display: flex;
 
   &__area {
-    width: 43.5rem;
+    width: 70rem;
     display: block;
     align-items: center;
-    border-bottom: solid 1px #d1cccc;
+    border-bottom: solid 0.1rem #d1cccc;
 
     &__link {
       width: 95%;
@@ -114,12 +114,12 @@
 
       &__figure {
         display: block;
-        margin-right: 1rem;
+        margin-right: 1.6rem;
 
         &__image {
-          height: 3rem;
-          width: 3rem;
-          margin-top: 0.8rem;
+          height: 4.8rem;
+          width: 4.8rem;
+          margin-top: 1.3rem;
           display: block;
           object-fit: cover;
         }
@@ -129,27 +129,27 @@
         margin: auto 0 auto 0;
 
         &__name {
-          font-size: 0.9rem;
+          font-size: 1.5rem;
         }
 
         &__detail {
-          margin-top: 0.7rem;
+          margin-top: 1.1rem;
 
           &__icon {
             color: #808080;
 
             .fa-comment-alt {
-              margin-left: 0.3rem;
+              margin-left: 0.5rem;
             }
 
             .listings__selling_status {
               background-color: #0099e8;
               color: #fff;
-              font-size: 0.8rem;
+              font-size: 1.3rem;
               font-weight: bolder;
-              border-radius: 0.2rem;
+              border-radius: 0.3rem;
               margin: 0 0 0 auto;
-              padding: 0.2rem;
+              padding: 0.3rem;
             }
             .listings__selling_status-sold {
               background-color: #808080;
@@ -160,9 +160,9 @@
 
       &__sngle-left {
         display: inline-block;
-        line-height: 4.47rem;
+        line-height: 7.2rem;
         margin: 0 0 0 auto;
-        font-size: 1.5rem;
+        font-size: 2.4rem;
       }
     }
   }
