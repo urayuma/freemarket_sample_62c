@@ -1,0 +1,43 @@
+.mypage_item_edit {
+  @include item_details;
+  margin: 0.8rem auto 0;
+  &__btns {
+    padding: 0.7rem;
+    &--edit {
+      width: 100%;
+      text-align: center;
+      margin: 0.8rem 0 0;
+      font-size: 1.6rem;
+      background: $red;
+      border: 0.1rem solid $red;
+      color: #fff;
+      line-height: 4.8rem;
+      display: block;
+    }
+    &--or {
+      text-align: center;
+    }
+    &--stop {
+      width: 100%;
+      text-align: center;
+      margin: 0.8rem 0 0;
+      font-size: 1.6rem;
+      background: #aaa;
+      border: 0.1rem solid #aaa;
+      color: #fff;
+      line-height: 4.8rem;
+      display: block;
+    }
+    #modal-open-btn {
+    width: 100%;
+    text-align: center;
+    margin: 0.8rem 0 0;
+    font-size: 1.6rem;
+    background: #aaa;
+    border: 0.1rem solid #aaa;
+    color: #fff;
+    line-height: 4.8rem;
+    display: block;
+    }
+  }
+}

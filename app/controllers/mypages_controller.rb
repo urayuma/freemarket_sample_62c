@@ -38,6 +38,12 @@ class MypagesController < ApplicationController
 
   def purchased; end
 
+  def exhibit_item
+    @item = Item.find(params[:id])
+  end
+
+  private
+
   def sidebar_setteing
     @menulist = ["マイページ", "お知らせ", "やることリスト", "いいね！一覧", "出品する", "出品した商品 - 出品中", "出品した商品 - 取引中", "出品した商品 - 売却済み", "購入した商品 - 取引中", "購入した商品 - 過去の取引", "ニュース一覧", "評価一覧", "ガイド", "お問い合わせ"]
     @linklist = ["/mypage", "/info/", "/mustdo/", "/liles_all/", "/出品する/", "/mypage/listings/listing", "/mypage/listings/in_progress", "/mypage/listings/completed", "/mypage/purchase", "/mypage/purchased"]
