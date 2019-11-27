@@ -25,6 +25,7 @@
 @import "variables/mixins";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "variables/breadcrumb";
 
 //mypages
 @import "mypages/sidebar";
@@ -63,6 +64,8 @@
 
 //items
 @import "items/sell";
+@import "items/show";
+@import "items/chat";
 
 //その他
 @import "shard/signups_errors";
@@ -79,5 +82,3 @@
 @import 'addresses/new.scss';
 @import 'creditcards/new.scss';
 // @import "signups/signup.scss";
-@import "items/show";
-@import "items/chat"
