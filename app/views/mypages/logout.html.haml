@@ -1,5 +1,8 @@
 %body
   = render "/homes/header"
+  - breadcrumb :logout
+  = render "layouts/breadcrumbs"
+  
   .contents
     .logout
       .logout__form

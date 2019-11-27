@@ -5,6 +5,16 @@
   background-color: black;
   float: right;
   background: #fff;
+  .l-single-inner_registration{
+    font-size: 2.4rem;
+    padding: 0.8rem 2.4rem;
+  }
+  .field-label-text{
+    margin-top: 2.4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
 }
 .input-text_cardnum {
   box-sizing: border-box;
@@ -42,21 +52,42 @@
 }
 .creditcard_information-add {
   .pay-informartion {
+    max-width: 32rem;
+    margin: 0 auto;
     position: relative;
     border-bottom: 0.1rem solid #f5f5f5;
-    .pay-informartion__list {
-      margin-top: 2rem;
+    &__title{
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    &__list {
+      padding:2.4rem;
+      .list-card-number,
+      .list-card-expiration{
+        font-size: 1.6rem;
+        margin-top: 0.8rem;
+      }
       .delete-btn {
         position: absolute;
         top: 4rem;
-        right: 0px;
+        right: 0;
         color: $red;
         border: 0.1rem solid $red;
         border-radius: 0.4rem;
         box-sizing: border-box;
         padding: 0.5rem;
         font-size: 1.4rem;
+        text-decoration: none;
       }
+    }
+  }
+  .pay-about{
+    text-align: right;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    &__link{
+      color: #0099e8;
+      text-decoration: none;
     }
   }
 }

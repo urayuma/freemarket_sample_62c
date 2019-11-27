@@ -16,9 +16,8 @@ class HomesController < ApplicationController
   end
 
   private
+
   def item_params
     params.permit(:email, :password)
   end
-
-
 end

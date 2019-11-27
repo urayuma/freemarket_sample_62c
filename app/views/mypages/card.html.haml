@@ -1,34 +1,46 @@
 
--# このファイルはクレジットカードを持っていなかった場合の画面です
 .header-a
   = render '/homes/header'
+  - breadcrumb :card
+  = render "layouts/breadcrumbs"
 .contents
   .main-mypage
     %h2.l-single-inner_registration
       支払い方法
-      -# = form_for @user, url: mypage_index_path, method: :get do |f|
     .creditcard_information-add
-      .pay-way
-        .pay-way__creditcard
-          クレジットカード一覧
-        .pay-way__addcard
-          = button_to card_new_mypage_index_path, method: :get, class: "btn-default add_credit" do
-            .i{class: "far fa-credit-card credit-icon"}
-            クレジットカードを追加する
-      %br
-      %h1 クレジットカードの有無で分岐させる
-      %br
-      .pay-informartion
-        .pay-informartion__title
-          クレジットカード一覧
-        .pay-informartion__list
-          =image_tag "visa.svg", height: '20', width: '40', class: "list-card-sort"
-          .list-card-number ************1234
-          .list-card-expiration 11/19
-          .delete-btn-zone
-            %button{class:"btn-default delete-btn"}  削除する
+      -if @card_information.blank?
+        .pay-way
+          .pay-way__creditcard
+            クレジットカード一覧
+          .pay-way__addcard
+            = button_to card_new_mypage_index_path, method: :get, class: "btn-default add_credit" do
+              .i{class: "far fa-credit-card credit-icon"}
+              クレジットカードを追加する
+        .pay-about
+          = link_to "/mypage/card/", class:'pay-about__link' do
+            支払い方法について
+            %span.pay-about__arrow
+              %i.fas.fa-chevron-right
+      -else
+        .pay-informartion
+          .pay-informartion__title
+            クレジットカード一覧
+          .pay-informartion__list
+            =image_tag "visa.svg", height: '20', width: '40', class: "list-card-sort"
+            .list-card-number
+              ="************"+@card_information.last4
+            .list-card-expiration 
+              ="#{@card_information.exp_month}/#{@card_information.exp_year%100}"
+            .delete-btn-zone
+              =link_to "削除する", delete_creditcards_path, {method: :post, class:"btn-default delete-btn"}
+        .pay-about
+          = link_to "/mypage/card/", class:'pay-about__link' do
+            支払い方法について
+            %span.pay-about__arrow
+              %i.fas.fa-chevron-right
 
 
   = render "sidebar"
 
 = render "/homes/footer"
+

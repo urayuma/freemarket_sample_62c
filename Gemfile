@@ -85,19 +85,17 @@ gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails' # 環境変数設定のために
 gem 'dropzonejs-rails'
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'fog-aws'
 gem 'font-awesome-sass'
+gem 'gretel'
 gem "haml-rails"
 gem 'jquery-rails'
+gem 'kaminari', '~> 0.17.0'
 gem 'mini_magick'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+gem 'payjp'
 gem 'rails-i18n'
 gem 'recaptcha', require: "recaptcha/rails"
-gem 'ancestry'
-gem 'active_hash'
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-
-gem 'carrierwave'
-gem 'kaminari', '~> 0.17.0'

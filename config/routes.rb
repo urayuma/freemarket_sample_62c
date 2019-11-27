@@ -41,17 +41,21 @@ Rails.application.routes.draw do
       post "/", to: 'addresses#create'
     end
   end
-  resources :creditcards, only: %i[new create]
+
+  resources :creditcards, only: %i[new show] do
+    collection do
+      post 'pay', to: 'creditcards#pay'
+      post 'delete', to: 'creditcards#delete'
+    end
+  end
+
   resources :order, only: %i[index] do
     member do
       get '/buy', to: 'orders#new'
     end
   end
   resources :addresses, only: %i[new create]
-  resources :creditcards, only: %i[new create]
-
-  resources :items, only: %i[new create show] do
-    resources :chats, only: [:show]
+  resources :items, only: %i[new create] do
     collection do
       get 'sell'
       get 'get_category_children', defaults: { format: 'json' }
