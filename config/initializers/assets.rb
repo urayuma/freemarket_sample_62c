@@ -13,4 +13,4 @@ Rails.application.config.assets.precompile += %w[*.svg]
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( home.scss )
+Rails.application.config.assets.precompile += %w[home.scss]
