@@ -1,0 +1,9 @@
+%button#modal-open-btn この商品を削除する
+= link_to item_path, method: :delete, id: 'item-delete-btn' do
+  #overlay
+    #modalWindow
+      .modal-message-box
+        %div 確認
+        %div 本当に削除しますか？
+      %button#modal-close-btn キャンセル
+      %button#delete-comformation-btn 削除する

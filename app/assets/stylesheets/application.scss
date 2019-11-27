@@ -20,6 +20,7 @@
 @import "config/colors";
 @import "config/font-size";
 
+
 //variables
 @import "variables/variables";
 @import "variables/mixins";
@@ -37,6 +38,7 @@
 @import "mypages/identification";
 @import "mypages/listings.scss";
 @import "mypages/purchase_purchased.scss";
+@import "mypages/exhibit_item";
 
 //signupus
 // @import "signups/signup.scss";
@@ -68,6 +70,7 @@
 @import "items/sell";
 @import "items/show";
 @import "items/chat";
+@import "items/modal";
 
 //その他
 @import "shard/signups_errors";
