@@ -15,6 +15,26 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  def edit
+    @item = Item.find_by(id: params[:id])
+    @item.images.build
+    @grandchild_category = Category.find(@item.category_id)
+    @usage_status = UsageStatus.all
+    @delivery_fee = DeliveryFee.all
+    @prefectures = Prefecture.all
+    @shipping_date = ShippingDate.all
+    @brand = Brand.all
+    @images = []
+    Array(@item.images).each do |image|
+      @images << image.image.url
+    end
+    @deliveryway = if @item.delivery_fee == "送料込み(出品者負担)"
+                     DeliveryWay.all
+                   else
+                     DeliveryWay2.all
+                   end
+  end
+
   def create
     @item = Item.new(item_params)
     respond_to do |format|
@@ -38,7 +58,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(id: params[:parent_id], ancestry: nil).children
+    @category_children = Category.find_by(id: params[:parent_id]).children
   end
 
   def get_category_grandchildren
@@ -46,31 +66,31 @@ class ItemsController < ApplicationController
   end
 
   def get_delivery_way
-    @delivery_way = if params[:delivery_fee_id] == "1"
+    @delivery_way = if params[:delivery_fee_id] == "送料込み(出品者負担)"
                       DeliveryWay.all
                     else
                       DeliveryWay2.all
                     end
   end
 
-  def show
+  def get_brand
+    @brand = Brand.all
   end
+
+  def show; end
 
   def update
-    @items = Item.find(id: params[:id])
-    if item.user_id = current_user.id
-      @items.update(id: params[:id])
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      Image.where(item: @item).delete_all
+      params[:images][:image].each do |image|
+        @item.images.create(image: image, item_id: @item.id)
+      end
     end
-    # redirect_to("/") 商品編集に行く前の画面パス
+    redirect_to edit_item_path(params[:id])
   end
 
-  def destroy
-    @images = Image.find_by(item_id: params[:item_id])
-    if image.item.user_id = current_user.id
-      @images.destroy
-    end
-    redirect_to("edit_item")
-  end
+  def destroy; end
 
   def sellnow
     item = Item.find_by(params[:id])
@@ -82,9 +102,12 @@ class ItemsController < ApplicationController
     item = Item.find_by(params[:id])
     item.update(selling_status: "4")
     redirect_to item_show_mypage_index_path
+  end
 
-  def search_item
-    @item = Item.find(params[:id])
+  def image_destroy
+    image = Image.find(params[:id])
+    image.destroy
+    redirect_to edit_item_path(params[:item_id])
   end
 
   private
@@ -92,8 +115,6 @@ class ItemsController < ApplicationController
   def find_item
     @item = Item.find(params[:id])
   end
-
-
 
   def item_params
     params.require(:item).permit(

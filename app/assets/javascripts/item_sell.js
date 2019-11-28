@@ -4,6 +4,11 @@ $(document).on("turbolinks:load", function() {
     var html = `<option value="${variable.id}">${variable.name}</option>`;
     return html;
   }
+  // 配送方法用のセレクトボックスのオプションを作成
+  function appendDeliveryWayOption(variable){
+    var html = `<option value="${variable.name}">${variable.name}</option>`;
+    return html;
+  }
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML) {
     var childSelectHtml = "";
@@ -80,17 +85,21 @@ $(document).on("turbolinks:load", function() {
       return false;
     }
   }
-  // ブランドの入力フォーム作成
-  function appendBrandForm() {
-    var appendSizeFormHtml = "";
-    appendSizeFormHtml = `<div id="brand_wrapper">
-                            <div class="sell-item__form">
+  // ブランドのセレクトボックス作成
+  function appendBrandForm(insertHTML){
+    var appendBrandFormHtml = '';
+    appendBrandFormHtml = `<div class="brand_wrapper">
                             <label class="sell-item__form--subject">ブランド</label>
                             <span class="sell-item__form--optional">任意</span>
-                            <input placeholder="ブランド（任意）" class="sell-item__form--brand" type="text" name="item[brand]" id="item_brand">
-                            </div>
+                            <div class="brand_select-wrapper">
+                            <select id="item-brand-select" name="item[brand_id]"><option value="">---</option>
+                            ${insertHTML}
+                          </select>  
+                            <div class="select-arrow">
+                              <i class="fas fa-chevron-down"></i>                           
+                            </div>                            
                             </div>`;
-    $(".category-wrapper").append(appendSizeFormHtml);
+    $('.category-wrapper').append(appendBrandFormHtml);
   }
 
   // 配送方法選択フォーム作成
@@ -119,8 +128,8 @@ $(document).on("turbolinks:load", function() {
     if (parentCategory != "") {
       //親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: "get_category_children",
-        type: "GET",
+        url: '/items/get_category_children',
+        type: 'GET',
         data: { parent_id: parentCategory },
         dataType: "json"
       })
@@ -128,7 +137,7 @@ $(document).on("turbolinks:load", function() {
           $(".children-wrapper").remove(); //親が変更された時、子以下を削除するする
           $(".grandchildren-wrapper").remove();
           $("#size_wrapper").remove();
-          $("#brand_wrapper").remove();
+          $(".brand_wrapper").remove();
           var insertHTML = "";
           children.forEach(function(child) {
             insertHTML += appendOption(child);
@@ -142,7 +151,7 @@ $(document).on("turbolinks:load", function() {
       $(".children-wrapper").remove(); //親カテゴリーが初期値になった時、子以下を削除するする
       $(".grandchildren-wrapper").remove();
       $("#size_wrapper").remove();
-      $("#brand_wrapper").remove();
+      $(".brand_wrapper").remove();
     }
   });
   // 子カテゴリー選択後のイベント
@@ -151,8 +160,8 @@ $(document).on("turbolinks:load", function() {
     if (childId != "") {
       //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: "get_category_grandchildren",
-        type: "GET",
+        url: '/items/get_category_grandchildren',
+        type: 'GET',
         data: { child_id: childId },
         dataType: "json"
       })
@@ -160,7 +169,7 @@ $(document).on("turbolinks:load", function() {
           if (grandchildren.length != 0) {
             $(".grandchildren-wrapper").remove(); //子が変更された時、孫以下を削除する
             $("#size_wrapper").remove();
-            $("#brand_wrapper").remove();
+            $(".brand_wrapper").remove();
             var insertHTML = "";
             grandchildren.forEach(function(grandchild) {
               insertHTML += appendOption(grandchild);
@@ -174,7 +183,7 @@ $(document).on("turbolinks:load", function() {
     } else {
       $(".grandchildren-wrapper").remove(); //子カテゴリーが初期値になった時、孫以下を削除する
       $("#size_wrapper").remove();
-      $("#brand_wrapper").remove();
+      $(".brand_wrapper").remove();
     }
   });
 
@@ -188,12 +197,25 @@ $(document).on("turbolinks:load", function() {
     } else {
       $("#size_wrapper").remove();
     }
-    if (judgeBrand(grandChildId)) {
-      //ブランドが必要なカテゴリか判定
-      $("#brand_wrapper").remove();
-      appendBrandForm();
-    } else {
-      $("#brand_wrapper").remove();
+    if (judgeBrand(grandChildId)){ //ブランドが必要なカテゴリか判定
+      $.ajax({
+        url: '/items/get_brand',
+        type: 'GET',
+        dataType: 'json'
+      })
+      .done(function(brands){
+        $('.brand_wrapper').remove();
+        var insertHTML = '';
+        brands.forEach(function(brand){
+        insertHTML += appendOption(brand);
+        });
+        appendBrandForm(insertHTML);
+      })
+      .fail(function(){
+        alert('ブランド取得に失敗しました');
+      })
+    }else{
+      $('.brand_wrapper').remove();
     }
   });
 
@@ -202,24 +224,24 @@ $(document).on("turbolinks:load", function() {
     var deliveryFeeId = $("#item_delivery_fee").val();
     if (deliveryFeeId != "") {
       $.ajax({
-        url: "get_delivery_way",
-        type: "GET",
+        url: '/items/get_delivery_way',
+        type: 'GET',
         data: { delivery_fee_id: deliveryFeeId },
-        dataType: "json"
+        dataType: 'json'
       })
-        .done(function(deliveryWays) {
-          if (deliveryWays.length != 0) {
-            $(".deliveryway-wrapper").remove();
-            var insertHTML = "";
-            deliveryWays.forEach(function(deliveryWay) {
-              insertHTML += appendOption(deliveryWay);
-            });
-            appendDeliveryWayBox(insertHTML);
-          }
-        })
-        .fail(function() {
-          alert("配送方法取得に失敗しました");
-        });
+      .done(function(deliveryWays){
+        if (deliveryWays.length != 0) {
+          $('.deliveryway-wrapper').remove(); 
+          var insertHTML = '';
+          deliveryWays.forEach(function(deliveryWay){
+          insertHTML += appendDeliveryWayOption(deliveryWay);
+          });
+          appendDeliveryWayBox(insertHTML);
+        }
+      })
+      .fail(function() {
+        alert("配送方法取得に失敗しました");
+      });
     } else {
       $(".deliveryway-wrapper").remove();
     }
@@ -253,6 +275,27 @@ $(document).on("turbolinks:load", function() {
       var profitResult = profitDefault.replace(profitDefault, "-");
       $(".result-fee").text(feeResult);
       $(".result-profit").text(profitResult);
+    }
+  })
+
+  $(window).on('load', function() {
+    var input = $("#item_price").val();
+    if (300 <= input && input <= 9999999 && Math.round(input) == input && input!=0){  //数値が範囲内か、少数でないか、0でないかチェックする
+      var fee = Math.floor(input * 0.1);
+      var profit = input - fee;
+      var feeDefault = $('.result-fee').text();
+      var profitDefault = $('.result-profit').text();
+      var feeResult = feeDefault.replace(feeDefault, "¥"+String(fee));
+      var profitResult = profitDefault.replace(profitDefault, "¥"+String(profit));
+      $('.result-fee').text(feeResult);
+      $('.result-profit').text(profitResult);
+    }else{
+      var feeDefault = $('.result-fee').text();
+      var profitDefault = $('.result-profit').text();
+      var feeResult = feeDefault.replace(feeDefault, "-");
+      var profitResult = profitDefault.replace(profitDefault, "-");
+      $('.result-fee').text(feeResult);
+      $('.result-profit').text(profitResult);
     }
   });
 });

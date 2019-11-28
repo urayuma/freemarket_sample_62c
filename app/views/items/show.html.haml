@@ -1,6 +1,6 @@
--# .header-a
--#   = render '/homes/header'
--# .item-detail-content
+.header-a
+  = render '/homes/header'
+.item-detail-content
 
   %h1.item-detail-content__title
     = @item.name
@@ -95,7 +95,5 @@
         .item-safety-btn
           .i{class: "fas fa-lock item-lock"}
           %span.item-lock__safety あんしん・あんぜんへの取り組み
--# ここまでが商品の詳細画面です〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
-
--# = render 'chat'
--# = render 'homes/footer'
+= render 'chat'
+= render 'homes/footer'

@@ -56,13 +56,15 @@
         .input_area {
           display: none;
         }
+        .input-area-text{
+          line-height: 16.2rem;
+        }
         .dropzone-area {
           width: 100%;
           min-height: 16.2rem;
           background: #f5f5f5;
           border: 0.1rem dashed #ccc;
           cursor: pointer;
-          line-height: 16.2rem;
           float: right;
         }
         .dropzone-area2 {
@@ -177,7 +179,8 @@
       .parent-wrapper,
       .children-wrapper,
       .grandchildren-wrapper,
-      .deliveryway-select-wrapper{
+      .deliveryway-select-wrapper,
+      .brand_select-wrapper{
         position: relative;
         .select-box {
           @extend .sell-item__form--name;
@@ -188,7 +191,8 @@
         #select-parent-category,
         #select-children-category,
         #select-grandchildren-category,
-        #select-delivery-way{
+        #select-delivery-way,
+        #item-brand-select{
           @extend .select-box;
         }
         .select-arrow {
@@ -346,6 +350,14 @@
   margin-top: 0;
 }
 
-.deliveryway-wrapper{
+.deliveryway-wrapper,
+.brand_wrapper
+{
   margin-top: 4rem;
+}
+
+.image-input-icon{
+  height: 16.2rem;
+  width:12.4rem;
+  line-height: 16.2rem;
 }
