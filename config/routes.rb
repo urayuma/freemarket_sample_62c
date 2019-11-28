@@ -52,6 +52,9 @@ Rails.application.routes.draw do
   resources :order, only: %i[index] do
     member do
       get '/buy', to: 'orders#new'
+      post '/pay', to: 'orders#pay'
+      get '/done', to: 'orders#done'
+      get '/failed', to: 'orders#failed'
     end
   end
   resources :addresses, only: %i[new create]

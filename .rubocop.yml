@@ -7,6 +7,8 @@ AllCops:
     - node_modules/**/*
     - db/migrate/*
     - vendor/**/*
+    - config/deploy.rb
+    - config/unicorn.rb
   # Rails向けのRails copsを実行。"rubocop -R"と同じ
   Rails:
     enabled: true

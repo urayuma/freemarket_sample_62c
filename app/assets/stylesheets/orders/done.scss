@@ -1,0 +1,55 @@
+.order_done{
+  width: 70rem; 
+  margin: 0 auto;
+  .buyed_information{
+    width: 70rem;  
+    margin: auto;
+    background-color: #FEF7DD;
+    &__text-delivery{
+      text-align: center;
+      color: $red;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 2rem 0;
+    }
+    &__text--notification{
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  }
+
+  .buy-panel-image{
+    width: 70rem;
+    background-color: #fff;
+    border-bottom: 0.2rem rgb(245, 245, 245) solid;
+
+    .buyed-item-image{
+      width: 30rem;
+      height:auto;
+      display: block;
+      margin: 0 auto;
+      padding-top: 2rem;
+    }
+    &__text{
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 5rem;
+    }
+  }
+  .buy-panel-price{
+    width: 70rem;
+    background-color: #fff;
+    border-bottom: 0.2rem rgb(245, 245, 245) solid;
+    padding:6rem 0 3rem 0;
+    text-align: center;
+    &__text{
+      font-size: 2rem;
+      display: inline-block;
+
+    }
+    &__text-fee{
+      font-size: 1.5rem;
+      display: inline-block;
+    }
+  }
+}
