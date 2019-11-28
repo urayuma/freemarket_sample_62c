@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       get 'listings/completed/', to: 'mypages#completed'
       get 'purchase', to: 'mypages#purchase'
       get 'purchased', to: 'mypages#purchased'
+      get ':id/exhibit_item', to: 'mypages#exhibit_item', as: :item_show
     end
   end
 
@@ -58,7 +59,10 @@ Rails.application.routes.draw do
     end
   end
   resources :addresses, only: %i[new create]
-  resources :items, only: %i[new create] do
+  resources :creditcards, only: %i[new create]
+
+  resources :items, only: %i[new create show destroy] do
+    resources :chats, only: [:show]
     collection do
       get 'sell'
       get 'get_category_children', defaults: { format: 'json' }

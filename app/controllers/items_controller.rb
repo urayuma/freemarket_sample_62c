@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :search_item, only: %i[destroy show]
   def sell
     @item = Item.new
     @category = Category.where(ancestry: nil)
@@ -18,7 +19,17 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id].to_s).children
   end
 
-  def show
+  def show; end
+
+  def destroy
+    if @item.destroy
+      redirect_to listings_listing_mypage_index_path
+    else
+      redirect_to item_show_mypage_index_path(params[:id])
+    end
+  end
+
+  def search_item
     @item = Item.find(params[:id])
   end
 end
