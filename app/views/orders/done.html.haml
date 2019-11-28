@@ -1,0 +1,24 @@
+%body
+  .order_done
+    =render 'header'
+    .single-main
+      .buyed_information
+        .buyed_information__text-delivery
+          %i.far.fa-clock
+          発送をお待ちください
+        .buyed_information__text--notification
+          出品者からの発送通知をお待ちください
+      .buy-panel
+        %p.buy-panel-title__order  購入が完了しました。
+      .buy-panel-image
+        = image_tag @item.images.first.image , class: "buyed-item-image"
+        .buy-panel-image__text 
+          =@item.name
+      .buy-panel-price
+        .buy-panel-price__text
+          ¥
+          =@item.price
+        .buy-panel-price__text-fee 送料込み
+
+    .single-footer
+      = render 'signups/footer'

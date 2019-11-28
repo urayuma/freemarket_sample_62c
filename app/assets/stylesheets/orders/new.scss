@@ -12,11 +12,14 @@
   background-color: rgb(245, 245, 245);
 }
 
+.headre-logo-wrapper{
+  display: block;
+  
+}
 .header-logo {
   height: 4.9rem;
   width: 18.5rem;
-  display: block;
-  margin: 4rem 4rem 0 0;
+  display: inline-block;
   background-image: url("fmarket_logo_red");
   background-repeat: no-repeat;
 }
@@ -115,6 +118,10 @@
         line-height: 5rem;
         font-size: 1.44rem;
         font-weight: bolder;
+      }
+      &__buy-button-red{
+        @extend .buy-panel__item-detail-inner__buy-button;
+        background-color: $red;
       }
 
       &__shipping {
