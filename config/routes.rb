@@ -77,6 +77,14 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_way', defaults: { format: 'json' }
     end
+    resources :items, only: [:edit, :delete]
+    member do
+      get '/edit', to: 'items#edit'
+      patch '/', to: 'items#update'
+      delete '/', to: 'items#destroy'
+    end
+    # ここのルーティング後でやる
+
   end
 
   patch 'user_information/update', to: 'user_information#update'

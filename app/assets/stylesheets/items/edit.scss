@@ -1,0 +1,379 @@
+.edit-header {
+  text-align: center;
+  height: 12.8rem;
+  &__link {
+    display: inline-block;
+    width: 18.5rem;
+    margin-top: 4rem;
+  }
+  &--logo {
+    padding-top: 4rem;
+  }
+}
+
+.edit-main {
+  width: 70rem;
+  margin: 0 auto;
+  background: #fff;
+  .edit-head {
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 3.2rem 1.6rem;
+    border-bottom: 0.1rem solid #f5f5f5;
+    line-height: 1.5;
+  }
+  .edit-image {
+    padding: 4rem;
+    border-bottom: 0.1rem solid #f5f5f5;
+
+  
+
+
+    &__wrapper {
+      width: 62rem - 12rem;
+      &--subject {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      &--essential {
+        margin-left: 0.8rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.2rem;
+        color: #fff;
+        font-size: 1.2rem;
+        vertical-align: top;
+        background: #ea352d;
+        font-weight: bold;
+        line-height: normal;
+      }
+      &--caution {
+        font-size: 1.4rem;
+        margin-top: 0.8rem;
+        line-height: 1.5;
+      }
+
+      &__items{
+
+        &__haveitems{
+  
+        
+  
+          &__list{
+            display: flex;
+            background-color: #f5f5f5;
+            // position: relative;
+  
+            &__editbutton{
+              // position: absolute;
+  
+            }
+  
+          }
+  
+        }
+      }
+  
+      .drop-area {
+        position: relative;
+        margin: 1.6rem auto 0;
+        .dropzone {
+          width: 100%;
+          min-height: 16.2rem;
+          background: #f5f5f5;
+          border: 0.1rem dashed #ccc;
+          cursor: pointer;
+        }
+        &__text {
+          position: absolute;
+          top: 50%;
+          left: 1.6rem;
+          right: 1.6rem;
+          text-align: center;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          pointer-events: none;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  .edit-item {
+    padding: 0 4rem 4rem;
+    border-bottom: 0.1rem solid #f5f5f5;
+    &__form {
+      margin: 4rem 0 0;
+      &--subject {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      &--essential {
+        @extend .edit-image__wrapper--essential;
+      }
+      &--optional {
+        @extend .edit-image__wrapper--essential;
+        background: #ccc;
+      }
+      &--name {
+        height: 4.8rem;
+        width: 100%;
+        padding: 1rem 1.6rem 0.8rem;
+        margin-top: 0.8rem;
+        border-radius: 0.4rem;
+        border: 0.1rem solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 1.6rem;
+        display: block;
+      }
+      &--explain {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-height: 10.4rem;
+        padding: 1rem;
+        border: 0.1rem solid #ccc;
+        background: #fff;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin-top: 0.8rem;
+      }
+      &--size {
+        @extend .edit-item__form--name;
+      }
+      &--brand {
+        @extend .edit-item__form--name;
+      }
+    }
+  }
+
+  .edit-select {
+    padding: 4rem;
+    border-bottom: 0.1rem solid #f5f5f5;
+    overflow: auto;
+    &__title {
+      color: #888;
+      font-size: 1.4rem;
+      float: left;
+      font-weight: bold;
+    }
+    &__link {
+      display: inline-block;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: #0099e8;
+      color: #fff;
+      line-height: 1.4rem;
+      font-size: 1.2rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    &__group {
+      float: right;
+      width: 40rem;
+      margin-top: 4rem;
+      position: relative;
+      .select-subject {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .select-essential {
+        @extend .edit-image__wrapper--essential;
+      }
+
+      .box-wrapper,
+      .parent-wrapper,
+      .children-wrapper,
+      .grandchildren-wrapper {
+        position: relative;
+        .select-box {
+          @extend .edit-item__form--name;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        #select-parent-category,
+        #select-children-category,
+        #select-grandchildren-category {
+          @extend .select-box;
+        }
+        .select-arrow {
+          position: absolute;
+          right: 1.6rem;
+          top: 50%;
+          z-index: 2;
+          color: #888;
+          font-size: 1.6rem;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+
+  .edit-price {
+    padding: 4rem;
+    border-bottom: 0.1rem solid #f5f5f5;
+    overflow: auto;
+    &__title {
+      color: #888;
+      font-size: 1.4rem;
+      float: left;
+      font-weight: bold;
+    }
+    &__link {
+      @extend .edit-select__link;
+    }
+    &__box {
+      float: right;
+      .price-form {
+        list-style: none;
+        width: 40rem;
+        margin: 0;
+        &__input {
+          overflow: auto;
+          padding: 0 0 2.4rem;
+          border-bottom: 0.1rem solid #ccc;
+          &--left {
+            float: left;
+            width: 50%;
+            line-height: 4.8rem;
+            .input-subject {
+              font-size: 1.4rem;
+              font-weight: bold;
+            }
+            .input-essential {
+              @extend .edit-image__wrapper--essential;
+              line-height: 4.8rem;
+            }
+          }
+          &--right {
+            float: right;
+            text-align: right;
+            width: 50%;
+            .input-chara {
+              font-size: 1.2rem;
+            }
+            .input-form {
+              @extend .edit-item__form--name;
+              display: inline-block;
+              width: 80%;
+              margin: 0 0 0 5%;
+              height: 4.8rem;
+              font-size: 1.6rem;
+              text-align: right;
+            }
+          }
+        }
+        &__fee {
+          overflow: auto;
+          padding: 2.4rem 0;
+          border-bottom: 0.1rem solid #ccc;
+          font-size: 1.4rem;
+          &--left {
+            float: left;
+            .subject-fee {
+            }
+          }
+          &--right {
+            float: right;
+            .result-fee {
+            }
+          }
+        }
+        &__profit {
+          overflow: auto;
+          padding: 2.4rem 0;
+          font-size: 1.6rem;
+          font-weight: bold;
+          &--left {
+            float: left;
+            .subject-profit {
+            }
+          }
+          &--right {
+            float: right;
+            .result-profit {
+            }
+          }
+        }
+      }
+    }
+  }
+  .edit-send {
+    padding: 4rem;
+    border-top: 0.1rem solid #eee;
+    &__caution {
+      font-size: 1.4rem;
+      &--link {
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+    &__submit {
+      &--button {
+        background: #ea352d;
+        border: 0.1rem solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 4.8rem;
+        font-size: 1.4rem;
+        border: 0.1rem solid transparent;
+        -webkit-transition: all ease-out 0.3s;
+        transition: all ease-out 0.3s;
+        cursor: pointer;
+        text-align: center;
+        margin: 4rem 0 0;
+      }
+    }
+    &__back {
+      &--button {
+        @extend .edit-send__submit--button;
+        width: 45%;
+        margin: 2.4rem auto 0;
+        background: #aaa;
+        border: 0.1rem solid #aaa;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.edit-item__form--name:focus,
+.edit-item__form--explain:focus,
+.edit-item__form--size:focus,
+.dropzone:focus {
+  outline: 0;
+  border-color: #0196e4;
+}
+
+.edit-select__group:first-child {
+  margin-top: 0;
+}
+
+
+
+.edit-images-image{
+  height: 11.4rem;
+  width: 11.6rem;
+  background-color: #f5f5f5;
+  // position: absolute;
+
+}
+
+.edit-images-button{
+  height: 15%;
+  width: 11.6rem;
+  background-color: #f5f5f5;
+  text-align: center;
+  display: inline-block;
+  line-height: 4.4rem;
+  // position: absolute;
+
+}

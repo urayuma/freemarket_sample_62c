@@ -56,12 +56,20 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def destroy
-    if @item.destroy
-      redirect_to listings_listing_mypage_index_path
-    else
-      redirect_to item_show_mypage_index_path(params[:id])
+  def update
+    @items = Item.find(id: params[:id])
+    if item.user_id = current_user.id
+      @items.update(id: params[:id])
     end
+    # redirect_to("/") 商品編集に行く前の画面パス
+  end
+
+  def destroy
+    @images = Image.find_by(item_id: params[:item_id])
+    if image.item.user_id = current_user.id
+      @images.destroy
+    end
+    redirect_to("edit_item")
   end
 
   def sellnow
@@ -74,6 +82,9 @@ class ItemsController < ApplicationController
     item = Item.find_by(params[:id])
     item.update(selling_status: "4")
     redirect_to item_show_mypage_index_path
+
+  def search_item
+    @item = Item.find(params[:id])
   end
 
   private

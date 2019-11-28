@@ -1,9 +1,119 @@
-%button#modal-open-btn この商品を削除する
-= link_to item_path, method: :delete, id: 'item-delete-btn' do
-  #overlay
-    #modalWindow
-      .modal-message-box
-        %div 確認
-        %div 本当に削除しますか？
-      %button#modal-close-btn キャンセル
-      %button#delete-comformation-btn 削除する
+.edit-header
+  = link_to root_path, class:"edit-header__link" do
+    = image_tag 'fmarket_logo_red.svg', width: '170', class: "edit-header__link--logo"
+
+.edit-main
+  %h2.edit-head 商品の情報を入力
+  = form_for @item do |f|
+    .edit-image
+      .edit-image__wrapper
+        %label.edit-image__wrapper--subject 出品画像
+        %span.edit-image__wrapper--essential 必須
+        %p.edit-image__wrapper--caution 最大10枚までアップロードできます
+
+        .edit-image__items
+          .edit-image__items__haveitems
+            .edit-image__items__haveitems__list
+              - @images.each do |image|
+                %figure
+                  = image_tag 'images.image', height: '85.5', width: '114', class:'edit-images-image'
+
+                .edit-image__items__haveitems__list__editbutton
+                  .edit-images-button 
+                    = link_to '削除', item_path(params[:id]), method: :delete
+
+
+        =f.label :image do
+          .drop-area 
+            = f.file_field :image, {multipart: true, multiple: true, class:"dropzone"} #デフォルトのファイル選択が表示されますが、サーバーサイドと合わせる際に調整します。
+            .drop-area__text
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
+
+    .edit-item
+      .edit-item__form
+        %label.edit-item__form--subject 商品名
+        %span.edit-item__form--essential 必須
+        = f.text_field :name, placeholder: '商品名（必須 40文字まで）',  class: 'edit-item__form--name'
+      .edit-item__form
+        %label.edit-item__form--subject 商品の説明
+        %span.edit-item__form--essential 必須
+        = f.text_area :name, placeholder: "商品の説明（必須1,000文字以内） （色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです", rows: 5, class:'edit-item__form--explain'
+    .edit-select
+      .edit-select__title 商品の詳細
+      .select-wrapper
+        .edit-select__group
+          .category-wrapper
+            %label.select-subject カテゴリー
+            %span.select-essential 必須
+            .parent-wrapper
+              = f.collection_select :category_id, :id , :name, {include_blank: "---"}, {id:'select-parent-category'}
+              .select-arrow
+                %i.fas.fa-chevron-down
+        .edit-select__group
+          %label.select-subject 商品の状態
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :usage_status, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+
+    .edit-select
+      .edit-select__title 配送について
+      = link_to "?", "/items/edit", class:'edit-select__link'
+      .selects-wrapper
+        .edit-select__group
+          %label.select-subject 配送料の負担
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :delivery_fee, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+        .edit-select__group
+          %label.select-subject 発送元の地域
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :delivery_area , @prefectures, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+        .edit-select__group
+          %label.select-subject 発送までの日数
+          %span.select-essential 必須
+          .box-wrapper
+            = f.collection_select :shipping_date , @shipping_date, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            .select-arrow
+              %i.fas.fa-chevron-down
+
+    .edit-price
+      .edit-price__title 販売価格(300〜9,999,999)
+      = link_to "?", "/items/edit", class:'edit-price__link'
+      .edit-price__box
+        %ul.price-form
+          %li.price-form__input
+            .price-form__input--left
+              %label.input-subject 価格
+              %span.input-essential 必須
+            .price-form__input--right
+              %span.input-chara ￥
+              = f.text_field :price, placeholder: '例）300',  class: 'input-form'
+          %li.price-form__fee
+            .price-form__fee--left
+              %label.subject-fee 販売手数料 (10%)
+            .price-form__fee--right
+              .result-fee -
+          %li.price-form__profit
+            .price-form__profit--left
+              %label.subject-profit 販売利益
+            .price-form__profit--right
+              .result-profit -
+
+    .edit-send
+      .edit-send__submit
+        = f.submit :"変更する", class:"edit-send__submit--button"
+        -# = link_to “変更する”, root_path
+
+      .edit-send__back
+        = link_to "キャンセル", :back, { class: "edit-send__back--button" }
+
+.single-footer
+  = render "/signups/footer"
