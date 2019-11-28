@@ -1,9 +1,6 @@
 %body
   .single-container
-
-    %header.single-header
-      .header-logo
-
+    =render 'header'
     .single-main
       .buy-panel
 
@@ -11,14 +8,14 @@
 
         .buy-panel__item-detail-inner
           .buy-panel__item-detail-inner__about
-            = image_tag 'fmarket.jpg', alt: "test", class: "buy-panel__item-detail-inner__about__image"
+            = image_tag @item.images.first.image , class: "buy-panel__item-detail-inner__about__image"
             %p.buy-panel__item-detail-inner__about__name
-              幽☆遊☆白書
+              = @item.name
 
         .buy-panel__item-detail-inner
           .buy-panel__item-detail-inner__box
             %p.buy-panel__item-detail-inner__box__price
-              ¥700
+              ="¥#{@item.price}"
             %p.buy-panel__item-detail-inner__box__delivery_fee
               送料込み
 
@@ -31,38 +28,43 @@
             %p.buy-panel__item-detail-inner__pay__message
               支払い金額
             %p.buy-panel__item-detail-inner__pay__price
-              ¥700
-        %p.buy-panel__item-detail-inner__error
-          配送先と支払い方法の入力を完了してください
+              ="¥#{@item.price}"
+        - unless @user.address.present? && @user.creditcard.present?
+          %p.buy-panel__item-detail-inner__error
+            配送先と支払い方法の入力を完了してください
+            .buy-panel__item-detail-inner__buy-button
+              購入する
+        - else
+          = link_to "購入する", pay_order_path, {method: :post, class: "buy-panel__item-detail-inner__buy-button-red"}
 
-        = button_to "購入する", "", class: "buy-panel__item-detail-inner__buy-button"
-
-        .buy-panel__item-detail-inner.buy-panel__item-detail-inner-order1
-          %p.buy-panel__item-detail-inner__shipping
-            配送先
-          %p.buy-panel__item-detail-inner__postcode
-            〒351-0011
-          %p.buy-panel__item-detail-inner__address
-            鹿児島県 種子島 中種子町4-3-4
-          %p.buy-panel__item-detail-inner__buyer
-            tanegashiman
-
-          .buy-panel__item-detail-inner__link
-            = link_to "", class: "go-to_change" do
-              %span.go-to_change__messaege 変更する
-              %i.fas.fa-angle-right
+        - if @user.address.present?
+          .buy-panel__item-detail-inner.buy-panel__item-detail-inner-order1
+            %p.buy-panel__item-detail-inner__shipping
+              配送先
+            %p.buy-panel__item-detail-inner__postcode
+              ="〒#{@user.address.postcode}"
+            %p.buy-panel__item-detail-inner__address
+              =@user.address.prefectures + @user.address.city + @user.address.street_num
+            %p.buy-panel__item-detail-inner__buyer
+              ="#{@user.lastname} #{@user.firstname}"
+            .buy-panel__item-detail-inner__link
+              //送付先を変更するページがないのでリンクを設定していません
+              = link_to "", class: "go-to_change" do  
+                %span.go-to_change__messaege 変更する
+                %i.fas.fa-angle-right
 
         .buy-panel__item-detail-inner.buy-panel__item-detail-inner-order1
           %p.buy-panel__item-detail-inner__pay-way
             支払い方法
-
-          %p.buy-panel__item-detail-inner__pay-detail
-            クレジットカード
-
+          - if @user.creditcard.present?
+            %p.buy-panel__item-detail-inner__pay-detail
+              クレジットカード
+          -else
+            %p.buy-panel__item-detail-inner__pay-detail /
           .buy-panel__item-detail-inner__link
-            = link_to "", class: "go-to_change" do
+            = link_to "/mypage/card", class: "go-to_change" do
               %span.go-to_change__messaege 変更する
               %i.fas.fa-angle-right
-
+            
     .single-footer
       = render 'signups/footer'
