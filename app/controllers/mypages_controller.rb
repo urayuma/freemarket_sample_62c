@@ -1,7 +1,6 @@
 class MypagesController < ApplicationController
   before_action :sidebar_setteing
-  # before_action :authenticate_user!
-  before_action :set_url, only: %i[listing in_progress completed]
+  before_action :authenticate_user!
   before_action :set_card, only: %i[card card_new]
 
   def index; end
@@ -28,15 +27,25 @@ class MypagesController < ApplicationController
     @prefectures = Prefecture.all
   end
 
-  def listing; end
+  def listing
+    @items = current_user.items.where(selling_status: "出品中").page(params[:page]).per(10)
+  end
 
-  def in_progress; end
+  def in_progress
+    @items = current_user.items.where(selling_status: "取引中").page(params[:page]).per(10)
+  end
 
-  def completed; end
+  def completed
+    @items = current_user.items.where(selling_status: "売却済み").page(params[:page]).per(10)
+  end
 
-  def purchase; end
+  def purchase
+    @items = current_user.items
+  end
 
-  def purchased; end
+  def purchased
+    @items = current_user.items
+  end
 
   def exhibit_item
     @item = Item.find(params[:id])
@@ -46,13 +55,9 @@ class MypagesController < ApplicationController
 
   def sidebar_setteing
     @menulist = ["マイページ", "お知らせ", "やることリスト", "いいね！一覧", "出品する", "出品した商品 - 出品中", "出品した商品 - 取引中", "出品した商品 - 売却済み", "購入した商品 - 取引中", "購入した商品 - 過去の取引", "ニュース一覧", "評価一覧", "ガイド", "お問い合わせ"]
-    @linklist = ["/mypage", "/info/", "/mustdo/", "/liles_all/", "/出品する/", "/mypage/listings/listing", "/mypage/listings/in_progress", "/mypage/listings/completed", "/mypage/purchase", "/mypage/purchased"]
+    @linklist = ["/mypage", "/info/", "/mustdo/", "/lieks_all/", "/items/sell", "/mypage/listings/listing", "/mypage/listings/in_progress", "/mypage/listings/completed", "/mypage/purchase", "/mypage/purchased"]
     @configlist = ["プロフィール", "発送元・お届け先住所変更", "支払い方法", "メール/パスワード", "本人情報", "電話番号の確認", "ログアウト"]
-    @configlinklist = ["/myage/edit", "/info/", "/mypage/card", "/shuppin/", "/mypage/identification", "/mypage/", "/mypage/logout/"]
-  end
-
-  def set_url
-    @url = request.url
+    @configlinklist = ["/mypage/edit", "/発送元・お届け先住所変更/", "/mypage/card", "/メール/パスワード/", "/mypage/identification", "/mypage/", "/mypage/logout/"]
   end
 
   def set_card

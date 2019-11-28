@@ -8,7 +8,51 @@
       .listings-product
         出品した商品
 
-      = render 'listings', { url: @url }
+      .listings-tabs
+        .listings-tabs__post
+        .listings-tabs__active
+        .listings-tabs__post
+
+
+      .listings-detail
+        = link_to "出品中", listings_listing_mypage_index_path, class: "listings-detail__post"
+        = link_to "取引中", listings_in_progress_mypage_index_path, class: "listings-detail__active"
+        = link_to "売却済み", listings_completed_mypage_index_path, class: "listings-detail__post"
+
+      - unless current_user.items.any?
+        %ul.listings-report-areas-none
+          %li.listings-report-area-none__area
+            取引中の商品はありません
+
+
+      - else
+        %ul.listings-report-areas-exsis
+
+          - @items.each do |item|
+            %li.listings-report-areas-exsis__area
+              = link_to item_show_mypage_index_path(item.id), data: { turbolinks: false}, class: "listings-report-areas-exsis__area__link" do
+
+                %figure.listings-report-areas-exsis__area__link__figure
+                  = image_tag "#{item.images.first.image}", class: 'listings-report-areas-exsis__area__link__figure__image'
+
+                .listings-report-areas-exsis__area__link__item
+                  %p.listings-report-areas-exsis__area__link__item__name
+                    = item.name
+
+                    .listings-report-areas-exsis__area__link__item__detail
+                      %span.listings-report-areas-exsis__area__link__item__detail__icon
+                        %i.far.fa-heart
+                        %span.listings__likes-count
+                          0
+
+                        %i.far.fa-comment-alt
+                        %span.listings__chates-count
+                          0
+                        %span.listings__selling_status
+                          取引中
+
+                %i.fas.fa-angle-right.listings-report-areas-exsis__area__link__sngle-left
+
 
     = render "sidebar"
 

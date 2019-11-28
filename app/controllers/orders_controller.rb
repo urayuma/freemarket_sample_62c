@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   def new
     @item = Item.find(params[:id])
     @user = current_user
@@ -16,7 +17,7 @@ class OrdersController < ApplicationController
         currency: 'jpy'
       )
       Order.create(item: item, user: current_user)
-      item.update(payment_status:"支払済" ,selling_status: "売却済") # あとでpayment_status、selling_statusをID化した場合変更が必要
+      item.update(payment_status: "支払済", selling_status: "売却済") # あとでpayment_status、selling_statusをID化した場合変更が必要
       redirect_to action: 'done'
     else
       redirect_to action: 'failed'

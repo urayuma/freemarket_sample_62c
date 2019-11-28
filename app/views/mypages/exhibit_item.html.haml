@@ -23,7 +23,7 @@
           %td.item-td
             = @item.category.parent.parent.name
             .category-icon
-            %span 
+            %span
               = @item.category.parent.name
             .category-icon
             %span
@@ -45,7 +45,7 @@
           %td.item-td
             = @item.delivery_fee
         %tr
-          %th.item-th 配送の方法	
+          %th.item-th 配送の方法
           %td.item-td
             = @item.delivery_way
         %tr
@@ -59,14 +59,14 @@
 
   .item-price-box
     %span.item-price-box__price
-      = @item.price
+      = "¥#{@item.price}"
     %span.item-price-box__tax (税込)
     %span.item-price-box__postage 着払い
 
   .item-description
     %p
       = @item.description
-  
+
 .mypage_item_edit
   .mypage_item_edit__btns
     %button{class: "btn-default mypage_item_edit__btns--edit"} 商品の編集

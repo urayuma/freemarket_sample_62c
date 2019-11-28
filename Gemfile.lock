@@ -445,7 +445,7 @@ DEPENDENCIES
   haml_lint
   jbuilder (~> 2.5)
   jquery-rails
-  kaminari (~> 0.17.0)
+  kaminari
   listen (>= 3.0.5, < 3.2)
   mini_magick
   mysql2 (>= 0.4.4, < 0.6.0)

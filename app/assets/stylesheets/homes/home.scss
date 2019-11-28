@@ -21,46 +21,45 @@
   display: flex;
   justify-content: center;
 
+  .HeaderTop {
+    height: 5rem;
+    width: 95%;
+    position: relative;
 
-  .HeaderTop{
-      height: 5rem;
-      width: 95%;
-      position: relative;
+    &__Menu {
+      display: flex;
 
-      &__Menu{
-        display: flex;
+      &__header-logo {
+        height: 4.5rem;
+        width: 18rem;
+        padding: 0.5rem;
+        background-image: image-url("fmarket_logo_red");
+        background-repeat: no-repeat;
+        position: absolute;
+      }
 
-        &__header-logo{
-          height: 4.5rem;
-          width: 18rem;
-          padding: 0.5rem;
-          background-image: url("fmarket_logo_red");
-          background-repeat: no-repeat;
-          position: absolute;
-        }
+      &__header-search {
+        width: 55%;
+        margin-left: 27rem;
+        background-color: rgb(245, 245, 245);
 
-        &__header-search {
-          width: 75rem;
-          margin-left: 27rem;
-          background-color: rgb(245, 245, 245);
-
-          font-size: 1.6rem;
-          height: 4rem;
-          line-height: 2.4em;
-          position: absolute;
-          border-width: 0.1rem;
-          border-style: solid;
-          border-color: rgb(204, 204, 204);
-          border-image: initial;
-          border-radius: 0.4rem;
-          outline: none;
-          transition: all 0.3s ease-out 0s;
-        }
+        font-size: 1.6rem;
+        height: 4rem;
+        line-height: 2.4em;
+        position: absolute;
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        border-radius: 0.4rem;
+        outline: none;
+        transition: all 0.3s ease-out 0s;
+      }
     }
   }
 }
 
-input.search{
+input.search {
   font-family: inherit;
   border: none;
   background-color: #f5f5f5;
@@ -75,91 +74,87 @@ button.search-logo {
   background-color: #f5f5f5;
 }
 
+.HeaderBottom {
+  height: 5rem;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  bottom: 0;
+  position: absolute;
 
-  .HeaderBottom {
-    height: 5rem;
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    bottom: 0;
-    position: absolute;
+  &__Left {
+    &__genre_search {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 2rem;
+      white-space: nowrap;
+      float: left;
+      padding-right: 2rem;
+      padding-top: 2rem;
+    }
+  }
 
-    &__Left {
-      &__genre_search {
+  &__Right {
+    margin: 0;
+    &__Menu-with-sign_in {
+      display: inline-block;
+      align-items: center;
+      font-size: 1.4rem;
+      height: 2rem;
+      padding-right: 3rem;
+      padding-top: 2rem;
+      transform: scale(1);
+      transition: all 0.3s ease-out 0s;
+
+      &__mypage {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+
+    &__Menu-without-sign_in {
+      display: flex;
+      margin-top: 1rem;
+      &__sign_up {
+        background-color: rgb(234, 53, 45);
+        color: rgb(255, 255, 255);
         display: block;
         font-size: 1.4rem;
-        font-weight: 600;
-        line-height: 2rem;
-        white-space: nowrap;
-        float: left;
-        padding-right: 2rem;
-        padding-top: 2rem;
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: rgb(234, 53, 45);
+        border-image: initial;
+        border-radius: 0.4rem;
+        padding: 0.8rem 1rem;
       }
-    }
 
-    &__Right {
-      margin: 0 ;
-      &__Menu-with-sign_in {
-        display: inline-block;
-        align-items: center;
+      &__sign_in {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 149, 238);
+        display: block;
         font-size: 1.4rem;
-        height: 2rem;
-        padding-right: 3rem;
-        padding-top: 2rem;
-        transform: scale(1);
-        transition: all 0.3s ease-out 0s;
-
-        &__mypage {
-          color: #333;
-          text-decoration: none;
-        }
-      }
-
-      &__Menu-without-sign_in {
-        display: flex;
-        margin-top: 1rem;
-        &__sign_up {
-          background-color: rgb(234, 53, 45);
-          color: rgb(255, 255, 255);
-          display: block;
-          font-size: 1.4rem;
-          border-width: 0.1rem;
-          border-style: solid;
-          border-color: rgb(234, 53, 45);
-          border-image: initial;
-          border-radius: 0.4rem;
-          padding: 0.8rem 1rem;
-        }
-
-        &__sign_in {
-          background-color: rgb(255, 255, 255);
-          color: rgb(0, 149, 238);
-          display: block;
-          font-size: 1.4rem;
-          border-width: 0.1rem;
-          border-style: solid;
-          border-color: rgb(0, 149, 238);
-          border-image: initial;
-          border-radius: 0.4rem;
-          padding: 0.8rem 1rem;
-          margin-left: 1rem;
-        }
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: rgb(0, 149, 238);
+        border-image: initial;
+        border-radius: 0.4rem;
+        padding: 0.8rem 1rem;
+        margin-left: 1rem;
       }
     }
+  }
 }
-
-
-
-
-
 
 .Slide-menu {
   height: 25rem;
   width: 100%;
   background-color: darksalmon;
   text-align: center;
-  background-image: url("https://www.haikei-free.com/dataimg/purple0119.png");
+  background-image: image-url(
+    "https://www.haikei-free.com/dataimg/purple0119.png"
+  );
 
   background-size: inherit;
 
@@ -167,19 +162,16 @@ button.search-logo {
   }
 }
 
-
-.main-toppage{
+.main-toppage {
   width: 75%;
 
-
-.MainMenu{
-
-  &__FavoriteItems{
-    height: 28rem;
-    background-color: #ffbf1f;
-    width: 100%;
-    margin-left: 15.3rem;
-    margin-top: 3rem;
+  .MainMenu {
+    &__FavoriteItems {
+      height: 28rem;
+      background-color: #ffbf1f;
+      width: 100%;
+      margin-left: 15.3rem;
+      margin-top: 3rem;
 
       &__Header {
         height: 5rem;
@@ -191,31 +183,25 @@ button.search-logo {
         padding: 1rem;
       }
 
-      &__Body{
-        &__Items{
-  
-          &__All{
-  
-            &__List{
+      &__Body {
+        &__Items {
+          &__All {
+            &__List {
               padding: 3rem;
-  
-              &__image{
+
+              &__image {
               }
             }
           }
         }
       }
-  }
-    
-      
-    
+    }
 
-  &__CategoryLists {
+    &__CategoryLists {
       height: 17.1rem;
       width: 100%;
       background-color: rgb(255, 255, 255);
       margin-left: 15.3rem;
-
 
       &__List {
         &__All {
@@ -232,62 +218,49 @@ button.search-logo {
 
             background-color: #dddddd;
             border-radius: 2rem;
-
           }
         }
       }
     }
-  
 
-  &__CategoryItems{
-    height: 40rem;
-    background-color: #000000;
-    width: 100%;
-    margin-left: 15.3rem;
+    &__CategoryItems {
+      height: 40rem;
+      background-color: #000000;
+      width: 100%;
+      margin-left: 15.3rem;
+      margin-bottom: 10rem;
 
-    &__Header{
-      display: flex;
-      font-weight: 600;
-      line-height: 1.4rem;
-      margin: 0;
+      &__Header {
+        display: flex;
+        font-weight: 600;
+        line-height: 1.4rem;
+        margin: 0;
 
-      height: 5rem;
-      justify-content: space-between;
-      padding: 15px;
+        height: 5rem;
+        justify-content: space-between;
+        padding: 15px;
+      }
 
+      &__Body {
+        &__Items {
+          &__All {
+            height: 30rem;
+            width: 100%;
 
-    }
-
-    &__Body{
-    
-      &__Items{
-        
-        &__All{
-          height:30rem;
-          width: 100%;
-          
-
-          &__List{
-            padding: 1rem, 1.6rem, 0, 1.6rem;
-            display: flex;
-            
-  
+            &__List {
+              padding: 1rem, 1.6rem, 0, 1.6rem;
+              display: flex;
+            }
           }
         }
       }
+
+      h3.category-item-title {
+        font-size: 2.4rem;
+        color: #dddddd;
+      }
     }
-  
 
-
-h3.category-item-title{
-  font-size: 2.4rem;
-  color: #dddddd;
-}
-
-
-  }
-      
-    
     &__BrandLists {
       height: 17.1rem;
       width: 100%;
@@ -298,9 +271,8 @@ h3.category-item-title{
         &__All {
           width: 75%;
           margin-left: 11.5rem;
-  
-          &__list{
-          
+
+          &__list {
             display: inline-block;
             font-size: 1.4rem;
             height: 3.2rem;
@@ -313,50 +285,42 @@ h3.category-item-title{
           }
         }
       }
-  }
-  
-
-  &__BrandItems{
-    height: 40rem;
-    background-color: #000000;
-    width: 100%;
-    margin-left: 15.3rem;
-    margin-bottom: 5rem;
-
-    &__Header{
-      display: flex;
-      font-weight: 600;
-      line-height: 1.4rem;
-      margin: 0;
-
-      height: 5rem;
-      justify-content: space-between;
-      padding: 1.5rem;
-
     }
 
-    &__Body{
+    &__BrandItems {
+      height: 40rem;
+      background-color: #000000;
+      width: 100%;
+      margin-left: 15.3rem;
+      margin-bottom: 5rem;
 
-      &__Items{
+      &__Header {
+        display: flex;
+        font-weight: 600;
+        line-height: 1.4rem;
+        margin: 0;
 
-      
-        &__All{
-          height: 30rem;
-          width: 100%;
+        height: 5rem;
+        justify-content: space-between;
+        padding: 1.5rem;
+      }
 
-          &__List{
-            padding: 1rem 1.6rem 0 1.6rem;
-            display: flex;
+      &__Body {
+        &__Items {
+          &__All {
+            height: 30rem;
+            width: 100%;
 
+            &__List {
+              padding: 1rem 1.6rem 0 1.6rem;
+              display: flex;
             }
           }
         }
       }
     }
   }
-  
 }
-
 
 h3.brand-item-title {
   font-size: 2.4rem;
@@ -368,8 +332,7 @@ p.show-detail {
   color: #dddddd;
 }
 
-
-figcaption{
+figcaption {
   height: 5rem;
   width: 20rem;
   margin: 0.1rem 1rem 1rem 1rem;
@@ -380,15 +343,13 @@ figcaption{
   line-height: initial;
 }
 
-
-.body-item-image{
+.body-item-image {
   display: flex;
   height: 23rem;
   width: 20rem;
   border-style: groove;
   background-size: cover;
   margin: 1rem;
-
 }
 
 .favorite-item-image {
@@ -407,8 +368,7 @@ h2.category-title {
   padding-top: 2rem;
 }
 
-
-a.category-list{
+a.category-list {
   display: flex;
   justify-content: center;
 }
@@ -430,7 +390,7 @@ li.FooterMenu__list__small {
   width: 100%;
   background-size: inherit;
   background-color: darkorange;
-  
+
   display: flex;
   justify-content: center;
 
@@ -448,15 +408,15 @@ p.aside-text1 {
   color: rgb(255, 255, 255);
   margin-top: 3rem;
   font-size: 2.4rem;
-  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray, 0.1rem -0.1rem 0 gray,
-    -0.1rem -0.1rem 0 gray;
+  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray,
+    0.1rem -0.1rem 0 gray, -0.1rem -0.1rem 0 gray;
 }
 
 p.aside-text2 {
   color: rgb(255, 255, 255);
   font-size: 2.4rem;
-  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray, 0.1rem -0.1rem 0 gray,
-    -0.1rem -0.1rem 0 gray;
+  text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray,
+    0.1rem -0.1rem 0 gray, -0.1rem -0.1rem 0 gray;
 }
 
 img.aside-image1 {
@@ -464,7 +424,7 @@ img.aside-image1 {
   padding-left: 2rem;
 }
 
-.footer-toppage{
+.footer-toppage {
   width: 100%;
   background-color: #ff006f;
   color: #ffffff;
@@ -476,35 +436,33 @@ img.aside-image1 {
   justify-content: center;
 }
 
-.FooterMenu{
-    height: 25rem;
-    width: 75%;
-    float: left;
+.FooterMenu {
+  height: 25rem;
+  width: 75%;
+  float: left;
 
+  &__list {
+    display: inline-block;
+    width: 20rem;
+    vertical-align: top;
+    margin: 3.2rem 3.2rem 0 0;
+    padding-left: 0;
 
-    &__list{
-      display: inline-block;
-      width: 20rem;
-      vertical-align: top;
-      margin: 3.2rem 3.2rem 0 0;
-      padding-left: 0;
-    
-      &__title{
-        font-size: 1.6rem;
-      }
-      
-      &__small{
-        font-size: 1.2rem;
-        margin-left: 1.6rem;
-        font: inherit;
-      }
+    &__title {
+      font-size: 1.6rem;
     }
+
+    &__small {
+      font-size: 1.2rem;
+      margin-left: 1.6rem;
+      font: inherit;
+    }
+  }
 }
 
-h2.FooterMenu__list__title{
+h2.FooterMenu__list__title {
   text-align: left;
 }
-
 
 .FooterBottom {
   width: 75%;
@@ -512,28 +470,24 @@ h2.FooterMenu__list__title{
   position: absolute;
   bottom: 2rem;
 
-  &__footer-logo{
+  &__footer-logo {
     height: 3.3rem;
     width: 12rem;
     padding: 2.5rem 0.5rem 0.5rem 0.5rem;
-    background-image: url("fmarket_logo_white");
+    background-image: image-url("fmarket_logo_white");
     background-repeat: no-repeat;
   }
-  
-  &__footer-text{
+
+  &__footer-text {
     text-align: center;
     width: 76rem;
     height: 1.2rem;
     font-size: 1.2rem;
     padding-left: 28rem;
   }
-  
-
 }
 
-
-
-.PostItems{
+.PostItems {
   width: 20rem;
   height: 20rem;
   padding: 2rem;
@@ -545,8 +499,7 @@ h2.FooterMenu__list__title{
   justify-content: center;
   z-index: 100;
 
-
-  &__Button{
+  &__Button {
     padding-top: 1.5rem;
     text-align: center;
     height: 14rem;
@@ -555,18 +508,15 @@ h2.FooterMenu__list__title{
     border-radius: 50%;
     color: white;
     font-size: 2rem;
-   }
+  }
 
-
-    &__Icon{
-        height: 5rem;
-        width: 5rem;
-        color: white;
-        display: flex;
-        justify-content: center;
-        margin-top: 0.7rem;
-        margin-left: 4.5rem;
-    
-    }
-
- }
+  &__Icon {
+    height: 5rem;
+    width: 5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.7rem;
+    margin-left: 4.5rem;
+  }
+}

@@ -3,7 +3,7 @@
     %ul.menu
       = @menulist.zip(@linklist) do |menu,link|
         %li.menu__item
-          = link_to link, class:'menu__item--link' do
+          = link_to link, class:'menu__item--link',data: { turbolinks: false} do
             = menu
             .menu__item--arrow
               %i.fas.fa-chevron-right

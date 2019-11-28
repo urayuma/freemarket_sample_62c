@@ -78,7 +78,7 @@
   font-weight: bold;
   color: #808080;
   background-color: #fff;
-  background-image: url("logo_gray");
+  background-image: image-url("logo_gray");
   background-size: 50% 50%;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -92,16 +92,15 @@
 }
 
 .listings-report-areas-exsis {
-  height: 7.2rem;
   width: 70rem;
   background-color: #fff;
   list-style: none;
-  display: flex;
+  align-items: center;
 
   &__area {
     width: 70rem;
+    height: 7.2rem;
     display: block;
-    align-items: center;
     border-bottom: solid 0.1rem #d1cccc;
 
     &__link {
