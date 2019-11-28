@@ -2,14 +2,25 @@ class MypagesController < ApplicationController
   before_action :sidebar_setteing
   # before_action :authenticate_user!
   before_action :set_url, only: %i[listing in_progress completed]
+  before_action :set_card, only: %i[card card_new]
 
   def index; end
 
   def edit; end
 
-  def card; end
+  def card
+    if @card.present?
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
 
-  def card_new; end
+  def card_new
+    @month = CreditcardMonth.all
+    @year = CreditcardYear.all
+    redirect_to action: "card" if @card.present?
+  end
 
   def logout; end
 
@@ -36,5 +47,9 @@ class MypagesController < ApplicationController
 
   def set_url
     @url = request.url
+  end
+
+  def set_card
+    @card = current_user.creditcard
   end
 end

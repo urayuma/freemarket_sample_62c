@@ -55,20 +55,48 @@ h4 {
   margin-top: 1.5rem;
 }
 
+.field-input-expiring{
+  display: flex;
+}
+
 @mixin input {
   // form_for切り替え時に調整必要かもしれません
   display: block;
   border-radius: 0.4rem;
   border: 0.1rem solid #ccc;
-  height: 5rem;
-  font-size: 1.7rem;
+  height: 4.8rem;
+  font-size: 1.6rem;
+  padding: 0 1.6rem;
+  border-radius: 0.4rem;
 }
 
 .input-text {
   //  selectなのでビューが崩れるかもしれません。 @mixin inputを継承してます
   @include input;
-  width: 10rem;
+  width: 13rem;
   display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  appearance: none;
+  padding-left: 1rem;
+  background: 0;
+}
+.select-wrapper{
+  position: relative;
+}
+.select-arrow{
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 1.6rem;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.exp-date{
+  font-size: 1.8rem;
+  margin-right: 1rem;
 }
 
 .input-text_cardnum {
@@ -77,11 +105,16 @@ h4 {
   width: 34rem;
 }
 
-.btn-default.btn-red {
-  //  .input-text_cardnumを継承してます。margin-bottomはボタンとフッターとの余白を作るために記述してます
+.creditcard-submit {     //  .input-text_cardnumを継承してます。margin-bottomはボタンとフッターとの余白を作るために記述してます
   @extend .input-text_cardnum;
   margin-top: 4rem;
   background-color: rgb(234, 53, 45);
   color: #fff;
   margin-bottom: 6rem;
+}
+
+.input-text:focus,
+.input-text_cardnum:focus{
+  outline: 0;
+  border-color: #0196E4;
 }
