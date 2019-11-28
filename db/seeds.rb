@@ -51,6 +51,51 @@ User.create!(
   ]
 )
 
+Address.create!(
+  [
+    {
+      lastname: 'Naminori',
+      firstname: 'Jonny',
+      lastname_kana: 'ナミノリ',
+      firstname_kana: 'ジョニー',
+      postcode:       "123-4567",
+      prefectures:    "神奈川",
+      city:           "横浜市緑区",
+      street_num:     "青山5-1-1",
+      building:       "柳ビル103",
+      home_call_num:  "09000000000",
+      user_id:         "1"
+    },
+    {
+      lastname: 'Sasurai',
+      firstname: 'Samurai',
+      lastname_kana: 'サスライ',
+      firstname_kana: 'サムライ',
+      postcode:       "123-4567",
+      prefectures:    "神奈川",
+      city:           "横浜市緑区",
+      street_num:     "青山5-1-1",
+      building:       "柳ビル103",
+      home_call_num:  "09000000099",
+      user_id:         "2"
+    },
+    {
+      lastname: 'oshiruko',
+      firstname: 'omochi',
+      lastname_kana: 'オシルコ',
+      firstname_kana: 'オモチ',
+      postcode:       "123-4567",
+      prefectures:    "神奈川",
+      city:           "横浜市緑区",
+      street_num:     "青山5-1-1",
+      building:       "柳ビル103",
+      home_call_num:  "09000009999",
+      user_id:         "3"
+    }
+  ]
+)
+
+
 # # ブランド レディース
 Brand.create!(
   [
@@ -384,7 +429,7 @@ Item.create!(
       shipping_date: '20191109',
       user_id: '1',
       brand_id: '2',
-      category_id: '1',
+      category_id: '80',
       payment_status: '支払済'
     },
     {
@@ -399,7 +444,7 @@ Item.create!(
       shipping_date: '20191110',
       user_id: '1',
       brand_id: '7',
-      category_id: '1',
+      category_id: '80',
       payment_status: '支払済'
     },
     {
@@ -414,7 +459,7 @@ Item.create!(
       shipping_date: '20191224',
       user_id: '1',
       brand_id: '1',
-      category_id: '1',
+      category_id: '20',
       payment_status: '支払済'
     }
 
@@ -436,7 +481,7 @@ Item.create!(
       shipping_date: '20191108',
       user_id: '2',
       brand_id: '3',
-      category_id: '2',
+      category_id: '144',
       payment_status: '支払済'
 
     },
@@ -452,7 +497,7 @@ Item.create!(
       shipping_date: '20191108',
       user_id: '2',
       brand_id: '4',
-      category_id: '2',
+      category_id: '91',
       payment_status: '支払済'
 
     },
@@ -468,7 +513,7 @@ Item.create!(
       shipping_date: '20191111',
       user_id: '3',
       brand_id: '6',
-      category_id: '2',
+      category_id: '99',
       payment_status: '支払済'
 
     }
@@ -491,7 +536,7 @@ Item.create!(
       shipping_date: '20190819',
       user_id: '3',
       brand_id: '19',
-      category_id: '3',
+      category_id: '183',
       payment_status: '未払い'
 
     },
@@ -507,7 +552,7 @@ Item.create!(
       shipping_date: '20190819',
       user_id: '3',
       brand_id: '5',
-      category_id: '3',
+      category_id: '183',
       payment_status: '未払い'
 
     }
@@ -530,7 +575,7 @@ Item.create!(
       shipping_date: '20190818',
       user_id: '1',
       brand_id: '20',
-      category_id: '4',
+      category_id: '262',
       payment_status: '支払済'
 
     },
@@ -546,7 +591,7 @@ Item.create!(
       shipping_date: '20190818',
       user_id: '1',
       brand_id: '13',
-      category_id: '4',
+      category_id: '262',
       payment_status: '支払済'
 
     }
@@ -569,7 +614,7 @@ Item.create!(
       shipping_date: '20190818',
       user_id: '2',
       brand_id: '9',
-      category_id: '5',
+      category_id: '279',
       payment_status: '支払済'
     },
     {
@@ -584,7 +629,7 @@ Item.create!(
       shipping_date: '20190818',
       user_id: '2',
       brand_id: '10',
-      category_id: '5',
+      category_id: '296',
       payment_status: '支払済'
     },
     {
@@ -599,7 +644,7 @@ Item.create!(
       shipping_date: '20190818',
       user_id: '2',
       brand_id: '15',
-      category_id: '5',
+      category_id: '296',
       payment_status: '支払済'
     }
 
@@ -621,7 +666,7 @@ Item.create!(
       shipping_date: '20191010',
       user_id: '3',
       brand_id: '10',
-      category_id: '6',
+      category_id: '308',
       payment_status: '支払済'
     }
   ]
@@ -642,7 +687,7 @@ Item.create!(
       shipping_date: '20191105',
       user_id: '2',
       brand_id: '15',
-      category_id: '7',
+      category_id: '403',
       payment_status: '支払済'
     },
     {
@@ -657,7 +702,7 @@ Item.create!(
       shipping_date: '20191105',
       user_id: '2',
       brand_id: '11',
-      category_id: '7',
+      category_id: '403',
       payment_status: '支払済'
     }
 
@@ -679,7 +724,7 @@ Item.create!(
       shipping_date: '20191009',
       user_id: '2',
       brand_id: '14',
-      category_id: '8',
+      category_id: '435',
       payment_status: '支払済'
     }
   ]
@@ -700,7 +745,7 @@ Item.create!(
       shipping_date: '20191009',
       user_id: '3',
       brand_id: '23',
-      category_id: '9',
+      category_id: '469',
       payment_status: '支払済'
     },
     {
@@ -715,7 +760,7 @@ Item.create!(
       shipping_date: '20191009',
       user_id: '3',
       brand_id: '15',
-      category_id: '9',
+      category_id: '469',
       payment_status: '支払済'
     },
     {
@@ -730,7 +775,7 @@ Item.create!(
       shipping_date: '20191009',
       user_id: '3',
       brand_id: '15',
-      category_id: '9',
+      category_id: '451',
       payment_status: '支払済'
     }
 
@@ -752,7 +797,7 @@ Item.create!(
       shipping_date: '20191001',
       user_id: '1',
       brand_id: '17',
-      category_id: '10',
+      category_id: '495',
       payment_status: '支払済'
     },
     {
@@ -767,7 +812,7 @@ Item.create!(
       shipping_date: '20190810',
       user_id: '2',
       brand_id: '17',
-      category_id: '10',
+      category_id: '495',
       payment_status: '未払い'
     }
   ]
@@ -788,7 +833,7 @@ Item.create!(
       shipping_date: '20190815',
       user_id: '2',
       brand_id: '18',
-      category_id: '11',
+      category_id: '532',
       payment_status: '支払済'
     },
     {
@@ -803,7 +848,7 @@ Item.create!(
       shipping_date: '20190815',
       user_id: '2',
       brand_id: '22',
-      category_id: '11',
+      category_id: '532',
       payment_status: '支払済'
     }
 
@@ -825,7 +870,7 @@ Item.create!(
       shipping_date: '20190710',
       user_id: '1',
       brand_id: '15',
-      category_id: '12',
+      category_id: '555',
       payment_status: '支払済'
     },
     {
@@ -840,7 +885,7 @@ Item.create!(
       shipping_date: '20190710',
       user_id: '1',
       brand_id: '21',
-      category_id: '12',
+      category_id: '537',
       payment_status: '支払済'
     },
     {
@@ -855,7 +900,7 @@ Item.create!(
       shipping_date: '20190710',
       user_id: '1',
       brand_id: '21',
-      category_id: '12',
+      category_id: '567',
       payment_status: '支払済'
     },
     {
@@ -870,7 +915,7 @@ Item.create!(
       shipping_date: '20190710',
       user_id: '1',
       brand_id: '15',
-      category_id: '12',
+      category_id: '567',
       payment_status: '支払済'
     }
 
@@ -892,7 +937,7 @@ Item.create!(
       shipping_date: '20190710',
       user_id: '1',
       brand_id: '23',
-      category_id: '13',
+      category_id: '607',
       payment_status: '支払済'
     }
   ]
@@ -927,7 +972,7 @@ Image.create!(
       item_id: '5'
     },
     {
-      # イケてるトレンチコート
+      #イケてるトレンチコート
       image: 'https://im.uniqlo.com/images/jp/pc/goods/419981/item/32_419981.jpg',
       item_id: '6'
     },

@@ -9,77 +9,86 @@
 
     %main.main-toppage
         .MainMenu
-            .MainMenu__FavoriteItems
-                .MainMenu__FavoriteItems__Header
-                    %h3.favorite-item-title いいね！した商品
-                    %p.show-detail すべて見る >
-                .MainMenu__FavoriteItems__Body
-                    .MainMenu__FavoriteItems__Body__Items
-                        .MainMenu__FavoriteItems__Body__Items__All
-                            .MainMenu__FavoriteItems__Body__Items__All__List
-                                .MainMenu__FavoriteItems__Body__Items__All__List__image
-                                    - @like_rankings.each do |image|
-                                        = image_tag image.image , height: '150', width: '180', class:'favorite-item-image'
+            - unless @like_rankings.nil?
+                .MainMenu__FavoriteItems
+                    .MainMenu__FavoriteItems__Header
+                        %h3.favorite-item-title いいね！した商品
+                        %p.show-detail すべて見る >
+                    .MainMenu__FavoriteItems__Body
+                        .MainMenu__FavoriteItems__Body__Items
+                            .MainMenu__FavoriteItems__Body__Items__All
+                                .MainMenu__FavoriteItems__Body__Items__All__List
+                                    .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                        - @like_rankings.each do |image|
+                                            = link_to item_path(image.item.id) do
+                                                = image_tag image.image , height: '150', width: '180', class:'favorite-item-image'
+
+            - if @items.any?
+                .MainMenu__CategoryLists
+                    %h2.category-title 人気のカテゴリー
+                    .MainMenu__CategoryLists__List
+                        .MainMenu__CategoryLists__List__All
+                            - @category_rankings.each do |category|
+                                .MainMenu__CategoryLists__List__All__list
+                                    %p.category-list
+                                        = category.name
+
+                - @category_rankings.each do |category|
+                - itemscounts = 0
+                    .MainMenu__CategoryItems
+                        .MainMenu__CategoryItems__Header
+                            %h3.category-item-title
+                                = category.name
+                                %span 新着アイテム
+                            %p.show-detail もっと見る >
+                        .MainMenu__CategoryItems__Body
+                            .MainMenu__CategoryItems__Body__Items
+                                .MainMenu__CategoryItems__Body__Items__All
+                                    .MainMenu__CategoryItems__Body__Items__All__List
+                                        - @items.each do |item|
+                                            - if item.category.root_id == category.id
+                                                - itemscounts += 1
+                                                %figure
+                                                    = link_to item_path(item.id) do
+                                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
+                                                        %figcaption
+                                                            = item.name
+                                                - break if itemscounts == 5
 
 
 
-            .MainMenu__CategoryLists
-                %h2.category-title 人気のカテゴリー
-                .MainMenu__CategoryLists__List
-                    .MainMenu__CategoryLists__List__All
-                        - @category_rankings.each do |category|
-                            .MainMenu__CategoryLists__List__All__list
-                                %p.category-list 
-                                    = category.name
 
+            - if @items.any?
+                .MainMenu__BrandLists
+                    %h2.category-title 人気のブランド
+                    .MainMenu__BrandLists__List
+                        .MainMenu__BrandLists__List__All
+                            - @brand_rankings.each do |brand|
+                                .MainMenu__BrandLists__List__All__list
+                                    %p.brand-list
+                                        = brand.name
 
-            .MainMenu__CategoryItems
-                .MainMenu__CategoryItems__Header
-                    %h3.category-item-title 
-                        - @categorytitle.each do |category|
-                            = category.name
-                        %span 新着アイテム
-                    %p.show-detail もっと見る >
-                .MainMenu__CategoryItems__Body
-                    .MainMenu__CategoryItems__Body__Items
-                        .MainMenu__CategoryItems__Body__Items__All
-                            .MainMenu__CategoryItems__Body__Items__All__List
-                                - @categoryitems.each do |item|
-                                    %figure
-                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
-                                        %figcaption 
-                                            = item.name
-                                    
-
-                            
-                                        
-
-            .MainMenu__BrandLists
-                %h2.category-title 人気のブランド
-                .MainMenu__BrandLists__List
-                    .MainMenu__BrandLists__List__All
-                        - @brand_rankings.each do |brand|
-                            .MainMenu__BrandLists__List__All__list
-                                %p.brand-list 
-                                    = brand.name
-
-
-            .MainMenu__BrandItems
-                .MainMenu__BrandItems__Header
-                    %h3.brand-item-title 
-                        - @brandtitle.each do |brand|
-                            = brand.name  
-                        %span 新着アイテム
-                    %p.show-detail もっと見る >
-                .MainMenu__BrandItems__Body
-                    .MainMenu__BrandItems__Body__Items
-                        .MainMenu__BrandItems__Body__Items__All
-                            .MainMenu__BrandItems__Body__Items__All__List
-                                - @branditems.each do |item|
-                                    %figure
-                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
-                                        %figcaption
-                                            = item.name
+                - @brand_rankings.each do |brand|
+                - itemscounts = 0
+                    .MainMenu__BrandItems
+                        .MainMenu__BrandItems__Header
+                            %h3.brand-item-title
+                                = brand.name
+                                %span 新着アイテム
+                            %p.show-detail もっと見る >
+                        .MainMenu__BrandItems__Body
+                            .MainMenu__BrandItems__Body__Items
+                                .MainMenu__BrandItems__Body__Items__All
+                                    .MainMenu__BrandItems__Body__Items__All__List
+                                        - @items.each do |item|
+                                            - if item.brand_id == brand.id
+                                                - itemscounts += 1
+                                                %figure
+                                                    = link_to item_path(item.id) do
+                                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
+                                                        %figcaption
+                                                            = item.name
+                                            - break if itemscounts == 5
 
 
     %aside.aside-toppage

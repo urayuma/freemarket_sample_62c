@@ -31,3 +31,4 @@ module FreemarketSample62c
     end
   end
 end
+Rails.application.config.assets.unknown_asset_fallback = true

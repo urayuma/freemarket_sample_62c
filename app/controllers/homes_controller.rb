@@ -1,18 +1,14 @@
 class HomesController < ApplicationController
   def index
-    @like_rankings = Image.find(Like.group(:item_id).order('count(item_id) desc').limit(4).pluck(:item_id))
+    @items = Item.all
 
-    @category_rankings = Category.find(Item.group(:category_id).order('count(category_id) desc').limit(4).pluck(:category_id))
+    @like_rankings = Image.find(Like.group(:item_id).order('count(item_id) desc').limit(4).pluck(:item_id)) if  user_signed_in? && Like.where(user_id: current_user.id).any?
 
-    @categorytitle = Category.find(Item.group(:category_id).order('count(category_id) desc').limit(1).pluck(:category_id))
-
-    @categoryitems = Item.where(category_id: @categorytitle[0].id)
+    root_ids = Item.all.map { |item| item.category.root_id }
+    sort_many = root_ids.instance_eval { uniq.sort_by {|x| count x}.reverse }
+    @category_rankings = Category.where(id: sort_many[0..3])
 
     @brand_rankings = Brand.find(Item.group(:brand_id).order('count(brand_id) desc').limit(4).pluck(:brand_id))
-
-    @brandtitle = Brand.find(Item.group(:brand_id).order('count(brand_id) desc').limit(1).pluck(:brand_id))
-
-    @branditems = Item.where(brand_id: @brandtitle[0].id)
   end
 
   private
