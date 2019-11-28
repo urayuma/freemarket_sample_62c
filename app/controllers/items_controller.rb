@@ -57,19 +57,22 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @items = Item.find(id: params[:id])
-    if item.user_id = current_user.id
-      @items.update(id: params[:id])
-    end
-    # redirect_to("/") 商品編集に行く前の画面パス
+    @id = params[:id] 
+    @items = Item.find(params[:id])
+    @items.update(name: item_params[:name],
+                  description: item_params[:description], 
+                  category_id: item_params[:category_id], 
+                  usage_status: item_params[:usage_status], 
+                  delivery_fee: item_params[:delivery_fee], 
+                  delivery_area: item_params[:delivery_area], 
+                  shipping_date: item_params[:shipping_date], 
+                  price: item_params[:price])
+    redirect_to edit_item_path(params[:id])
+  
   end
 
   def destroy
-    @images = Image.find_by(item_id: params[:item_id])
-    if image.item.user_id = current_user.id
-      @images.destroy
-    end
-    redirect_to("edit_item")
+   
   end
 
   def sellnow
@@ -82,6 +85,11 @@ class ItemsController < ApplicationController
     item = Item.find_by(params[:id])
     item.update(selling_status: "4")
     redirect_to item_show_mypage_index_path
+  def image_destroy
+    image = Image.find(params[:id])
+    image.destroy
+    redirect_to edit_item_path(params[:item_id])
+  end
 
   def search_item
     @item = Item.find(params[:id])
@@ -116,3 +124,4 @@ class ItemsController < ApplicationController
           .merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
   end
 end
+

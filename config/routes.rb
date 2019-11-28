@@ -83,6 +83,8 @@ Rails.application.routes.draw do
       patch '/', to: 'items#update'
       delete '/', to: 'items#destroy'
     end
+    delete '/:id/image/', to: 'items#image_destroy'
+
     # ここのルーティング後でやる
 
   end

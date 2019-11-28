@@ -16,11 +16,11 @@
             .edit-image__items__haveitems__list
               - @images.each do |image|
                 %figure
-                  = image_tag 'images.image', height: '85.5', width: '114', class:'edit-images-image'
+                  = image_tag "#{image.image}", height: '85.5', width: '114', class:'edit-images-image'
 
                 .edit-image__items__haveitems__list__editbutton
                   .edit-images-button 
-                    = link_to '削除', item_path(params[:id]), method: :delete
+                    = link_to '削除', "/items/#{params[:id]}/#{image.id}/image", method: :delete
 
 
         =f.label :image do
@@ -38,7 +38,7 @@
       .edit-item__form
         %label.edit-item__form--subject 商品の説明
         %span.edit-item__form--essential 必須
-        = f.text_area :name, placeholder: "商品の説明（必須1,000文字以内） （色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです", rows: 5, class:'edit-item__form--explain'
+        = f.text_area :description, placeholder: "商品の説明（必須1,000文字以内） （色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです", rows: 5, class:'edit-item__form--explain'
     .edit-select
       .edit-select__title 商品の詳細
       .select-wrapper
@@ -47,14 +47,14 @@
             %label.select-subject カテゴリー
             %span.select-essential 必須
             .parent-wrapper
-              = f.collection_select :category_id, :id , :name, {include_blank: "---"}, {id:'select-parent-category'}
+              = f.collection_select :category_id, Category.all, :id , :name, {include_blank: "---"}, {id:'select-parent-category'}
               .select-arrow
                 %i.fas.fa-chevron-down
         .edit-select__group
           %label.select-subject 商品の状態
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :usage_status, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :usage_status, UsageStatus.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
 
@@ -66,21 +66,21 @@
           %label.select-subject 配送料の負担
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :delivery_fee, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :delivery_fee, DeliveryFee.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
         .edit-select__group
           %label.select-subject 発送元の地域
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :delivery_area , @prefectures, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :delivery_area, Prefecture.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
         .edit-select__group
           %label.select-subject 発送までの日数
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :shipping_date , @shipping_date, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :shipping_date , ShippingDate.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
 
@@ -109,8 +109,7 @@
 
     .edit-send
       .edit-send__submit
-        = f.submit :"変更する", class:"edit-send__submit--button"
-        -# = link_to “変更する”, root_path
+        = f.submit :"変更する", class:"edit-send__submit--button", method: :patch
 
       .edit-send__back
         = link_to "キャンセル", :back, { class: "edit-send__back--button" }
