@@ -30,7 +30,7 @@
           %td.item-td
             = @item.category.parent.parent.name
             .category-icon
-            %span 
+            %span
               = @item.category.parent.name
             .category-icon
             %span
@@ -52,7 +52,7 @@
           %td.item-td
             = @item.delivery_fee
         %tr
-          %th.item-th 配送の方法	
+          %th.item-th 配送の方法
           %td.item-td
             = @item.delivery_way
         %tr
@@ -69,9 +69,9 @@
       = @item.price
     %span.item-price-box__tax (税込)
     %span.item-price-box__postage 着払い
-    
+
   .item-buy-btn
-    %button{class: "btn-default item-buy-btn__red"} 購入画面に進む
+    = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red"
   .item-description
     %p
       = @item.description

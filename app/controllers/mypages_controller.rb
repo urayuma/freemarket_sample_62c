@@ -1,7 +1,6 @@
 class MypagesController < ApplicationController
   before_action :sidebar_setteing
-  # before_action :authenticate_user!
-  before_action :set_url, only: %i[listing in_progress completed]
+  before_action :authenticate_user!
   before_action :set_card, only: %i[card card_new]
 
   def index; end
@@ -28,15 +27,25 @@ class MypagesController < ApplicationController
     @prefectures = Prefecture.all
   end
 
-  def listing; end
+  def listing
+    @items = current_user.items.where(selling_status: "出品中").page(params[:page]).per(10)
+  end
 
-  def in_progress; end
+  def in_progress
+    @items = current_user.items.where(selling_status: "取引中").page(params[:page]).per(10)
+  end
 
-  def completed; end
+  def completed
+    @items = current_user.items.where(selling_status: "売却済み").page(params[:page]).per(10)
+  end
 
-  def purchase; end
+  def purchase
+    @items = current_user.items
+  end
 
-  def purchased; end
+  def purchased
+    @items = current_user.items
+  end
 
   def exhibit_item
     @item = Item.find(params[:id])
@@ -49,10 +58,6 @@ class MypagesController < ApplicationController
     @linklist = ["/mypage", "/info/", "/mustdo/", "/liles_all/", "/出品する/", "/mypage/listings/listing", "/mypage/listings/in_progress", "/mypage/listings/completed", "/mypage/purchase", "/mypage/purchased"]
     @configlist = ["プロフィール", "発送元・お届け先住所変更", "支払い方法", "メール/パスワード", "本人情報", "電話番号の確認", "ログアウト"]
     @configlinklist = ["/myage/edit", "/info/", "/mypage/card", "/shuppin/", "/mypage/identification", "/mypage/", "/mypage/logout/"]
-  end
-
-  def set_url
-    @url = request.url
   end
 
   def set_card
