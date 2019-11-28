@@ -58,43 +58,42 @@ Address.create!(
       firstname: 'Jonny',
       lastname_kana: 'ナミノリ',
       firstname_kana: 'ジョニー',
-      postcode:       "123-4567",
-      prefectures:    "神奈川",
-      city:           "横浜市緑区",
-      street_num:     "青山5-1-1",
-      building:       "柳ビル103",
-      home_call_num:  "09000000000",
-      user_id:         "1"
+      postcode: "123-4567",
+      prefectures: "神奈川",
+      city: "横浜市緑区",
+      street_num: "青山5-1-1",
+      building: "柳ビル103",
+      home_call_num: "09000000000",
+      user_id: "1"
     },
     {
       lastname: 'Sasurai',
       firstname: 'Samurai',
       lastname_kana: 'サスライ',
       firstname_kana: 'サムライ',
-      postcode:       "123-4567",
-      prefectures:    "神奈川",
-      city:           "横浜市緑区",
-      street_num:     "青山5-1-1",
-      building:       "柳ビル103",
-      home_call_num:  "09000000099",
-      user_id:         "2"
+      postcode: "123-4567",
+      prefectures: "神奈川",
+      city: "横浜市緑区",
+      street_num: "青山5-1-1",
+      building: "柳ビル103",
+      home_call_num: "09000000099",
+      user_id: "2"
     },
     {
       lastname: 'oshiruko',
       firstname: 'omochi',
       lastname_kana: 'オシルコ',
       firstname_kana: 'オモチ',
-      postcode:       "123-4567",
-      prefectures:    "神奈川",
-      city:           "横浜市緑区",
-      street_num:     "青山5-1-1",
-      building:       "柳ビル103",
-      home_call_num:  "09000009999",
-      user_id:         "3"
+      postcode: "123-4567",
+      prefectures: "神奈川",
+      city: "横浜市緑区",
+      street_num: "青山5-1-1",
+      building: "柳ビル103",
+      home_call_num: "09000009999",
+      user_id: "3"
     }
   ]
 )
-
 
 # # ブランド レディース
 Brand.create!(
@@ -445,7 +444,7 @@ Item.create!(
       user_id: '1',
       brand_id: '7',
       category_id: '80',
-      payment_status: '支払済'
+      payment_status: '未払い'
     },
     {
       name: 'グッチTシャツ',
@@ -460,7 +459,7 @@ Item.create!(
       user_id: '1',
       brand_id: '1',
       category_id: '20',
-      payment_status: '支払済'
+      payment_status: '未払い'
     }
 
   ]
@@ -482,7 +481,7 @@ Item.create!(
       user_id: '2',
       brand_id: '3',
       category_id: '144',
-      payment_status: '支払済'
+      payment_status: '未払い'
 
     },
     {
@@ -498,7 +497,7 @@ Item.create!(
       user_id: '2',
       brand_id: '4',
       category_id: '91',
-      payment_status: '支払済'
+      payment_status: '未払い'
 
     },
     {
@@ -972,7 +971,7 @@ Image.create!(
       item_id: '5'
     },
     {
-      #イケてるトレンチコート
+      # イケてるトレンチコート
       image: 'https://im.uniqlo.com/images/jp/pc/goods/419981/item/32_419981.jpg',
       item_id: '6'
     },
