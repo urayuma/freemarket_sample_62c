@@ -28,7 +28,7 @@
 
           - @items.each do |item|
             %li.listings-report-areas-exsis__area
-              = link_to item_show_mypage_index_path(item.id), class: "listings-report-areas-exsis__area__link" do
+              = link_to item_show_mypage_index_path(item.id),data: { turbolinks: false}, class: "listings-report-areas-exsis__area__link" do
 
                 %figure.listings-report-areas-exsis__area__link__figure
                   = image_tag item.images.first.image, class: 'listings-report-areas-exsis__area__link__figure__image'
