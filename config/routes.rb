@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get 'purchase', to: 'mypages#purchase'
       get 'purchased', to: 'mypages#purchased'
       get ':id/exhibit_item', to: 'mypages#exhibit_item', as: :item_show
+      get 'address', to: 'mypages#address'
     end
   end
 
@@ -36,10 +37,11 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :addresses, only: %i[edit update delete] do
+  resources :addresses, only: %i[edit delete] do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'
+      patch "/", to: 'addresses#update'
     end
   end
 
