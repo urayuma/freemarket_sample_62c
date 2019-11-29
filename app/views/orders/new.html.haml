@@ -48,8 +48,7 @@
             %p.buy-panel__item-detail-inner__buyer
               ="#{@user.lastname} #{@user.firstname}"
             .buy-panel__item-detail-inner__link
-              //送付先を変更するページがないのでリンクを設定していません
-              = link_to "", class: "go-to_change" do  
+              = link_to "/mypage/address", class: "go-to_change" do  
                 %span.go-to_change__messaege 変更する
                 %i.fas.fa-angle-right
 
