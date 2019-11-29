@@ -18,11 +18,13 @@
                         .MainMenu__FavoriteItems__Body__Items
                             .MainMenu__FavoriteItems__Body__Items__All
                                 .MainMenu__FavoriteItems__Body__Items__All__List
-                                    .MainMenu__FavoriteItems__Body__Items__All__List__image
+                                    .MainMenu__FavoriteItems__Body__Items__All__List__images
                                         - @like_rankings.each do |image|
-                                            = link_to item_path(image.item.id) do
-                                                = image_tag image.image , height: '150', width: '180', class:'favorite-item-image'
-
+                                            = link_to item_path(image.item.id), class: "MainMenu__FavoriteItems__Body__Items__All__List__images__image" do
+                                                - if image.item.selling_status == "売却済み"
+                                                    .home__sold-out-image
+                                                        %span.home__sold-out-text SOLD
+                                                = image_tag image.image, class:'favorite-item-image'
             - if @items.any?
                 .MainMenu__CategoryLists
                     %h2.category-title 人気のカテゴリー
@@ -48,9 +50,12 @@
                                         - @items.each do |item|
                                             - if item.category.root_id == category.id
                                                 - itemscounts += 1
-                                                %figure
+                                                %figure.MainMenu__CategoryItems__Body__Items__All__List__item
                                                     = link_to item_path(item.id) do
-                                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
+                                                        - if item.selling_status == "売却済み"
+                                                            .home__sold-out-image
+                                                                %span.home__sold-out-text SOLD
+                                                        = image_tag item.images.first.image , class:'body-item-image'
                                                         %figcaption
                                                             = item.name
                                                 - break if itemscounts == 5
@@ -83,12 +88,15 @@
                                         - @items.each do |item|
                                             - if item.brand_id == brand.id
                                                 - itemscounts += 1
-                                                %figure
+                                                %figure.MainMenu__CategoryItems__Body__Items__All__List__item
                                                     = link_to item_path(item.id) do
-                                                        = image_tag item.images.first.image , height: '230', width: '200', class:'body-item-image'
+                                                        - if item.selling_status == "売却済み"
+                                                            .home__sold-out-image
+                                                                %span.home__sold-out-text SOLD
+                                                        = image_tag item.images.first.image , class:'body-item-image'
                                                         %figcaption
                                                             = item.name
-                                            - break if itemscounts == 5
+                                                - break if itemscounts == 5
 
 
     %aside.aside-toppage
