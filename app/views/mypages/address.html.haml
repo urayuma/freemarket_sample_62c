@@ -6,7 +6,7 @@
     = render "sidebar"
     .mypage-address
       %h2.l-single-inner_registration
-        住所入力
+        発送元・お届け先住所変更
       = form_for @address, url: addresses_path do |f|
         - required = '必須'
         - optional = '任意'
