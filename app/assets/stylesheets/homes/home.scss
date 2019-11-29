@@ -33,7 +33,7 @@
         height: 4.5rem;
         width: 18rem;
         padding: 0.5rem;
-        background-image: url("fmarket_logo_red");
+        background-image: image-url("fmarket_logo_red");
         background-repeat: no-repeat;
         position: absolute;
       }
@@ -152,7 +152,9 @@ button.search-logo {
   width: 100%;
   background-color: darksalmon;
   text-align: center;
-  background-image: url("https://www.haikei-free.com/dataimg/purple0119.png");
+  background-image: image-url(
+    "https://www.haikei-free.com/dataimg/purple0119.png"
+  );
 
   background-size: inherit;
 
@@ -472,7 +474,7 @@ h2.FooterMenu__list__title {
     height: 3.3rem;
     width: 12rem;
     padding: 2.5rem 0.5rem 0.5rem 0.5rem;
-    background-image: url("fmarket_logo_white");
+    background-image: image-url("fmarket_logo_white");
     background-repeat: no-repeat;
   }
 

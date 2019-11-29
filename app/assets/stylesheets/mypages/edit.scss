@@ -20,14 +20,14 @@
       width: 70rem;
       text-align: center;
       padding: 7.2rem 1.6rem 2.4rem;
-      background-image: url(fmarket.jpg);
+      background-image: image-url("fmarket.jpg");
       &--image {
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
         display: inline-block;
         vertical-align: middle;
-        background-image: url(user.jpg);
+        background-image: image-url("user.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 10%;
