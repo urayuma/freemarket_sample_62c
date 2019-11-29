@@ -15,6 +15,13 @@ class AddressesController < ApplicationController
     end
   end
 
+  def update
+    params[:address][:home_call_num] = nil if params[:address][:home_call_num].empty?
+    @address = Address.update(address_params)
+    redirect_to controller: :mypages,action: :address
+  end
+
+
   private
 
   def address_params
