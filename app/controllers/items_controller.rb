@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :search_item, only: %i[destroy show]
+  before_action :authenticate_user!, only: %i[sell create destroy]
   def sell
     @item = Item.new
     @category = Category.where(ancestry: nil)
