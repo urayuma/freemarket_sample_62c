@@ -8,6 +8,9 @@
     .item-detail-content__information--pictures
       .item-detail-phone-big
         - @item.images.first(1).each do |image|
+          - if @item.selling_status == "売却済み"
+            .item-detail__show__sold-out-image
+              %span.item-detail__show__sold-out-text SOLD
           = image_tag image.image, class: "item-detail-phone-big-main"
       .item-detail-phone-cells
         - @item.images.each do |image|
