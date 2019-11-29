@@ -16,6 +16,27 @@
       background-color: #fafafa;
       .item-detail-phone-big {
         line-height: 0;
+        position: relative;
+
+        .item-detail__show__sold-out-image {
+          border: 5rem solid;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: $red transparent transparent $red;
+          z-index: 1;
+          position: absolute;
+        }
+        .item-detail__show__sold-out-text {
+          font-size: 2rem;
+          letter-spacing: 0.1em;
+          color: #fff;
+          font-weight: bolder;
+          position: absolute;
+          top: -2rem;
+          left: -5rem;
+          transform: rotateZ(315deg);
+        }
         .item-detail-phone-big-main {
           height: 30rem;
           width: 30rem;
@@ -71,7 +92,7 @@
             font-weight: 900;
             display: inline-block;
             margin-left: 1.6rem;
-            color: #FFCC66;
+            color: #ffcc66;
           }
           .bad-icon::before {
             font-family: "Font Awesome 5 Free";
@@ -79,7 +100,7 @@
             font-weight: 900;
             display: inline-block;
             margin-left: 1.6rem;
-            color: #5D99FF;
+            color: #5d99ff;
           }
         }
         .category-icon {
@@ -96,7 +117,9 @@
     .item-price-box__price {
       margin-right: 1.6rem;
       font-size: 5rem;
-      font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+      font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial",
+        "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ",
+        Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
     }
     .item-price-box__tax {
       font-size: 1rem;
