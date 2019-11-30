@@ -76,23 +76,27 @@ h4 {
   width: 13rem;
   display: inline-block;
   -webkit-appearance: none;
-  -moz-appearance: none; 
+  -moz-appearance: none;
   appearance: none;
+  overflow: hidden;
   padding-left: 1rem;
   background: 0;
 }
+
 .select-wrapper{
   position: relative;
 }
-.select-arrow{
+
+.creditcard-pulldown {
   position: absolute;
   right: 1.6rem;
-  top: 50%;
+  top: 2.4rem;
   z-index: 2;
   color: #888;
   font-size: 1.6rem;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
+  pointer-events: none;
 }
 .exp-date{
   font-size: 1.8rem;

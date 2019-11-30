@@ -31,13 +31,11 @@
           .field-input-expiring
             .select-wrapper
               = select_tag "exp_month", options_from_collection_for_select(@month, :value, :name), class:"input-text input-text-date", id: "exp_month"
-              .select-arrow
-                %i.fas.fa-chevron-down
+              %i.fas.fa-chevron-down.creditcard-pulldown
             %span.exp-date 月
             .select-wrapper
               = select_tag "exp_year", options_from_collection_for_select(@year, :value, :name), class:"input-text input-text-date", id: "exp_year"
-              .select-arrow
-                %i.fas.fa-chevron-down
+              %i.fas.fa-chevron-down.creditcard-pulldown
             %span.exp-date 年
         .field-creditcard
           .field-label
