@@ -9,6 +9,7 @@ class HomesController < ApplicationController
     @category_rankings = Category.where(id: sort_many[0..3])
 
     @brand_rankings = Brand.find(Item.group(:brand_id).order('count(brand_id) desc').limit(4).pluck(:brand_id))
+
   end
 
   private
@@ -17,3 +18,4 @@ class HomesController < ApplicationController
     params.permit(:email, :password)
   end
 end
+

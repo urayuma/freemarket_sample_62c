@@ -1,0 +1,190 @@
+.home-menu-search {
+  position: relative;
+  width: 100%;
+  // height: 5rem;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.home-menu-search > li {
+  display: flex;
+  // height: 50px;
+  // line-height: 50px;
+  background: #fff;
+}
+
+.home-menu-search > li a {
+  display: flex;
+  // display: block;
+}
+
+.home-menu-search > li a:hover {
+  color: #999;
+}
+
+ul.home-menu-search__second-level {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+ul.home-menu-search__third-level {
+  visibility: hidden;
+  display: flex;
+  opacity: 0;
+}
+
+ul.home-menu-search__fourth-level {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.home-menu-search > li:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.home-menu-search__second-level li {
+  border-top: 1px solid grey;
+}
+
+.home-menu-search__third-level li {
+  border-top: 1px solid grey;
+}
+
+.home-menu-search__second-level li a:hover {
+  background: #f5f5f5;
+}
+
+.home-menu-search__third-level li a:hover {
+  background: #f5f5f5;
+}
+
+.home-menu-search__fourth-level li a:hover {
+  background: #f5f5f5;
+}
+
+/* floatクリア */
+.home-menu-search:before,
+.home-menu-search:after {
+  content: " ";
+  display: table;
+}
+
+.home-menu-search:after {
+  clear: both;
+}
+
+.home-menu-search {
+  *zoom: 1;
+}
+
+
+// カテゴリーメニュー（多重層メニュー）
+.home-menu-search > li.home-menu-search__multi {
+  position: relative;
+  display: flex;
+}
+
+li.home-menu-search__multi ul.home-menu-search__second-level {
+  position: absolute;
+  display: flex;
+  top: 2.8rem;
+  width: 150%;
+  background: #fff;
+  line-height: 5rem;
+  padding-left: 1rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li.home-menu-search__multi:hover ul.home-menu-search__second-level {
+  // top: 50px;
+  visibility: visible;
+  opacity: 1;
+}
+
+li.home-menu-search__multi ul.home-menu-search__second-level li {
+  position: relative;
+}
+
+
+li.home-menu-search__multi ul.home-menu-search__second-level li ul.home-menu-search__third-level {
+  position: absolute;
+  top: -1px;
+  left: 100%;
+  width: 100%;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li.home-menu-search__multi ul.home-menu-search__second-level li:hover ul.home-menu-search__third-level {
+  visibility: visible;
+  opacity: 1;
+}
+
+li.home-menu-search__multi ul.home-menu-search__second-level li ul.home-menu-search__third-level li {
+  position: relative;
+  background: #fff;
+}
+
+
+li.home-menu-search__multi ul.home-menu-search__second-level li ul.home-menu-search__third-level li ul.home-menu-search__fourth-level {
+  position: absolute;
+  background: #fff;
+  // display: flex;
+  top: -1px;
+  left: 100%;
+  width: 100%;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li.home-menu-search__multi ul.home-menu-search__second-level li ul.home-menu-search__third-level li:hover ul.home-menu-search__fourth-level {
+  visibility: visible;
+  background: #fff;
+  opacity: 1;
+}
+
+.init-right:after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0 0 15px;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+// ブランドメニュー（シングルメニュー）
+.home-menu-search > li.home-menu-search__single {
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+
+li.home-menu-search__single ul.home-menu-search__second-level {
+  position: absolute;
+  top: 2.8rem;
+  padding-left: 1rem;
+  width: 150%;
+  background: #fff;
+  line-height: 5rem;
+  opacity: 1;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li.home-menu-search__single:hover ul.home-menu-search__second-level {
+  visibility: visible;
+  opacity: 1;
+}
+
+i.fas.fa-tag, i.far.fa-list-alt{
+  margin-top: 0.3rem;
+  padding-right: 0.5rem;
+}
