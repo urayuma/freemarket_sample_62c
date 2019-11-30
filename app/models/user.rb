@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :chats
   has_many :orders
   has_many :items
+  has_many :likes, dependent: :destroy
   has_many :sns_credentials, dependent: :destroy
 
   validates :nickname, presence: true, length: { maximum: 20 }

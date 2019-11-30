@@ -73,4 +73,6 @@ Rails.application.routes.draw do
   end
 
   patch 'user_information/update', to: 'user_information#update'
+  post '/items/:item_id/likes', to: "likes#create"
+  delete '/items/:item_id/likes', to: "likes#destroy"
 end

@@ -1,0 +1,10 @@
+- if Like.find_by(user_id: current_user.id, item_id: @item.id)
+  = link_to "/items/#{@item.id}/likes", method: :delete, remote: true do
+    .i{class: "fas fa-heart red_heart"}
+    %span.red_heart__iine いいね！
+- else
+  = link_to "/items/#{@item.id}/likes", method: :post, remote: true do
+    .i{class: "far fa-heart none_heart"}
+    %span.none_heart__iine いいね！
+
+= @item.likes.length
