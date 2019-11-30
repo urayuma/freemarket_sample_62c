@@ -18,49 +18,56 @@
             %i.fas.fa-chevron-right
         .identification__form--group
           %label.form-subject お名前
-          %p.form-contents 向井 治
+          %p.form-contents
+            = "#{current_user.lastname} #{current_user.firstname}"
         .identification__form--group
           %label.form-subject お名前カナ
-          %p.form-contents ムカイ ジ
+          %p.form-contents
+            = "#{current_user.lastname_kana} #{current_user.firstname_kana}"
         .identification__form--group
           %label.form-subject 生年月日
-          %p.form-contents 1994/11/09
-        .identification__form--group
-          %label.form-subject 郵便番号
-          %span.form-optional 任意
-          %br
-          %input.form-text{ type: "text", placeholder: "例）1234567" }
-        .identification__form--group
-          %label.form-subject 都道府県
-          %span.form-optional 任意
-          %br
-          .select-wrrapper
-            .select-arrow
-              %i.fas.fa-chevron-down
-            = select_tag 'prefectures', options_from_collection_for_select( @prefectures, :id, :name ), class: "form-select" #機能実装時はplaseholderで初期値設定してください
-        .identification__form--group
-          %label.form-subject 市区町村
-          %span.form-optional 任意
-          %br
-          %input.form-text{ type: "text", placeholder: "例）足立区安達町" }
-        .identification__form--group
-          %label.form-subject 番地
-          %span.form-optional 任意
-          %br
-          %input.form-text{ type: "text", placeholder: "例）阿立1-2-3" }
-        .identification__form--group
-          %label.form-subject 建物名
-          %span.form-optional 任意
-          %br
-          %input.form-text{ type: "text", placeholder: "例）アダチビル101" }
-        .identification__form--group
-          = button_to "登録する", "/mypage/identification", { method: :patch, class: "submit-button" } #パスは仮置き
-        .identification__form--group
-          %p.identification__form--link
-            = link_to "", class:"about-link" do
-              %br
-              本人情報の登録について
-              %i.fas.fa-chevron-right
+          %p.form-contents
+            ="#{current_user.birthday_year}/#{current_user.birthday_month}/#{current_user.birthday_day}"
+        = form_for @information, url:user_information_update_path do |f|
+          .identification__form--group
+            %label.form-subject 郵便番号
+            %span.form-optional 任意
+            %br
+            = f.text_field :postcode, placeholder: "例）1234567", class: 'form-text'
+            - if @information.errors.messages[:postcode].any?
+              = render 'shard/signups_errors', errors: @information.errors.full_messages_for(:postcode)
+          .identification__form--group
+            %label.form-subject 都道府県
+            %span.form-optional 任意
+            %br
+            .select-wrrapper
+              .select-arrow
+                %i.fas.fa-chevron-down
+              = f.collection_select :prefectures, @prefectures, :id, :name, {include_blank: "---"}, {class:'form-select'} 
+
+          .identification__form--group
+            %label.form-subject 市区町村
+            %span.form-optional 任意
+            %br
+            = f.text_field :city, placeholder: "例）足立区安達町", class: 'form-text'
+          .identification__form--group
+            %label.form-subject 番地
+            %span.form-optional 任意
+            %br
+            = f.text_field :street_num, placeholder: "例）阿立1-2-3", class: 'form-text'
+          .identification__form--group
+            %label.form-subject 建物名
+            %span.form-optional 任意
+            %br
+            = f.text_field :building, placeholder: "例）アダチビル101", class: 'form-text'
+          .identification__form--group
+            = f.submit :"登録する", class:"submit-button"
+          .identification__form--group
+            %p.identification__form--link
+              = link_to "", class:"about-link" do
+                %br
+                本人情報の登録について
+                %i.fas.fa-chevron-right
 
   = render "/homes/footer"
   = render "/homes/postitem"

@@ -51,6 +51,7 @@ class SignupsController < ApplicationController
         user_id: @user.id
       )
       sign_in User.find(@user.id) unless user_signed_in?
+      UserInformation.create(user: @user)
       redirect_to addresses_path
     else
       render :step2
