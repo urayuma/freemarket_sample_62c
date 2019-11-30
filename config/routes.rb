@@ -71,4 +71,6 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+
+  patch 'user_information/update', to: 'user_information#update'
 end
