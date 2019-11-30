@@ -54,6 +54,7 @@ class MypagesController < ApplicationController
 
   def address
     @address = current_user.address
+    @prefectures = Prefecture.all
   end
 
   def sidebar_setting
