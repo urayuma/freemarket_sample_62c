@@ -81,8 +81,8 @@
   .item-bottom-button
     .item-bottom-button__left
       .item-like-btn
-        .i{class:"far fa-heart item-heart"}
-        %span.item-heart__like いいね！
+        %div{id: "like-#{@item.id}"}
+          = render partial: 'likes/item'
       .item-report-btn
         .i{class: "far fa-flag item-flag"}
         %span.item-flag__report不適切な商品の報告
