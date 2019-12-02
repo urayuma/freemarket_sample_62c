@@ -1,7 +1,7 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
-  function appendOption(category){
-    var html = `<option value="${category.id}">${category.name}</option>`;
+  function appendOption(variable){
+    var html = `<option value="${variable.id}">${variable.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -70,11 +70,31 @@ $(function(){
                             <div class="sell-item__form">
                             <label class="sell-item__form--subject">ブランド</label>
                             <span class="sell-item__form--optional">任意</span>
-                            <input placeholder="ブランド（任意）" class="sell-item__form--brand" type="text" name="item[branc]" id="item_branc">
+                            <input placeholder="ブランド（任意）" class="sell-item__form--brand" type="text" name="item[brand]" id="item_brand">
                             </div>                            
                             </div>`;
     $('.category-wrapper').append(appendSizeFormHtml);
   }
+
+  // 配送方法選択フォーム作成
+  function appendDeliveryWayBox(insertHTML){
+    var deliveryWayHtml = '';
+    deliveryWayHtml = `
+                        <div class="deliveryway-wrapper">
+                        <label class="select-subject">配送の方法</label>
+                        <span class="select-essential">必須</span>
+                        <div class="deliveryway-select-wrapper">
+                        <select id="select-delivery-way" name="item[delivery_way]"><option value="">---</option>
+                          ${insertHTML}
+                        </select>  
+                          <div class="select-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                          </div>
+                          </div>
+                        </div>`;
+    $('.delivery-wrapper').append(deliveryWayHtml);
+  }
+  
 
   // 親カテゴリー選択後のイベント
   $('#select-parent-category').on('change', function(){
@@ -156,6 +176,35 @@ $(function(){
     }
   })
 
+// 配送料の負担選択後、発送方法欄を表出する処理
+  $(document).on('change', '#item_delivery_fee', function(){
+    var deliveryFeeId = $('#item_delivery_fee').val(); 
+    if (deliveryFeeId != ""){ 
+      $.ajax({
+        url: 'get_delivery_way',
+        type: 'GET',
+        data: { delivery_fee_id: deliveryFeeId },
+        dataType: 'json'
+      })
+      .done(function(deliveryWays){
+        if (deliveryWays.length != 0) {
+          $('.deliveryway-wrapper').remove(); 
+          var insertHTML = '';
+          deliveryWays.forEach(function(deliveryWay){
+          insertHTML += appendOption(deliveryWay);
+          });
+          appendDeliveryWayBox(insertHTML);
+        }
+      })
+      .fail(function(){
+        alert('配送方法取得に失敗しました');
+      })
+    }else{
+      $('.deliveryway-wrapper').remove(); 
+    }
+
+  })
+
   //販売手数料と販売利益を計算
   $("#item_price").on("keyup", function(){
     var input = $("#item_price").val();
@@ -177,13 +226,4 @@ $(function(){
       $('.result-profit').text(profitResult);
     }
   })
-
-  $(function() { 
-    $(".dropzone").dropzone({
-      addRemoveLinks: true,
-      uploadMultiple: true,
-      paramName: "file[]"
-    });
-  });
-  
 });
