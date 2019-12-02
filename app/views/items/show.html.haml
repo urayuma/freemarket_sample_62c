@@ -69,12 +69,16 @@
 
   .item-price-box
     %span.item-price-box__price
-      = "¥#{@item.price}"
+      = "¥#{@item.price.to_s(:delimited)}"
     %span.item-price-box__tax (税込)
     %span.item-price-box__postage 着払い
 
   .item-buy-btn
-    = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red"
+    - if @item.selling_status == "売却済み" #active_hash導入後に変更が必要
+      .btn-default.item-buy-btn__sold
+        売り切れました
+    - else
+      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red"
   .item-description
     %p
       = @item.description
