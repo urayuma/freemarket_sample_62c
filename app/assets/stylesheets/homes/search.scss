@@ -1,0 +1,87 @@
+.search_main {
+  border-color: rgb(204, 204, 204);
+  width: 60%;
+  display: flex;
+  justify-content: center;
+
+  .search-menu {
+    width: 30%;
+    &__sort {
+      height: 10rem;
+      .sort-submit-btn {
+        display: none;
+      }
+    }
+    &__detailed {
+    }
+  }
+
+  .search_result {
+    width: 70%;
+    border-color: rgb(204, 204, 204);
+    .search-word {
+      border-color: rgb(204, 204, 204);
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+    &__count {
+      color: #888888;
+      margin: 1.5rem 0;
+    }
+    &__lists {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      &__list {
+        height: 30rem;
+        width: 22%;
+        margin-left: 2rem;
+
+        &__link {
+          .search__sold-out-image {
+            border: 3rem solid;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: $red transparent transparent $red;
+            z-index: 1;
+            position: absolute;
+          }
+          .search__sold-out-text {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bolder;
+            position: absolute;
+            top: -1.7rem;
+            left: -3rem;
+            transform: rotateZ(315deg);
+          }
+
+          &__image {
+            height: 25rem;
+            width: 100%;
+          }
+          &__text {
+            height: 4rem;
+            background-color: #fff;
+            position: relative;
+            &__like {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  border: none;
+  color: #696969;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+}

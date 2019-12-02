@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   end
 
   root 'homes#index'
-  get 'home/index', to: 'homes#index'
+  resources :homes, only: [:index] do
+    collection do
+      match 'search', to: 'homes#search', via: [:get, :post]
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
 
   resources :mypage, only: [:index] do
     collection do

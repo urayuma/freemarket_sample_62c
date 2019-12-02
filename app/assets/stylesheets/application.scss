@@ -20,7 +20,6 @@
 @import "config/colors";
 @import "config/font-size";
 
-
 //variables
 @import "variables/variables";
 @import "variables/mixins";
@@ -63,7 +62,7 @@
 @import "homes/home";
 @import "homes/home-slidemenu.scss";
 @import "homes/home-header.scss";
-
+@import "homes/search.scss";
 
 //orders
 @import "orders/new.scss";

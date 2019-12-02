@@ -98,4 +98,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'payjp'
 gem 'rails-i18n'
+gem 'ransack'
 gem 'recaptcha', require: "recaptcha/rails"
