@@ -50,6 +50,9 @@
   margin-right: 7.7rem;
 }
 
+.field-input-name{
+  display: flex;
+}
 .field-address {
   line-height: 2rem;
   margin-top: 4rem;
@@ -146,6 +149,11 @@
   -moz-appearance: none;
   appearance: none;
   overflow: hidden;
+}
+
+#address_prefectures_error{
+  @extend #address_prefectures;
+  border: 0.1rem solid red;
 }
 
 .field-pulldown {
