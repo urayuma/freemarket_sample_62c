@@ -946,158 +946,158 @@ Image.create!(
   [
     {
       # シャネルセール品３点
-      image: 'https://image.interior-book.jp/article/original/56619.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '1'
     },
     {
       # カビゴン着ぐるみ
-      image: 'https://shop.r10s.jp/wigland/cabinet/110717/szj18-tmy-061.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '2'
     },
     {
       # グッチTシャツ
-      image: 'https://i.pinimg.com/736x/06/58/e4/0658e4e5b54e2f5768c9dc2e9ca08487.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '3'
     },
 
     {
       # 黄金に輝く胸筋
-      image: 'https://monde.jp/blog/wp-content/uploads/2018/09/toop-5.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '4'
     },
     {
       # ブラウンニット
-      image: 'https://www.wearstand.com/upload/save_image/ps_5166405_505_m.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '5'
     },
     {
       # イケてるトレンチコート
-      image: 'https://im.uniqlo.com/images/jp/pc/goods/419981/item/32_419981.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '6'
     },
 
     {
       # ボスベイビー
-      image: 'https://bossbaby.jp/news/wp-content/uploads/sites/42/2018/04/bb_cg_Boss_Baby_05_RGB-%E3%82%B3%E3%83%94%E3%83%BC.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '7'
     },
 
     {
       # ギフトにもGoodよだれかけ
-      image: 'https://marlmarl-cdn.azureedge.net/pub/assets/img/model/macaron/macaron-3_mauve/macaron-3_mauve-m1.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '8'
     },
 
     {
       # 流れるアンモナイト型シンク
-      image: 'http://livedoor.blogimg.jp/hamusoku/imgs/f/0/f014ad2e.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '9'
     },
     {
       # アップルメモパッド
-      image: 'http://www.neverlandclub.jp/images/e2/e2688/image.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '10'
     },
 
     {
       # 安心引きこもりライフ
-      image: 'https://up.gc-img.net/post_img_web/2014/05/InEKjVpSmGvrmFE',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '11'
     },
     {
       # マッチョでぽん
-      image: 'http://blog-imgs-95.fc2.com/h/i/t/hitoikigame/macho_main.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '12'
     },
     {
       # ゲームキューブカセット
-      image: 'https://image.biccamera.com/img/00000001994940_A01.jpg?sr.dw=320&sr.dh=320&sr.jqh=60&sr.mat=1',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '13'
     },
 
     {
       # ゲロゲロ卵の黄身
-      image: 'https://img2.bgxcdn.com/thumb/view/oaupload/banggood/images/73/4A/53a93389-1091-2feb-c03b-d3909ecc7ca6.jpg',
+     image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '14'
     },
     {
       # フリーザのような美肌に！ドラゴンボールフェイスパック
-      image: 'https://shop35-makeshop.akamaized.net/shopimages/isshindo/000000000051.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '15'
     },
 
     {
       # クロエ香水
-      image: 'http://www.happiness-d.com/img/goods/L/kuroeo-doparufamu%20EPS75ml_l.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '16'
     },
 
     {
       # ピザ機
-      image: 'http://ure.pia.co.jp/mwimgs/9/3/-/img_93cf494da83a05a87813ebc9bbf2100157735.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '17'
     },
     {
       # おしるこプロテイン
-      image: 'https://cdn-ak.f.st-hatena.com/images/fotolife/s/ssachiko/20180120/20180120185647.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '18'
     },
     {
       # バタフライラケット
-      image: 'https://tshop.r10s.jp/arhua/cabinet/2016/04c/16720_1.jpg?fitin=300:300',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '19'
     },
     {
       # ajidesuシャツ
-      image: ' https://auctions.afimg.jp/item_data/image/20110324/yahoo/b/b119144780.1.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '20'
     },
 
     {
       # おじさんキーホルダー
-      image: 'https://media-01.creema.net/user/1543965/exhibits/3315665/0_18ef12f2ff05ba2cb05eac25c91d52a7_583x585.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '21'
     },
     {
       # ジャパングッズ
-      image: 'https://s3-ap-northeast-1.amazonaws.com/hmj-fes-production/users/creation_1s/000/012/671/original/d00042d2-1784-44c3-a7c2-63cbe81527c120181213-4-4nvbdn.jpg?1544686864',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '22'
     },
     {
       # 関取トークショー
-      image: 'https://s3-ap-northeast-1.amazonaws.com/welltool/officials/offi290/spaces/spce288/arti3944_1_1570123069.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '23'
     },
     {
       # ディズニーチケット
-      image: 'https://c05.castel.jp/picture?url=https%3A%2F%2Fcastel.jp%2Fimg%2Fup%2Fpicture_39386.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '24'
     },
 
     {
       # 走行速度300km デススター
-      image: 'https://wired.jp/wp-content/uploads/2012/12/death-star-660x448.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '25'
     },
     {
       # ミレニアムファルコン
-      image: 'https://cache.ymall.jp/webcom/item/multiimage/300/7657888012_001.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '26'
     },
     {
       # セール中！宇宙の仲間たち
-      image: 'https://shop.daigo.co.jp/wp-content/uploads/post/26858/S3709.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '27'
     },
     {
       # 惑星間をひとっ飛び未確認生命体
-      image: 'https://img.sirabee.com/wp-content/uploads/2019/09/GettyImages-1054137738.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '28'
     },
 
     {
       # スパイン産オレンジハニー
-      image: 'http://www.tullys.co.jp/menu/uploads/orangehoney_191015.jpg',
+      image: open("#{Rails.root}/app/assets/images/fmarket.jpg"),
       item_id: '29'
     }
 

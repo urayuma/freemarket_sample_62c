@@ -55,7 +55,7 @@
                                                         - if item.selling_status == "売却済み"
                                                             .home__sold-out-image
                                                                 %span.home__sold-out-text SOLD
-                                                        = image_tag item.images.first.image , class:'body-item-image'
+                                                        = image_tag item.images.first.image.url , class:'body-item-image'
                                                         %figcaption
                                                             = item.name
                                                 - break if itemscounts == 5
@@ -93,7 +93,7 @@
                                                         - if item.selling_status == "売却済み"
                                                             .home__sold-out-image
                                                                 %span.home__sold-out-text SOLD
-                                                        = image_tag item.images.first.image , class:'body-item-image'
+                                                        = image_tag item.images.first.image.url , class:'body-item-image'
                                                         %figcaption
                                                             = item.name
                                                 - break if itemscounts == 5
