@@ -15,7 +15,7 @@
         .buy-panel__item-detail-inner
           .buy-panel__item-detail-inner__box
             %p.buy-panel__item-detail-inner__box__price
-              ="¥#{@item.price}"
+              ="¥#{@item.price.to_s(:delimited)}"
             %p.buy-panel__item-detail-inner__box__delivery_fee
               送料込み
 
@@ -28,7 +28,7 @@
             %p.buy-panel__item-detail-inner__pay__message
               支払い金額
             %p.buy-panel__item-detail-inner__pay__price
-              ="¥#{@item.price}"
+              ="¥#{@item.price.to_s(:delimited)}"
         - unless @user.address.present? && @user.creditcard.present?
           %p.buy-panel__item-detail-inner__error
             配送先と支払い方法の入力を完了してください
@@ -48,7 +48,7 @@
             %p.buy-panel__item-detail-inner__buyer
               ="#{@user.lastname} #{@user.firstname}"
             .buy-panel__item-detail-inner__link
-              = link_to "/mypage/address", class: "go-to_change" do  
+              = link_to "/mypage/address", class: "go-to_change" do
                 %span.go-to_change__messaege 変更する
                 %i.fas.fa-angle-right
 
@@ -64,6 +64,6 @@
             = link_to "/mypage/card", class: "go-to_change" do
               %span.go-to_change__messaege 変更する
               %i.fas.fa-angle-right
-            
+
     .single-footer
       = render 'signups/footer'
