@@ -39,7 +39,7 @@ set :default_env,
     AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
     AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 
-set :linked_files, %w[config/secrets.yml]
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
@@ -47,18 +47,6 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
-
-  desc 'upload secrets.yml'
-  task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
-      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
-    end
-  end
-  before :starting, 'deploy:upload'
-  after :finishing, 'deploy:cleanup'
 
   desc 'Create database'
   task :db_create do

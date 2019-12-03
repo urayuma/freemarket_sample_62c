@@ -1,6 +1,7 @@
 class UserInformationController < ApplicationController
   def update
-    UserInformation.update(info_params)
+    user_information = UserInformation.find_by(user: current_user)
+    user_information.update(info_params)
     redirect_to controller: :mypages, action: :identification
   end
 
