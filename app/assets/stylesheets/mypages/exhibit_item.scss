@@ -1,3 +1,28 @@
+.mypage_item_sold {
+  @include item_details;
+  margin: 0.8rem auto 0;
+  padding: 1rem;
+  &__message {
+    background-color: #aaa;
+    text-align: center;
+    line-height: 4.8rem;
+    color: #fff;
+    &:hover {
+      animation: sample_anime01 3s;
+    }
+    @keyframes sample_anime01 {
+      0% {
+        background-color: skyblue;
+      }
+      50% {
+        background-color: pink;
+      }
+      100% {
+        background-color: orange;
+      }
+    }
+  }
+}
 .mypage_item_edit {
   @include item_details;
   margin: 0.8rem auto 0;

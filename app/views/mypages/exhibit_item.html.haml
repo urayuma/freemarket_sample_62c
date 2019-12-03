@@ -8,10 +8,10 @@
     .item-detail-content__information--pictures
       .item-detail-phone-big
         - @item.images.first(1).each do |image|
-          = image_tag image.image, class: "item-detail-phone-big-main"
+          = image_tag image.image.url, class: "item-detail-phone-big-main"
       .item-detail-phone-cells
         - @item.images.each do |image|
-          =image_tag image.image, class: "item-detail-phone-cells-bits"
+          =image_tag image.image.url, class: "item-detail-phone-cells-bits"
     .item-detail-content__information--list
       %table.item-detail-table(border = "1")
         %tr
@@ -67,20 +67,29 @@
     %p
       = @item.description
 
-.mypage_item_edit
-  .mypage_item_edit__btns
-    %button{class: "btn-default mypage_item_edit__btns--edit"} 商品の編集
-    %p.mypage_item_edit__btns--or or
-    %button{class: "btn-default mypage_item_edit__btns--stop"} 出品を一旦停止する
-    %button#modal-open-btn この商品を削除する
-    #overlay
-      #modalWindow
-        .modal-message-box
-          %div 確認
-          %div 本当に削除しますか？
-        %button#modal-close-btn キャンセル
-        = link_to item_path, method: :DELETE, id: 'item-delete-btn' do
-          %button#delete-comformation-btn 削除する
+- if @item.selling_status == "3"
+  .mypage_item_sold
+    .mypage_item_sold__message 売り切れ
+-else
+  .mypage_item_edit
+    .mypage_item_edit__btns
+      %button{class: "btn-default mypage_item_edit__btns--edit"}商品の編集
+      %p.mypage_item_edit__btns--or or
+      - if @item.selling_status == "4"
+        = link_to sellnow_mypage_index_path, method: :patch do
+          %button{class: "btn-default mypage_item_edit__btns--stop"}出品を再開する
+      - else
+        = link_to sellstop_mypage_index_path, method: :patch do
+          %button{class: "btn-default mypage_item_edit__btns--stop"}出品を一旦停止する
+      %button#modal-open-btn この商品を削除する
+      #overlay
+        #modalWindow
+          .modal-message-box
+            %div 確認
+            %div 本当に削除しますか？
+          %button#modal-close-btn キャンセル
+          = link_to item_path, method: :DELETE, id: 'item-delete-btn' do
+            %button#delete-comformation-btn 削除する
 = render 'items/chat'
 = render 'homes/footer'
 = render "/homes/postitem"
