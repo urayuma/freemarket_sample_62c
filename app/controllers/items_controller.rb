@@ -15,6 +15,17 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  def edit
+    @item = Item.find_by(id: params[:id])
+    @images = @item.images
+    @item.images.build
+    @grandchild_category = Category.find(@item.category_id)
+    @usage_status = UsageStatus.all
+    @delivery_fee = DeliveryFee.all
+    @prefectures = Prefecture.all
+    @shipping_date = ShippingDate.all
+  end
+
   def create
     @item = Item.new(item_params)
     respond_to do |format|
@@ -38,7 +49,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(id: params[:parent_id], ancestry: nil).children
+    @category_children = Category.find_by(id: params[:parent_id]).children
   end
 
   def get_category_grandchildren
@@ -51,6 +62,10 @@ class ItemsController < ApplicationController
                     else
                       DeliveryWay2.all
                     end
+  end
+
+  def get_brand
+    @brand = Brand.all
   end
 
   def show

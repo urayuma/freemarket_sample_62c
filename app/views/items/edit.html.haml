@@ -14,13 +14,12 @@
         .edit-image__items
           .edit-image__items__haveitems
             .edit-image__items__haveitems__list
-              - @images.each do |image|
-                %figure
-                  = image_tag "#{image.image}", height: '85.5', width: '114', class:'edit-images-image'
-
-                .edit-image__items__haveitems__list__editbutton
-                  .edit-images-button 
-                    = link_to '削除', "/items/#{params[:id]}/#{image.id}/image", method: :delete
+              -# - @images.each do |image|
+              -#   %figure
+              -#     = image_tag "#{image.image}", height: '85.5', width: '114', class:'edit-images-image'
+                -# .edit-image__items__haveitems__list__editbutton
+                -#   .edit-images-button 
+                -#     = link_to '削除', "/items/#{params[:id]}/#{image.id}/image", method: :delete
 
 
         =f.label :image do
@@ -47,14 +46,32 @@
             %label.select-subject カテゴリー
             %span.select-essential 必須
             .parent-wrapper
-              = f.collection_select :category_id, Category.all, :id , :name, {include_blank: "---"}, {id:'select-parent-category'}
+              = f.collection_select :category_id, @item.category.parent.parent.siblings, :id , :name, {include_blank: "---", selected: @item.category.parent.parent.id}, {id:'select-parent-category'}
               .select-arrow
                 %i.fas.fa-chevron-down
+            .children-wrapper
+              = f.collection_select :category_id, @item.category.parent.siblings, :id , :name, {include_blank: "---", selected:  @item.category.parent.id}, {id:'select-parent-category'}
+              .select-arrow
+                %i.fas.fa-chevron-down
+            .grandchildren-wrapper
+              = f.collection_select :category_id, @grandchild_category.siblings, :id , :name, {include_blank: "---", selected: @item.category_id}, {id:'select-parent-category'}
+              .select-arrow
+                %i.fas.fa-chevron-down
+            #size_wrapper
+              .edit-item__form
+                %label.edit-item__form--subject サイズ
+                %span.edit-item__form--essential 必須
+                = f.text_field :size, value:@item.size, placeholder: "サイズ（必須） （S,M,L,靴のサイズ等）",  class: 'edit-item__form--size', id:"item_size"
+            #brand_wrapper
+              .edit-item__form
+                %label.edit-item__form--subject ブランド
+                %span.edit-item__form--optional 任意
+                = f.text_field :brand_id, value:@item.brand.name, placeholder: "ブランド（任意）",  class: 'edit-item__form--brand', id:"item_brand"
         .edit-select__group
           %label.select-subject 商品の状態
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :usage_status, UsageStatus.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :usage_status, @usage_status, :name, :name, {include_blank: "---", selected: @item.usage_status}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
 
@@ -66,14 +83,14 @@
           %label.select-subject 配送料の負担
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :delivery_fee, DeliveryFee.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :delivery_fee, @delivery_fee, :name , :name, {include_blank: "---", selected: @item.delivery_fee}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
         .edit-select__group
           %label.select-subject 発送元の地域
           %span.select-essential 必須
           .box-wrapper
-            = f.collection_select :delivery_area, Prefecture.all, :id , :name, {include_blank: "---"}, {class:'select-box'}
+            = f.collection_select :delivery_area, Prefecture.all, :name , :name, {include_blank: "---"}, {class:'select-box'}
             .select-arrow
               %i.fas.fa-chevron-down
         .edit-select__group

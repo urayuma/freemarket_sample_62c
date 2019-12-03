@@ -81,16 +81,20 @@ $(document).on("turbolinks:load", function() {
     }
   }
   // ブランドの入力フォーム作成
-  function appendBrandForm() {
-    var appendSizeFormHtml = "";
-    appendSizeFormHtml = `<div id="brand_wrapper">
-                            <div class="sell-item__form">
+  function appendBrandForm(insertHTML){
+    var appendBrandFormHtml = '';
+    appendBrandFormHtml = `<div class="brand_wrapper">
                             <label class="sell-item__form--subject">ブランド</label>
                             <span class="sell-item__form--optional">任意</span>
-                            <input placeholder="ブランド（任意）" class="sell-item__form--brand" type="text" name="item[brand]" id="item_brand">
-                            </div>
+                            <div class="brand_select-wrapper">
+                            <select id="item-brand-select" name="item[brand]"><option value="">---</option>
+                            ${insertHTML}
+                          </select>  
+                            <div class="select-arrow">
+                              <i class="fas fa-chevron-down"></i>                           
+                            </div>                            
                             </div>`;
-    $(".category-wrapper").append(appendSizeFormHtml);
+    $('.category-wrapper').append(appendBrandFormHtml);
   }
 
   // 配送方法選択フォーム作成
@@ -119,8 +123,8 @@ $(document).on("turbolinks:load", function() {
     if (parentCategory != "") {
       //親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: "get_category_children",
-        type: "GET",
+        url: '/items/get_category_children',
+        type: 'GET',
         data: { parent_id: parentCategory },
         dataType: "json"
       })
@@ -151,8 +155,8 @@ $(document).on("turbolinks:load", function() {
     if (childId != "") {
       //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: "get_category_grandchildren",
-        type: "GET",
+        url: '/items/get_category_grandchildren',
+        type: 'GET',
         data: { child_id: childId },
         dataType: "json"
       })
@@ -188,12 +192,25 @@ $(document).on("turbolinks:load", function() {
     } else {
       $("#size_wrapper").remove();
     }
-    if (judgeBrand(grandChildId)) {
-      //ブランドが必要なカテゴリか判定
-      $("#brand_wrapper").remove();
-      appendBrandForm();
-    } else {
-      $("#brand_wrapper").remove();
+    if (judgeBrand(grandChildId)){ //ブランドが必要なカテゴリか判定
+      $.ajax({
+        url: 'get_brand',
+        type: 'GET',
+        dataType: 'json'
+      })
+      .done(function(brands){
+        $('#brand_wrapper').remove();
+        var insertHTML = '';
+        brands.forEach(function(brand){
+        insertHTML += appendOption(brand);
+        });
+        appendBrandForm(insertHTML);
+      })
+      .fail(function(){
+        alert('ブランド取得に失敗しました');
+      })
+    }else{
+      $('#brand_wrapper').remove();
     }
   });
 
