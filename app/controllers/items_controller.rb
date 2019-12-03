@@ -56,11 +56,23 @@ class ItemsController < ApplicationController
     end
   end
 
-  def search_item
-    @item = Item.find(params[:id])
+  def sellnow
+    item = Item.find_by(params[:id])
+    item.update(selling_status: "1")
+    redirect_to item_show_mypage_index_path
+  end
+
+  def sellstop
+    item = Item.find_by(params[:id])
+    item.update(selling_status: "4")
+    redirect_to item_show_mypage_index_path
   end
 
   private
+
+  def search_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(

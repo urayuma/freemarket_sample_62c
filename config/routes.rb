@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       get 'purchased', to: 'mypages#purchased'
       get ':id/exhibit_item', to: 'mypages#exhibit_item', as: :item_show
       get 'address', to: 'mypages#address'
+      patch 'sellnow/:id', to: 'items#sellnow', as: :sellnow
+      patch 'sellstop/:id', to: 'items#sellstop', as: :sellstop
     end
   end
 
