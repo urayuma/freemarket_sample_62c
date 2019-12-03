@@ -11,10 +11,10 @@
           - if @item.selling_status == "売却済み"
             .item-detail__show__sold-out-image
               %span.item-detail__show__sold-out-text SOLD
-          = image_tag image.image, class: "item-detail-phone-big-main"
+          = image_tag image.image.url, class: "item-detail-phone-big-main"
       .item-detail-phone-cells
         - @item.images.each do |image|
-          =image_tag image.image, class: "item-detail-phone-cells-bits"
+          =image_tag image.image.url, class: "item-detail-phone-cells-bits"
     .item-detail-content__information--list
       %table.item-detail-table(border = "1")
         %tr
@@ -61,7 +61,7 @@
         %tr
           %th.item-th 配送元地域
           %td.item-td
-            = @item.user.address.prefectures
+            = @item.delivery_area
         %tr
           %th.item-th 発送日の目安
           %td.item-td
@@ -86,7 +86,7 @@
     .item-bottom-button__left
       .item-like-btn
         %div{id: "like-#{@item.id}"}
-          = render partial: 'likes/item'
+          = render 'likes/like', { item: @item }
       .item-report-btn
         .i{class: "far fa-flag item-flag"}
         %span.item-flag__report不適切な商品の報告

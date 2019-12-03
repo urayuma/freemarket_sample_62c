@@ -15,15 +15,15 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-      respond_to do |format|
-        if @item.save
-          params[:images][:image].each do |image|
-            @item.images.create(image: image, item_id: @item.id)
-          end
-          format.html { redirect_to root_path }
-        else
-          @item.images.build
-          format.html { render action: 'sell' }
+    respond_to do |format|
+      if @item.save
+        params[:images][:image].each do |image|
+          @item.images.create(image: image, item_id: @item.id)
+        end
+        format.html { redirect_to root_path }
+      else
+        @item.images.build
+        format.html { render action: 'sell' }
       end
     end
   end
@@ -80,6 +80,6 @@ class ItemsController < ApplicationController
       :payment_status,
       images_attributes: [:image]
     )
-      .merge(user_id:current_user.id, selling_status: 1, payment_status: 2)
+          .merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
   end
 end
