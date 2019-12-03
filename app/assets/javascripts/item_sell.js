@@ -4,6 +4,11 @@ $(document).on("turbolinks:load", function() {
     var html = `<option value="${variable.id}">${variable.name}</option>`;
     return html;
   }
+  // 配送方法用のセレクトボックスのオプションを作成
+  function appendDeliveryWayOption(variable){
+    var html = `<option value="${variable.name}">${variable.name}</option>`;
+    return html;
+  }
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML) {
     var childSelectHtml = "";
@@ -80,14 +85,14 @@ $(document).on("turbolinks:load", function() {
       return false;
     }
   }
-  // ブランドの入力フォーム作成
+  // ブランドのセレクトボックス作成
   function appendBrandForm(insertHTML){
     var appendBrandFormHtml = '';
     appendBrandFormHtml = `<div class="brand_wrapper">
                             <label class="sell-item__form--subject">ブランド</label>
                             <span class="sell-item__form--optional">任意</span>
                             <div class="brand_select-wrapper">
-                            <select id="item-brand-select" name="item[brand]"><option value="">---</option>
+                            <select id="item-brand-select" name="item[brand_id]"><option value="">---</option>
                             ${insertHTML}
                           </select>  
                             <div class="select-arrow">
@@ -222,7 +227,17 @@ $(document).on("turbolinks:load", function() {
         url: "get_delivery_way",
         type: "GET",
         data: { delivery_fee_id: deliveryFeeId },
-        dataType: "json"
+        dataType: 'json'
+      })
+      .done(function(deliveryWays){
+        if (deliveryWays.length != 0) {
+          $('.deliveryway-wrapper').remove(); 
+          var insertHTML = '';
+          deliveryWays.forEach(function(deliveryWay){
+          insertHTML += appendDeliveryWayOption(deliveryWay);
+          });
+          appendDeliveryWayBox(insertHTML);
+        }
       })
         .done(function(deliveryWays) {
           if (deliveryWays.length != 0) {

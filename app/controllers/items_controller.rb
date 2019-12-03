@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.valid? && params[:images].present?
