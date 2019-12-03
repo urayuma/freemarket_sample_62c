@@ -66,7 +66,7 @@
               .edit-item__form
                 %label.edit-item__form--subject ブランド
                 %span.edit-item__form--optional 任意
-                = f.text_field :brand_id, value:@item.brand.name, placeholder: "ブランド（任意）",  class: 'edit-item__form--brand', id:"item_brand"
+                = f.collection_select :brand_id, @brand, :id , :name, {include_blank: "---", selected: @item.brand_id}, {id:'item-brand'}
         .edit-select__group
           %label.select-subject 商品の状態
           %span.select-essential 必須

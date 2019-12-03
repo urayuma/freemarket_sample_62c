@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
     @delivery_fee = DeliveryFee.all
     @prefectures = Prefecture.all
     @shipping_date = ShippingDate.all
+    @brand = Brand.all
   end
 
   def create
