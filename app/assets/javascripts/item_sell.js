@@ -199,7 +199,7 @@ $(document).on("turbolinks:load", function() {
     }
     if (judgeBrand(grandChildId)){ //ブランドが必要なカテゴリか判定
       $.ajax({
-        url: 'get_brand',
+        url: '/items/get_brand',
         type: 'GET',
         dataType: 'json'
       })
@@ -224,8 +224,8 @@ $(document).on("turbolinks:load", function() {
     var deliveryFeeId = $("#item_delivery_fee").val();
     if (deliveryFeeId != "") {
       $.ajax({
-        url: "get_delivery_way",
-        type: "GET",
+        url: '/items/get_delivery_way',
+        type: 'GET',
         data: { delivery_fee_id: deliveryFeeId },
         dataType: 'json'
       })
@@ -285,6 +285,27 @@ $(document).on("turbolinks:load", function() {
       var profitResult = profitDefault.replace(profitDefault, "-");
       $(".result-fee").text(feeResult);
       $(".result-profit").text(profitResult);
+    }
+  })
+
+  $(window).on('load', function() {
+    var input = $("#item_price").val();
+    if (300 <= input && input <= 9999999 && Math.round(input) == input && input!=0){  //数値が範囲内か、少数でないか、0でないかチェックする
+      var fee = Math.floor(input * 0.1);
+      var profit = input - fee;
+      var feeDefault = $('.result-fee').text();
+      var profitDefault = $('.result-profit').text();
+      var feeResult = feeDefault.replace(feeDefault, "¥"+String(fee));
+      var profitResult = profitDefault.replace(profitDefault, "¥"+String(profit));
+      $('.result-fee').text(feeResult);
+      $('.result-profit').text(profitResult);
+    }else{
+      var feeDefault = $('.result-fee').text();
+      var profitDefault = $('.result-profit').text();
+      var feeResult = feeDefault.replace(feeDefault, "-");
+      var profitResult = profitDefault.replace(profitDefault, "-");
+      $('.result-fee').text(feeResult);
+      $('.result-profit').text(profitResult);
     }
   });
 });

@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find_by(id: params[:id])
-    @images = @item.images
     @item.images.build
     @grandchild_category = Category.find(@item.category_id)
     @usage_status = UsageStatus.all
@@ -25,6 +24,11 @@ class ItemsController < ApplicationController
     @prefectures = Prefecture.all
     @shipping_date = ShippingDate.all
     @brand = Brand.all
+    @images = []
+    Array(@item.images).each do |image|
+      @images << image.image.url
+    end
+    
   end
 
   def create
@@ -68,6 +72,10 @@ class ItemsController < ApplicationController
 
   def get_brand
     @brand = Brand.all
+  end
+
+  def get_image
+    @images = Item.find(params[:item_id]).images
   end
 
   def show

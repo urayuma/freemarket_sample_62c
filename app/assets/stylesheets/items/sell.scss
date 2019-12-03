@@ -56,13 +56,15 @@
         .input_area {
           display: none;
         }
+        .input-area-text{
+          line-height: 16.2rem;
+        }
         .dropzone-area {
           width: 100%;
           min-height: 16.2rem;
           background: #f5f5f5;
           border: 0.1rem dashed #ccc;
           cursor: pointer;
-          line-height: 16.2rem;
           float: right;
         }
         .dropzone-area2 {
@@ -352,4 +354,10 @@
 .brand_wrapper
 {
   margin-top: 4rem;
+}
+
+.image-input-icon{
+  height: 16.2rem;
+  width:12.4rem;
+  line-height: 16.2rem;
 }

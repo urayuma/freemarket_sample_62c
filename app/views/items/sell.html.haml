@@ -21,11 +21,11 @@
               = image.label :image, class: "dropzone-box", for: "upload-image" do
                 .input_area
                   = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                %p ここをクリックしてください
+                %p.input-area-text ここをクリックしてください
             #preview2
             .dropzone-area2
               = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %p ここをクリックしてください
+                %p.input-area-text ここをクリックしてください
       .sell-item
         .sell-item__form
           %label.sell-item__form--subject 商品名

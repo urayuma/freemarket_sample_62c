@@ -8,6 +8,28 @@ $(document).on('turbolinks:load', function(){
   var preview = $('#preview');
   var preview2 = $('#preview2');
 
+  function appendPreview1(index,url){
+    var previewHtml = `<div class="img_view" data-image="${index}"><img src="${url}">
+                <div class="btn_wrapper">
+                <div class="btn delete">削除
+                </div>
+                </div>
+                </div>`;
+  $('#preview').append(previewHtml);
+  return previewHtml;
+  };
+
+  function appendPreview2(index,url){
+    var previewHtml = `<div class="img_view" data-image="${index}"><img src="${url}">
+                <div class="btn_wrapper">
+                <div class="btn delete">削除</div>
+                </div>
+                </div>`;
+  $('#preview2').append(previewHtml);
+  return previewHtml;
+  };
+
+
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
@@ -38,7 +60,7 @@ $(document).on('turbolinks:load', function(){
         })
       })
       if(images.length == 9) {
-        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone2.find('p').replaceWith('<i class="fa fa-camera image-input-icon"></i>')
       }
     } else {
         $('#preview').empty();
@@ -51,10 +73,13 @@ $(document).on('turbolinks:load', function(){
         })
       }
       if(images.length == 4) {
-        dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone.find('p').replaceWith('<i class="fa fa-camera image-input-icon"></i>')
       }
     if(images.length == 10) {
       dropzone2.css({
+        'display': 'none'
+      })
+      dropzone.css({
         'display': 'none'
       })
       return;
@@ -62,6 +87,7 @@ $(document).on('turbolinks:load', function(){
     var new_image = $(`<input multiple= "multiple" name="images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
   });
+
   $(document).on('click', '.delete', function() {
     var target_image = $(this).parent().parent();
     $.each(inputs, function(index, input){
@@ -126,4 +152,74 @@ $(document).on('turbolinks:load', function(){
       dropzone.find('i').replaceWith('<p>ココをクリックしてください</p>')
     }
   })
+
+    // 編集ページ読み込み時に発火
+    $(window).on('load', function() {
+      itemId = $('#item-id').data('id');
+      if (itemId != null){
+        $.ajax({
+          url: '/items/get_image',
+          type: 'GET',
+          data: { item_id: itemId },
+          dataType: 'json'
+        })
+        .done(function(ArrayImages){
+          $.each(ArrayImages,function(index,image){
+            var file = image.image.url;
+            if(index < 5){
+              images.push(appendPreview1(index,file));
+            }else{
+              images.push(appendPreview2(index,file));
+            }
+            var new_image = $(`<input multiple= "multiple" name="images[image][${file}]]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+            input_area.prepend(new_image);
+            inputs.push(new_image);
+          });
+  
+          if(images.length >= 5) {
+            dropzone2.css({
+              'display': 'block'
+            })
+            dropzone.css({
+              'display': 'none'
+            })
+            dropzone2.css({
+              'width': `calc(100% - (124px * ${images.length - 5}))`
+            })
+            if(images.length == 9) {
+              dropzone2.find('p').replaceWith('<i class="fa fa-camera image-input-icon"></i>')
+            }
+          } else {
+              $('#preview').empty();
+              $.each(images, function(index, image) {
+                image.attr('data-image', index);
+                preview.append(image);
+              })
+              dropzone.css({
+                'width': `calc(100% - (124px * ${images.length}))`
+              })
+            }
+            if(images.length == 4) {
+              dropzone.find('p').replaceWith('<i class="fa fa-camera image-input-icon"></i>')
+            }
+          if(images.length == 10) {
+            dropzone.css({
+              'display': 'none'
+            })
+            dropzone2.css({
+              'display': 'none'
+            })
+            input_area.css({
+              'display':'none'
+            })
+            
+            return;
+          }
+        })
+        .fail(function(){
+          alert('画像の取得に失敗しました');
+        })
+      }
+    })
+
 });
