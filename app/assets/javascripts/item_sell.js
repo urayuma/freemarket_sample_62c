@@ -1,4 +1,4 @@
-$(function() {
+$(document).on("turbolinks:load", function() {
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(variable) {
     var html = `<option value="${variable.id}">${variable.name}</option>`;

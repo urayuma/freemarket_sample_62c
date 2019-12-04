@@ -82,18 +82,19 @@
   .item-description
     %p
       = @item.description
-  .item-bottom-button
-    .item-bottom-button__left
-      .item-like-btn
-        %div{id: "like-#{@item.id}"}
-          = render 'likes/like', { item: @item }
-      .item-report-btn
-        .i{class: "far fa-flag item-flag"}
-        %span.item-flag__report不適切な商品の報告
-    .item-bottom-button__right
-      .item-safety-btn
-        .i{class: "fas fa-lock item-lock"}
-        %span.item-lock__safety あんしん・あんぜんへの取り組み
+  - unless @item.user.id == current_user.id
+    .item-bottom-button
+      .item-bottom-button__left
+        .item-like-btn
+          %div{id: "like-#{@item.id}"}
+            = render 'likes/like', { item: @item }
+        .item-report-btn
+          .i{class: "far fa-flag item-flag"}
+          %span.item-flag__report不適切な商品の報告
+      .item-bottom-button__right
+        .item-safety-btn
+          .i{class: "fas fa-lock item-lock"}
+          %span.item-lock__safety あんしん・あんぜんへの取り組み
 -# ここまでが商品の詳細画面です〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
 
 = render 'chat'
