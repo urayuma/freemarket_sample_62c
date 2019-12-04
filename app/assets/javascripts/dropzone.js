@@ -261,4 +261,13 @@ $(document).on('turbolinks:load', function(){
       }
     })
 
+
+    $('#edit-submit').click(function(e){
+      e.preventDefault();
+      var formData = new FormData($(this).get(0));
+      console.log(formData);
+
+
+    })
+
 });
