@@ -21,7 +21,7 @@
             .dropzone-area
               = image.label :image, class: "dropzone-box", for: "upload-image" do
                 .input_area
-                  -# = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                  = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
                 %p.input-area-text ここをクリックしてください
             #preview2
             .dropzone-area2
@@ -127,7 +127,7 @@
 
     .sell-send
       .sell-send__submit
-        = f.submit :"変更する", class:"sell-send__submit--button", method: :patch
+        = f.submit :"変更する", class:"sell-send__submit--button", method: :patch,id:"edit-submit"
 
       .sell-send__back
         = link_to "キャンセル", :back, { class: "sell-send__back--button" }

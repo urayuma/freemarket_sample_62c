@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.valid? && params[:images].present?
@@ -82,19 +81,20 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @id = params[:id] 
-    @items = Item.find(params[:id])
-    @items.update(name: item_params[:name],
-                  description: item_params[:description], 
-                  category_id: item_params[:category_id], 
-                  usage_status: item_params[:usage_status], 
-                  delivery_fee: item_params[:delivery_fee], 
-                  delivery_area: item_params[:delivery_area], 
-                  shipping_date: item_params[:shipping_date], 
-                  price: item_params[:price])
-    redirect_to edit_item_path(params[:id])
-  
+    @item = Item.find(params[:id])
+    respond_to do |format|
+      if @item.update(item_params)
+        Image.where(item:@item).delete_all
+        params[:images][:image].each do |image|
+          @item.images.create(image: image, item_id: @item.id)
+        end
+        format.html {redirect_to edit_item_path(params[:id])}
+      else
+        format.html {redirect_to edit_item_path(params[:id])}
+      end
+    end  
   end
+
 
   def destroy
    

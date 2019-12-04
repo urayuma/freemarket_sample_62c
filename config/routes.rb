@@ -69,7 +69,7 @@ Rails.application.routes.draw do
   resources :addresses, only: %i[new create]
   resources :creditcards, only: %i[new create]
 
-  resources :items, only: %i[new create show destroy edit] do
+  resources :items, only: %i[new create show destroy edit update] do
     resources :chats, only: [:show]
     collection do
       get 'sell'
