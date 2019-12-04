@@ -67,7 +67,7 @@
 
 
 
-            - if @items.any?
+            - if @items.where.not(brand_id: nil).any?
                 .MainMenu__BrandLists
                     %h2.category-title 人気のブランド
                     .MainMenu__BrandLists__List
