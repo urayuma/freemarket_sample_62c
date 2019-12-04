@@ -31,7 +31,7 @@
         %tr
           %th.item-th ブランド
           %td.item-td
-            = @item.brand.name
+            = @item.brand.name if @item.brand.present?
         %tr
           %th.item-th 商品のサイズ
           %td.item-td
