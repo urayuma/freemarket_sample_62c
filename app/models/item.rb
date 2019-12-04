@@ -12,8 +12,6 @@ class Item < ApplicationRecord
     query = '(SELECT COUNT(likes.item_id) FROM likes where likes.item_id = items.id GROUP BY likes.item_id)'
     Arel.sql(query)
   end
-end
-
 
   validates :user_id, presence: true
   validates :name, presence: true, length: { minimum:1, maximum: 40, message: "入力してください" }
