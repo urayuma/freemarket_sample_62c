@@ -1,38 +1,37 @@
 .search_main {
   border-color: rgb(204, 204, 204);
-  width: 60%;
-  display: flex;
-  justify-content: center;
-
-  .search-menu {
-    width: 30%;
-    &__sort {
-      height: 10rem;
-      .sort-submit-btn {
-        display: none;
-      }
-    }
-    &__detailed {
-    }
-  }
+  width: 70%;
+  margin: auto;
 
   .search_result {
-    width: 70%;
+    width: 100%;
     border-color: rgb(204, 204, 204);
-    .search-word {
-      border-color: rgb(204, 204, 204);
-      font-size: 2rem;
-      font-weight: bolder;
-    }
-    &__count {
-      color: #888888;
-      margin: 1.5rem 0;
+    &__search {
+      display: flex;
+      margin-top: 3rem;
+
+      &__about {
+        .search-word {
+          border-color: rgb(204, 204, 204);
+          font-size: 2rem;
+          font-weight: bolder;
+        }
+        &__count {
+          color: #888888;
+          margin: 1.5rem 0;
+        }
+      }
+      &__sort {
+        margin-left: 3rem;
+        .sort-submit-btn {
+          display: none;
+        }
+      }
     }
     &__lists {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      margin: auto;
       &__list {
         height: 30rem;
         width: 22%;

@@ -91,7 +91,6 @@ class ItemsController < ApplicationController
       :category_id,
       :payment_status,
       images_attributes: [:image]
-    )
-          .merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
+    ).merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
   end
 end

@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :homes, only: [:index] do
     collection do
-      match 'search', to: 'homes#search', via: [:get, :post]
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
+      match 'search', to: 'homes#search', via: %i[get post]
     end
   end
 

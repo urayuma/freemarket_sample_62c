@@ -6,7 +6,7 @@
                     .HeaderTop__Menu__header-logo
 
                 .HeaderTop__Menu__header-search
-                    = search_form_for(@q, url:search_homes_path) do |f|
+                    = search_form_for(@ransack, url:search_homes_path) do |f|
                         = f.search_field :name_cont_any, placeholder: "何かお探しですか？", class: "search_items_filed"
                         = button_tag type: 'submit', class: "search_items_btn" do
                             %i.fas.fa-search

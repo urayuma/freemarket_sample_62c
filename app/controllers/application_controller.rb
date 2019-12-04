@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def set_search
-    @q = Item.includes(:category).ransack(params[:q])
-    @items = @q.result(distinct: true)
+    @ransack = Item.includes(:category).ransack(params[:q])
+    @items = @ransack.result(distinct: true)
   end
 
   private
