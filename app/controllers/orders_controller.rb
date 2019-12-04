@@ -3,13 +3,13 @@ class OrdersController < ApplicationController
   def new
     @item = Item.find(params[:id])
     @user = current_user
-    redirect_to action: 'failed' unless @item.selling_status == "出品中"
+    redirect_to action: 'failed' unless @item.selling_status == "1"
   end
 
   def pay
     card = current_user.creditcard
     item = Item.find(params[:id])
-    if item.selling_status == "出品中" # あとでselling_statusをID化した場合変更が必要
+    if item.selling_status == "1" # あとでselling_statusをID化した場合変更が必要
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
         amount: item.price,
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
         currency: 'jpy'
       )
       Order.create(item: item, user: current_user)
-      item.update(payment_status: "支払済", selling_status: "売却済") # あとでpayment_status、selling_statusをID化した場合変更が必要
+      item.update(payment_status: "1", selling_status: "3") # あとでpayment_status、selling_statusをID化した場合変更が必要
       redirect_to action: 'done'
     else
       redirect_to action: 'failed'
