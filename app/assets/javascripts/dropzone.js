@@ -7,6 +7,7 @@ $(document).on('turbolinks:load', function(){
   var input_area = $('.input_area');
   var preview = $('#preview');
   var preview2 = $('#preview2');
+  var defaultInput = [];
 
   function appendPreview1(index,url){
     var previewHtml = `<div class="img_view" data-image="${index}"><img src="${url}">
@@ -34,6 +35,7 @@ $(document).on('turbolinks:load', function(){
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     inputs.push($(this));
+    console.log(this)
     var img = $(`<div class= "img_view"><img></div>`);
     reader.onload = function(e) {
       var btn_wrapper = $('<div class="btn_wrapper"><div class="btn delete">削除</div></div>');
@@ -213,6 +215,7 @@ $(document).on('turbolinks:load', function(){
 
             input_area.prepend(new_image);
             inputs.push(new_image);
+            defaultInput.push(image);
           });
   
           if(images.length >= 5) {
@@ -259,15 +262,37 @@ $(document).on('turbolinks:load', function(){
           alert('画像の取得に失敗しました');
         })
       }
-    })
+   
 
 
     $('#edit-submit').click(function(e){
       e.preventDefault();
-      var formData = new FormData($(this).get(0));
-      console.log(formData);
+      var formData = new FormData($('#item-dropzone').get(0));
+      if (defaultInput.length == 0) {
+        formData.append("images[image][]", 0)
+      } else {
+        defaultInput.forEach(function(image){
+          console.log(image)
+          formData.append("images[image][]", image);
+        });
+      }
+      itemId = $('#item-id').data('id');
 
+      for (let value of formData.entries()) { 
+        console.log(value); 
+      }
 
-    })
+      $.ajax({
+        url:         '/items/'+itemId,
+        type:        'PATCH',
+        data:        formData,
+        contentType: false,
+        processData: false,
+        dataType: 'json'
+      })
+    });
+
+  
+  })
 
 });
