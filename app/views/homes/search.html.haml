@@ -23,7 +23,7 @@
               - if item.selling_status == "売却済み"
                 .search__sold-out-image
                   %span.search__sold-out-text SOLD
-              = image_tag item.images.first.image, class: "search_result__lists__list__link__image"
+              = image_tag item.images.first.image.url, class: "search_result__lists__list__link__image"
             .search_result__lists__list__link__text
               = item.name.truncate(20)
               - if item.likes.any?
