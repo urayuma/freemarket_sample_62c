@@ -14,11 +14,33 @@
         .HeaderBottom
             .HeaderBottom__Left
                 .HeaderBottom__Left__genre_search
-                    %i.far.fa-list-alt
-                    カテゴリーから探す
+
+
+
                 .HeaderBottom__Left__genre_search
-                    %i.fas.fa-tag
-                    ブランドから探す
+                    %ul.home-menu-search
+                        %li.home-menu-search__multi
+                            %i.far.fa-list-alt
+                            %a.init-bottom{:href => "#"} カテゴリーから探す
+                            %ul.home-menu-search__second-level
+                                %li
+                                    - Category.roots.each do |parent|
+                                        %a.init-right{:href => "#"} 
+                                            = parent.name
+
+                            
+                .HeaderBottom__Left__genre_search
+                    %ul.home-menu-search
+                        %li.home-menu-search__single
+                            %i.fas.fa-tag
+                            %a.init-bottom{:href => "#"} ブランドから探す
+                            %ul.home-menu-search__second-level
+                                - @brand_rankings.each do |brand|
+                                    %a.init-right{:href => "#"}
+                                        = brand.name
+                                %li
+                                    %a.init-right{:href => "#"} ブランド一覧
+
             .HeaderBottom__Right
                 - if user_signed_in?
                     .HeaderBottom__Right__Menu-with-sign_in

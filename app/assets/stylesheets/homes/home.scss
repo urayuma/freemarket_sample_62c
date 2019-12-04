@@ -147,19 +147,15 @@ button.search-logo {
   }
 }
 
-.Slide-menu {
-  height: 25rem;
+.Home-Slide-menu {
+  height: 45rem;
   width: 100%;
-  background-color: darksalmon;
   text-align: center;
-  background-image: image-url(
-    "https://www.haikei-free.com/dataimg/purple0119.png"
-  );
+  
+   &__cont{
 
-  background-size: inherit;
+   }
 
-  &__1 {
-  }
 }
 
 .main-toppage {
@@ -169,7 +165,7 @@ button.search-logo {
   .MainMenu {
     &__FavoriteItems {
       height: 30rem;
-      background-color: #ffbf1f;
+      background-color: #c50028;
       width: 100%;
       margin: auto;
 
@@ -248,7 +244,7 @@ button.search-logo {
             padding: 1rem;
             margin: 4rem 2rem 0 2rem;
 
-            background-color: #dddddd;
+            background-color: #f1e8de;
             border-radius: 2rem;
           }
         }
@@ -257,7 +253,7 @@ button.search-logo {
 
     &__CategoryItems {
       height: 40rem;
-      background-color: #000000;
+      background-color: #223652;
       width: 100%;
 
       margin-bottom: 10rem;
@@ -341,7 +337,7 @@ button.search-logo {
             padding: 1rem;
             margin: 4rem 2rem 0 2rem;
 
-            background-color: #dddddd;
+            background-color: #f1e8de;
             border-radius: 2rem;
           }
         }
@@ -350,7 +346,7 @@ button.search-logo {
 
     &__BrandItems {
       height: 40rem;
-      background-color: #000000;
+      background-color:#223652 ;
       width: 100%;
 
       margin-bottom: 5rem;
@@ -430,8 +426,11 @@ li.FooterMenu__list__small {
 .aside-toppage {
   height: 18rem;
   width: 100%;
-  background-size: inherit;
-  background-color: darkorange;
+  background-color: #42548b;
+  background-image: url("aside-image");
+
+  background-repeat: no-repeat;
+  background-size: cover;
 
   display: flex;
   justify-content: center;
@@ -468,7 +467,7 @@ img.aside-image1 {
 
 .footer-toppage {
   width: 100%;
-  background-color: #ff006f;
+  background-color: #d06816;
   color: #ffffff;
   position: relative;
 }
