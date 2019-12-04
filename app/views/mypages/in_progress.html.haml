@@ -19,7 +19,7 @@
         = link_to "取引中", listings_in_progress_mypage_index_path, class: "listings-detail__active"
         = link_to "売却済み", listings_completed_mypage_index_path, class: "listings-detail__post"
 
-      - unless current_user.items.any?
+      - unless @items.any?
         %ul.listings-report-areas-none
           %li.listings-report-area-none__area
             取引中の商品はありません
@@ -33,7 +33,7 @@
               = link_to item_show_mypage_index_path(item.id), data: { turbolinks: false}, class: "listings-report-areas-exsis__area__link" do
 
                 %figure.listings-report-areas-exsis__area__link__figure
-                  = image_tag "#{item.images.first.image}", class: 'listings-report-areas-exsis__area__link__figure__image'
+                  = image_tag item.images.first.image.url, class: 'listings-report-areas-exsis__area__link__figure__image'
 
                 .listings-report-areas-exsis__area__link__item
                   %p.listings-report-areas-exsis__area__link__item__name
