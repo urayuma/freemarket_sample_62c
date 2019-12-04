@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :search_item, only: %i[destroy show]
+  before_action :find_item, only: %i[destroy show]
   before_action :authenticate_user!, only: %i[sell create destroy]
-
+  before_action :set_search, only: [:show]
   def sell
     @item = Item.new
     @category = Category.where(ancestry: nil)
@@ -91,7 +91,6 @@ class ItemsController < ApplicationController
       :category_id,
       :payment_status,
       images_attributes: [:image]
-    )
-          .merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
+    ).merge(user_id: current_user.id, selling_status: 1, payment_status: 2)
   end
 end

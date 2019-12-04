@@ -1,0 +1,37 @@
+%body.body-toppage
+  = render 'header'
+
+  .search_main
+    .search_result
+      .search_result__search
+        .search_result__search__about
+          %span.search-word
+            = params[:q][:name_cont_any]
+          %span.nokekka
+            の検索結果
+          %p.search_result__search__about__count
+            = "#{@items.count}件表示"
+        .search_result__search__sort
+          = search_form_for @ransack, url: search_homes_path ,html: { method: :post }, class: "search-menu__sort" do |f|
+            = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc', 'いいね!の多い順': 'likes_count desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'} )
+            = f.hidden_field :name_cont_any, value: params[:q][:name_cont_any]
+            = f.submit '変更', class: "sort-submit-btn"
+      %ul.search_result__lists
+        - @items.each do |item|
+          %li.search_result__lists__list
+            = link_to item_path(item.id), class: "search_result__lists__list__link" do
+              - if item.selling_status == "売却済み"
+                .search__sold-out-image
+                  %span.search__sold-out-text SOLD
+              = image_tag item.images.first.image, class: "search_result__lists__list__link__image"
+            .search_result__lists__list__link__text
+              = item.name.truncate(20)
+              - if item.likes.any?
+                %span.search_result__lists__list__link__text__like
+                  = link_to "/items/#{item.id}/likes", method: :post, remote: true do
+                    %i{class: "far fa-heart none_heart"}
+                  = item.likes.length
+  = paginate @items
+
+  = render 'footer'
+  = render 'postitem'

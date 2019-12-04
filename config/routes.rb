@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   end
 
   root 'homes#index'
-  get 'home/index', to: 'homes#index'
+  resources :homes, only: [:index] do
+    collection do
+      match 'search', to: 'homes#search', via: %i[get post]
+    end
+  end
 
   resources :mypage, only: [:index] do
     collection do

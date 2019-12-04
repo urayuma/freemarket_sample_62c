@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  before_action :set_search
   def index
     @items = Item.all
 
@@ -12,10 +13,22 @@ class HomesController < ApplicationController
 
   end
 
+  def search
+    @category = Category.where(ancestry: nil)
+    if params[:q].present?
+      @ransack = Item.search(search_params)
+      @items = @ransack.result(distinct: true).page(params[:page]).per(40)
+    else
+      params[:q] = { sorts: 'id desc' }
+      @ransack = Item.includes(:category).ransack(params[:q])
+      @items = Item.all.page(params[:page]).per(40)
+    end
+  end
+
   private
 
-  def item_params
-    params.permit(:email, :password)
+  def search_params
+    params.require(:q).permit(:name_cont_any, :sorts)
   end
 end
 

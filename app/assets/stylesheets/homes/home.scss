@@ -39,21 +39,36 @@
       }
 
       &__header-search {
-        width: 55%;
-        margin-left: 27rem;
-        background-color: rgb(245, 245, 245);
-
+        width: 70%;
+        margin-left: 30rem;
         font-size: 1.6rem;
-        height: 4rem;
-        line-height: 2.4em;
-        position: absolute;
-        border-width: 0.1rem;
-        border-style: solid;
-        border-color: rgb(204, 204, 204);
-        border-image: initial;
-        border-radius: 0.4rem;
-        outline: none;
-        transition: all 0.3s ease-out 0s;
+        line-height: 3em;
+
+        #item_search {
+          display: flex;
+          width: 100%;
+          position: relative;
+          .search_items_filed {
+            width: 100%;
+            height: 4rem;
+            background-color: #dddddd;
+            border-width: 0.1rem;
+            border-style: solid;
+            border-color: #dddddd;
+            border-image: initial;
+            border-radius: 0.4rem;
+            outline: none;
+            transition: all 0.3s ease-out 0s;
+          }
+          .search_items_btn {
+            position: absolute;
+            right: 3%;
+            bottom: 30%;
+            border: none;
+            border-color: #dddddd;
+            background-color: #dddddd;
+          }
+        }
       }
     }
   }

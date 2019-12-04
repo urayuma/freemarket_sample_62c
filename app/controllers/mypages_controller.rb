@@ -2,6 +2,7 @@ class MypagesController < ApplicationController
   before_action :sidebar_setting
   before_action :authenticate_user!
   before_action :set_card, only: %i[card card_new]
+  before_action :set_search
 
   def index; end
 
