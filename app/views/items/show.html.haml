@@ -74,14 +74,14 @@
     %span.item-price-box__postage 着払い
 
   .item-buy-btn
-    - if @item.selling_status == "売却済み" #active_hash導入後に変更が必要
+    - if @item.selling_status == "3"
       .btn-default.item-buy-btn__sold
         売り切れました
     - else
-      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red"
+      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red" if @item.id != current_user.id
   .item-description
     %p
-      = @item.description
+  = @item.description
   - unless @item.user.id == current_user.id
     .item-bottom-button
       .item-bottom-button__left
