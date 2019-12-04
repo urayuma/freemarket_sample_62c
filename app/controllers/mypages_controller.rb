@@ -3,6 +3,7 @@ class MypagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_card, only: %i[card card_new]
   before_action :set_search
+  before_action :set_brand_rankings
 
   def index; end
 

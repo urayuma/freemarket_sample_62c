@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     @items = @ransack.result(distinct: true)
   end
 
+  def set_brand_rankings
+    @brand_rankings = Brand.find(Item.where.not(brand_id: nil).group(:brand_id).order('count(brand_id) desc').limit(4).pluck(:brand_id))
+  end
+
   private
 
   def production?

@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   before_action :set_search
+  before_action :set_brand_rankings
   def index
     @items = Item.all
 
@@ -8,9 +9,6 @@ class HomesController < ApplicationController
     root_ids = Item.all.map { |item| item.category.root_id }
     sort_many = root_ids.instance_eval { uniq.sort_by { |x| count x }.reverse }
     @category_rankings = Category.where(id: sort_many[0..3])
-
-    @brand_rankings = Brand.find(Item.group(:brand_id).order('count(brand_id) desc').limit(4).pluck(:brand_id))
-
   end
 
   def search

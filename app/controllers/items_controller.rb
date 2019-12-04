@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :find_item, only: %i[destroy show]
   before_action :authenticate_user!, only: %i[sell create destroy]
   before_action :set_search, only: [:show]
+  before_action :set_brand_rankings, only: [:show]
+
   def sell
     @item = Item.new
     @category = Category.where(ancestry: nil)
@@ -52,7 +54,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
@@ -77,9 +78,11 @@ class ItemsController < ApplicationController
 
   private
 
-  def search_item
+  def find_item
     @item = Item.find(params[:id])
   end
+
+
 
   def item_params
     params.require(:item).permit(
