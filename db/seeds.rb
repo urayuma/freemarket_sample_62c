@@ -7,6 +7,52 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # # ブランド レディース
+User.create!(
+  [
+    {
+      email: 'jonny@gmail.com',
+      password: 'jonny1234',
+      nickname: '波乗りJonny',
+      lastname: 'Naminori',
+      firstname: 'Jonny',
+      lastname_kana: 'ナミノリ',
+      firstname_kana: 'ジョニー',
+      birthday_year: '2000',
+      birthday_month: '1',
+      birthday_day: '1',
+      phonenumber: '09012345678'
+    },
+    {
+      email: 'samurai@gmail.com',
+      password: 'samurai2345',
+      nickname: 'さすらいの侍',
+      lastname: 'Sasurai',
+      firstname: 'Samurai',
+      lastname_kana: 'サスライ',
+      firstname_kana: 'サムライ',
+      birthday_year: '1992',
+      birthday_month: '3',
+      birthday_day: '3',
+      phonenumber: '08033333333'
+    },
+    {
+      email: 'omochi@gmail.com',
+      password: 'omochi3456',
+      nickname: 'お餅にはおしるこ',
+      lastname: 'oshiruko',
+      firstname: 'omochi',
+      lastname_kana: 'オシルコ',
+      firstname_kana: 'オモチ',
+      birthday_year: '1993',
+      birthday_month: '5',
+      birthday_day: '18',
+      phonenumber: '08055555555'
+    }
+  ]
+)
+
+
+
 Brand.create!(
   [
     {
