@@ -48,13 +48,3 @@
                     = link_to "パスワードをお忘れの方", "", class: "forgot-password-sign-in"
 .single-footer
     = render 'signups/footer'
-
-:javascript
-    // パスワードの表示・非表示切替
-    $('.checkbox').change(function(){
-        if ( $(this).prop('checked') ) {
-            $('#password').attr('type','text');
-        } else {
-            $('#password').attr('type','password');
-        }
-    });
