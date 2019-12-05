@@ -44,7 +44,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :addresses, only: %i[edit delete] do
+  resources :addresses, only: %i[edit destroy] do
     collection do
       get "/", to: 'addresses#new'
       post "/", to: 'addresses#create'
