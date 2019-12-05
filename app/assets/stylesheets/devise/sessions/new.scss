@@ -113,7 +113,12 @@
       padding: 4rem 6.4rem;
 
       &__form-group {
-        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        &__check {
+          margin: auto;
+          margin-bottom: 2rem;
+          margin-top: -2rem;
+        }
       }
     }
   }
