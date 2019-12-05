@@ -80,15 +80,19 @@ class ItemsController < ApplicationController
   def show; end
 
   def update
-    @item = Item.find(params[:id])
-    if @item.update(item_params)
-      Image.where(item: @item).delete_all
-      params[:images][:image].each do |image|
-        @item.images.create(image: image, item_id: @item.id)
-      end
-      redirect_to item_show_mypage_index_path(params[:id])
-    else
+    if params[:image].nil?
       redirect_to edit_item_path(params[:id])
+    else  
+      @item = Item.find(params[:id])
+      if @item.update(item_params)
+        Image.where(item: @item).delete_all
+        params[:images][:image].each do |image|
+          @item.images.create(image: image, item_id: @item.id)
+        end
+        redirect_to item_show_mypage_index_path(params[:id])
+      else 
+        redirect_to edit_item_path(params[:id])
+      end
     end
   end
 
