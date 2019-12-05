@@ -35,6 +35,10 @@
                         .login-panel__login-form-form__form-group
                             = f.password_field :password, class: 'user_password', id: 'password', placeholder: 'パスワード'
 
+                        .login-panel__login-form-form__form-group.login-panel__login-form-form__form-group__check
+                            = f.check_box :password, checked: false, class: "checkbox"
+                            = f.label :"パスワードを表示する", class: 'check_password'
+
                         .login-panel__login-form-form__form-group
                             = recaptcha_tags id: 'recaptcha'
 
@@ -45,4 +49,12 @@
 .single-footer
     = render 'signups/footer'
 
-
+:javascript
+    // パスワードの表示・非表示切替
+    $('.checkbox').change(function(){
+        if ( $(this).prop('checked') ) {
+            $('#password').attr('type','text');
+        } else {
+            $('#password').attr('type','password');
+        }
+    });

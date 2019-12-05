@@ -72,10 +72,10 @@
             = f.label :"パスワード", class: 'label_password'
             %span.min #{required}
             - if @user.errors.messages[:password].present?
-              = f.password_field :password_confirmation, class: 'user_password_error', id: 'password', placeholder: '７文字以上'
+              = f.password_field :password_confirmation, class: 'user_password_error', id: 'password', placeholder: '英数字を含む７文字以上'
               = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:password)
             - else
-              = f.password_field :password_confirmation, class: 'user_password', id: 'password', placeholder: '７文字以上'
+              = f.password_field :password_confirmation, class: 'user_password', id: 'password', placeholder: '英数字を含む７文字以上'
 
             .field_checkbox
               = f.check_box :password, checked: false, class: "checkbox"
