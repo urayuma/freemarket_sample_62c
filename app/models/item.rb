@@ -14,14 +14,13 @@ class Item < ApplicationRecord
   end
 
   validates :user_id, presence: true
-  validates :name, presence: true, length: { minimum:1, maximum: 40, message: "入力してください" }
-  validates :description, presence: true, length: { minimum: 1,maximum: 1000, message: "入力してください" }
+  validates :name, presence: true, length: { minimum: 1, maximum: 40, message: "入力してください" }
+  validates :description, presence: true, length: { minimum: 1, maximum: 1000, message: "入力してください" }
   validates :category_id, presence: true
   validates :usage_status, presence: true
   validates :delivery_fee, presence: true
   validates :delivery_way, presence: true
   validates :delivery_area, presence: true
   validates :shipping_date, presence: true
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, message: "入力してください"}, numericality: { only_integer: true }
-
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: "入力してください" }
 end
