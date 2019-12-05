@@ -69,13 +69,14 @@ Rails.application.routes.draw do
   resources :addresses, only: %i[new create]
   resources :creditcards, only: %i[new create]
 
-  resources :items, only: %i[new create show destroy] do
+  resources :items, only: %i[new create show destroy edit update] do
     resources :chats, only: [:show]
     collection do
       get 'sell'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_way', defaults: { format: 'json' }
+      get 'get_brand', defaults: { format: 'json' }
     end
   end
 

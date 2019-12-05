@@ -29,4 +29,3 @@ class HomesController < ApplicationController
     params.require(:q).permit(:name_cont_any, :sorts)
   end
 end
-
