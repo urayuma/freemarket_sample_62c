@@ -252,9 +252,8 @@ button.search-logo {
           display: flex;
           justify-content: center;
           &__list {
-            display: inline-block;
+            display: inline;
             font-size: 1.4rem;
-            height: 3.2rem;
 
             padding: 1rem;
             margin: 4rem 2rem 0 2rem;
@@ -289,6 +288,7 @@ button.search-logo {
           &__All {
             height: 30rem;
             width: 100%;
+            overflow: auto;
 
             &__List {
               padding: 1rem, 1.6rem, 0, 1.6rem;
@@ -297,8 +297,9 @@ button.search-logo {
                 margin-left: 1rem;
                 .body-item-image {
                   display: flex;
-                  height: 23rem;
-                  width: 20rem;
+                  justify-content: center;
+                  height: 20rem;
+                  width: 18rem;
                   border-style: groove;
                   background-size: cover;
                 }
@@ -345,9 +346,8 @@ button.search-logo {
           justify-content: center;
 
           &__list {
-            display: inline-block;
+            display: inline;
             font-size: 1.4rem;
-            height: 3.2rem;
 
             padding: 1rem;
             margin: 4rem 2rem 0 2rem;
@@ -382,10 +382,13 @@ button.search-logo {
           &__All {
             height: 30rem;
             width: 100%;
+            overflow: auto;
 
+          
             &__List {
               padding: 1rem 1.6rem 0 1.6rem;
               display: flex;
+
             }
           }
         }
@@ -406,13 +409,13 @@ p.show-detail {
 
 figcaption {
   height: 5rem;
-  width: 20rem;
+  width: 18rem;
   margin-top: 0.1rem;
   position: absolute;
   background-color: grey;
   color: #dddddd;
   text-align: center;
-  line-height: initial;
+  line-height: margin 0 auto;
 }
 
 h2.category-title {
@@ -421,7 +424,7 @@ h2.category-title {
   padding-top: 2rem;
 }
 
-a.category-list {
+p.category-list {
   display: flex;
   justify-content: center;
 }

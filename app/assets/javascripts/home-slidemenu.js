@@ -1,8 +1,4 @@
-/*
-Copyright (c) Ruslan Pivovarov
-Released under the MIT license
-https://codepen.io/mrspok407/pen/bwLwvL
-*/
+
 
 $(document).on("turbolinks:load", function() {
   const $cont = $(".cont");
