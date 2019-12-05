@@ -74,11 +74,11 @@ Address.create!(
       lastname_kana: 'テスト',
       firstname_kana: 'タロウ',
       postcode: '123-4567',
-      prefextures: '北海道',
+      prefectures: '北海道',
       city: '札幌市札幌',
       street_num: '札幌町札幌1-2-3',
       building: '',
-      home_call_num:''
+      home_call_num:'09012345678'
     },
     {
       user_id: 2,
@@ -87,11 +87,11 @@ Address.create!(
       lastname_kana: 'テスト',
       firstname_kana: 'ニタロウ',
       postcode: '123-4567',
-      prefextures: '北海道',
+      prefectures: '北海道',
       city: '札幌市札幌',
       street_num: '札幌町札幌1-2-3',
       building: '',
-      home_call_num:''
+      home_call_num:'08012345678'
     },
     {
       user_id: 3,
@@ -100,11 +100,11 @@ Address.create!(
       lastname_kana: 'テスト',
       firstname_kana: 'サンタロウ',
       postcode: '123-4567',
-      prefextures: '北海道',
+      prefectures: '北海道',
       city: '札幌市札幌',
       street_num: '札幌町札幌1-2-3',
       building: '',
-      home_call_num:''
+      home_call_num:'09098765432'
     },
     {
       user_id: 4,
@@ -113,11 +113,11 @@ Address.create!(
       lastname_kana: 'テスト',
       firstname_kana: 'ヨンタロウ',
       postcode: '123-4567',
-      prefextures: '北海道',
+      prefectures: '北海道',
       city: '札幌市札幌',
       street_num: '札幌町札幌1-2-3',
       building: '',
-      home_call_num:''
+      home_call_num:'08098765432'
     }
   ]
 )
