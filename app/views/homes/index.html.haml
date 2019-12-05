@@ -23,12 +23,12 @@
                             .MainMenu__FavoriteItems__Body__Items__All
                                 .MainMenu__FavoriteItems__Body__Items__All__List
                                     .MainMenu__FavoriteItems__Body__Items__All__List__images
-                                        - @like_rankings.each do |image|
-                                            = link_to item_path(image.item.id), class: "MainMenu__FavoriteItems__Body__Items__All__List__images__image" do
-                                                - if image.item.selling_status == "売却済み"
+                                        - @like_rankings.each do |item|
+                                            = link_to item_path(item.id), class: "MainMenu__FavoriteItems__Body__Items__All__List__images__image" do
+                                                - if item.selling_status == "売却済み"
                                                     .home__sold-out-image
                                                         %span.home__sold-out-text SOLD
-                                                = image_tag image.image.url, class:'favorite-item-image'
+                                                = image_tag item.images.first.image.url, class:'favorite-item-image'
             - if @items.any?
                 .MainMenu__CategoryLists
                     %h2.category-title 人気のカテゴリー
