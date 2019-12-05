@@ -90,7 +90,7 @@
             %div 確認
             %div 本当に削除しますか？
           %button#modal-close-btn キャンセル
-          = link_to item_path, method: :DELETE, id: 'item-delete-btn' do
+          = link_to item_path, method: :DELETE do
             %button#delete-comformation-btn 削除する
 = render 'items/chat'
 = render 'homes/footer'
