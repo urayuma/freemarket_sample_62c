@@ -14,7 +14,7 @@ User.create!(
       password: 'selleruser123',
       nickname: 'selleruser1',
       lastname: 'test',
-      firstname: 'selleruser1',
+      firstname: 'selleruser',
       lastname_kana: 'テスト',
       firstname_kana: 'シュッピンシャ',
       birthday_year: '2000',
@@ -27,11 +27,9 @@ User.create!(
       password: 'selleruser1234',
       nickname: 'selleruser2',
       lastname: 'test',
-      firstname: 'selleruser2',
+      firstname: 'selleruser２',
       lastname_kana: 'テスト',
       firstname_kana: 'シュッピンシャ',
-      lastname_kana: 'サスライ',
-      firstname_kana: 'サムライ',
       birthday_year: '1992',
       birthday_month: '3',
       birthday_day: '3',
@@ -42,7 +40,7 @@ User.create!(
       password: 'buyeruser123',
       nickname: 'buyeruser1',
       lastname: 'test',
-      firstname: 'buyeruser1',
+      firstname: 'buyeruser',
       lastname_kana: 'テスト',
       firstname_kana: 'コウニュウシャ',
       birthday_year: '1993',
@@ -55,13 +53,13 @@ User.create!(
       password: 'buyeruser1234',
       nickname: 'buyeruser2',
       lastname: 'test',
-      firstname: 'buyeruser2',
+      firstname: 'buyeruser２',
       lastname_kana: 'テスト',
       firstname_kana: 'コウニュウシャ',
       birthday_year: '1993',
       birthday_month: '5',
       birthday_day: '18',
-      phonenumber: '08055555555'
+      phonenumber: '08055555556'
     }
   ]
 )
