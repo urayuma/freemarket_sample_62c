@@ -90,16 +90,19 @@ class ItemsController < ApplicationController
     redirect_to edit_item_path(params[:id])
   end
 
-  def destroy; end
+  def destroy
+    Item.find(params[:id]).destroy
+    redirect_to listings_listing_mypage_index_path
+  end
 
   def sellnow
-    item = Item.find_by(params[:id])
+    item = Item.find(params[:id])
     item.update(selling_status: "1")
     redirect_to item_show_mypage_index_path
   end
 
   def sellstop
-    item = Item.find_by(params[:id])
+    item = Item.find(params[:id])
     item.update(selling_status: "4")
     redirect_to item_show_mypage_index_path
   end
