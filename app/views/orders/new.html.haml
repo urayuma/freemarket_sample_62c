@@ -8,7 +8,7 @@
 
         .buy-panel__item-detail-inner
           .buy-panel__item-detail-inner__about
-            = image_tag @item.images.first.image , class: "buy-panel__item-detail-inner__about__image"
+            = image_tag @item.images.first.image.url , class: "buy-panel__item-detail-inner__about__image"
             %p.buy-panel__item-detail-inner__about__name
               = @item.name
 

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
 
   validates :nickname, presence: true, length: { maximum: 20 }
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i, message: "は英字と数字両方を含むパスワードを設定してください" } # 英字と数字の両方を含む7文字以上128文字以下
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i, message: "は英字と数字両方を含むパスワードを設定してください" }, allow_blank: true # 英字と数字の両方を含む7文字以上128文字以下
 
   validates :lastname, presence: true
   validates :lastname, length: { maximum: 35 }

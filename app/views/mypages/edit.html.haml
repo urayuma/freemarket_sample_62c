@@ -7,13 +7,12 @@
     .profile-main__top
       プロフィール
     .profile-main__header
-      .profile-main__header--image
-      -# 一度仮置きをしておいてあとでform_foに書き換える
-      %input.profile-main__header--input{name: "nickname", placeholder: "例)AYA☆セール", type: "text", value: ""}/
-    .profile-main__textarea
-      -# 一度仮置きをしておいてあとでform_foに書き換える
-      %textarea.profile-main__textarea--box{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ", type: "text", value: ""}
-      .profile-main__textarea--edit 変更する
+      = form_for @user, url: edit_mypage_index_path, method: :patch, class: "profile-main__header__from" do |f|
+        .profile-main__header--image
+        = f.text_field :nickname, class: "profile-main__header--input", placeholder: "例)AYA☆セール"
+        .profile-main__textarea
+          = f.text_area :introduction, class: "profile-main__textarea--box", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"
+        = f.submit "変更する", class: "profile-main__textarea--edit"
 
   = render "sidebar"
 

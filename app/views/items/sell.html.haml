@@ -21,11 +21,11 @@
               = image.label :image, class: "dropzone-box", for: "upload-image" do
                 .input_area
                   = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                %p ここをクリックしてください
+                %p.input-area-text ここをクリックしてください
             #preview2
             .dropzone-area2
               = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %p ここをクリックしてください
+                %p.input-area-text ここをクリックしてください
       .sell-item
         .sell-item__form
           %label.sell-item__form--subject 商品名
@@ -50,7 +50,7 @@
             %label.select-subject 商品の状態
             %span.select-essential 必須
             .box-wrapper
-              = f.collection_select :usage_status , @usage_status, :id , :name, {include_blank: "---"}, {class:'select-box'}
+              = f.collection_select :usage_status , @usage_status, :name , :name, {include_blank: "---"}, {class:'select-box'}
               .select-arrow
                 %i.fas.fa-chevron-down
 
@@ -63,21 +63,21 @@
               %label.select-subject 配送料の負担
               %span.select-essential 必須
               .box-wrapper
-                = f.collection_select :delivery_fee , @delivery_fee, :id , :name, {include_blank: "---"}, {class:'select-box'}
+                = f.collection_select :delivery_fee , @delivery_fee, :name , :name, {include_blank: "---"}, {class:'select-box'}
                 .select-arrow
                   %i.fas.fa-chevron-down
           .sell-select__group
             %label.select-subject 発送元の地域
             %span.select-essential 必須
             .box-wrapper
-              = f.collection_select :delivery_area , @prefectures, :id , :name, {include_blank: "---"}, {class:'select-box'}
+              = f.collection_select :delivery_area , @prefectures, :name , :name, {include_blank: "---"}, {class:'select-box'}
               .select-arrow
                 %i.fas.fa-chevron-down
           .sell-select__group
             %label.select-subject 発送までの日数
             %span.select-essential 必須
             .box-wrapper
-              = f.collection_select :shipping_date , @shipping_date, :id , :name, {include_blank: "---"}, {class:'select-box'}
+              = f.collection_select :shipping_date , @shipping_date, :name, :name, {include_blank: "---"}, {class:'select-box'}
               .select-arrow
                 %i.fas.fa-chevron-down
 

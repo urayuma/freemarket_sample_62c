@@ -7,7 +7,18 @@ class MypagesController < ApplicationController
 
   def index; end
 
-  def edit; end
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(nickname: user_params[:nickname], introduction: user_params[:introduction])
+      redirect_to mypage_index_path
+    else
+      render  :edit
+    end
+  end
 
   def card
     if @card.present?
@@ -70,5 +81,9 @@ class MypagesController < ApplicationController
 
   def set_card
     @card = current_user.creditcard
+  end
+
+  def user_params
+    params.require(:user).permit(:nickname, :introduction)
   end
 end

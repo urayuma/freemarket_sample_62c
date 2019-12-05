@@ -6,53 +6,125 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# # ブランド レディース
+# # ユーザー
 User.create!(
   [
     {
-      email: 'jonny@gmail.com',
-      password: 'jonny1234',
-      nickname: '波乗りJonny',
-      lastname: 'Naminori',
-      firstname: 'Jonny',
-      lastname_kana: 'ナミノリ',
-      firstname_kana: 'ジョニー',
+      email: 'fmarket-seller_user1@gmail.com',
+      password: 'selleruser123',
+      nickname: 'selleruser1',
+      lastname: 'test',
+      firstname: 'selleruser',
+      lastname_kana: 'テスト',
+      firstname_kana: 'シュッピンシャ',
       birthday_year: '2000',
       birthday_month: '1',
       birthday_day: '1',
       phonenumber: '09012345678'
     },
     {
-      email: 'samurai@gmail.com',
-      password: 'samurai2345',
-      nickname: 'さすらいの侍',
-      lastname: 'Sasurai',
-      firstname: 'Samurai',
-      lastname_kana: 'サスライ',
-      firstname_kana: 'サムライ',
+      email: 'fmarket-seller_user2@gmail.com',
+      password: 'selleruser1234',
+      nickname: 'selleruser2',
+      lastname: 'test',
+      firstname: 'selleruser二',
+      lastname_kana: 'テスト',
+      firstname_kana: 'シュッピンシャ',
       birthday_year: '1992',
       birthday_month: '3',
       birthday_day: '3',
       phonenumber: '08033333333'
     },
     {
-      email: 'omochi@gmail.com',
-      password: 'omochi3456',
-      nickname: 'お餅にはおしるこ',
-      lastname: 'oshiruko',
-      firstname: 'omochi',
-      lastname_kana: 'オシルコ',
-      firstname_kana: 'オモチ',
+      email: 'fmarket-buyer_user@gmail.com',
+      password: 'buyeruser123',
+      nickname: 'buyeruser1',
+      lastname: 'test',
+      firstname: 'buyeruser',
+      lastname_kana: 'テスト',
+      firstname_kana: 'コウニュウシャ',
       birthday_year: '1993',
       birthday_month: '5',
       birthday_day: '18',
       phonenumber: '08055555555'
+    },
+    {
+      email: 'fmarket-buyer_user2@gmail.com',
+      password: 'buyeruser1234',
+      nickname: 'buyeruser',
+      lastname: 'test',
+      firstname: 'buyeruser二',
+      lastname_kana: 'テスト',
+      firstname_kana: 'コウニュウシャ',
+      birthday_year: '1993',
+      birthday_month: '5',
+      birthday_day: '18',
+      phonenumber: '08055555556'
+    }
+  ]
+)
+
+# # アドレス
+Address.create!(
+  [
+    {
+      user_id: 1,
+      lastname: 'テスト',
+      firstname: '太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'タロウ',
+      postcode: '123-4567',
+      prefectures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:'09012345678'
+    },
+    {
+      user_id: 2,
+      lastname: 'テスト',
+      firstname: '二太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'ニタロウ',
+      postcode: '123-4567',
+      prefectures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:'08012345678'
+    },
+    {
+      user_id: 3,
+      lastname: 'テスト',
+      firstname: '三太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'サンタロウ',
+      postcode: '123-4567',
+      prefectures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:'09098765432'
+    },
+    {
+      user_id: 4,
+      lastname: 'テスト',
+      firstname: '四太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'ヨンタロウ',
+      postcode: '123-4567',
+      prefectures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:'08098765432'
     }
   ]
 )
 
 
 
+# # ブランド レディース
 Brand.create!(
   [
     {
