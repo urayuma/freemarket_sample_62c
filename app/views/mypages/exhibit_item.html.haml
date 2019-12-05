@@ -73,8 +73,9 @@
 -else
   .mypage_item_edit
     .mypage_item_edit__btns
-      %button{class: "btn-default mypage_item_edit__btns--edit"}商品の編集
-      %p.mypage_item_edit__btns--or or
+      = link_to edit_item_path(@item), method: :get do
+        %button{class: "btn-default mypage_item_edit__btns--edit"}商品の編集
+        %p.mypage_item_edit__btns--or or
       - if @item.selling_status == "4"
         = link_to sellnow_mypage_index_path, method: :patch do
           %button{class: "btn-default mypage_item_edit__btns--stop"}出品を再開する
