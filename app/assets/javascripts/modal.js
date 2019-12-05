@@ -8,6 +8,7 @@ document.addEventListener(
         $("#overlay").fadeOut();
       };
       document.getElementById("delete-comformation-btn").onclick = function() {
+        console.log("fejfdfa");
         document.getElementById("item-delete-btn").click();
       };
     };

@@ -84,14 +84,15 @@
         = link_to sellstop_mypage_index_path, method: :patch do
           %button{class: "btn-default mypage_item_edit__btns--stop"}出品を一旦停止する
       %button#modal-open-btn この商品を削除する
+      = link_to "", item_path(@item), method: :DELETE, id: 'item-delete-btn'
       #overlay
         #modalWindow
           .modal-message-box
             %div 確認
             %div 本当に削除しますか？
           %button#modal-close-btn キャンセル
-          = link_to item_path, method: :DELETE, id: 'item-delete-btn' do
-            %button#delete-comformation-btn 削除する
+          %button#delete-comformation-btn 削除する
+
 = render 'items/chat'
 = render 'homes/footer'
 = render "/homes/postitem"

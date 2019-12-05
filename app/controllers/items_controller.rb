@@ -98,6 +98,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @item = Item.find(params[:id])
     if @item.destroy
       redirect_to listings_listing_mypage_index_path
