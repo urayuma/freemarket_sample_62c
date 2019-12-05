@@ -35,15 +35,36 @@
                         .login-panel__login-form-form__form-group
                             = f.password_field :password, class: 'user_password', id: 'password', placeholder: 'パスワード'
 
-                        .login-panel__login-form-form__form-group.login-panel__login-form-form__form-group__check
-                            = f.check_box :password, checked: false, class: "checkbox"
-                            = f.label :"パスワードを表示する", class: 'check_password'
-
                         .login-panel__login-form-form__form-group
                             = recaptcha_tags id: 'recaptcha'
 
                         .login-panel__login-form-form__form-group
                             = f.submit "ログイン", class: "login-btn-red"
+
+                        .login-infomaiton
+                            .login-infomaiton__seller
+                                %p.login-infomaiton__seller__name
+                                    出品者:
+                                %p.login-infomaiton__seller__email
+                                    email:
+                                    %span.login-infomaiton__seller__email__body
+                                        fmarket-seller_user1@gmail.com
+                                %p.login-infomaiton__seller__password
+                                    password:
+                                    %span.login-infomaiton__seller__password__boy
+                                        selleruser123
+                            %br/
+                            %p.login-infomaiton__buyer
+                                %p.login-infomaiton__buyer__name
+                                    購入者:
+                                %p.login-infomaiton__buyer__email
+                                    email:
+                                    %span.login-infomaiton__buyer__email__body
+                                        fmarket-buyer_user@gmail.com
+                                %p.login-infomaiton__buyer__password
+                                    password:
+                                    %span.login-infomaiton__buyer__password__boy
+                                        buyeruser123
 
                     = link_to "パスワードをお忘れの方", "", class: "forgot-password-sign-in"
 .single-footer

@@ -108,17 +108,23 @@
       }
     }
     &__login-form-form {
-      height: 41rem;
+      height: 55rem;
       width: 72%;
-      padding: 4rem 6.4rem;
+      margin: auto;
+      padding-top: 3rem;
 
       &__form-group {
         margin-bottom: 2rem;
-        &__check {
-          margin: auto;
-          margin-bottom: 2rem;
-          margin-top: -2rem;
-        }
+      }
+    }
+    .login-infomaiton {
+      padding: 0.7rem;
+      margin-bottom: 3rem;
+      border: 0.1rem solid gray;
+      border-radius: 1rem;
+      &__seller__email__body,
+      &__buyer__email__body {
+        margin-left: 3rem;
       }
     }
   }
