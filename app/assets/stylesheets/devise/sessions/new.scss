@@ -107,7 +107,6 @@
         }
       }
     }
-
     &__login-form-form {
       height: 41rem;
       width: 72%;
@@ -154,4 +153,10 @@ input.input-data {
   font-size: 1.4rem;
   text-decoration: none;
   color: #0099e8;
+}
+
+.Unimplemented.message {
+  text-align: center;
+  color: $red;
+  font-size: 1.8rem;
 }

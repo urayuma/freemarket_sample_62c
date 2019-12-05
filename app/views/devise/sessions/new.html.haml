@@ -2,7 +2,8 @@
     .single-container
 
         %header.single-header
-            .header-logo
+            = link_to root_path do
+                .header-logo
 
 
         .single-main
@@ -23,6 +24,8 @@
                         %span.login-panel__login-form-inner--google__message
                             Googleでログイン
 
+                %p.Unimplemented.message
+                    SNS認証は本番環境では未実装です。
 
                 .login-panel__login-form-form
                     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
