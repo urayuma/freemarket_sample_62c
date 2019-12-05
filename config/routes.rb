@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     collection do
       get '/',    to: 'mypages#index'
       get 'edit', to: 'mypages#edit'
+      patch 'edit', to: 'mypages#update'
       get 'card', to: 'mypages#card'
       get 'card/new', to: 'mypages#card_new'
       get 'logout', to: 'mypages#logout'
