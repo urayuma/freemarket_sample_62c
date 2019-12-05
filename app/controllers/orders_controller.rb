@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   def new
     @item = Item.find(params[:id])
+    redirect_to root_path if @item.user.id == current_user.id
     @user = current_user
     redirect_to action: 'failed' unless @item.selling_status == "1"
   end

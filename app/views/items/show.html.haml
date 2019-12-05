@@ -78,12 +78,14 @@
     - if @item.selling_status == "3"
       .btn-default.item-buy-btn__sold
         売り切れました
+    - elsif user_signed_in?
+      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red" if @item.user.id != current_user.id
     - else
-      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red" if @item.id != current_user.id
+      = button_to "購入画面に進む", buy_order_path(@item.id),method: :get, class: "btn-default item-buy-btn__red"
   .item-description
     %p
   = @item.description
-  - unless @item.user.id == current_user.id
+  - if user_signed_in? && @item.user.id != current_user.id
     .item-bottom-button
       .item-bottom-button__left
         .item-like-btn
