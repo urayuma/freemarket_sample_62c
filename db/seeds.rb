@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# # ブランド レディース
+# # ユーザー
 User.create!(
   [
     {
@@ -66,8 +66,67 @@ User.create!(
   ]
 )
 
+# # アドレス
+Address.create!(
+  [
+    {
+      user_id: 1,
+      lastname: 'テスト',
+      firstname: '太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'タロウ',
+      postcode: '123-4567',
+      prefextures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:''
+    },
+    {
+      user_id: 2,
+      lastname: 'テスト',
+      firstname: '二太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'ニタロウ',
+      postcode: '123-4567',
+      prefextures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:''
+    },
+    {
+      user_id: 3,
+      lastname: 'テスト',
+      firstname: '三太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'サンタロウ',
+      postcode: '123-4567',
+      prefextures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:''
+    },
+    {
+      user_id: 4,
+      lastname: 'テスト',
+      firstname: '四太郎',
+      lastname_kana: 'テスト',
+      firstname_kana: 'ヨンタロウ',
+      postcode: '123-4567',
+      prefextures: '北海道',
+      city: '札幌市札幌',
+      street_num: '札幌町札幌1-2-3',
+      building: '',
+      home_call_num:''
+    }
+  ]
+)
 
 
+
+# # ブランド レディース
 Brand.create!(
   [
     {
