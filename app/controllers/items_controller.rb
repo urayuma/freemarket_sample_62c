@@ -80,7 +80,6 @@ class ItemsController < ApplicationController
   def show; end
 
   def update
-
     @item = Item.find(params[:id])
     if @item.update(item_params)
       Image.where(item: @item).delete_all
@@ -94,8 +93,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.find(params[:id]).destroy
-    redirect_to listings_listing_mypage_index_path
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to listings_listing_mypage_index_path
+    else
+      redirect_to item_show_mypage_index_path(@item.id)
+    end
   end
 
   def sellnow
@@ -108,12 +111,6 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.update(selling_status: "4")
     redirect_to item_show_mypage_index_path
-  end
-
-  def image_destroy
-    image = Image.find(params[:id])
-    image.destroy
-    redirect_to edit_item_path(params[:item_id])
   end
 
   private
