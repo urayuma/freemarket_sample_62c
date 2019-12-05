@@ -31,17 +31,16 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-set :default_env, {
-    rbenv_root: "/usr/local/rbenv",
-    path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-    BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
-    BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
-    AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-    AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
+# set :default_env, {
+#     rbenv_root: "/usr/local/rbenv",
+#     path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+#     BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
+#     BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
+#     AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+#     AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+# }
 
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
-set :linked_files, %w{ config/secrets.yml }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
