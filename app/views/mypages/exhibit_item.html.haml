@@ -61,7 +61,8 @@
     %span.item-price-box__price
       = "¥#{@item.price.to_s(:delimited)}"
     %span.item-price-box__tax (税込)
-    %span.item-price-box__postage 着払い
+    %span.item-price-box__postage
+      = @item.delivery_fee
 
   .item-description
     %p
