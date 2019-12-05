@@ -1,11 +1,11 @@
 class HomesController < ApplicationController
   before_action :set_search
   before_action :set_brand_rankings
+
   def index
     @items = Item.all.order(updated_at: "DESC")
 
-    @like_rankings = Image.find(Like.group(:item_id).order('count(item_id) desc').limit(4).pluck(:item_id)) if user_signed_in? && Like.where(user_id: current_user.id).any?
-    # @like_rankings = Like.find(Like.group(:user_id).order('count(item_id) desc').limit(5).pluck(:user_id)) if user_signed_in? && Like.where(user_id: current_user.id).any?
+    @like_rankings = Item.find(Like.group(:item_id).order('count(updated_at) desc').limit(4).pluck(:item_id)) if user_signed_in? && Like.where(user_id: current_user.id).any?
 
 
     root_ids = Item.all.map { |item| item.category.root_id }
