@@ -42,15 +42,15 @@ class MypagesController < ApplicationController
   end
 
   def listing
-    @items = current_user.items.where(selling_status: "1").page(params[:page]).per(10)
+    @items = current_user.items.where(selling_status: "1")
   end
 
   def in_progress
-    @items = current_user.items.where(selling_status: "2").page(params[:page]).per(10)
+    @items = current_user.items.where(selling_status: "2")
   end
 
   def completed
-    @items = current_user.items.where(selling_status: "3").page(params[:page]).per(10)
+    @items = current_user.items.where(selling_status: "3")
   end
 
   def purchase
