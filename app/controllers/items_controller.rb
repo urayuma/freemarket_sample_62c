@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: %i[destroy show]
+  before_action :find_item, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[sell create destroy]
   before_action :set_search, only: [:show]
   before_action :set_brand_rankings, only: [:show]
@@ -13,26 +13,6 @@ class ItemsController < ApplicationController
     @delivery_way = DeliveryWay.all
     @shipping_date = ShippingDate.all
     @item.images.build
-  end
-
-  def edit
-    @item = Item.find_by(id: params[:id])
-    @item.images.build
-    @grandchild_category = Category.find(@item.category_id)
-    @usage_status = UsageStatus.all
-    @delivery_fee = DeliveryFee.all
-    @prefectures = Prefecture.all
-    @shipping_date = ShippingDate.all
-    @brand = Brand.all
-    @images = []
-    Array(@item.images).each do |image|
-      @images << image.image.url
-    end
-    @deliveryway = if @item.delivery_fee == "送料込み(出品者負担)"
-                     DeliveryWay.all
-                   else
-                     DeliveryWay2.all
-                   end
   end
 
   def create
@@ -57,6 +37,57 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show; end
+
+  def edit
+    @item.images.build
+    @grandchild_category = Category.find(@item.category_id)
+    @usage_status = UsageStatus.all
+    @delivery_fee = DeliveryFee.all
+    @prefectures = Prefecture.all
+    @shipping_date = ShippingDate.all
+    @brand = Brand.all
+    @images = []
+    Array(@item.images).each do |image|
+      @images << image.image.url
+    end
+    @deliveryway = if @item.delivery_fee == "送料込み(出品者負担)"
+                     DeliveryWay.all
+                   else
+                     DeliveryWay2.all
+                   end
+  end
+
+  def update
+    if params[:images][:image].nil?
+      redirect_to edit_item_path(params[:id])
+    elsif @item.update(item_params)
+      exist_ids = @item.images.pluck(:id)
+      params[:images][:image].each do |image|
+        if image.is_a?(String)
+          exist_ids.delete(image.to_i)
+        else
+          render :edit unless @item.images.create(image: image, item_id: @item.id)
+        end
+      end
+      exist_ids.each do |id|
+        delete_image = Image.find(id)
+        delete_image.delete
+      end
+      redirect_to item_show_mypage_index_path(params[:id])
+    else
+      redirect_to redirect_to edit_item_path(params[:id])
+    end
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to listings_listing_mypage_index_path
+    else
+      redirect_to item_show_mypage_index_path(@item.id)
+    end
+  end
+
   def get_category_children
     @category_children = Category.find_by(id: params[:parent_id]).children
   end
@@ -77,33 +108,8 @@ class ItemsController < ApplicationController
     @brand = Brand.all
   end
 
-  def show; end
-
-  def update
-    @item = Item.find(params[:id])
-    if params[:image].nil?
-      redirect_to edit_item_path(params[:id])
-    else
-      @item = Item.find(params[:id])
-      if @item.update(item_params)
-        Image.where(item: @item).delete_all
-        params[:images][:image].each do |image|
-          @item.images.create(image: image, item_id: @item.id)
-        end
-        redirect_to item_show_mypage_index_path(params[:id])
-      else
-        redirect_to edit_item_path(params[:id])
-      end
-    end
-  end
-
-  def destroy
-    @item = Item.find(params[:id])
-    if @item.destroy
-      redirect_to listings_listing_mypage_index_path
-    else
-      redirect_to item_show_mypage_index_path(@item.id)
-    end
+  def get_image
+    @images = Item.find(params[:item_id]).images
   end
 
   def sellnow

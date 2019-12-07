@@ -16,7 +16,7 @@ class MypagesController < ApplicationController
     if @user.update(nickname: user_params[:nickname], introduction: user_params[:introduction])
       redirect_to mypage_index_path
     else
-      render  :edit
+      render :edit
     end
   end
 

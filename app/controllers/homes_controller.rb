@@ -3,7 +3,7 @@ class HomesController < ApplicationController
   before_action :set_brand_rankings
 
   def index
-    @items = Item.all.order(updated_at: "DESC")
+    @items = Item.where.not(selling_status: "4").order(updated_at: "DESC")
 
     @like_rankings = Item.find(Like.group(:item_id).order('count(updated_at) desc').limit(4).pluck(:item_id)) if user_signed_in? && Like.where(user_id: current_user.id).any?
 
