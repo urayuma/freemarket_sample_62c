@@ -7,7 +7,6 @@ class HomesController < ApplicationController
 
     @like_rankings = Item.find(Like.group(:item_id).order('count(updated_at) desc').limit(4).pluck(:item_id)) if user_signed_in? && Like.where(user_id: current_user.id).any?
 
-
     root_ids = Item.all.map { |item| item.category.root_id }
     sort_many = root_ids.instance_eval { uniq.sort_by { |x| count x }.reverse }
     @category_rankings = Category.where(id: sort_many[0..3])

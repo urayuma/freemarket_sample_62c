@@ -197,9 +197,13 @@ button.search-logo {
       &__Body {
         height: calc(100% - 5rem);
         &__Items {
+          overflow: scroll;
           &__All {
+            margin: 0 3rem;
+            width: 95%;
+
             &__List {
-              margin-left: 3rem;
+              overflow: scroll;
               &__images {
                 display: flex;
                 &__image {
@@ -209,8 +213,8 @@ button.search-logo {
 
                   .favorite-item-image {
                     display: block;
-                    height: 20rem;
-                    width: 18rem;
+                    height: 18rem;
+                    width: 16rem;
                   }
                   .home__sold-out-image {
                     border: 3rem solid;
@@ -266,7 +270,7 @@ button.search-logo {
     }
 
     &__CategoryItems {
-      height: 40rem;
+      height: 33rem;
       background-color: #223652;
       width: 100%;
 
@@ -285,14 +289,25 @@ button.search-logo {
 
       &__Body {
         &__Items {
+          overflow: scroll;
+
           &__All {
-            height: 30rem;
-            width: 100%;
-            overflow: auto;
+            height: 33rem;
+            width: 95%;
 
             &__List {
-              padding: 1rem, 1.6rem, 0, 1.6rem;
+              overflow: scroll;
+              padding: 1rem 1.6rem 0 1.6rem;
               display: flex;
+              color: #dddddd;
+              text-align: center;
+              margin-top: 0.1rem;
+
+
+              &__figcaption{
+              }
+
+
               &__item {
                 margin-left: 1rem;
                 .body-item-image {
@@ -360,7 +375,7 @@ button.search-logo {
     }
 
     &__BrandItems {
-      height: 40rem;
+      height: 33rem;
       background-color:#223652 ;
       width: 100%;
 
@@ -379,17 +394,25 @@ button.search-logo {
 
       &__Body {
         &__Items {
+          overflow: scroll;
           &__All {
             height: 30rem;
-            width: 100%;
-            overflow: auto;
+            width: 95%;
 
           
             &__List {
+              overflow: scroll;
               padding: 1rem 1.6rem 0 1.6rem;
               display: flex;
+              color: #dddddd;
+              text-align: center;
+              margin-top: 0.1rem;
 
+              &__figcaption{
+              }
+                
             }
+
           }
         }
       }
@@ -407,16 +430,17 @@ p.show-detail {
   color: #dddddd;
 }
 
-figcaption {
-  height: 5rem;
-  width: 18rem;
-  margin-top: 0.1rem;
-  position: absolute;
-  background-color: grey;
-  color: #dddddd;
-  text-align: center;
-  line-height: margin 0 auto;
-}
+// figcaption {
+//   height: 5rem;
+//   width: 18rem;
+//   margin-top: 0.1rem;
+//   position: absolute;
+//   background-color: grey;
+//   color: #dddddd;
+//   overflow: scroll;
+//   text-align: center;
+//   line-height: margin 0 auto;
+// }
 
 h2.category-title {
   text-align: center;
@@ -551,7 +575,6 @@ h2.FooterMenu__list__title {
   position: fixed;
   bottom: 0.5rem;
   right: 0;
-  display: inline-block;
   display: flex;
   justify-content: center;
   z-index: 100;
