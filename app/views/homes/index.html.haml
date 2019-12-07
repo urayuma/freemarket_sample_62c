@@ -55,14 +55,14 @@
                                         - @items.each do |item|
                                             - if item.category.root_id == category.id
                                                 - itemscounts += 1
-                                                %figure.MainMenu__CategoryItems__Body__Items__All__List__item
+                                                .MainMenu__CategoryItems__Body__Items__All__List__item
                                                     = link_to item_path(item.id) do
                                                         - if item.selling_status == "3"
                                                             .home__sold-out-image
                                                                 %span.home__sold-out-text SOLD
                                                         = image_tag item.images.first.image.url , class:'body-item-image'
-                                                        %figcaption
-                                                            = item.name
+                                                    .MainMenu__CategoryItems__Body__Items__All__List__item__figcaption
+                                                        = item.name
                                                 - break if itemscounts == 5
 
 
@@ -93,14 +93,14 @@
                                         - @items.each do |item|
                                             - if item.brand_id == brand.id
                                                 - itemscounts += 1
-                                                %figure.MainMenu__CategoryItems__Body__Items__All__List__item
+                                                .MainMenu__CategoryItems__Body__Items__All__List__item
                                                     = link_to item_path(item.id) do
                                                         - if item.selling_status == "3"
                                                             .home__sold-out-image
                                                                 %span.home__sold-out-text SOLD
                                                         = image_tag item.images.first.image.url , class:'body-item-image'
-                                                        %figcaption
-                                                            = item.name
+                                                    .MainMenu__CategoryItems__Body__Items__All__List__item__figcaption
+                                                        = item.name
                                                 - break if itemscounts == 5
 
 
