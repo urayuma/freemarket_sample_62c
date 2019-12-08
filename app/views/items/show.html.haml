@@ -7,12 +7,12 @@
   .item-detail-content__information
     .item-detail-content__information--pictures
       .item-detail-phone-big
-        - if @item.selling_status == "3"
-          .item-detail__show__sold-out-image
-            %span.item-detail__show__sold-out-text SOLD
         %ul.slider-thum
           - @item.images.each.with_index(1) do |image, index|
             %li#slide-item
+              - if @item.selling_status == "3"
+                .item-detail__show__sold-out-image
+                  %span.item-detail__show__sold-out-text SOLD
               = image_tag image.image.url, class: "item-detail-phone-big-main", id: index
       %ul.item-detail-phone-cells
         - @item.images.each.with_index(1) do |image, index|
