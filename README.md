@@ -1,27 +1,34 @@
-# README
+# メルカリクローンアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TECH::EXPERT でのカリキュラム内で５人のグループ開発で作成しました。
 
-Things you may want to cover:
+### URL
 
-- Ruby version
+http://18.177.15.224
 
-- System dependencies
+### 使用技術
 
-- Configuration
+Ruby 2.5.1p57
+Rails 5.2.3
+RSpec
+AWS
 
-- Database creation
+- EC2
+- S3
 
-- Database initialization
+### 機能一覧
 
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+- ユーザ登録(session と devise を用いたページ遷移あり),ログイン機能全般
+- facebook/googele での omniauth 認証(ローカル環境のみ)
+- 商品出品機能
+- 多階層カテゴリー(ancestry)
+- 画像のプレビュー機能(jquery)
+- 複数画像アップロード(carrierwave)
+- 商品購入機能(payjp)
+- いいね機能
+- 検索機能(ransack)
+- ページネーション(kaminari)
+- 自動デプロイ(capistrano)
 
 # DB 設計
 
