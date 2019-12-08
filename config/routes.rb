@@ -78,6 +78,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_way', defaults: { format: 'json' }
       get 'get_brand', defaults: { format: 'json' }
+      get 'get_image', defaults: { format: 'json' }
     end
   end
 
