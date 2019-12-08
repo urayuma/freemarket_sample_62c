@@ -14,14 +14,14 @@
       max-width: 30rem;
       min-width: 30rem;
       background-color: #fafafa;
-      .slider-thum {
-        display: flex;
-        overflow: hidden;
-        .item-detail-phone-big {
-          line-height: 0;
-          position: relative;
-          min-height:0;
-          min-width : 0;
+      .item-detail-phone-big {
+        line-height: 0;
+        position: relative;
+        min-height:0;
+        min-width : 0;
+        .slider-thum {
+          display: flex;
+          overflow: hidden;
           .item-detail__show__sold-out-image {
             border: 5rem solid;
             width: 0;
