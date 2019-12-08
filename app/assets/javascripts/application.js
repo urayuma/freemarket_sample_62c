@@ -16,4 +16,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require dropzone
+//= require slick
+//= require slick.min
 //= require_tree .

@@ -7,14 +7,17 @@
   .item-detail-content__information
     .item-detail-content__information--pictures
       .item-detail-phone-big
-        - @item.images.first(1).each do |image|
-          - if @item.selling_status == "3"
-            .item-detail__show__sold-out-image
-              %span.item-detail__show__sold-out-text SOLD
-          = image_tag image.image.url, class: "item-detail-phone-big-main"
-      .item-detail-phone-cells
-        - @item.images.each do |image|
-          =image_tag image.image.url, class: "item-detail-phone-cells-bits"
+        - if @item.selling_status == "3"
+          .item-detail__show__sold-out-image
+            %span.item-detail__show__sold-out-text SOLD
+        %ul.slider-thum
+          - @item.images.each.with_index(1) do |image, index|
+            %li#slide-item
+              = image_tag image.image.url, class: "item-detail-phone-big-main", id: index
+      %ul.item-detail-phone-cells
+        - @item.images.each.with_index(1) do |image, index|
+          %li.item-slider-li
+            = image_tag image.image.url, class: "item-detail-phone-cells-bits", id: index
     .item-detail-content__information--list
       %table.item-detail-table(border = "1")
         %tr
