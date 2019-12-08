@@ -14,43 +14,63 @@
       max-width: 30rem;
       min-width: 30rem;
       background-color: #fafafa;
-      .item-detail-phone-big {
-        line-height: 0;
-        position: relative;
-
-        .item-detail__show__sold-out-image {
-          border: 5rem solid;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-color: $red transparent transparent $red;
-          z-index: 1;
-          position: absolute;
+      .slider-thum {
+        display: flex;
+        overflow: hidden;
+        .item-detail-phone-big {
+          line-height: 0;
+          position: relative;
+          min-height:0;
+          min-width : 0;
+          .item-detail__show__sold-out-image {
+            border: 5rem solid;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: $red transparent transparent $red;
+            z-index: 1;
+            position: absolute;
+          }
+          .item-detail__show__sold-out-text {
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: #fff;
+            font-weight: bolder;
+            position: absolute;
+            top: -2rem;
+            left: -5rem;
+            transform: rotateZ(315deg);
+          }
+          .item-detail-phone-big-main {
+            height: 30rem !important;
+            width: 30rem;
+          }
         }
-        .item-detail__show__sold-out-text {
-          font-size: 2rem;
-          letter-spacing: 0.1em;
-          color: #fff;
-          font-weight: bolder;
-          position: absolute;
-          top: -2rem;
-          left: -5rem;
-          transform: rotateZ(315deg);
-        }
-        .item-detail-phone-big-main {
-          height: 30rem;
-          width: 30rem;
-        }
+      }
+      .item-slider-li {
+        list-style: none;
+        height: 6rem;
+        width: 6rem !important;
+        outline:none;
+        margin: auto;
       }
       .item-detail-phone-cells {
         line-height: 0;
-        display: flex;
-        flex-wrap: wrap;
         height: 12rem;
         width: 30rem;
+        display : -webkit-box;     /* old Android */
+        display : -webkit-flex;    /* Safari etc. */
+        display : -ms-flexbox;     /* IE10        */
+        display : flex;
+        
         .item-detail-phone-cells-bits {
           height: 6rem;
           width: 6rem;
+          cursor: pointer;
+          -webkit-flex-wrap: wrap;          /* Safari etc. */
+          -ms-flex-wrap    : wrap;          /* IE10        */
+          flex-wrap        : wrap;
+
         }
       }
     }
@@ -199,9 +219,14 @@
     }
   }
 }
-.item-detail-phone-big__main--image {
-  height: 10rem;
-  width: 7rem;
-  opacity: 0.5;
-  background-size: 7rem 10rem;
+
+#slide-item {
+  height: 30rem;
+}
+
+.slider div {
+  height: 300px;
+}
+.slider img {
+  width: 100%;
 }
