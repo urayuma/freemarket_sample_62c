@@ -2,7 +2,7 @@
 
 $(document).on("turbolinks:load", function() {
   const $cont = $(".cont");
-  const $slider = $(".slider");
+  const $slidertop = $(".slidertop");
   const $nav = $(".nav");
   const winW = $(window).width();
   const animSpd = 750;
@@ -69,7 +69,7 @@ $(document).on("turbolinks:load", function() {
       .find(`.slide--${numSlide}__text-wrapper`)
       .append(letter)
       .append(frag1);
-    $slider.append($slide);
+    $slidertop.append($slide);
 
     if (arrTitlewords[titleword].length <= 4) {
       $(".slide--" + numSlide)
@@ -97,20 +97,20 @@ $(document).on("turbolinks:load", function() {
   function pagination(direction) {
     animation = true;
     diff = 0;
-    $slider.addClass("animation");
-    $slider.css({
+    $slidertop.addClass("animation");
+    $slidertop.css({
       transform: "translate3d(-" + (curSlide - direction) * 100 + "%, 0, 0)"
     });
 
-    $slider.find(".slide__darkbg").css({
+    $slidertop.find(".slide__darkbg").css({
       transform: "translate3d(" + (curSlide - direction) * 50 + "%, 0, 0)"
     });
 
-    $slider.find(".slide__letter").css({
+    $slidertop.find(".slide__letter").css({
       transform: "translate3d(0, 0, 0)"
     });
 
-    $slider.find(".slide__text").css({
+    $slidertop.find(".slide__text").css({
       transform: "translate3d(0, 0, 0)"
     });
   }
@@ -142,7 +142,7 @@ $(document).on("turbolinks:load", function() {
     if (animation) return;
     let target = +$(this).attr("data-target");
     let startX = e.pageX || e.originalEvent.touches[0].pageX;
-    $slider.removeClass("animation");
+    $slidertop.removeClass("animation");
 
     $(document).on("mousemove touchmove", function(e) {
       let x = e.pageX || e.originalEvent.touches[0].pageX;
@@ -153,21 +153,21 @@ $(document).on("turbolinks:load", function() {
       )
         return;
 
-      $slider.css({
+      $slidertop.css({
         transform:
           "translate3d(-" + ((curSlide - 1) * 100 + diff / 30) + "%, 0, 0)"
       });
 
-      $slider.find(".slide__darkbg").css({
+      $slidertop.find(".slide__darkbg").css({
         transform:
           "translate3d(" + ((curSlide - 1) * 50 + diff / 60) + "%, 0, 0)"
       });
 
-      $slider.find(".slide__letter").css({
+      $slidertop.find(".slide__letter").css({
         transform: "translate3d(" + diff / 60 + "vw, 0, 0)"
       });
 
-      $slider.find(".slide__text").css({
+      $slidertop.find(".slide__text").css({
         transform: "translate3d(" + diff / 15 + "px, 0, 0)"
       });
     });

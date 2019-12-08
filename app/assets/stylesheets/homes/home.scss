@@ -23,7 +23,7 @@
 
   .HeaderTop {
     height: 5rem;
-    width: 95%;
+    width: 100%;
     position: relative;
 
     &__Menu {
@@ -32,14 +32,13 @@
       &__header-logo {
         height: 4.5rem;
         width: 18rem;
-        padding: 0.5rem;
         background-image: image-url("fmarket_logo_red");
         background-repeat: no-repeat;
         position: absolute;
       }
 
       &__header-search {
-        width: 70%;
+        width: 80%;
         margin-left: 30rem;
         font-size: 1.6rem;
         line-height: 3em;
@@ -94,7 +93,6 @@ button.search-logo {
   width: 75%;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
   bottom: 0;
   position: absolute;
 
@@ -303,12 +301,10 @@ button.search-logo {
               text-align: center;
               margin-top: 0.1rem;
 
-
-              &__figcaption{
-              }
-
-
               &__item {
+                height: 26rem;
+                width: 19rem;
+  
                 margin-left: 1rem;
                 .body-item-image {
                   display: flex;
@@ -408,7 +404,10 @@ button.search-logo {
               text-align: center;
               margin-top: 0.1rem;
 
-              &__figcaption{
+              &__item{
+                height: 26rem;
+                width: 19rem;
+
               }
                 
             }
@@ -430,17 +429,6 @@ p.show-detail {
   color: #dddddd;
 }
 
-// figcaption {
-//   height: 5rem;
-//   width: 18rem;
-//   margin-top: 0.1rem;
-//   position: absolute;
-//   background-color: grey;
-//   color: #dddddd;
-//   overflow: scroll;
-//   text-align: center;
-//   line-height: margin 0 auto;
-// }
 
 h2.category-title {
   text-align: center;
@@ -466,11 +454,9 @@ li.FooterMenu__list__small {
 }
 
 .aside-toppage {
-  height: 18rem;
+  height: 15rem;
   width: 100%;
   background-color: #42548b;
-  background-image: url("aside-image");
-
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -483,7 +469,11 @@ li.FooterMenu__list__small {
   }
 
   &Aside__Image {
-    display: block;
+    width: 20rem;
+    height: 17rem;
+    background-image: image-url("logo_gray");
+    background-repeat: no-repeat;
+
   }
 }
 
@@ -500,6 +490,10 @@ p.aside-text2 {
   font-size: 2.4rem;
   text-shadow: 0.1rem 0.1rem 0 gray, -0.1rem 0.1rem 0 gray,
     0.1rem -0.1rem 0 gray, -0.1rem -0.1rem 0 gray;
+}
+
+img.aside-background{
+  width: 100%;
 }
 
 img.aside-image1 {
@@ -563,10 +557,8 @@ h2.FooterMenu__list__title {
 
   &__footer-text {
     text-align: center;
-    width: 76rem;
     height: 1.2rem;
     font-size: 1.2rem;
-    padding-left: 28rem;
   }
 }
 

@@ -30,11 +30,11 @@
 
     .sell-item
       .sell-item__form
-        %label.sell-item__form--subject 商品名
+        %label.sell-item__form--subject 商品名（最大40文字）
         %span.sell-item__form--essential 必須
         = f.text_field :name, placeholder: '商品名（必須 40文字まで）',  class: 'sell-item__form--name'
       .sell-item__form
-        %label.sell-item__form--subject 商品の説明
+        %label.sell-item__form--subject 商品の説明（最大1000文字）
         %span.sell-item__form--essential 必須
         = f.text_area :description, placeholder: "商品の説明（必須1,000文字以内） （色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです", rows: 5, class:'sell-item__form--explain'
     .sell-select

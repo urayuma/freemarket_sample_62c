@@ -5,7 +5,7 @@
 
     .Home-Slide-menu
         .cont
-            .slider
+            .slidertop
             %ul.nav
             .side-nav.side-nav--right{"data-target": "right"}
             .side-nav.side-nav--left{"data-target": "left"}
@@ -105,6 +105,7 @@
 
 
     %aside.aside-toppage
+
         .Aside__Text
             .Aside__Text__Lists
                 %p.aside-text1 Fmarket  わくわくフリマアプリ
@@ -113,9 +114,7 @@
 
             = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "aside-app"
 
-
         .Aside__Image
-            = image_tag "https://dimg04.c-ctrip.com/images/100a0v000000jmtuu00D6_C_750_350.jpg?proc=source%2Ftrip", alt: "", class: "aside-image1", height: '200', width: '270'
 
     = render 'footer'
     = render 'postitem'
