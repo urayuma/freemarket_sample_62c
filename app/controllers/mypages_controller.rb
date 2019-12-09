@@ -38,7 +38,11 @@ class MypagesController < ApplicationController
 
   def identification
     @prefectures = Prefecture.all
-    @information = current_user.user_information
+    if current_user.user_information.nil?
+      @information = current_user.create_user_information
+    else
+      @information = current_user.user_information
+    end
   end
 
   def listing
